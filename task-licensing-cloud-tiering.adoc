@@ -1,0 +1,197 @@
+---
+sidebar: sidebar
+permalink: task-licensing-cloud-tiering.html
+keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, tiering, cloud tiering
+summary: A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
+---
+
+= Set up licensing for Cloud Tiering
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
+
+A few notes before you read any further:
+
+* If you've already subscribed to the Cloud Manager subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You’ll see an active subscription in the Cloud Tiering *Licensing* tab. You won’t need to subscribe again.
+// You'll see an active subscription in the Digital Wallet.
+
+* The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. This is different than in the past where you purchased a _FabricPool_ license for each cluster.
+
+* There are no charges when tiering data to StorageGRID, so neither a BYOL license or PAYGO registration is required. This tiered data doesn’t count against the capacity purchased in your license.
+
+link:concept-cloud-tiering.html#pricing-and-licenses[Learn more about how licensing works for Cloud Tiering].
+
+== Use a Cloud Tiering PAYGO subscription
+
+Pay-as-you-go subscriptions from your cloud provider's marketplace enable you to license the use of Cloud Volumes ONTAP systems and many Cloud Data Services, such as Cloud Tiering.
+
+=== Subscribing from the AWS Marketplace
+
+Subscribe to Cloud Tiering from the AWS Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to AWS S3.
+
+.Steps
+[[subscribe-aws]]
+. In Cloud Manager, click *Tiering > Licensing*.
+
+. Click *Subscribe* under AWS Marketplace and then click *Continue*.
+
+. Subscribe from the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^], and then log back in to Cloud Central to complete the registration.
++
+The following video shows the process:
++
+video::video_subscribing_aws_tiering.mp4[width=848, height=480]
+
+=== Subscribing from the Azure Marketplace
+
+Subscribe to Cloud Tiering from the Azure Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to Azure Blob storage.
+
+.Steps
+[[subscribe-azure]]
+. In Cloud Manager, click *Tiering > Licensing*.
+
+. Click *Subscribe* under Azure Marketplace and then click *Continue*.
+
+. Subscribe from the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^], and then log back in to Cloud Central to complete the registration.
++
+The following video shows the process:
++
+video::video_subscribing_azure_tiering.mp4[width=848, height=480]
+
+=== Subscribing from the GCP Marketplace
+
+Subscribe to Cloud Tiering from the GCP Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to Google Cloud storage.
+
+.Steps
+[[subscribe-gcp]]
+. In Cloud Manager, click *Tiering > Licensing*.
+
+. Click *Subscribe* under GCP Marketplace and then click *Continue*.
+
+. Subscribe from the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], and then log back in to Cloud Central to complete the registration.
++
+The following video shows the process:
++
+video::video_subscribing_gcp_tiering.mp4[width=848, height=480]
+
+== Use a Cloud Tiering BYOL license
+
+Bring-your-own licenses from NetApp provide 2-, 12-, 24-, or 36-month terms. The BYOL *Cloud Tiering* license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. The total tiering capacity defined in your Cloud Tiering license is shared among *all* of your on-prem clusters, making initial licensing and renewal easy.
+
+If you don't have a Cloud Tiering license, contact us to purchase one:
+
+* mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Send email to purchase a license].
+* Click the chat icon in the lower-right of Cloud Manager to request a license.
+
+Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a Cloud Tiering license with the same dollar-equivalence and the same expiration date. link:task-managing-licenses.html#exchange-unassigned-node-based-licenses[Go here for details].
+
+You use the Digital Wallet page in Cloud Manager to manage Cloud Tiering BYOL licenses. You can add new licenses and update existing licenses.
+
+=== New Cloud Tiering BYOL licensing starting August 21, 2021
+
+The new *Cloud Tiering* license was introduced on August 21, 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for configurations that aren't supported within Cloud Manager.
+
+If you have one of these configurations, you'll continue to use a FabricPool license on each cluster (managed using System Manager or the CLI):
+
+** ONTAP installations in the GovCloud or in Dark Sites
+** ONTAP clusters in a MetroCluster configuration
+** ONTAP clusters using FabricPool Mirror functionality
+** ONTAP clusters that are tiering data to IBM Cloud Object Storage or Alibaba Cloud Object Storage
++
+Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, and S3-compatible object storage.
+
+Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
+
+If you are currently using FabricPool licensing, you're not affected until your FabricPool license reaches its expiration date or maximum capacity. Contact NetApp when you need to update your license, or earlier to make sure there is no interruption in your ability to tier data to the cloud.
+
+* If you're using a configuration that is supported in Cloud Manager, your FabricPool licenses will be converted to Cloud Tiering licenses and they'll appear in the Digital Wallet. When those initial licenses expire, you'll need to update the Cloud Tiering licenses.
+* If you're using a configuration that is not supported in Cloud Manager, then you'll continue using a FabricPool license. https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html[See how to license tiering using System Manager^].
+
+Here are some things you need to know about the two licenses:
+
+[cols="50,50",width=95%,options="header"]
+|===
+| Cloud Tiering license
+| FabricPool license
+
+| It is a _floating_ license that you can use across multiple on-premises ONTAP clusters. | It is a per-cluster license that you purchase and license for _every_ cluster.
+| It is registered in Cloud Manager in the Digital Wallet. | It is applied to individual clusters using System Manager or the ONTAP CLI.
+| Tiering configuration and management is done through the Cloud Tiering service in Cloud Manager. | Tiering configuration and management is done through System Manager or the ONTAP CLI.
+| Once configured, you can use the tiering service without a license for 30 days using the free trial. | Once configured, you can tier the first 10 TB of data for free.
+|===
+
+=== Obtain your Cloud Tiering license file
+
+After you have purchased your Cloud Tiering license, you activate the license in Cloud Manager by entering the Cloud Tiering serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
+
+.Steps
+
+. Sign in to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
+
+. Enter your Cloud Tiering license serial number.
++
+image:screenshot_cloud_tiering_license_step1.gif[A screenshot that shows a table of licenses after searching by serial number.]
+
+. Under *License Key*, click *Get NetApp License File*.
+
+. Enter your Cloud Manager Account ID (this is called a Tenant ID on the support site) and click *Submit* to download the license file.
++
+image:screenshot_cloud_tiering_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
++
+You can find your Cloud Manager Account ID by selecting the *Account* drop-down from the top of Cloud Manager, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
+
+=== Add Cloud Tiering BYOL licenses to your account
+
+After you purchase a Cloud Tiering license for your Cloud Manager account, you need to add the license to Cloud Manager to use the Cloud Tiering service.
+
+.Steps
+
+. Click *All Services > Digital Wallet > Data Services Licenses*.
+
+. Click *Add License*.
+
+. In the _Add License_ dialog, enter the license information and click *Add License*:
++
+* If you have the tiering license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
++
+If your NetApp Support Site account isn't available from the drop-down list, link:task-adding-nss-accounts.html[add the NSS account to Cloud Manager^].
+* If you have the tiering license file, select the *Upload License File* option and follow the prompts to attach the file.
++
+image:screenshot_services_license_add.png[A screenshot that shows the page to add the Cloud Tiering BYOL license.]
+
+.Result
+
+Cloud Manager adds the license so that your Cloud Tiering service is active.
+
+=== Update a Cloud Tiering BYOL license
+
+If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in Cloud Tiering.
+
+image:screenshot_services_license_expire2.png[A screenshot that shows an expiring license in the Cloud Tiering page.]
+
+This status also appears in the Digital Wallet page.
+
+image:screenshot_services_license_expire1.png[A screenshot that shows an expiring license in the Digital Wallet page.]
+
+You can update your Cloud Tiering license before it expires so that there is no interruption in your ability to tier your data to the cloud.
+
+.Steps
+
+. Click the chat icon in the lower-right of Cloud Manager to request an extension to your term or additional capacity to your Cloud Tiering license for the particular serial number.
++
+After you pay for the license and it is registered with the NetApp Support Site, Cloud Manager automatically updates the license in the Digital Wallet and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
+
+. If Cloud Manager can't automatically update the license, then you’ll need to manually upload the license file.
+.. You can <<Obtain your Cloud Tiering license file,obtain the license file from the NetApp Support Site>>.
+.. On the Digital Wallet page in the _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
++
+image:screenshot_services_license_update.png[A screenshot of selecting the Update License button for a particular service.]
+.. In the _Update License_ page, upload the license file and click *Update License*.
+
+.Result
+
+Cloud Manager updates the license so that your Cloud Tiering service continues to be active.

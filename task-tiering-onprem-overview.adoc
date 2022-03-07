@@ -1,0 +1,35 @@
+---
+sidebar: sidebar
+permalink: task-tiering-onprem-overview.html
+keywords: overview, tiering overview, tiered clusters, clusters enabled for tiering, data tiering overview, cold data, hot data, tiered data, savings, savings opportunities, saving opportunity, policies, cold snapshots, all dp user data, cold user data & snapshots, cold user data and snapshots, all user data, no policy, marketplace subscriptions, clusters associated
+summary: Cloud Tiering provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
+---
+
+= Get an overview of data tiering from your clusters
+:toc: macro
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Tiering provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
+
+Cloud Tiering provides the following details about your environment:
+
+image:screenshot_tiering_onprem_overview.gif[A screenshot of the On-Prem Overview page.]
+
+Active Clusters:: The number of clusters that are currently tiering data to the cloud, the clusters that aren't tiering data to the cloud, and the number of clusters that don't support data tiering.
+
+Data Overview:: The amount of data that was tiered to the cloud, and the amount of hot and cold data on the cluster.
+
+Total Savings:: The amount of money that you've saved by tiering data to the cloud, as well as the amount of money that you could save by tiering more data to the cloud.
+
+Policies:: The number of times that each tiering policy has been applied to a volume.
+
+Marketplace Subscriptions:: The number of clusters associated with each type of Marketplace Subscription and an indication about your subscription status.
+
+.Steps
+
+. Click *Tiering > On-Prem Overview*.
