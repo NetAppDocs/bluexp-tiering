@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An on-prem ONTAP cluster that's running ONTAP 9.2 or later and has an HTTPS connection to Amazon S3. link:task-discovering-ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.2 or later and has an HTTPS connection to Amazon S3. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * An AWS account that has an access key and <<Preparing Amazon S3,the required permissions>> so the ONTAP cluster can tier inactive data in and out of S3.
 * A Connector installed in an AWS VPC or on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to S3 storage, and to the Cloud Tiering service.
@@ -88,16 +88,16 @@ NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup w
 
 You need to create an on-prem ONTAP working environment in Cloud Manager before you can start tiering cold data.
 
-link:task-discovering-ontap.html[Learn how to discover a cluster].
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 
 === Creating or switching Connectors
 
 A Connector is required to tier data to the cloud. When tiering data to AWS S3, you can use a Connector that's in an AWS VPC or on your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in AWS or on-prem.
 
-* link:concept-connectors.html[Learn about Connectors]
-* link:task-creating-connectors-aws.html[Creating a Connector in AWS]
-* link:task-installing-linux.html[Installing the Connector on an existing Linux host]
-* link:task-managing-connectors.html[Switching between Connectors]
+* https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-aws.html[Creating a Connector in AWS^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-linux.html[Installing the Connector on an existing Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
 
 === Preparing networking for the Connector
 
@@ -148,7 +148,7 @@ https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html
 After you prepare your AWS environment, start tiering inactive data from your first cluster.
 
 .What you'll need
-* link:task-discovering-ontap.html[An on-premises working environment].
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
 * An AWS access key for an IAM user who has the required S3 permissions.
 
 .Steps

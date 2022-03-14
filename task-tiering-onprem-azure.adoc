@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An on-prem ONTAP cluster that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. link:task-discovering-ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * A Connector installed in an Azure VNet or on your premises.
 * Networking for a Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Azure storage, and to the Cloud Tiering service.
 
@@ -87,17 +87,17 @@ NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup w
 
 You need to create an on-prem ONTAP working environment in Cloud Manager before you can start tiering cold data.
 
-link:task-discovering-ontap.html[Learn how to discover a cluster].
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 
 === Creating or switching Connectors
 
 A Connector is required to tier data to the cloud. When tiering data to Azure Blob storage, you can use a Connector that’s in an Azure VNet or on your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in Azure or on-prem.
 
-* link:concept-connectors.html[Learn about Connectors]
-* link:task-creating-connectors-azure.html[Creating a Connector in Azure]
+* https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-azure.html[Creating a Connector in Azure^]
 * link:reference-cloud-mgr-reqs.html[Connector host requirements]
-* link:task-installing-linux.html[Installing the Connector on an existing Linux host]
-* link:task-managing-connectors.html[Switching between Connectors]
+* https://docs.netapp.com/us-en/cloud-manager-get-started/task-installing-linux.html[Installing the Connector on an existing Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
 
 === Verify that you have the necessary Connector permissions
 
@@ -141,7 +141,7 @@ After you prepare your Azure environment, start tiering inactive data from your 
 
 .What you'll need
 
-link:task-discovering-ontap.html[An on-premises working environment].
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
 
 .Steps
 

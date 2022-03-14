@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An on-prem ONTAP cluster that's running ONTAP 9.4 or later, and a connection over a user-specified port to StorageGRID. link:task-discovering-ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.4 or later, and a connection over a user-specified port to StorageGRID. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * StorageGRID 10.3 or later with AWS access keys that have S3 permissions.
 * A Connector installed on your premises.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster, to StorageGRID, and to the Cloud Tiering service.
@@ -80,7 +80,7 @@ NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup w
 
 You need to create an on-prem ONTAP working environment in the Cloud Manager Canvas before you can start tiering cold data.
 
-link:task-discovering-ontap.html[Learn how to discover a cluster].
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 
 === Preparing StorageGRID
 
@@ -109,10 +109,10 @@ You must not enable StorageGRID object versioning on the object store bucket.
 
 A Connector is required to tier data to the cloud. When tiering data to StorageGRID, a Connector must be available on your premises. You'll either need to install a new Connector or make sure that the currently selected Connector resides on-prem.
 
-* link:concept-connectors.html[Learn about Connectors]
+* https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
 * link:reference-cloud-mgr-reqs.html[Connector host requirements]
-* link:task-installing-linux.html[Installing the Connector on an existing Linux host]
-* link:task-managing-connectors.html[Switching between Connectors]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-linux.html[Installing the Connector on an existing Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
 
 === Preparing networking for the Connector
 
@@ -131,7 +131,7 @@ Ensure that the Connector has the required networking connections.
 After you prepare your environment, start tiering inactive data from your first cluster.
 
 .What you'll need
-* link:task-discovering-ontap.html[An on-premises working environment].
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
 * The FQDN of the StorageGRID server and the port that will be used for HTTPS communications.
 * An AWS access key that has the required S3 permissions.
 

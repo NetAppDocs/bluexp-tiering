@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An on-prem ONTAP cluster that's running ONTAP 9.6 or later and has an HTTPS connection to Google Cloud Storage. link:task-discovering-ontap.html[Learn how to discover a cluster].
+* An on-prem ONTAP cluster that's running ONTAP 9.6 or later and has an HTTPS connection to Google Cloud Storage. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * A service account that has the predefined Storage Admin role and storage access keys.
 * A Connector installed in a Google Cloud Platform VPC.
 * Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Google Cloud Storage, and to the Cloud Tiering service.
@@ -88,15 +88,15 @@ NOTE: Cloud Tiering supports FlexGroup volumes. Setup works the same as any othe
 
 You need to create an on-prem ONTAP working environment in Cloud Manager before you can start tiering cold data.
 
-link:task-discovering-ontap.html[Learn how to discover a cluster].
+https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 
 === Creating or switching Connectors
 
 A Connector is required to tier data to the cloud. When tiering data to Google Cloud Storage, a Connector must be available in a Google Cloud Platform VPC. You'll either need to create a new Connector or make sure that the currently selected Connector resides in GCP.
 
-* link:concept-connectors.html[Learn about Connectors]
-* link:task-creating-connectors-gcp.html[Creating a Connector in GCP]
-* link:task-managing-connectors.html[Switching between Connectors]
+* https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-gcp.html[Creating a Connector in GCP^]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
 
 === Preparing networking for the Connector
 
@@ -139,7 +139,7 @@ You'll need to enter the keys later when you set up Cloud Tiering.
 After you prepare your Google Cloud environment, start tiering inactive data from your first cluster.
 
 .What you'll need
-* link:task-discovering-ontap.html[An on-premises working environment].
+* https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
 * Storage access keys for a service account that has the Storage Admin role.
 
 .Steps

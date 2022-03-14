@@ -87,7 +87,7 @@ If you don't have a Cloud Tiering license, contact us to purchase one:
 * mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Send email to purchase a license].
 * Click the chat icon in the lower-right of Cloud Manager to request a license.
 
-Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a Cloud Tiering license with the same dollar-equivalence and the same expiration date. link:task-managing-licenses.html#exchange-unassigned-node-based-licenses[Go here for details].
+Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a Cloud Tiering license with the same dollar-equivalence and the same expiration date. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-licenses.html#exchange-unassigned-node-based-licenses[Go here for details^].
 
 You use the Digital Wallet page in Cloud Manager to manage Cloud Tiering BYOL licenses. You can add new licenses and update existing licenses.
 

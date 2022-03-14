@@ -45,7 +45,7 @@ If you have Cloud Volumes ONTAP systems, you'll find them in the Cluster Dashboa
 
 From the Cluster Dashboard, you can view tiering information similar to an on-prem ONTAP cluster: operational health, current savings, savings opportunities, details about volumes and aggregates, and more.
 
-Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. link:task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager^].
+Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager^].
 
 == Object storage
 
