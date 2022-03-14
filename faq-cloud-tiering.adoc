@@ -126,7 +126,7 @@ The following questions relate to permissions.
 
 === What permissions are required in AWS?
 
-Permissions are required link:task_tiering_onprem_aws#preparing-amazon-s3[to manage the S3 bucket].
+Permissions are required link:task-tiering-onprem-aws#preparing-amazon-s3[to manage the S3 bucket].
 
 === What permissions are required in Azure?
 
