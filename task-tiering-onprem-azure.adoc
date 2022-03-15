@@ -95,7 +95,7 @@ A Connector is required to tier data to the cloud. When tiering data to Azure Bl
 
 * https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
 * https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-azure.html[Creating a Connector in Azure^]
-* link:reference-cloud-mgr-reqs.html[Connector host requirements]
+* https://docs.netapp.com/us-en/cloud-manager-connector/task_installing_linux.html[Connector host requirements^]
 * https://docs.netapp.com/us-en/cloud-manager-get-started/task-installing-linux.html[Installing the Connector on an existing Linux host^]
 * https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
 
