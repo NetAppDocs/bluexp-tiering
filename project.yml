@@ -60,20 +60,36 @@ homepage:
   tiles:
     - title: Get started
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-    - title: tile name
+        - title: Learn about Cloud Tiering
+          url: concept-cloud-tiering.html
+        - title: What’s New
+          url: whats-new.html
+        - title: Set up licensing
+          url: task-licensing-cloud-tiering.html
+    - title: Tier volume data to cloud
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
+        - title: On-premises ONTAP to Amazon S3
+          url: task-tiering-onprem-aws.html
+        - title: On-premises ONTAP to Azure Blob
+          url: task-tiering-onprem-azure.html
+        - title: On-premises ONTAP to Google Cloud
+          url: task-tiering-onprem-gcp.html
+        - title: On-premises ONTAP to StorageGRID
+          url: task-tiering-onprem-storagegrid.html
+        - title: On-premises ONTAP to generic S3
+          url: task-tiering-onprem-s3-compat.html
+    - title: Manage volume tiering settings
+      links:
+        - title: Change a volume’s tiering policy
+          url: task-managing-tiering.html#changing-a-volumes-tiering-policy
+        - title: Review tiering info for a cluster
+          url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
+        - title: Tiering data from additional volumes
+          url: task-managing-tiering.html#tiering-data-from-additional-volumes
+        - title: Move data from the cloud back to the performance tier
+          url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
+        - title: Manage tiering settings on aggregates
+          url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
     - title: Blogs & community
       links:
         - title: NetApp Community
