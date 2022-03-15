@@ -1,0 +1,58 @@
+---
+sidebar: sidebar
+permalink: whats-new.html
+keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes
+summary: Learn what's new in <service>.
+---
+
+= What's new with <service>
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Learn what's new in <service>.
+
+tag::whats-new[]
+== <date of release in the format dd month year like 28 Nov 2021>
+
+=== <feature title>
+
+<description>
+
+=== <feature title>
+
+<description>
+
+== <date of release in the format dd month year like 28 Nov 2021>
+
+=== <feature title>
+
+<description>
+
+=== <feature title>
+
+<description>
+
+== <date of release in the format dd month year like 28 Nov 2021>
+
+=== <feature title>
+
+<description>
+
+=== <feature title>
+
+<description>
+end::whats-new[]
+
+== <date of release in the format dd month year like 28 Nov 2021>
+
+=== <feature title>
+
+<description>
+
+=== <feature title>
+
+<description>

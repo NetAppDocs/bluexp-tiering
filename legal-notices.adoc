@@ -1,0 +1,26 @@
+---
+permalink: legal-notices.html
+sidebar: sidebar
+keywords:
+summary:
+---
+
+= Legal notices
+:icons: font
+:imagesdir: ../media/
+
+// Include the common notices
+include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/common-legal-notices.adoc[]
+
+// Include the open source notice intro
+include::https://raw.githubusercontent.com/NetAppDocs/common/main/_include/open-source-notice-intro.adoc[]
+
+// Add required link(s)
+* link:media/notice_cloud_manager_3.9.pdf[Notice for Cloud Manager 3.9^]
+* link:media/notice_cloud_backup_service.pdf[Notice for the Cloud Backup^]
+* link:media/notice_single_file_restore.pdf[Notice for Single File Restore^]
+* link:media/notice_global_file_cache.pdf[Notice for Global File Cache^]
+* link:media/notice_cloud_sync.pdf[Notice for Cloud Sync^]
+* link:media/notice_cloud_tiering.pdf[Notice for Cloud Tiering^]
+* link:media/notice_cloud_data_sense.pdf[Notice for Cloud Data Sense^]
+* link:media/notice_application_templates.pdf[Notice for Application Templates^]
