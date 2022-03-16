@@ -66,19 +66,19 @@ homepage:
           url: whats-new.html
         - title: Set up licensing
           url: task-licensing-cloud-tiering.html
-    - title: Tier volume data to cloud
+    - title: Tier on-prem ONTAP data to the cloud
       links:
-        - title: On-premises ONTAP to Amazon S3
+        - title: Tier to Amazon S3
           url: task-tiering-onprem-aws.html
-        - title: On-premises ONTAP to Azure Blob
+        - title: Tier to Azure Blob
           url: task-tiering-onprem-azure.html
-        - title: On-premises ONTAP to Google Cloud
+        - title: Tier to Google Cloud
           url: task-tiering-onprem-gcp.html
-        - title: On-premises ONTAP to StorageGRID
+        - title: Tier to StorageGRID
           url: task-tiering-onprem-storagegrid.html
-        - title: On-premises ONTAP to generic S3
+        - title: Tier to generic S3
           url: task-tiering-onprem-s3-compat.html
-    - title: Manage volume tiering settings
+    - title: Manage tiering settings
       links:
         - title: Change a volume’s tiering policy
           url: task-managing-tiering.html#changing-a-volumes-tiering-policy
@@ -98,3 +98,7 @@ homepage:
           url: https://cloud.netapp.com/blog
         - title: Cloud webinars
           url: https://cloud.netapp.com/events
+    - title: Other resources
+      links:
+        - title: Cloud Central use cases
+          url: https://cloud.netapp.com/cloud-tiering
