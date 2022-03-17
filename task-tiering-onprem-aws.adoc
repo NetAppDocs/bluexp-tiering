@@ -82,7 +82,7 @@ When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. 
 
 include::_include/tiering_supported_volumes.adoc[]
 
-NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup works the same as any other volume.
+NOTE: Cloud Tiering supports FlexGroup volumes starting with ONTAP 9.5. Setup works the same as any other volume.
 
 === Discovering an ONTAP cluster
 
@@ -109,7 +109,7 @@ Ensure that the Connector has the required networking connections. A Connector c
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to S3
-* An HTTPS connection over port 443 to your ONTAP clusters
+* An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 . If needed, enable a VPC Endpoint to S3.
 +

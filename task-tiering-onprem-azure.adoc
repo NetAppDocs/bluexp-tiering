@@ -119,7 +119,7 @@ Ensure that the Connector has the required networking connections. A Connector c
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to Azure Blob storage
-* An HTTPS connection over port 443 to your ONTAP clusters
+* An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 . If needed, enable a VNet service endpoint to Azure storage.
 +

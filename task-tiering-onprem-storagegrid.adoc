@@ -124,7 +124,7 @@ Ensure that the Connector has the required networking connections.
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to StorageGRID
-* An HTTPS connection over port 443 to your ONTAP cluster
+* An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 == Tiering inactive data from your first cluster to StorageGRID
 
