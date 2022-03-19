@@ -1,5 +1,6 @@
 settings:
   name: Cloud Tiering
+  platform: cloud
   internal:
     pdf_enabled: true
   prod:
@@ -56,6 +57,9 @@ sidebar:
           url: /task-get-help.html
     - title: Legal notices
       url: /legal-notices.html
+product-family:
+  name: Cloud Manager
+  repo: cloud-manager-family
 homepage:
   tiles:
     - title: Get started
@@ -84,7 +88,7 @@ homepage:
           url: task-managing-tiering.html#changing-a-volumes-tiering-policy
         - title: Review tiering info for a cluster
           url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
-        - title: Tiering data from additional volumes
+        - title: Tier data from additional volumes
           url: task-managing-tiering.html#tiering-data-from-additional-volumes
         - title: Move data from the cloud back to the performance tier
           url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
