@@ -93,11 +93,10 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 A Connector is required to tier data to the cloud. When tiering data to Azure Blob storage, you can use a Connector that’s in an Azure VNet or on your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in Azure or on-prem.
 
-* https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-azure.html[Creating a Connector in Azure^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task_installing_linux.html[Connector host requirements^]
-* https://docs.netapp.com/us-en/cloud-manager-get-started/task-installing-linux.html[Installing the Connector on an existing Linux host^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[Creating a Connector in Azure^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html[Switching between Connectors^]
 
 === Verify that you have the necessary Connector permissions
 
