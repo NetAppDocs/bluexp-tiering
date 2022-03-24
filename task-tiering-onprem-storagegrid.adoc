@@ -109,10 +109,9 @@ You must not enable StorageGRID object versioning on the object store bucket.
 
 A Connector is required to tier data to the cloud. When tiering data to StorageGRID, a Connector must be available on your premises. You'll either need to install a new Connector or make sure that the currently selected Connector resides on-prem.
 
-* https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task_installing_linux.html[Connector host requirements^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-linux.html[Installing the Connector on an existing Linux host^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html[Switching between Connectors^]
 
 === Preparing networking for the Connector
 
@@ -124,7 +123,7 @@ Ensure that the Connector has the required networking connections.
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to StorageGRID
-* An HTTPS connection over port 443 to your ONTAP cluster
+* An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 == Tiering inactive data from your first cluster to StorageGRID
 

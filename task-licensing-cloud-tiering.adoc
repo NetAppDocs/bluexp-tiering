@@ -40,7 +40,7 @@ Subscribe to Cloud Tiering from the AWS Marketplace to set up a pay-as-you-go su
 
 . Click *Subscribe* under AWS Marketplace and then click *Continue*.
 
-. Subscribe from the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^], and then log back in to Cloud Central to complete the registration.
+. Subscribe from the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^], and then log back in to Cloud Central to complete the registration.
 +
 The following video shows the process:
 +
@@ -93,23 +93,16 @@ You use the Digital Wallet page in Cloud Manager to manage Cloud Tiering BYOL li
 
 === New Cloud Tiering BYOL licensing starting August 21, 2021
 
-The new *Cloud Tiering* license was introduced on August 21, 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for configurations that aren't supported within Cloud Manager.
+The new *Cloud Tiering* license was introduced in August 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, S3-compatible object storage, and StorageGRID.
 
-If you have one of these configurations, you'll continue to use a FabricPool license on each cluster (managed using System Manager or the CLI):
+The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for ONTAP deployments in sites that have no internet access (also known as "dark sites"). If you have a dark site deployment, you'll install a FabricPool license on each cluster using System Manager or the ONTAP CLI.
 
-** ONTAP installations in the GovCloud or in Dark Sites
-** ONTAP clusters in a MetroCluster configuration
-** ONTAP clusters using FabricPool Mirror functionality
-** ONTAP clusters that are tiering data to IBM Cloud Object Storage or Alibaba Cloud Object Storage
-+
-Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, and S3-compatible object storage.
-
-Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
+TIP: Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
 
 If you are currently using FabricPool licensing, you're not affected until your FabricPool license reaches its expiration date or maximum capacity. Contact NetApp when you need to update your license, or earlier to make sure there is no interruption in your ability to tier data to the cloud.
 
-* If you're using a configuration that is supported in Cloud Manager, your FabricPool licenses will be converted to Cloud Tiering licenses and they'll appear in the Digital Wallet. When those initial licenses expire, you'll need to update the Cloud Tiering licenses.
-* If you're using a configuration that is not supported in Cloud Manager, then you'll continue using a FabricPool license. https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html[See how to license tiering using System Manager^].
+* If you're using a configuration that's supported in Cloud Manager, your FabricPool licenses will be converted to Cloud Tiering licenses and they'll appear in the Digital Wallet. When those initial licenses expire, you'll need to update the Cloud Tiering licenses.
+* If you're using a configuration that's not supported in Cloud Manager, then you'll continue using a FabricPool license. https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html[See how to license tiering using System Manager^].
 
 Here are some things you need to know about the two licenses:
 
@@ -158,7 +151,7 @@ After you purchase a Cloud Tiering license for your Cloud Manager account, you n
 +
 * If you have the tiering license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
-If your NetApp Support Site account isn't available from the drop-down list, https://docs.netapp.com/us-en/cloud-manager-get-started/task-adding-nss-accounts.html[add the NSS account to Cloud Manager^].
+If your NetApp Support Site account isn't available from the drop-down list, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[add the NSS account to Cloud Manager^].
 * If you have the tiering license file, select the *Upload License File* option and follow the prompts to attach the file.
 +
 image:screenshot_services_license_add.png[A screenshot that shows the page to add the Cloud Tiering BYOL license.]

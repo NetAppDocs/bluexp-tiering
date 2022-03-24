@@ -1,12 +1,13 @@
 settings:
   name: Cloud Tiering
+  platform: cloud
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: true
 sidebar:
   entries:
-    - title: Back to Cloud Manager documentation
+    - title: All Cloud Manager documentation
       url: https://docs.netapp.com/us-en/cloud-manager-family
     - title: Cloud Tiering docs
       url: /index.html
@@ -56,24 +57,43 @@ sidebar:
           url: /task-get-help.html
     - title: Legal notices
       url: /legal-notices.html
+product-family:
+  name: Cloud Manager
+  repo: cloud-manager-family
 homepage:
   tiles:
     - title: Get started
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-    - title: tile name
+        - title: Learn about Cloud Tiering
+          url: concept-cloud-tiering.html
+        - title: What’s New
+          url: whats-new.html
+        - title: Set up licensing
+          url: task-licensing-cloud-tiering.html
+    - title: Tier on-prem ONTAP data to the cloud
       links:
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
-        - title: title
-          url: page.html
+        - title: Tier to Amazon S3
+          url: task-tiering-onprem-aws.html
+        - title: Tier to Azure Blob
+          url: task-tiering-onprem-azure.html
+        - title: Tier to Google Cloud
+          url: task-tiering-onprem-gcp.html
+        - title: Tier to StorageGRID
+          url: task-tiering-onprem-storagegrid.html
+        - title: Tier to generic S3
+          url: task-tiering-onprem-s3-compat.html
+    - title: Manage tiering settings
+      links:
+        - title: Change a volume’s tiering policy
+          url: task-managing-tiering.html#changing-a-volumes-tiering-policy
+        - title: Review tiering info for a cluster
+          url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
+        - title: Tier data from additional volumes
+          url: task-managing-tiering.html#tiering-data-from-additional-volumes
+        - title: Move data from the cloud back to the performance tier
+          url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
+        - title: Manage tiering settings on aggregates
+          url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
     - title: Blogs & community
       links:
         - title: NetApp Community
@@ -82,3 +102,7 @@ homepage:
           url: https://cloud.netapp.com/blog
         - title: Cloud webinars
           url: https://cloud.netapp.com/events
+    - title: Other resources
+      links:
+        - title: Cloud Central use cases
+          url: https://cloud.netapp.com/cloud-tiering

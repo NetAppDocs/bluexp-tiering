@@ -41,7 +41,7 @@ In Cloud Manager, select an on-prem working environment, click *Enable* for the 
 After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP Cloud Tiering BYOL license, or a combination of both:
 
 [role="quick-margin-list"]
-* To subscribe from the AWS Marketplace, https://aws.amazon.com/marketplace/pp/B07QX2QLXX[go to the Cloud Manager Marketplace offering^], click *Subscribe*, and then follow the prompts.
+* To subscribe from the AWS Marketplace, https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[go to the Cloud Manager Marketplace offering^], click *Subscribe*, and then follow the prompts.
 * To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
 
 == Requirements
@@ -82,7 +82,7 @@ When you set up data tiering, Cloud Tiering prompts you for the IPspace to use. 
 
 include::_include/tiering_supported_volumes.adoc[]
 
-NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup works the same as any other volume.
+NOTE: Cloud Tiering supports FlexGroup volumes starting with ONTAP 9.5. Setup works the same as any other volume.
 
 === Discovering an ONTAP cluster
 
@@ -94,10 +94,10 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 A Connector is required to tier data to the cloud. When tiering data to AWS S3, you can use a Connector that's in an AWS VPC or on your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in AWS or on-prem.
 
-* https://docs.netapp.com/us-en/cloud-manager-connector/concept-connectors.html[Learn about Connectors^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-creating-connectors-aws.html[Creating a Connector in AWS^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-installing-linux.html[Installing the Connector on an existing Linux host^]
-* https://docs.netapp.com/us-en/cloud-manager-connector/task-managing-connectors.html[Switching between Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Creating a Connector in AWS^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html[Switching between Connectors^]
 
 === Preparing networking for the Connector
 
@@ -109,7 +109,7 @@ Ensure that the Connector has the required networking connections. A Connector c
 
 * An outbound internet connection to the Cloud Tiering service over port 443 (HTTPS)
 * An HTTPS connection over port 443 to S3
-* An HTTPS connection over port 443 to your ONTAP clusters
+* An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 . If needed, enable a VPC Endpoint to S3.
 +

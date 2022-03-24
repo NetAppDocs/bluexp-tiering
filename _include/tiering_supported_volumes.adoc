@@ -1,0 +1,2 @@
+Supported volumes and aggregates::
+The total number of volumes that Cloud Tiering can tier might be less than the number of volumes on your ONTAP system. That's because volumes can't be tiered from some aggregates. Refer to ONTAP documentation for link:https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool[functionality or features not supported by FabricPool^].
