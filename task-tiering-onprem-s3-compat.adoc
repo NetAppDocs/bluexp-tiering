@@ -48,7 +48,7 @@ In Cloud Manager, select an on-prem working environment, click *Enable* for the 
 Pay for Cloud Tiering through a pay-as-you-go subscription from your cloud provider, a NetApp Cloud Tiering bring-your-own-license, or a combination of both:
 
 [role="quick-margin-list"]
-* To subscribe to the Cloud Manager PAYGO offering from the https://aws.amazon.com/marketplace/pp/B07QX2QLXX[AWS Marketplace^], https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^], or https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], click *Subscribe* and follow the prompts.
+* To subscribe to the Cloud Manager PAYGO offering from the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^], https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^], or https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], click *Subscribe* and follow the prompts.
 
 * To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
 
