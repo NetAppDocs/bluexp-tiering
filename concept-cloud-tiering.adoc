@@ -98,7 +98,7 @@ After you purchase a Cloud Tiering license, you'll need use the Digital Wallet p
 
 As noted above, we recommend that you set up a pay-as-you-go subscription, even if you have purchased a BYOL license.
 
-NOTE: Starting August 21, 2021 the old *FabricPool* license is being replaced by the *Cloud Tiering* license. link:task-licensing-cloud-tiering.html#new-cloud-tiering-byol-licensing-starting-august-21-2021[Read more about how the Cloud Tiering license is different than the FabricPool license].
+NOTE: Starting August 2021 the old *FabricPool* license was replaced by the *Cloud Tiering* license. link:task-licensing-cloud-tiering.html#new-cloud-tiering-byol-licensing-starting-august-21-2021[Read more about how the Cloud Tiering license is different than the FabricPool license].
 
 == How Cloud Tiering works
 
