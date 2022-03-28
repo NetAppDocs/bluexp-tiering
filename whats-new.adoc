@@ -16,16 +16,6 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
-== 3 Apr 2022
-
-=== Support AWS S3 Glacier Instant Retrieval Storage Class
-
-sdfsdsdf
-
-=== Recommendation for Cloud Tiering from Notification panel
-
-sdfsdfsf
-
 == 2 September 2021
 
 === Cloud Tiering BYOL license replaces FabricPool license.
@@ -43,7 +33,6 @@ Now you can tier inactive data to any Object Storage service which uses the Simp
 === The Connector can be running on premises when tiering data to Azure Blob storage.
 
 You are no longer required to use a Connector installed in an Azure VNet. Your Connector can be running on a host in your premises when tiering data to Azure Blob storage.
-// end::whats-new[]
 
 == 7 June 2021
 
@@ -60,6 +49,7 @@ In earlier releases you could transition tiered data from the Standard storage c
 This functionality is useful if you want to stop using tiering on a volume, or if you decide to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier. This capability is available when using ONTAP 9.8 and greater.
 
 See how to link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[migrate data back to the performance tier].
+// end::whats-new[]
 
 == 2 May 2021
 
