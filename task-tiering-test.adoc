@@ -1,0 +1,48 @@
+---
+sidebar: sidebar
+permalink: task-tiering-test.html
+keywords: throughput, latency, tiering performance, cloud performance test, tiering test, object storage performance
+summary: Run a Cloud Performance Test to measure network latency and throughput performance from an ONTAP cluster to an object store before and after setting up data tiering.
+---
+
+= Measure network latency and throughput performance
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Run a Cloud Performance Test to measure network latency and throughput performance from an ONTAP cluster to an object store before and after setting up data tiering. The test also identifies any failures that occurred.
+
+Here are sample performance results:
+
+image:screenshot_cloud_performance_test.gif[A screenshot of cluster performance results for a Cloud Performance Test.]
+
+.Before you get started
+
+It's best to run this check when the cluster is under 50% CPU utilization.
+
+.Steps for a cluster that hasn't been set up for tiering
+
+. At the top of Cloud Manager, click *Tiering*.
+
+. From the *Cluster Dashboard*, click the menu icon for a cluster and select *Cloud Performance Test*.
+
+. Review the details and click *Continue*.
+
+. Follow the prompts to provide the required information.
++
+The information that you need to provide is the same as if you were setting up tiering on the cluster.
+
+. Optionally continue to the Tier Volumes wizard to complete the setup.
+
+.Steps for a cluster that has been set up for tiering
+
+. At the top of Cloud Manager, click *Tiering*.
+
+. From the *Cluster Dashboard*, click the menu icon for a cluster and select *Cloud Performance Test*.
+
+. Select a node from the drop-down list.
+
+. View the results or recheck the performance.

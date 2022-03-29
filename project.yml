@@ -1,7 +1,108 @@
 settings:
-  name: "Product Name"
+  name: Cloud Tiering
+  platform: cloud
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: true
 sidebar:
+  entries:
+    - title: All Cloud Manager documentation
+      url: https://docs.netapp.com/us-en/cloud-manager-family
+    - title: Cloud Tiering docs
+      url: /index.html
+    - title: Release notes
+      url: /whats-new.html
+    - title: Get started
+      entries:
+        - title: Learn about Cloud Tiering
+          url: /concept-cloud-tiering.html
+        - title: Tier on-prem data to the cloud
+          entries:
+            - title: Tier to Amazon S3
+              url: /task-tiering-onprem-aws.html
+            - title: Tier to Azure Blob storage
+              url: /task-tiering-onprem-azure.html
+            - title: Tier to Google Cloud Storage
+              url: /task-tiering-onprem-gcp.html
+            - title: Tier to StorageGRID
+              url: /task-tiering-onprem-storagegrid.html
+            - title: Tier to S3 object storage
+              url: /task-tiering-onprem-s3-compat.html
+        - title: Set up licensing
+          url: /task-licensing-cloud-tiering.html
+        - title: FAQ
+          url: /faq-cloud-tiering.html
+    - title: Use Cloud Tiering
+      entries:
+        - title: Test cloud performance
+          url: /task-tiering-test.html
+        - title: Manage data tiering
+          url: /task-managing-tiering.html
+        - title: View tiering overview for all clusters
+          url: /task-tiering-onprem-overview.html
+        - title: Reference
+          entries:
+            - title: Supported Amazon S3 storage classes and regions
+              url: /reference-aws-support.html
+            - title: Supported Azure access tiers and regions
+              url: /reference-azure-support.html
+            - title: Supported Google Cloud storage classes and regions
+              url: /reference-google-support.html
+    - title: Knowledge and support
+      entries:
+        - title: Register for support
+          url: /task-support-registration.html
+        - title: Get help
+          url: /task-get-help.html
+    - title: Legal notices
+      url: /legal-notices.html
+product-family:
+  name: Cloud Manager
+  repo: cloud-manager-family
+homepage:
+  tiles:
+    - title: Get started
+      links:
+        - title: Learn about Cloud Tiering
+          url: concept-cloud-tiering.html
+        - title: What’s New
+          url: whats-new.html
+        - title: Set up licensing
+          url: task-licensing-cloud-tiering.html
+    - title: Tier on-prem ONTAP data to the cloud
+      links:
+        - title: Tier to Amazon S3
+          url: task-tiering-onprem-aws.html
+        - title: Tier to Azure Blob
+          url: task-tiering-onprem-azure.html
+        - title: Tier to Google Cloud
+          url: task-tiering-onprem-gcp.html
+        - title: Tier to StorageGRID
+          url: task-tiering-onprem-storagegrid.html
+        - title: Tier to generic S3
+          url: task-tiering-onprem-s3-compat.html
+    - title: Manage tiering settings
+      links:
+        - title: Change a volume’s tiering policy
+          url: task-managing-tiering.html#changing-a-volumes-tiering-policy
+        - title: Review tiering info for a cluster
+          url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
+        - title: Tier data from additional volumes
+          url: task-managing-tiering.html#tiering-data-from-additional-volumes
+        - title: Move data from the cloud back to the performance tier
+          url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
+        - title: Manage tiering settings on aggregates
+          url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
+    - title: Blogs & community
+      links:
+        - title: NetApp Community
+          url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+        - title: Cloud Central blog
+          url: https://cloud.netapp.com/blog
+        - title: Cloud webinars
+          url: https://cloud.netapp.com/events
+    - title: Other resources
+      links:
+        - title: Cloud Central use cases
+          url: https://cloud.netapp.com/cloud-tiering
