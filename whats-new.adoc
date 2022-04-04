@@ -16,7 +16,7 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
-== 3 April 2022
+== 4 April 2022
 
 === Amazon S3 Glacier Instant Retrieval storage class is now available.
 
