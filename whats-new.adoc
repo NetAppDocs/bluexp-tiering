@@ -28,11 +28,11 @@ When setting up Cloud Tiering, now you can configure a lifecycle rule so your in
 
 A new *Cloud Tiering* license is now available for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within Cloud Manager.
 
-link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
+https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
 
 === Tier inactive data from on-prem ONTAP clusters to S3-compatible object storage.
 
-Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. link:task-tiering-onprem-s3-compat.html[See how to tier data to S3-compatible object storage].
+Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html[See how to tier data to S3-compatible object storage].
 
 == 7 July 2021
 
