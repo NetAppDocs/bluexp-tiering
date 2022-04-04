@@ -16,23 +16,30 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 4 April 2022
+
+=== Amazon S3 Glacier Instant Retrieval storage class is now available.
+
+When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the _Standard_ storage class to _Glacier Instant Retrieval_ after a certain number of days. This will help reduce your AWS infrastructure costs.
+
 == 2 September 2021
 
 === Cloud Tiering BYOL license replaces FabricPool license.
 
 A new *Cloud Tiering* license is now available for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within Cloud Manager.
 
-link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
+https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
 
 === Tier inactive data from on-prem ONTAP clusters to S3-compatible object storage.
 
-Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. link:task-tiering-onprem-s3-compat.html[See how to tier data to S3-compatible object storage].
+Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html[See how to tier data to S3-compatible object storage].
 
 == 7 July 2021
 
 === The Connector can be running on premises when tiering data to Azure Blob storage.
 
 You are no longer required to use a Connector installed in an Azure VNet. Your Connector can be running on a host in your premises when tiering data to Azure Blob storage.
+// end::whats-new[]
 
 == 7 June 2021
 
@@ -49,7 +56,6 @@ In earlier releases you could transition tiered data from the Standard storage c
 This functionality is useful if you want to stop using tiering on a volume, or if you decide to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier. This capability is available when using ONTAP 9.8 and greater.
 
 See how to link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[migrate data back to the performance tier].
-// end::whats-new[]
 
 == 2 May 2021
 
@@ -61,7 +67,7 @@ When selecting the volumes that you want to tier from an ONTAP system, now there
 
 If you need to change the number of "cooling days" that determine how long data in a volume must remain inactive before it is moved to object storage, now you can specify up to 183 days (up from 63 days) when using ONTAP 9.8 or greater.
 
-== 8 Mar 2021
+== 8 March 2021
 
 === Lifecycle rules now available when tiering to Google Cloud Storage.
 

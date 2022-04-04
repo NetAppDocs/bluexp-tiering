@@ -67,7 +67,7 @@ Yes, you can. When you set up data tiering, you have the choice to add a new buc
 
 === Which S3 storage classes are supported?
 
-Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Access_, _One Zone-IA_, or _Intelligent_ storage classes. See link:reference-aws-support.html[Supported S3 storage classes] for more details.
+Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Access_, _One Zone-Infrequent Access_, _Intelligent Tiering_, and _Glacier Instant Retrieval_ storage classes. See link:reference-aws-support.html[Supported S3 storage classes] for more details.
 
 === Which Azure Blob access tiers are supported?
 
