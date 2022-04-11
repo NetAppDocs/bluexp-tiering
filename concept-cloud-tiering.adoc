@@ -17,7 +17,9 @@ NetApp's Cloud Tiering service extends your data center to the cloud by automati
 
 The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active (hot) data remains on the local tier (on-premises ONTAP aggregates), while inactive (cold) data is moved to the cloud tier -- all while preserving ONTAP data efficiencies.
 
-*Note:* Starting with ONTAP 9.8 you can tier data from aggregates consisting of HDDs in addition to high-performance SSDs. Prior to that release you can tier data only from AFF systems or FAS systems with all-SSD aggregates. See https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-8E421CC9-1DE1-492F-A84C-9EB1B0177807.html[Requirements for using FabricPool^] for details.
+Originally supported on AFF and FAS systems with all-SSD aggregates, starting with ONTAP 9.8 you can tier data from aggregates consisting of HDDs in addition to high-performance SSDs. See https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html[the considerations and requirements for using FabricPool^] for details.
+
+TIP: Cloud Tiering is supported on AFF, FAS, and ONTAP Select systems.
 
 == Features
 
@@ -36,7 +38,7 @@ TIP: Cloud Volumes ONTAP systems are read-only from Cloud Tiering. https://docs.
 
 == Supported object storage providers
 
-You can tier inactive data from an on-premises ONTAP cluster to the following object storage providers:
+You can tier inactive data from an on-premises ONTAP system to the following object storage providers:
 
 * Amazon S3
 * Microsoft Azure Blob
@@ -88,7 +90,7 @@ For example, if you have a 10 TB license, all capacity beyond the 10 TB is charg
 
 You won't be charged from your pay-as-you-go subscription during your free trial or if you haven't exceeded your Cloud Tiering BYOL license.
 
-link:task-licensing-cloud-tiering.html#Use-a-cloud-tiering-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
+link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
 
 === Bring your own license
 
