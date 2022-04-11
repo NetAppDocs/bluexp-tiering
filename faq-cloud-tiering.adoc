@@ -29,6 +29,10 @@ It depends on where you tier the cold data. Refer to the following:
 * link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to StorageGRID]
 * link:task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to S3 object storage]
 
+=== What types of ONTAP systems are supported?
+
+Cloud Tiering is supported from AFF, FAS, and ONTAP Select systems.
+
 === Does Cloud Tiering enable inactive data reporting?
 
 Yes, Cloud Tiering enables inactive data reporting on each aggregate. This setting enables us to identify the amount of inactive data that can be tiered to low-cost object storage.
