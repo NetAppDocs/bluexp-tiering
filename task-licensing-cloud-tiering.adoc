@@ -188,3 +188,7 @@ image:screenshot_services_license_update.png[A screenshot of selecting the Updat
 .Result
 
 Cloud Manager updates the license so that your Cloud Tiering service continues to be active.
+
+== Deploy Cloud Tiering licenses to clusters in special configurations
+
+ONTAP clusters in Tiering Mirror and MetroCluster configurations can't be licensed in the same manner as single-node and HA-configured clusters. You need to push a "child" license to these clusters for 
