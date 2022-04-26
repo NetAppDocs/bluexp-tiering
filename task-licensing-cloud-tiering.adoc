@@ -189,6 +189,43 @@ image:screenshot_services_license_update.png[A screenshot of selecting the Updat
 
 Cloud Manager updates the license so that your Cloud Tiering service continues to be active.
 
-== Deploy Cloud Tiering licenses to clusters in special configurations
+== Apply Cloud Tiering licenses to clusters in special configurations
 
-ONTAP clusters in Tiering Mirror and MetroCluster configurations can't be licensed in the same manner as single-node and HA-configured clusters. You need to push a "child" license to these clusters for 
+ONTAP clusters in the following configurations can use Cloud Tiering licenses, but they must be applied in a different manner than typical single-node and HA-configured ONTAP clusters:
+
+* Tiering Mirror configurations
+* MetroCluster configurations
+* clusters that are tiered to IBM Cloud Object Storage
+
+=== Process for existing clusters that have the FabricPool license installed
+
+When you discover any of these clusters in Cloud Tiering, the FabricPool license is recognized and added to the Digital Wallet, and tiering continues as normal. When the FabricPool license expires, you'll need to purchase the new Cloud Tiering license.
+
+=== Process for newly created clusters
+
+Typically, when you configure an ONTAP cluster for Cloud Tiering using the Cloud Manager interface, the following actions happen:
+
+. The "parent" Cloud Tiering license tracks the capacity being used for tiering by all clusters to make sure there is enough capacity in the license
+. A "child" tiering license is automatically installed on each cluster to communicate with the "parent" license in the Digital Wallet
+
+For the three configurations listed above, Cloud Tiering is configured on the cluster using System Manager or the ONTAP CLI. So in these cases you'll need to push the "child" license to these clusters manually from the Cloud Tiering interface.
+
+TIP: Since data is tiered to two different object storage locations for Tiering Mirror and MetroCluster configurations, you'll need to purchase a license with enough capacity for tiering to both locations.
+
+.Steps
+
+. Install and configure your ONTAP clusters using System Manager or the ONTAP CLI. Do not configure tiering at this point.
+
+. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[Purchase a Cloud Tiering license] for the capacity needed for the new cluster, or clusters.
+
+. In Cloud Manager, link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add the license to the Digital Wallet].
+
+. In Cloud Tiering, link:task-managing-tiering.html#discovering-additional-clusters-from-cloud-tiering[discover the new clusters].
+
+. From the Cluster Dashboard, click image:screenshot_horizontal_more_button.gif[More icon] for the cluster and select *Deploy License*.
++
+image:screenshot_tiering_deploy_license.png[A screenshot showing how to deploy a tiering license to an ONTAP cluster.]
+
+. In the _Deploy License_ dialog, click *Deploy*.
+
+. Return to System Manager or the ONTAP CLI and set up your tiering configuration.
