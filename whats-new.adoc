@@ -18,9 +18,9 @@ Learn what's new in Cloud Tiering.
 // tag::whats-new[]
 == 1 May 2022
 
-=== Cloud Tiering license support for clusters in Tiering Mirror and MetroCluster configurations
+=== Cloud Tiering license support for additional cluster configurations
 
-Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror and MetroCluster configurations, and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license these types of clusters.]
+Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license these types of clusters.]
 
 == 4 April 2022
 
