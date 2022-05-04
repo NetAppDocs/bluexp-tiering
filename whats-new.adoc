@@ -16,11 +16,17 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 3 May 2022
+
+=== Cloud Tiering license support for additional cluster configurations
+
+Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
+
 == 4 April 2022
 
 === Amazon S3 Glacier Instant Retrieval storage class is now available
 
-When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the _Standard_ storage class to _Glacier Instant Retrieval_ after a certain number of days. This will help reduce your AWS infrastructure costs.
+When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the _Standard_ storage class to _Glacier Instant Retrieval_ after a certain number of days. This will help reduce your AWS infrastructure costs. https://docs.netapp.com/us-en/cloud-manager-tiering/reference-aws-support.html[See the supported S3 storage classes.]
 
 === Cloud Tiering has been fully qualified on ONTAP Select systems
 
@@ -37,13 +43,13 @@ https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering
 === Tier inactive data from on-prem ONTAP clusters to S3-compatible object storage
 
 Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html[See how to tier data to S3-compatible object storage].
+// end::whats-new[]
 
 == 7 July 2021
 
 === The Connector can be running on premises when tiering data to Azure Blob storage
 
 You are no longer required to use a Connector installed in an Azure VNet. Your Connector can be running on a host in your premises when tiering data to Azure Blob storage.
-// end::whats-new[]
 
 == 7 June 2021
 

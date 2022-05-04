@@ -31,7 +31,7 @@ It depends on where you tier the cold data. Refer to the following:
 
 === What types of ONTAP systems are supported?
 
-Cloud Tiering is supported from AFF, FAS, and ONTAP Select systems.
+Cloud Tiering is supported from single-node and high-availability AFF, FAS, and ONTAP Select clusters. Clusters in FabricPool Mirror configurations are also supported, but the configuration must be done using System Manager or the ONTAP CLI.
 
 === Does Cloud Tiering enable inactive data reporting?
 
@@ -57,7 +57,14 @@ The following questions relate to object storage.
 
 === Which object storage providers are supported?
 
-Amazon S3, Azure Blob storage, Google Cloud Storage, NetApp StorageGRID, and S3-compatible object storage providers are supported.
+Cloud Tiering supports the following object storage providers:
+
+* Amazon S3
+* Microsoft Azure Blob
+* Google Cloud Storage
+* NetApp StorageGRID
+* S3-compatible object storage
+* IBM Cloud Object Storage (but the FabricPool configuration must be done using System Manager or the ONTAP CLI)
 
 === Can I use my own bucket/container?
 

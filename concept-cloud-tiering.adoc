@@ -17,9 +17,9 @@ NetApp's Cloud Tiering service extends your data center to the cloud by automati
 
 The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active (hot) data remains on the local tier (on-premises ONTAP aggregates), while inactive (cold) data is moved to the cloud tier -- all while preserving ONTAP data efficiencies.
 
-Originally supported on AFF and FAS systems with all-SSD aggregates, starting with ONTAP 9.8 you can tier data from aggregates consisting of HDDs in addition to high-performance SSDs. See https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html[the considerations and requirements for using FabricPool^] for details.
+Originally supported on AFF, FAS, and ONTAP Select systems with all-SSD aggregates, starting with ONTAP 9.8 you can tier data from aggregates consisting of HDDs in addition to high-performance SSDs. See https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html[the considerations and requirements for using FabricPool^] for details.
 
-TIP: Cloud Tiering is supported on AFF, FAS, and ONTAP Select systems.
+Cloud Tiering licenses can also be shared with your clusters that are in FabricPool Mirror configurations (not including MetroCluster configurations). The FabricPool configuration must be done using System Manager or the ONTAP CLI, but https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[licensing for these types of clusters is done using Cloud Tiering.]
 
 == Features
 
@@ -45,6 +45,8 @@ You can tier inactive data from an on-premises ONTAP system to the following obj
 * Google Cloud Storage
 * S3-compatible object storage
 * NetApp StorageGRID
+
+Cloud Tiering licenses can also be shared with your clusters that are tiering data to IBM Cloud Object Storage. FabricPool configuration must be done using System Manager or the ONTAP CLI, but https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[licensing for this type of configuration is done using Cloud Tiering.]
 
 NOTE: You can tier data from NAS volumes to the public cloud or to private clouds, like StorageGRID. When tiering data that is accessed by SAN protocols, NetApp recommends using private clouds due to connectivity considerations.
 
