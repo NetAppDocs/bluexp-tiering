@@ -15,41 +15,137 @@ summary: This FAQ can help if you're just looking for a quick answer to a questi
 [.lead]
 This FAQ can help if you're just looking for a quick answer to a question.
 
+== Cloud Tiering service
+
+The following FAQs relate to how Cloud Tiering works.
+
+=== What are the benefits of using the Cloud Tiering service?
+
+Cloud Tiering addresses the challenges that come with rapid data growth, providing you with benefits such as:
+
+* Effortless data center extension to the cloud, providing up to 50x more space
+* Storage optimization, yielding an average storage savings of 70%
+* Reduced total cost of ownership by 30%, on average
+* No need to refactor applications
+
+=== What kind of data is useful to tier to the cloud?
+
+Essentially, any data that is considered inactive on both primary and secondary storage systems is a good target to move to the cloud. On primary systems, such data can include snapshots, historical records, and finished projects. On secondary systems, this includes all volumes that contain copies of primary data made for DR and backup purposes.
+
+=== Can I tier data from both NAS volumes and SAN volumes?
+
+Yes, you can tier data from NAS volumes to the public cloud or to private clouds, like StorageGRID. When tiering data that is accessed by SAN protocols, NetApp recommends using private clouds because SAN protocols are more sensitive to connectivity issues than NAS.
+
+=== What is the definition of inactive data or infrequently used data, and how is that controlled?
+
+The definition of what can also be referred to cold data is: "volume blocks (metadata excluded) that have not been accessed for some amount of time". The “amount of time” is determined by a tiering policy attribute named cooling-days.
+
+=== Will Cloud Tiering retain my storage efficiency savings in the cloud tier?
+
+Yes, the ONTAP volume-level storage efficiencies such as compression, deduplication, and compaction are preserved when moving data to the cloud tier.
+
+=== What is the difference between FabricPool and Cloud Tiering?
+
+FabricPool is ONTAP’s tiering technology that can be self-managed through the ONTAP CLI and System Manager, or managed as-a-service through Cloud Tiering. Cloud Tiering turns FabricPool into a managed service with advanced automation processes, on both ONTAP and in the cloud, providing greater visibility and control over tiering across hybrid and multi-cloud deployments.
+
+=== Can the data tiered to the cloud be used for disaster recovery or for backup/archive?
+
+No. Since the volume’s metadata is never tiered from the performance tier, the data stored in object storage cannot be accessed directly.
+
+However, Cloud Tiering can be used to achieve cost-effective backup and DR by enabling it on secondary systems and SnapMirror destination volumes (DP volumes), to tier off all of the data (metadata excluded), thus reducing your data center footprint and TCO.
+
+=== Is Cloud Tiering applied at the volume or aggregate level?
+
+Cloud Tiering is enabled at the volume level by associating a tiering policy with each volume. Cold data identification is done at the block level.
+
+=== How does Cloud Tiering determine which blocks to tier to the cloud?
+
+The tiering policy associated with the volume is the mechanism that controls which blocks are tiered and when. The policy defines the type of data blocks (snapshots, user data, or both) and the cooling period. See link:concept-cloud-tiering.html#volume-tiering-policies[Volume Tiering Policies] for details.
+
+=== Does Cloud Tiering enable Inactive Data Reporting?
+
+Yes, Cloud Tiering enables Inactive Data Reporting (IDR) on each aggregate. This setting enables us to identify the amount of inactive data that can be tiered to low-cost object storage.
+
+=== How long does it take IDR to show information from the moment I start running it?
+
+IDR starts showing information after the configured cooling period has passed. Using ONTAP 9.7 and earlier, IDR had a non-adjustable cooling period of 31 days. Starting with ONTAP 9.8, the IDR cooling-period can be configured up to 183 days.
+
+== Licenses and Costs
+
+The following FAQs relate to licensing and costs to use Cloud Tiering.
+
+=== How much does using Cloud Tiering cost?
+
+When tiering cold data to the public cloud:
+
+* For the pay-as-you-go (PAYGO), usage-based subscription: $0.05 per GB/Month.
+* For the annual (BYOL), term-based subscription: starting from $0.033 per GB/Month.
+
+When tiering cold data to a NetApp StorageGRID system (private cloud) there is no cost.
+
+=== Can I have both a BYOL and PAYGO license for the same ONTAP cluster?
+
+Yes. Cloud Tiering allows you to use a BYOL license, a PAYGO subscription, or a combination of both.
+
+=== What happens if I have reached the BYOL capacity limit?
+
+If you reach a BYOL capacity limit, tiering of new cold data stops while all previously tiered data remains accessible. If you have a PAYGO marketplace subscription to the _Cloud Manager - Deploy & Manage Cloud Data Services_, new cold data will continue to be tiered to object storage and the charges would incur on a per-use basis.
+
+=== Does the Cloud Tiering license include the egress charges from the cloud provider?
+
+No, it does not.
+
+=== Is rehydration of on-prem systems subject to the egress cost charged by the cloud providers?
+
+Yes. All reads from the public cloud are subject to egress fees.
+
+=== How can I estimate my cloud charges? Is there a “what if” mode for Cloud Tiering?
+
+The best way to estimate how much a cloud provider will charge for hosting your data is to use their calculators: https://calculator.aws/#/[AWS], https://azure.microsoft.com/en-us/pricing/calculator/[Azure] and https://cloud.google.com/products/calculator[Google Cloud].
+
+=== Are there any extra charges by the cloud providers for reading/retrieving data from the object storage to the on-prem storage?
+
+Yes. Check https://aws.amazon.com/s3/pricing/[Amazon S3 Pricing], https://azure.microsoft.com/en-us/pricing/details/storage/blobs/[Block Blob Pricing], and https://cloud.google.com/storage/pricing[Cloud Storage Pricing] for additional pricing incurred with data reading/retrieving.
+
+=== How can I estimate my volumes’ savings and get a cold data report before I enable Cloud Tiering?
+
+To get an estimate, simply add your ONTAP cluster to Cloud Manager and inspect it through the Cloud Tiering Clusters Dashboard, which is located in the Tiering tab. When Inactive Data Reporting (IDR) is disabled or has not yet been activated for a long enough period of time, Cloud Tiering uses an industry-constant of 70% to calculate the estimated savings. Once IDR data is available, Cloud Tiering updates the savings to accurate figures.
+
 == ONTAP
 
 The following questions relate to ONTAP.
 
-=== What are the requirements for my ONTAP cluster?
+=== Which ONTAP versions does Cloud Tiering support?
 
-It depends on where you tier the cold data. Refer to the following:
-
-* link:task-tiering-onprem-aws.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Amazon S3]
-* link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Azure Blob storage]
-* link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to Google Cloud Storage]
-* link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to StorageGRID]
-* link:task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters[Tiering data from on-premises ONTAP clusters to S3 object storage]
+Cloud Tiering supports ONTAP version 9.2 and higher.
 
 === What types of ONTAP systems are supported?
 
-Cloud Tiering is supported from single-node and high-availability AFF, FAS, and ONTAP Select clusters. Clusters in FabricPool Mirror configurations are also supported, but the configuration must be done using System Manager or the ONTAP CLI.
+Cloud Tiering is supported from single-node and high-availability AFF, FAS, and ONTAP Select clusters.
 
-=== Does Cloud Tiering enable inactive data reporting?
+Clusters in FabricPool Mirror configurations are also supported, but the tiering configuration must be done using System Manager or the ONTAP CLI.
 
-Yes, Cloud Tiering enables inactive data reporting on each aggregate. This setting enables us to identify the amount of inactive data that can be tiered to low-cost object storage.
+=== Can I tier data from FAS systems with HDDs only?
 
-NOTE: Cloud Tiering enables inactive data reporting on HDD aggregates if the cluster is running ONTAP 9.6 or later.
+Yes, starting ONTAP 9.8 you can tier data from volumes hosted on HDD aggregates.
 
-=== Can I tier data from NAS volumes and SAN volumes?
+=== Can I tier data from an AFF joined to a cluster that has FAS nodes with HDDs?
 
-You can tier data from NAS volumes to the public cloud or to private clouds, like StorageGRID. When tiering data that is accessed by SAN protocols, NetApp recommends using private clouds due to connectivity considerations.
+Yes. Cloud Tiering can be configured to tier volumes hosted on any aggregate. The data tiering configuration is irrelevant to the type of controller used and whether the cluster is heterogeneous or not.
 
 === What about Cloud Volumes ONTAP?
 
-If you have Cloud Volumes ONTAP systems, you'll find them in the Cluster Dashboard so you get a full view of data tiering in your hybrid cloud infrastructure.
+If you have Cloud Volumes ONTAP systems, you'll find them in the Cloud Tiering Cluster Dashboard so you get a full view of data tiering in your hybrid cloud infrastructure. However, Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager^].
 
-From the Cluster Dashboard, you can view tiering information similar to an on-prem ONTAP cluster: operational health, current savings, savings opportunities, details about volumes and aggregates, and more.
+=== What other requirements are necessary for my ONTAP clusters?
 
-Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager^].
+It depends on where you tier the cold data. Refer to the following links for more details:
+
+* link:task-tiering-onprem-aws.html#preparing-your-ontap-clusters[Tiering data to Amazon S3]
+* link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters[Tiering data to Azure Blob storage]
+* link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters[Tiering data to Google Cloud Storage]
+* link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters[Tiering data to StorageGRID]
+* link:task-tiering-onprem-s3-compat.html#preparing-your-ontap-clusters[Tiering data to S3 object storage]
 
 == Object storage
 
@@ -64,7 +160,7 @@ Cloud Tiering supports the following object storage providers:
 * Google Cloud Storage
 * NetApp StorageGRID
 * S3-compatible object storage
-* IBM Cloud Object Storage (but the FabricPool configuration must be done using System Manager or the ONTAP CLI)
+* IBM Cloud Object Storage (the FabricPool configuration must be done using System Manager or the ONTAP CLI)
 
 === Can I use my own bucket/container?
 
@@ -80,6 +176,14 @@ Yes, you can. When you set up data tiering, you have the choice to add a new buc
 
 Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Access_, _One Zone-Infrequent Access_, _Intelligent Tiering_, and _Glacier Instant Retrieval_ storage classes. See link:reference-aws-support.html[Supported S3 storage classes] for more details.
 
+=== Why are Amazon S3 Glacier Flexible and S3 Glacier Deep Archive not supported by Cloud Tiering?
+
+The main reason Amazon S3 Glacier Flexible and S3 Glacier Deep Archive aren't supported is that Cloud Tiering is designed as a high-performance tiering solution, so data must be continuously available and quickly accessible for retrieval. With S3 Glacier Flexible and S3 Glacier Deep Archive, data retrieval can last anywhere between a few minutes to 48 hours.
+
+=== Can I use other S3-compatible object storage services, such as Wasabi, with Cloud Tiering?
+
+Yes, configuring S3-compatible object storage through the Tiering UI is supported for clusters using ONTAP 9.8 and later. link:task-tiering-onprem-s3-compat.html[See the details here].
+
 === Which Azure Blob access tiers are supported?
 
 Cloud Tiering supports data tiering to the _Hot_ or _Cool_ access tiers for your inactive data. See link:reference-azure-support.html[Supported Azure Blob access tiers] for more details.
@@ -92,6 +196,40 @@ Cloud Tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, a
 
 One object store for the entire cluster.
 
+=== Can multiple buckets be attached to the same aggregate?
+
+It is possible to attach up to two buckets per aggregate for the purpose of mirroring, where cold data is synchronously tiered to both buckets. The buckets can be from different providers and different locations. However, configuration through the Cloud Tiering UI is not supported at this time -- setup is available through System Manager or the CLI.
+
+=== Can different buckets be attached to different aggregates in the same cluster?
+
+Yes. The general best practice is to attach a single bucket to multiple aggregates. However, when using the public cloud there is a maximum IOPS limitation for the object storage services, therefore multiple buckets must be considered. However, configuration through the Cloud Tiering UI is not supported at this time -- setup is available through System Manager or the CLI.
+
+=== What happens with the tiered data when you migrate a volume from one cluster to another?
+
+When migrating a volume from one cluster to another, all the cold data is read from the cloud tier. The write location on the destination cluster depends on whether tiering was enabled and the type of tiering policy used on the source and destination volumes.
+
+=== What happens with the tiered data when you move a volume from one node to another in the same cluster?
+
+If the destination aggregate does not have an attached cloud tier, data is read from the cloud tier of the source aggregate and written entirely to the local tier of the destination aggregate. If the destination aggregate has an attached cloud tier, data is read from the cloud tier of the source aggregate and first written to the local tier of the destination aggregate, to facilitate quick cutover. Later, based on the tiering policy used, it is written to the cloud tier.
+
+Starting with ONTAP 9.6, if the destination aggregate is using the same cloud tier as the source aggregate, the cold data does not move back to the local tier.
+
+=== How can I bring my tiered data back on-prem?
+
+Write back is generally performed on reads and depends on the tiering policy type. Prior to ONTAP 9.8, writing back of the entire volume can be done with a volume move operation. After 9.8, the Tiering UI has options to *Bring back all data* or *Bring back active file system*. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[See how to move data back to the performance tier].
+
+=== When replacing an existing AFF/FAS controller with a new one, would the tiered data be migrated back on-prem?
+
+No. During the “head swap” procedure, the only thing that changes is the aggregate’s ownership. In this case, it will be changed to the new controller without any data movement.
+
+=== Can I use the tiered data to recover a volume or a system during a disaster recovery scenario?
+
+No. Since the volume’s metadata is always stored on the local performance tier, if there’s a disaster and the local tier is lost, the metadata is lost as well and there is no way to reference the tiered data.
+
+=== Can I use the cloud provider’s console or object storage explorers to look at the data tiered to a bucket? Can I use the data stored in the object storage directly without ONTAP?
+
+No. The objects constructed and tiered to the cloud do not contain a single file but up to 1,024 4KB blocks from multiple files. A volume’s metadata always remains on the local tier.
+
 === Can I apply policies to my object store to move data around independent of tiering?
 
 Yes. You can enable life cycle management so that Cloud Tiering transitions data from the default storage class/access tier to a more cost-effective tier after a certain number of days.
@@ -100,7 +238,11 @@ The life cycle rule is applied to all objects in the selected bucket for Amazon 
 
 == Connectors
 
-The following questions relate to Connectors.
+The following questions relate to the Cloud Manager Connector.
+
+=== What is the Connector?
+
+The Connector is software running on a compute instance either within your cloud account, or on-premises, that enables Cloud Manager to securely manage cloud resources. To use the Cloud Tiering service, you must deploy a Connector.
 
 === Where does the Connector need to be installed?
 
@@ -109,9 +251,70 @@ The following questions relate to Connectors.
 * When tiering data to Google Cloud Storage, the Connector must reside in a Google Cloud Platform VPC.
 * When tiering data to StorageGRID or other S3-Compatible storage providers, the Connector must reside on your premises.
 
-== Networking
+=== Can I deploy the Connector on-premises?
 
-The following questions relate to networking.
+Yes. The Connector software can be downloaded and manually installed on a Linux host in your network. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[See how to install the Connector in your premises].
+
+=== Is an account with a cloud service provider required before using Cloud Tiering?
+
+Yes. You must have an account before you can define the object storage that you want to use. An account with a cloud storage provider is also required when setting up the Connector in the cloud on a VPC or VNet.
+
+=== What are the implications if the Connector fails?
+
+In the case of a Connector failure, only the visibility into the tiered environments is impacted. All the data is accessible and newly identified cold data is automatically tiered to object storage.
+
+== Tiering policies
+
+=== What are the available tiering policies?
+
+There are four tiering policies:
+
+●	None: Classifies all data as always hot; preventing any data from the volume being moved to object storage.
+●	Cold Snapshots (Snapshot-only): Only cold snapshot blocks are moved to object storage.
+●	Cold User Data and Snapshots (Auto): Both cold snapshot blocks and cold user data blocks are moved to object storage.
+●	All User Data (All): Classifies all data as cold; immediately moving the entire volume to object storage.
+
+link:concept-cloud-tiering.html#volume-tiering-policies[Learn more about Tiering Policies].
+
+=== At which point is my data is considered cold?
+
+Since data tiering is done at the block level, a data block is considered cold after it hasn’t been accessed for a certain period of time, which is defined by the tiering policy’s minimum-cooling-days attribute. The applicable range is 2-63 days with ONTAP 9.7 and earlier, or 2-183 days starting with ONTAP 9.8.
+
+=== What is the default cooling period for data before it is tiered to the cloud tier?
+
+The default cooling period for the Cold Snapshot policy is 2 days, while the default cooling period for Cold User Data and Snapshots is 31 days. The cooling-days parameter is not applicable to the All tiering policy.
+
+=== Is all the tiered data retrieved from object storage when I do a full backup?
+
+During full backup all the cold data is read. The retrieval of the data depends on the tiering policy used. When using the All and Cold User Data and Snapshots policies, the cold data is not written back to the performance tier. When using the Cold Snapshots policy, only in case of an old snapshot being used for the backup will its cold blocks be retrieved.
+
+=== Can you choose a tiering size per volume?
+
+No. However, you can choose which volumes are eligible for tiering, the type of data to be tiered, and its cooling period. This is done by associating a tiering policy with that volume.
+
+=== Is the All User Data policy the only option for data protection volumes?
+
+No. Data protection (DP) volumes can be associated with any of the three policies available. The type of policy used on the source and destination (DP) volumes determines the write location of the data.
+
+=== Does resetting the tiering policy of a volume to None rehydrate the cold data or just prevent future cold blocks from being moved to the cloud?
+
+No rehydration takes place when a tiering policy is reset, but it will prevent new cold blocks from being moved to the cloud tier.
+
+=== After tiering data to the cloud, can I change the tiering policy?
+
+Yes. The behavior after the change depends on the new associated policy.
+
+=== What should I do if I want to ensure certain data is not moved to the cloud?
+
+Do not associate a tiering policy with the volume containing that data.
+
+=== Where is the metadata of the files stored?
+
+The metadata of a volumes is always stored locally, on the performance tier -- it is never tiered to the cloud.
+
+== Networking and security
+
+The following questions relate to networking and security.
 
 === What are the networking requirements?
 
@@ -125,32 +328,40 @@ ONTAP reads and writes data to and from object storage. The object storage never
 
 For more details, see:
 
-* link:task-tiering-onprem-aws.html[Tiering data from on-premises ONTAP clusters to Amazon S3]
-* link:task-tiering-onprem-azure.html[Tiering data from on-premises ONTAP clusters to Azure Blob storage]
-* link:task-tiering-onprem-gcp.html[Tiering data from on-premises ONTAP clusters to Google Cloud Storage]
-* link:task-tiering-onprem-storagegrid.html[Tiering data from on-premises ONTAP clusters to StorageGRID]
-* link:task-tiering-onprem-s3-compat.html[Tiering data from on-premises ONTAP clusters to S3 object storage]
+* link:task-tiering-onprem-aws.html[Tiering data to Amazon S3]
+* link:task-tiering-onprem-azure.html[Tiering data to Azure Blob storage]
+* link:task-tiering-onprem-gcp.html[Tiering data to Google Cloud Storage]
+* link:task-tiering-onprem-storagegrid.html[Tiering data to StorageGRID]
+* link:task-tiering-onprem-s3-compat.html[Tiering data to S3 object storage]
 
-== Permissions
+=== What tools can I use for monitoring and reporting in order to manage cold data stored in the cloud?
 
-The following questions relate to permissions.
+Other than Cloud Tiering, https://docs.netapp.com/us-en/active-iq-unified-manager/[Active IQ Unified Manager^] and https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^] can be used for monitoring and reporting.
 
-=== What permissions are required in AWS?
+=== What are the implications if the network link to the cloud provider fails?
 
-Permissions are required link:task-tiering-onprem-aws.html#preparing-amazon-s3[to manage the S3 bucket].
+In case of a network failure, the local performance tier remains online and hot data remains accessible. However, blocks that were already moved to the cloud tier will be inaccessible and applications will receive an error message when trying to access that data. Once connectivity is restored, all data will be seamlessly accessible.
 
-=== What permissions are required in Azure?
+=== Is there a network bandwidth recommendation?
 
-No extra permissions are needed outside of the permissions that you need to provide to Cloud Manager.
+The underlying FabricPool tiering technology read latency depends on connectivity to the cloud tier. Although tiering works on any bandwidth, it is recommended to place intercluster LIFs on 10 Gbps ports to provide adequate performance. There are no recommendations or bandwidth limitations for the Connector.
 
-=== What permissions are required in Google Cloud Platform?
+=== Is there any latency when a user attempts to access tiered data?
 
-Storage Admin permissions are needed for a link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage[service account that has storage access keys].
+Yes. Cloud tiers cannot provide the same latency as the local tier since latency depends on the connectivity. To estimate the latency and throughput of an object store, Cloud Tiering provides a Cloud Performance Test (based on the ONTAP object store profiler) that can be used after the object store is attached and before tiering is set up.
 
-=== What permissions are required for StorageGRID?
+=== How is my data secured?
 
-link:task-tiering-onprem-storagegrid.html#preparing-storagegrid[S3 permissions are needed].
+AES-256-GCM encryption is maintained on both the performance and cloud tiers. TLS 1.2 encryption is used to encrypt data over the wire as it moves between tiers, and to encrypt communication between the Connector and both the ONTAP cluster and the object store.
 
-=== What permissions are required for S3-compatible object storage?
+=== Do I need an Ethernet port installed and configured on my AFF?
 
-link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage[S3 permissions are needed].
+Yes. An intercluster LIF must be configured on an ethernet port, on each node within an HA pair that hosts volumes with data you plan to tier to the cloud. For more information, see the Requirements section for the cloud provider where you plan to tier data.
+
+=== What permissions are required?
+
+* link:task-tiering-onprem-aws.html#preparing-amazon-s3[For Amazon, permissions are required to manage the S3 bucket].
+* For Azure, no extra permissions are needed outside of the permissions that you need to provide to Cloud Manager.
+* link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage[For Google Cloud, Storage Admin permissions are needed for a service account that has storage access keys].
+* link:task-tiering-onprem-storagegrid.html#preparing-storagegrid[For StorageGRID, S3 permissions are needed].
+* link:task-tiering-onprem-s3-compat.html#preparing-s3-compatible-object-storage[For S3-compatible object storage, S3 permissions are needed].
