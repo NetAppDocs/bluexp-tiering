@@ -62,6 +62,10 @@ Cloud Tiering is enabled at the volume level by associating a tiering policy wit
 
 The tiering policy associated with the volume is the mechanism that controls which blocks are tiered and when. The policy defines the type of data blocks (snapshots, user data, or both) and the cooling period. See link:concept-cloud-tiering.html#volume-tiering-policies[Volume Tiering Policies] for details.
 
+=== How does Cloud Tiering affect the volume capacity?
+
+Cloud Tiering has no effect on the volume’s capacity but rather on the aggregate’s performance tier usage.
+
 === Does Cloud Tiering enable Inactive Data Reporting?
 
 Yes, Cloud Tiering enables Inactive Data Reporting (IDR) on each aggregate. This setting enables us to identify the amount of inactive data that can be tiered to low-cost object storage.
@@ -192,6 +196,10 @@ Cloud Tiering supports data tiering to the _Hot_ or _Cool_ access tiers for your
 
 Cloud Tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, and _Archive_ storage classes. See link:reference-google-support.html[Supported Google Cloud storage classes] for more details.
 
+=== Does Cloud Tiering support the use of life cycle management policies?
+
+Yes. You can enable life cycle management so that Cloud Tiering transitions data from the default storage class/access tier to a more cost-effective tier after a certain number of days. The life cycle rule is applied to all objects in the selected bucket for Amazon S3 and Google Cloud storage, and to all containers in the selected storage account for Azure Blob.
+
 === Does Cloud Tiering use one object store for the entire cluster or one per aggregate?
 
 One object store for the entire cluster.
@@ -214,9 +222,9 @@ If the destination aggregate does not have an attached cloud tier, data is read 
 
 Starting with ONTAP 9.6, if the destination aggregate is using the same cloud tier as the source aggregate, the cold data does not move back to the local tier.
 
-=== How can I bring my tiered data back on-prem?
+=== How can I bring my tiered data back on-prem to the performance tier?
 
-Write back is generally performed on reads and depends on the tiering policy type. Prior to ONTAP 9.8, writing back of the entire volume can be done with a volume move operation. After 9.8, the Tiering UI has options to *Bring back all data* or *Bring back active file system*. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[See how to move data back to the performance tier].
+Write back is generally performed on reads and depends on the tiering policy type. Prior to ONTAP 9.8, writing back of the entire volume can be done with a _volume move_ operation. Starting with ONTAP 9.8, the Tiering UI has options to *Bring back all data* or *Bring back active file system*. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[See how to move data back to the performance tier].
 
 === When replacing an existing AFF/FAS controller with a new one, would the tiered data be migrated back on-prem?
 
@@ -229,12 +237,6 @@ No. Since the volume’s metadata is always stored on the local performance tier
 === Can I use the cloud provider’s console or object storage explorers to look at the data tiered to a bucket? Can I use the data stored in the object storage directly without ONTAP?
 
 No. The objects constructed and tiered to the cloud do not contain a single file but up to 1,024 4KB blocks from multiple files. A volume’s metadata always remains on the local tier.
-
-=== Can I apply policies to my object store to move data around independent of tiering?
-
-Yes. You can enable life cycle management so that Cloud Tiering transitions data from the default storage class/access tier to a more cost-effective tier after a certain number of days.
-
-The life cycle rule is applied to all objects in the selected bucket for Amazon S3 and Google Cloud storage, and to all containers in the selected storage account for Azure Blob.
 
 == Connectors
 
