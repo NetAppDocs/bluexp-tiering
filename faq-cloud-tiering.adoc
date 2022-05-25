@@ -93,7 +93,7 @@ Yes. Cloud Tiering allows you to use a BYOL license, a PAYGO subscription, or a 
 
 === What happens if I have reached the BYOL capacity limit?
 
-If you reach a BYOL capacity limit, tiering of new cold data stops while all previously tiered data remains accessible. If you have a PAYGO marketplace subscription to the _Cloud Manager - Deploy & Manage Cloud Data Services_, new cold data will continue to be tiered to object storage and the charges would incur on a per-use basis.
+If you reach a BYOL capacity limit, tiering of new cold data stops while all previously tiered data remains accessible. If you have a PAYGO marketplace subscription to the _Cloud Manager - Deploy & Manage Cloud Data Services_, new cold data will continue to be tiered to object storage and you'll pay for those charges on a per-use basis.
 
 === Does the Cloud Tiering license include the egress charges from the cloud provider?
 
@@ -229,10 +229,6 @@ Write back is generally performed on reads and depends on the tiering policy typ
 === When replacing an existing AFF/FAS controller with a new one, would the tiered data be migrated back on-prem?
 
 No. During the “head swap” procedure, the only thing that changes is the aggregate’s ownership. In this case, it will be changed to the new controller without any data movement.
-
-=== Can I use the tiered data to recover a volume or a system during a disaster recovery scenario?
-
-No. Since the volume’s metadata is always stored on the local performance tier, if there’s a disaster and the local tier is lost, the metadata is lost as well and there is no way to reference the tiered data.
 
 === Can I use the cloud provider’s console or object storage explorers to look at the data tiered to a bucket? Can I use the data stored in the object storage directly without ONTAP?
 
