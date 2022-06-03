@@ -117,7 +117,7 @@ These access keys must be associated with a user who has the following permissio
 A Connector is required to tier data to the cloud. When tiering data to S3-compatible object storage, a Connector must be available on your premises. You'll either need to install a new Connector or make sure that the currently selected Connector resides on-prem.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Deploying a Connector on a Linux host^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html[Switching between Connectors^]
 
 === Preparing networking for the Connector
@@ -149,9 +149,11 @@ After you prepare your environment, start tiering inactive data from your first 
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
-. *Choose your provider*: Select *S3 Compatible* and click *Continue*.
+. *Define Object Storage Name*: Enter a name for this object storage. It must be unique from any other object storage you may be using with aggregates on this cluster.
 
-. Complete the steps on the *Tiering Setup* page:
+. *Select Provider*: Select *S3 Compatible* and click *Continue*.
+
+. Complete the steps on the *Create Object Storage* pages:
 
 .. *Server*: Enter the FQDN of the S3-compatible object storage server, the port that ONTAP should use for HTTPS communication with the server, and the access key and secret key for an account that has the required S3 permissions.
 
