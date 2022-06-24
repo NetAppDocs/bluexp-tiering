@@ -205,12 +205,14 @@ When you link:task-managing-tiering.html#discovering-additional-clusters-from-cl
 
 When you discover typical clusters in Cloud Tiering, you'll configure tiering using the Cloud Tiering interface. In these cases the following actions happen:
 
-. The "parent" Cloud Tiering license tracks the capacity being used for tiering by all clusters to make sure there is enough capacity in the license
-. A "child" tiering license is automatically installed on each cluster to communicate with the "parent" license in the Digital Wallet
+. The "parent" Cloud Tiering license tracks the capacity being used for tiering by all clusters to make sure there is enough capacity in the license. The total licensed capacity and expiration date are shown in the Digital Wallet.
+. A "child" tiering license is automatically installed on each cluster to communicate with the "parent" license.
+
+NOTE: The licensed capacity and expiration date shown in System Manager or in the ONTAP CLI for the "child" license is not the real information, so don't be concerned if the information is not the same. These values are managed internally by the Cloud Tiering software. The real information is tracked in the Digital Wallet.
 
 For the three configurations listed above, you'll need to configure tiering using System Manager or the ONTAP CLI (not by using the Cloud Tiering interface). So in these cases you'll need to push the "child" license to these clusters manually from the Cloud Tiering interface.
 
-TIP: Since data is tiered to two different object storage locations for MetroCluster and Tiering Mirror configurations, you'll need to purchase a license with enough capacity for tiering to both locations.
+Note that since data is tiered to two different object storage locations for Tiering Mirror configurations, you'll need to purchase a license with enough capacity for tiering data to both locations.
 
 .Steps
 
