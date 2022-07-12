@@ -60,7 +60,7 @@ Licensing::
 A Cloud Tiering license isn’t required in your Cloud Manager account, nor is a FabricPool license required on the ONTAP cluster, when tiering data to StorageGRID.
 
 Cluster networking requirements::
-* The ONTAP cluster initiates an HTTPS connection over a user-specified port to StorageGRID (the port is configurable during tiering setup).
+* The ONTAP cluster initiates an HTTPS connection over a user-specified port to the StorageGRID Gateway Node (the port is configurable during tiering setup).
 +
 ONTAP reads and writes data to and from object storage. The object storage never initiates, it just responds.
 
@@ -131,7 +131,7 @@ After you prepare your environment, start tiering inactive data from your first 
 
 .What you'll need
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
-* The FQDN of the StorageGRID server and the port that will be used for HTTPS communications.
+* The FQDN of the StorageGRID Gateway Node, and the port that will be used for HTTPS communications.
 * An AWS access key that has the required S3 permissions.
 
 .Steps
@@ -148,7 +148,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Setup Tier
 
 . Complete the steps on the *Create Object Storage* pages:
 
-.. *Server*: Enter the FQDN of the StorageGRID server, the port that ONTAP should use for HTTPS communication with StorageGRID, and the access key and secret key for an account that has the required S3 permissions.
+.. *Server*: Enter the FQDN of the StorageGRID Gateway Node, the port that ONTAP should use for HTTPS communication with StorageGRID, and the access key and secret key for an account that has the required S3 permissions.
 
 .. *Bucket*: Add a new bucket or select an existing bucket that starts with the prefix _fabric-pool_ and click *Continue*.
 +
