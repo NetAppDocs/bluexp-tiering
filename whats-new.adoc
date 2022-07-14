@@ -16,6 +16,12 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 1 August 2022
+
+=== new stuff
+
+details
+
 == 3 May 2022
 
 === Cloud Tiering license support for additional cluster configurations
@@ -31,6 +37,7 @@ When setting up Cloud Tiering, now you can configure a lifecycle rule so your in
 === Cloud Tiering has been fully qualified on ONTAP Select systems
 
 In addition to tiering data from your AFF and FAS systems, now you can tier inactive data from your ONTAP Select systems to cloud storage.
+// end::whats-new[]
 
 == 2 September 2021
 
@@ -43,7 +50,6 @@ https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering
 === Tier inactive data from on-prem ONTAP clusters to S3-compatible object storage
 
 Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html[See how to tier data to S3-compatible object storage].
-// end::whats-new[]
 
 == 7 July 2021
 
