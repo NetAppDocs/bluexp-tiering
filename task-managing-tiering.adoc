@@ -25,7 +25,7 @@ TIP: You don't need to configure the object storage because it was already confi
 
 . At the top of Cloud Manager, click *Tiering*.
 
-. From the *Clusters Dashboard*, click *Tier Volumes* for the cluster.
+. From the *Clusters Dashboard*, click *Basic Tiering Setup* for the cluster.
 +
 image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to select the Tier Volumes button for a cluster.]
 
@@ -132,7 +132,7 @@ image:screenshot_tiering_modify_aggr.png["A screenshot showing the Modify Aggreg
 
 . In the dialog that is displayed, modify the fullness threshold and choose whether to enable or disable inactive data reporting.
 +
-image:screenshot_edit_aggregate.gif[A screenshot that shows a slider to modify the tiering fullness threshold and a button to enable or disable inactive data reporting.]
+image:screenshot_tiering_modify_aggregate.png[A screenshot that shows a slider to modify the tiering fullness threshold and a button to enable or disable inactive data reporting.]
 
 . Click *Apply*.
 
