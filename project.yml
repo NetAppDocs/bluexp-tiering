@@ -34,20 +34,22 @@ sidebar:
           url: /faq-cloud-tiering.html
     - title: Use Cloud Tiering
       entries:
-        - title: Test cloud performance
-          url: /task-tiering-test.html
         - title: Manage data tiering
           url: /task-managing-tiering.html
+        - title: Manage object storage
+          url: /task-managing-object-storage.html
+        - title: Test cloud performance
+          url: /task-tiering-test.html
         - title: View tiering overview for all clusters
           url: /task-tiering-onprem-overview.html
-        - title: Reference
-          entries:
-            - title: Supported Amazon S3 storage classes and regions
-              url: /reference-aws-support.html
-            - title: Supported Azure access tiers and regions
-              url: /reference-azure-support.html
-            - title: Supported Google Cloud storage classes and regions
-              url: /reference-google-support.html
+    - title: Reference
+      entries:
+        - title: Supported Amazon S3 storage classes and regions
+          url: /reference-aws-support.html
+        - title: Supported Azure access tiers and regions
+          url: /reference-azure-support.html
+        - title: Supported Google Cloud storage classes and regions
+          url: /reference-google-support.html
     - title: Knowledge and support
       entries:
         - title: Register for support

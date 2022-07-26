@@ -165,7 +165,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 . Complete the steps on the *Create Object Storage* pages:
 
-.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_ and click *Continue*.
+.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_, select the bucket region, and click *Continue*.
 +
 When using an on-prem Connector, you must enter the AWS Account ID that provides access to the existing S3 bucket or new S3 bucket that will be created.
 +
