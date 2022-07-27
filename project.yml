@@ -96,6 +96,16 @@ homepage:
           url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
         - title: Manage tiering settings on aggregates
           url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
+    - title: Manage object storage
+      links:
+        - title: Add a new object store for a cluster
+          url: task-managing-object-storage.html#adding-a-new-object-store
+        - title: Add a second object store to an aggregate for mirroring
+          url: task-managing-object-storage.html#attaching-a-second-object-store-to-an-aggregate-for-mirroring
+        - title: Swap the primary and mirror object store
+          url: task-managing-object-storage.html#swapping-the-primary-and-mirror-object-store
+        - title: Remove a mirror object store
+          url: task-managing-object-storage.html#removing-a-mirror-object-store-from-an-aggregate
     - title: Blogs & community
       links:
         - title: NetApp Community

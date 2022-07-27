@@ -33,7 +33,7 @@ If you want to add a new object store for this cluster you can click *Create New
 
 == Adding a new object store
 
-You can add a new object store that will be available for your cluster. After you create it you can attach it to an aggregate.
+You can add a new object store that will be available for aggregates in your cluster. After you create it, you can attach it to an aggregate.
 
 .Steps
 
@@ -99,7 +99,7 @@ image:screenshot_tiering_mirror_config_complete.png["A screenshot showing a seco
 
 == Swapping the primary and mirror object store
 
-You can swap the primary and mirror object store for an aggregate. The object store mirror becomes the primary, the original primary automatically becomes the mirror.
+You can swap the primary and mirror object store for an aggregate. The object store mirror becomes the primary, and the original primary becomes the mirror.
 
 .Steps
 
@@ -110,6 +110,8 @@ image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Adva
 . From the Advanced Setup page, click the menu icon for the aggregate and select *Swap Destinations*.
 +
 image:screenshot_tiering_mirror_swap.png["A screenshot showing the Swap Destination option for an aggregate."]
+
+The primary and mirror objects stores are swapped.
 
 == Removing a mirror object store from an aggregate
 
