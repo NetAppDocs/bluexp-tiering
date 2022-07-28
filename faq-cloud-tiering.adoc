@@ -127,7 +127,7 @@ Cloud Tiering supports ONTAP version 9.2 and higher.
 
 Cloud Tiering is supported from single-node and high-availability AFF, FAS, and ONTAP Select clusters.
 
-Clusters in FabricPool Mirror configurations are also supported, but the tiering configuration must be done using System Manager or the ONTAP CLI.
+Clusters in FabricPool Mirror configurations and MetroCluster configurations are also supported, but the tiering configuration must be done using System Manager or the ONTAP CLI.
 
 === Can I tier data from FAS systems with HDDs only?
 
@@ -202,15 +202,15 @@ Yes. You can enable life cycle management so that Cloud Tiering transitions data
 
 === Does Cloud Tiering use one object store for the entire cluster or one per aggregate?
 
-One object store for the entire cluster.
+In a typical configuration there is one object store for the entire cluster. Starting in August 2022, you can use the *Advanced Setup* page to add additional object stores for a cluster, and then attach different object stores to different aggregates.
 
 === Can multiple buckets be attached to the same aggregate?
 
-It is possible to attach up to two buckets per aggregate for the purpose of mirroring, where cold data is synchronously tiered to both buckets. The buckets can be from different providers and different locations. However, configuration through the Cloud Tiering UI is not supported at this time -- setup is available through System Manager or the CLI.
+It is possible to attach up to two buckets per aggregate for the purpose of mirroring, where cold data is synchronously tiered to both buckets. The buckets can be from different providers and different locations. Starting in August 2022, you can use the *Advanced Setup* page to attach two object stores to a single aggregate.
 
 === Can different buckets be attached to different aggregates in the same cluster?
 
-Yes. The general best practice is to attach a single bucket to multiple aggregates. However, when using the public cloud there is a maximum IOPS limitation for the object storage services, therefore multiple buckets must be considered. However, configuration through the Cloud Tiering UI is not supported at this time -- setup is available through System Manager or the CLI.
+Yes. The general best practice is to attach a single bucket to multiple aggregates. However, when using the public cloud there is a maximum IOPS limitation for the object storage services, therefore multiple buckets must be considered. 
 
 === What happens with the tiered data when you migrate a volume from one cluster to another?
 

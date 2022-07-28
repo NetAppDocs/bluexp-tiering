@@ -27,6 +27,8 @@ Cloud Tiering offers automation, monitoring, reports, and a common management in
 
 * Automation makes it easier to set up and manage data tiering from on-prem ONTAP clusters to the cloud
 * You can choose the default cloud provider storage class/access tier, or use lifecycle management to move older tiered data to a more cost-effective tier
+* You can create connections to additional object stores that can be used for other aggregates in your cluster
+* Using the UI you can drag object stores to an aggregate for tiering and for FabricPool mirroring
 * A single pane of glass removes the need to independently manage FabricPool across several clusters
 * Reports show the amount of active and inactive data on each cluster
 * A tiering health status helps you identify and correct issues as they occur
@@ -52,7 +54,7 @@ NOTE: You can tier data from NAS volumes to the public cloud or to private cloud
 
 === Object storage tiers
 
-Each ONTAP cluster tiers inactive data to a single object store. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
+ONTAP clusters can tier inactive data to a single object store, or to multiple object stores. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
 
 * link:reference-aws-support.html[Learn about supported AWS S3 storage classes]
 * link:reference-azure-support.html[Learn about supported Azure Blob access tiers]

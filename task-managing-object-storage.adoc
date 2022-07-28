@@ -25,7 +25,7 @@ You might want to see all the object stores that have been configured for your c
 
 . Review details about the object store.
 +
-This example shows both an Amazon S3 and Azure Blob object store configured for a single cluster:
+This example shows both an Amazon S3 and Azure Blob object store attached to different aggregates on a cluster.
 +
 image:screenshot_tiering_object_store_view.png["A screenshot that shows the object storage information, which details total used capacity, aggregate attached to the object store, name of the object store, and more information."]
 

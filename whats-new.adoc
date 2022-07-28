@@ -18,9 +18,13 @@ Learn what's new in Cloud Tiering.
 // tag::whats-new[]
 == 1 August 2022
 
-=== new stuff
+=== Ability to configure additional object stores for other aggregates in your cluster
 
-details
+The Cloud Tiering UI has added a new set of pages for object storage configuration. You can add new object stores, connect multiple object stores to an aggregate for FabricPool Mirroring, swap the primary and mirror object stores, delete object store connections to aggregates, and more. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-object-storage.html[Learn more about the new object storage functionality.]
+
+=== Cloud Tiering license support for MetroCluster configurations
+
+Cloud Tiering licenses can now be shared with your clusters that are in MetroCluster configurations. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
 
 == 3 May 2022
 
