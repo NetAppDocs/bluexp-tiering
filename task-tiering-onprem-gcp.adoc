@@ -65,6 +65,8 @@ Supported ONTAP platforms::
 Supported ONTAP versions::
 ONTAP 9.6 or later
 
+include::_include/tiering-admin-app-access.adoc[]
+
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over port 443 to Google Cloud Storage.
 +

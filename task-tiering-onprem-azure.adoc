@@ -64,6 +64,8 @@ Supported ONTAP platforms::
 Supported ONTAP version::
 ONTAP 9.4 or later
 
+include::_include/tiering-admin-app-access.adoc[]
+
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over port 443 to Azure Blob storage.
 +

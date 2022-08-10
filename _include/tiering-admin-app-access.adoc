@@ -1,0 +1,2 @@
+Required application access parameter::
+The cluster admin user must have “console” Application access. You can verify this using the ONTAP command `security login show`. "console" should appear in the _Application_ column for the "admin" user. Use the `security login create` command to add console application access if necessary. https://docs.netapp.com/us-en/ontap-cli-9111/security-login-create.html[See the "security login" commands for details].

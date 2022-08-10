@@ -56,6 +56,8 @@ Supported ONTAP platforms::
 Supported ONTAP version::
 ONTAP 9.4 or later
 
+include::_include/tiering-admin-app-access.adoc[]
+
 Licensing::
 A Cloud Tiering license isn’t required in your Cloud Manager account, nor is a FabricPool license required on the ONTAP cluster, when tiering data to StorageGRID.
 
