@@ -65,6 +65,8 @@ Supported ONTAP platforms::
 Supported ONTAP version::
 ONTAP 9.2 or later
 
+include::_include/tiering-admin-app-access.adoc[]
+
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over port 443 to Amazon S3.
 +
@@ -95,8 +97,8 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 A Connector is required to tier data to the cloud. When tiering data to AWS S3, you can use a Connector that's in an AWS VPC or on your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in AWS or on-prem.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Creating a Connector in AWS^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Installing the Connector on a Linux host^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html[Deploying a Connector in AWS^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html[Deploying a Connector on a Linux host^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html[Switching between Connectors^]
 
 === Preparing networking for the Connector
@@ -159,11 +161,13 @@ After you prepare your AWS environment, start tiering inactive data from your fi
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
-. *Choose your provider*: This page appears only when using an on-prem Connector. Select *Amazon Web Services* and click *Continue*.
+. *Define Object Storage Name*: Enter a name for this object storage. It must be unique from any other object storage you may be using with aggregates on this cluster.
 
-. Complete the steps on the *Tiering Setup* page:
+. *Select Provider*: Select *Amazon Web Services* and click *Continue*.
 
-.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_ and click *Continue*.
+. Complete the steps on the *Create Object Storage* pages:
+
+.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_, select the bucket region, and click *Continue*.
 +
 When using an on-prem Connector, you must enter the AWS Account ID that provides access to the existing S3 bucket or new S3 bucket that will be created.
 +
@@ -194,7 +198,7 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_modify_volumes.gif["A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button.""]
+image:screenshot_tiering_tier_volumes.png["A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button."]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
@@ -209,4 +213,6 @@ You've successfully set up data tiering from volumes on the cluster to S3 object
 .What's next?
 link:task-licensing-cloud-tiering.html[Be sure to subscribe to the Cloud Tiering service].
 
-You can also add additional clusters or review information about the active and inactive data on the cluster. For details, see link:task-managing-tiering.html[Managing data tiering from your clusters].
+You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].
+
+You can also create additional object storage in cases where you may want to tier data from certain aggregate on a cluster to a different object store. Or if you plan to use FabricPool Mirroring where your tiered data is replicated an different object store. link:task-managing-object-storage.html[Learn more about managing object stores].

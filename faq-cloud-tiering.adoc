@@ -93,7 +93,7 @@ Yes. Cloud Tiering allows you to use a BYOL license, a PAYGO subscription, or a 
 
 === What happens if I have reached the BYOL capacity limit?
 
-If you reach a BYOL capacity limit, tiering of new cold data stops while all previously tiered data remains accessible. If you have a PAYGO marketplace subscription to the _Cloud Manager - Deploy & Manage Cloud Data Services_, new cold data will continue to be tiered to object storage and the charges would incur on a per-use basis.
+If you reach a BYOL capacity limit, tiering of new cold data stops while all previously tiered data remains accessible. If you have a PAYGO marketplace subscription to the _Cloud Manager - Deploy & Manage Cloud Data Services_, new cold data will continue to be tiered to object storage and you'll pay for those charges on a per-use basis.
 
 === Does the Cloud Tiering license include the egress charges from the cloud provider?
 
@@ -127,7 +127,7 @@ Cloud Tiering supports ONTAP version 9.2 and higher.
 
 Cloud Tiering is supported from single-node and high-availability AFF, FAS, and ONTAP Select clusters.
 
-Clusters in FabricPool Mirror configurations are also supported, but the tiering configuration must be done using System Manager or the ONTAP CLI.
+Clusters in FabricPool Mirror configurations and MetroCluster configurations are also supported, but the tiering configuration must be done using System Manager or the ONTAP CLI.
 
 === Can I tier data from FAS systems with HDDs only?
 
@@ -202,15 +202,15 @@ Yes. You can enable life cycle management so that Cloud Tiering transitions data
 
 === Does Cloud Tiering use one object store for the entire cluster or one per aggregate?
 
-One object store for the entire cluster.
+In a typical configuration there is one object store for the entire cluster. Starting in August 2022, you can use the *Advanced Setup* page to add additional object stores for a cluster, and then attach different object stores to different aggregates.
 
 === Can multiple buckets be attached to the same aggregate?
 
-It is possible to attach up to two buckets per aggregate for the purpose of mirroring, where cold data is synchronously tiered to both buckets. The buckets can be from different providers and different locations. However, configuration through the Cloud Tiering UI is not supported at this time -- setup is available through System Manager or the CLI.
+It is possible to attach up to two buckets per aggregate for the purpose of mirroring, where cold data is synchronously tiered to both buckets. The buckets can be from different providers and different locations. Starting in August 2022, you can use the *Advanced Setup* page to attach two object stores to a single aggregate.
 
 === Can different buckets be attached to different aggregates in the same cluster?
 
-Yes. The general best practice is to attach a single bucket to multiple aggregates. However, when using the public cloud there is a maximum IOPS limitation for the object storage services, therefore multiple buckets must be considered. However, configuration through the Cloud Tiering UI is not supported at this time -- setup is available through System Manager or the CLI.
+Yes. The general best practice is to attach a single bucket to multiple aggregates. However, when using the public cloud there is a maximum IOPS limitation for the object storage services, therefore multiple buckets must be considered. 
 
 === What happens with the tiered data when you migrate a volume from one cluster to another?
 
@@ -229,10 +229,6 @@ Write back is generally performed on reads and depends on the tiering policy typ
 === When replacing an existing AFF/FAS controller with a new one, would the tiered data be migrated back on-prem?
 
 No. During the “head swap” procedure, the only thing that changes is the aggregate’s ownership. In this case, it will be changed to the new controller without any data movement.
-
-=== Can I use the tiered data to recover a volume or a system during a disaster recovery scenario?
-
-No. Since the volume’s metadata is always stored on the local performance tier, if there’s a disaster and the local tier is lost, the metadata is lost as well and there is no way to reference the tiered data.
 
 === Can I use the cloud provider’s console or object storage explorers to look at the data tiered to a bucket? Can I use the data stored in the object storage directly without ONTAP?
 

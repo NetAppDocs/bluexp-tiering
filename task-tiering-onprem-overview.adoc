@@ -16,7 +16,7 @@ summary: Cloud Tiering provides an aggregated view of data tiering from each of 
 [.lead]
 Cloud Tiering provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
 
-Cloud Tiering provides the following details about your environment:
+Just click *Tiering > On-Prem Overview*. Cloud Tiering provides the following details about your environment.
 
 image:screenshot_tiering_onprem_overview.gif[A screenshot of the On-Prem Overview page.]
 
@@ -29,7 +29,3 @@ Total Savings:: The amount of money that you've saved by tiering data to the clo
 Policies:: The number of times that each tiering policy has been applied to a volume.
 
 Marketplace Subscriptions:: The number of clusters associated with each type of Marketplace Subscription and an indication about your subscription status.
-
-.Steps
-
-. Click *Tiering > On-Prem Overview*.
