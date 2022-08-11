@@ -6,10 +6,9 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
+  rss_page: "whats-new.html"
 sidebar:
   entries:
-    - title: All Cloud Manager documentation
-      url: https://docs.netapp.com/us-en/cloud-manager-family
     - title: Cloud Tiering docs
       url: /index.html
     - title: Release notes
@@ -36,20 +35,22 @@ sidebar:
           url: /faq-cloud-tiering.html
     - title: Use Cloud Tiering
       entries:
-        - title: Test cloud performance
-          url: /task-tiering-test.html
         - title: Manage data tiering
           url: /task-managing-tiering.html
+        - title: Manage object storage
+          url: /task-managing-object-storage.html
+        - title: Test cloud performance
+          url: /task-tiering-test.html
         - title: View tiering overview for all clusters
           url: /task-tiering-onprem-overview.html
-        - title: Reference
-          entries:
-            - title: Supported Amazon S3 storage classes and regions
-              url: /reference-aws-support.html
-            - title: Supported Azure access tiers and regions
-              url: /reference-azure-support.html
-            - title: Supported Google Cloud storage classes and regions
-              url: /reference-google-support.html
+    - title: Reference
+      entries:
+        - title: Supported Amazon S3 storage classes and regions
+          url: /reference-aws-support.html
+        - title: Supported Azure access tiers and regions
+          url: /reference-azure-support.html
+        - title: Supported Google Cloud storage classes and regions
+          url: /reference-google-support.html
     - title: Knowledge and support
       entries:
         - title: Register for support
@@ -61,6 +62,7 @@ sidebar:
 product-family:
   name: Cloud Manager
   repo: cloud-manager-family
+  sidebar_label: All Cloud Manager documentation
 homepage:
   tiles:
     - title: Get started
@@ -95,6 +97,16 @@ homepage:
           url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
         - title: Manage tiering settings on aggregates
           url: task-managing-tiering.html#managing-tiering-settings-on-aggregates
+    - title: Manage object storage
+      links:
+        - title: Add a new object store for a cluster
+          url: task-managing-object-storage.html#adding-a-new-object-store
+        - title: Add a second object store to an aggregate for mirroring
+          url: task-managing-object-storage.html#attaching-a-second-object-store-to-an-aggregate-for-mirroring
+        - title: Swap the primary and mirror object store
+          url: task-managing-object-storage.html#swapping-the-primary-and-mirror-object-store
+        - title: Remove a mirror object store
+          url: task-managing-object-storage.html#removing-a-mirror-object-store-from-an-aggregate
     - title: Blogs & community
       links:
         - title: NetApp Community

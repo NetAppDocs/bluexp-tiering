@@ -95,7 +95,7 @@ You use the Digital Wallet page in Cloud Manager to manage Cloud Tiering BYOL li
 
 The new *Cloud Tiering* license was introduced in August 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, S3-compatible object storage, IBM Cloud Object Storage, and StorageGRID.
 
-The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for ONTAP deployments in sites that have no internet access (also known as "dark sites") or for MetroCluster systems using FabricPool Mirror. If you are using these configurations, you'll install a FabricPool license on each cluster using System Manager or the ONTAP CLI.
+The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for ONTAP deployments in sites that have no internet access (also known as "dark sites"). If you're using this type of configuration, you'll install a FabricPool license on each cluster using System Manager or the ONTAP CLI.
 
 TIP: Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
 
@@ -194,9 +194,8 @@ Cloud Manager updates the license so that your Cloud Tiering service continues t
 ONTAP clusters in the following configurations can use Cloud Tiering licenses, but the license must be applied in a different manner than typical single-node and HA-configured ONTAP clusters:
 
 * Clusters in Tiering Mirror configurations (clusters connected to two object stores)
-+
-MetroCluster configurations using FabricPool Mirror are not currently supported
-* Clusters that are tiering data to IBM Cloud Object Storage
+* MetroCluster configurations using FabricPool Mirror
+* Clusters that are tiered to IBM Cloud Object Storage
 
 === Process for existing clusters that have a FabricPool license
 
@@ -211,7 +210,7 @@ When you discover typical clusters in Cloud Tiering, you'll configure tiering us
 
 NOTE: The licensed capacity and expiration date shown in System Manager or in the ONTAP CLI for the "child" license is not the real information, so don't be concerned if the information is not the same. These values are managed internally by the Cloud Tiering software. The real information is tracked in the Digital Wallet.
 
-For the two configurations listed above, you'll need to configure tiering using System Manager or the ONTAP CLI (not by using the Cloud Tiering interface). So in these cases you'll need to push the "child" license to these clusters manually from the Cloud Tiering interface.
+For the three configurations listed above, you'll need to configure tiering using System Manager or the ONTAP CLI (not by using the Cloud Tiering interface). So in these cases you'll need to push the "child" license to these clusters manually from the Cloud Tiering interface.
 
 Note that since data is tiered to two different object storage locations for Tiering Mirror configurations, you'll need to purchase a license with enough capacity for tiering data to both locations.
 
@@ -237,6 +236,8 @@ The child license is deployed to the ONTAP cluster.
 
 . Return to System Manager or the ONTAP CLI and set up your tiering configuration.
 +
-https://docs.netapp.com/us-en/ontap/fabricpool/manage-mirrors-task.html[FabricPool Mirror configuration information^]
+https://docs.netapp.com/us-en/ontap/fabricpool/manage-mirrors-task.html[FabricPool Mirror configuration information]
 +
-https://docs.netapp.com/us-en/ontap/fabricpool/setup-ibm-object-storage-cloud-tier-task.html[Tiering to IBM Cloud Object Storage information^]
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html[FabricPool MetroCluster configuration information]
++
+https://docs.netapp.com/us-en/ontap/fabricpool/setup-ibm-object-storage-cloud-tier-task.html[Tiering to IBM Cloud Object Storage information]

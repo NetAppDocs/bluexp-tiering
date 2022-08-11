@@ -19,7 +19,7 @@ The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool
 
 Originally supported on AFF, FAS, and ONTAP Select systems with all-SSD aggregates, starting with ONTAP 9.8 you can tier data from aggregates consisting of HDDs in addition to high-performance SSDs. See https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html[the considerations and requirements for using FabricPool^] for details.
 
-Cloud Tiering licenses can also be shared with your clusters that are in FabricPool Mirror configurations (not including MetroCluster configurations). The FabricPool configuration must be done using System Manager or the ONTAP CLI, but https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[licensing for these types of clusters is done using Cloud Tiering.]
+Cloud Tiering licenses can also be shared with your clusters that are in MetroCluster and FabricPool Mirror configurations. The FabricPool configuration must be set up using System Manager or the ONTAP CLI, but https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[licensing for these types of clusters is completed using Cloud Tiering.]
 
 == Features
 
@@ -27,6 +27,8 @@ Cloud Tiering offers automation, monitoring, reports, and a common management in
 
 * Automation makes it easier to set up and manage data tiering from on-prem ONTAP clusters to the cloud
 * You can choose the default cloud provider storage class/access tier, or use lifecycle management to move older tiered data to a more cost-effective tier
+* You can create connections to additional object stores that can be used for other aggregates in your cluster
+* Using the UI you can drag object stores to an aggregate for tiering and for FabricPool mirroring
 * A single pane of glass removes the need to independently manage FabricPool across several clusters
 * Reports show the amount of active and inactive data on each cluster
 * A tiering health status helps you identify and correct issues as they occur
@@ -46,13 +48,13 @@ You can tier inactive data from an on-premises ONTAP system to the following obj
 * S3-compatible object storage
 * NetApp StorageGRID
 
-Cloud Tiering licenses can also be shared with your clusters that are tiering data to IBM Cloud Object Storage. The FabricPool configuration must be done using System Manager or the ONTAP CLI, but https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[licensing for this type of configuration is done using Cloud Tiering.]
+Cloud Tiering licenses can also be shared with your clusters that are tiering data to IBM Cloud Object Storage. The FabricPool configuration must be set up using System Manager or the ONTAP CLI, but https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[licensing for this type of configuration is completed using Cloud Tiering.]
 
 NOTE: You can tier data from NAS volumes to the public cloud or to private clouds, like StorageGRID. When tiering data that is accessed by SAN protocols, NetApp recommends using private clouds due to connectivity considerations.
 
 === Object storage tiers
 
-Each ONTAP cluster tiers inactive data to a single object store. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
+ONTAP clusters can tier inactive data to a single object store, or to multiple object stores. When you set up data tiering, you have the choice to add a new bucket/container or to select an existing bucket/container, along with a storage class or access tier.
 
 * link:reference-aws-support.html[Learn about supported AWS S3 storage classes]
 * link:reference-azure-support.html[Learn about supported Azure Blob access tiers]
