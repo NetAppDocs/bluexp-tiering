@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-managing-object-storage.html
 keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage
-summary: After you've configured your on-prem ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, delete object storage, and more.
+summary: After you've configured your on-prem ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, remove a mirrored object store from an aggregate, and more.
 ---
 
 = Managing object storage used for data tiering
@@ -13,7 +13,7 @@ summary: After you've configured your on-prem ONTAP clusters to tier data to a p
 :imagesdir: ./media/
 
 [.lead]
-After you've configured your on-prem ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, delete object storage, and more.
+After you've configured your on-prem ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, remove a mirrored object store from an aggregate, and more.
 
 == Viewing object stores configured for a cluster
 
@@ -21,15 +21,13 @@ You might want to see all the object stores that have been configured for your c
 
 .Steps
 
-. From the *Clusters Dashboard*, click the menu icon for a cluster and select *Cluster info*.
+. From the *Clusters Dashboard*, click the menu icon for a cluster and select *Object Store Info*.
 
-. Review details about the object store.
+. Review details about the object stores.
 +
 This example shows both an Amazon S3 and Azure Blob object store attached to different aggregates on a cluster.
 +
 image:screenshot_tiering_object_store_view.png["A screenshot that shows the object storage information, which details total used capacity, aggregate attached to the object store, name of the object store, and more information."]
-
-If you want to add a new object store for this cluster you can click *Create New Object Store* to start the wizard.
 
 == Adding a new object store
 
@@ -37,7 +35,7 @@ You can add a new object store that will be available for aggregates in your clu
 
 .Steps
 
-. From the *Clusters Dashboard*, click the menu icon for a cluster and select *Cluster info*.
+. From the *Clusters Dashboard*, click the menu icon for a cluster and select *Object Store Info*.
 
 . From the Object Store Information page, click *Create New Object Store*.
 +
@@ -47,13 +45,11 @@ The object store wizard starts. The example below shows how to create an object 
 
 . *Define Object Storage Name*: Enter a name for this object storage. It must be unique from any other object storage you may be using with aggregates on this cluster.
 
-. *Select Provider*: Select *Amazon Web Services* and click *Continue*.
+. *Select Provider*: Select the provider, for example *Amazon Web Services*, and click *Continue*.
 
 . Complete the steps on the *Create Object Storage* pages:
 
-.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_, select the bucket region, and click *Continue*.
-+
-When using an on-prem Connector, you must enter the AWS Account ID that provides access to the existing S3 bucket or new S3 bucket that will be created.
+.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_. Then enter the AWS Account ID that provides access to the bucket, select the bucket region, and click *Continue*.
 +
 The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
@@ -69,7 +65,7 @@ Note that the life cycle rule is applied to all objects in the selected bucket.
 
 .. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click *Continue*.
 +
-The IAM user must be in the same AWS account as the bucket that you selected or created on the *S3 Bucket* page.
+The IAM user must be in the same AWS account as the bucket that you selected or created on the *S3 Bucket* page. See the required permissions in the section about activating tiering.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
@@ -111,11 +107,11 @@ image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Adva
 +
 image:screenshot_tiering_mirror_swap.png["A screenshot showing the Swap Destination option for an aggregate."]
 
-The primary and mirror objects stores are swapped.
+. Approve the action in the dialog box and the primary and mirror objects stores are swapped.
 
 == Removing a mirror object store from an aggregate
 
-You can remove a FabricPool mirror if you no longer need to replicate an object store.
+You can remove a FabricPool mirror if you no longer need to replicate to an additional object store.
 
 .Steps
 
@@ -123,8 +119,17 @@ You can remove a FabricPool mirror if you no longer need to replicate an object 
 +
 image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Advanced Setup button for a cluster.]
 
-. From the Advanced Setup page, click the menu icon for the aggregate and select *Delete Tiering Mirror*.
+. From the Advanced Setup page, click the menu icon for the aggregate and select *Unmirror Object Store*.
 +
-image:screenshot_tiering_mirror_delete.png["A screenshot showing the Delete Tiering Mirror option for an aggregate."]
+image:screenshot_tiering_mirror_delete.png["A screenshot showing the Unmirror Object Store option for an aggregate."]
 
 The mirror object store is removed from the aggregate and the tiered data is no longer replicated.
+
+== Migrating your tiered data to a different cloud provider
+
+Cloud Tiering enables you to easily migrate your tiered data to a different cloud provider. For example, if you want to move from Amazon S3 to Azure Blob, you can follow the steps listed above in this order:
+
+. Add an Azure Blob object store.
+. Attach this new object store as the mirror to the existing aggregate.
+. Swap the primary and mirror object stores.
+. Unmirror the Amazon S3 object store.

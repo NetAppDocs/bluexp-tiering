@@ -16,7 +16,7 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
-== 1 August 2022
+== 3 August 2022
 
 === Ability to configure additional object stores for other aggregates in your cluster
 
