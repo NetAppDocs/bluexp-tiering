@@ -54,7 +54,7 @@ Set up permissions for the Connector to create and manage the S3 bucket. You'll 
 Select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Amazon S3.
 
 [role="quick-margin-para"]
-<<Enable Cloud Backup,See how to activate Cloud Backup on your volumes.>>
+<<Tier inactive data from your first cluster to Amazon S3,See how to enable Tiering for your volumes.>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Set up licensing
 
@@ -103,7 +103,7 @@ If you already have a Connector deployed in your AWS VPC or on your premises, th
 ** An HTTPS connection over port 443 to your S3 object storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html[see the list of endpoints^])
 ** An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html#cloud-tiering[Ensure that the Connector has permissions to manage the S3 bucket]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html#cloud-tiering[Ensure that the Connector has permissions to manage the S3 bucket^]
 
 * If you have a Direct Connect or VPN connection from your ONTAP cluster to the VPC, and you want communication between the Connector and S3 to stay in your AWS internal network (a *private* connection), you'll need to enable a VPC Endpoint interface to S3. <<Configure your system for a private connection using a VPC endpoint interface,See how to set up a VPC endpoint interface.>>
 
@@ -230,10 +230,10 @@ GqvbOz/oO2NWLLFCqI+xmkLcMiPrZy+/6Af+HH2mLCM4EsI2b+IpBmPkriWnnxo=
 . Log into the ONTAP cluster CLI and apply the certificate you copied using the following command (substitute your own storage VM name):
 +
 [source,text]
-cluster1::> security certificate install -vserver cluster1 -type server-ca
+cluster1::> security certificate install -vserver <svm_name> -type server-ca
 Please enter Certificate: Press <Enter> when done
 
-== Tiering inactive data from your first cluster to Amazon S3
+== Tier inactive data from your first cluster to Amazon S3
 
 After you prepare your AWS environment, start tiering inactive data from your first cluster.
 
@@ -279,11 +279,11 @@ The IAM user must be in the same AWS account as the bucket that you selected or 
 
 .. *Networking*: Enter the networking details and click *Continue*.
 +
-The IPspace in the ONTAP cluster where the volumes you want to tier reside. The intercluster LIFs for this IPspace must have outbound internet access so that they can connect to your cloud provider's object storage.
+Select the IPspace in the ONTAP cluster where the volumes you want to tier reside. The intercluster LIFs for this IPspace must have outbound internet access so that they can connect to your cloud provider's object storage.
 +
 Optionally, choose whether you'll use an AWS PrivateLink that you have previously configured. <<Configure your system for a private connection using a VPC endpoint interface,See the setup information above.>>
 +
-A dialog box appears to help guide you through the endpoint configuration.
+A dialog box is displayed to help guide you through the endpoint configuration.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
