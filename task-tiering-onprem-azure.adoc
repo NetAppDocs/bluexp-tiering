@@ -208,4 +208,4 @@ link:task-licensing-cloud-tiering.html[Be sure to subscribe to the Cloud Tiering
 
 You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].
 
-You can also create additional object storage in cases where you may want to tier data from certain aggregate on a cluster to a different object store. Or if you plan to use FabricPool Mirroring where your tiered data is replicated an different object store. link:task-managing-object-storage.html[Learn more about managing object stores].
+You can also create additional object storage in cases where you may want to tier data from certain aggregates on a cluster to different object stores. Or if you plan to use FabricPool Mirroring where your tiered data is replicated to an additional object store. link:task-managing-object-storage.html[Learn more about managing object stores].
