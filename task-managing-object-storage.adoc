@@ -79,6 +79,8 @@ Now you can attach the object store to an aggregate in your cluster.
 
 You can attach a second object store to an aggregate to create a FabricPool mirror to replicate an object store. You must have one object store already attached to the aggregate.
 
+When using a MetroCluster configuration, https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html[go here to see more details and requirements in the ONTAP documentation].
+
 .Steps
 
 . From the *Clusters Dashboard*, click *Advanced Setup* for the selected cluster.
@@ -92,6 +94,8 @@ image:screenshot_tiering_mirror_config.png["A screenshot showing how to drag a s
 . In the Attach Object Store dialog, click *Attach* and the second object store is attached to the aggregate.
 +
 image:screenshot_tiering_mirror_config_complete.png["A screenshot showing a second object store attached to an aggregate."]
+
+The Mirror status will appear as "Sync in progress" while the 2 object stores are synchronizing, and it will change to "Synchronized" when synchronization is complete.
 
 == Swapping the primary and mirror object store
 
@@ -124,6 +128,8 @@ image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Adva
 image:screenshot_tiering_mirror_delete.png["A screenshot showing the Unmirror Object Store option for an aggregate."]
 
 The mirror object store is removed from the aggregate and the tiered data is no longer replicated.
+
+NOTE: When removing the mirror object store from a MetroCluster configuration you'll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
 
 == Migrating your tiered data to a different cloud provider
 

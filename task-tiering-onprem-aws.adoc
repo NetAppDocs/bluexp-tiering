@@ -48,6 +48,9 @@ Discover your ONTAP cluster in Cloud Manager, verify that the cluster meets mini
 [role="quick-margin-para"]
 Set up permissions for the Connector to create and manage the S3 bucket. You'll also need to set up permissions for the on-premises ONTAP cluster so it can read and write data to the S3 bucket.
 
+[role="quick-margin-para"]
+<<Set up S3 permissions,See how to set up permissions for the Connector and for your on-prem cluster.>>
+
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Enable Cloud Tiering on the system
 
 [role="quick-margin-para"]
@@ -118,7 +121,8 @@ Supported ONTAP platforms::
 * When using ONTAP 9.7 and earlier: You can tier data from AFF systems, or FAS systems with all-SSD aggregates.
 
 Supported ONTAP versions::
-ONTAP 9.2 or later
+* ONTAP 9.2 or later
+* ONTAP 9.7 or later is required if you plan to use an AWS PrivateLink connection to object storage
 
 include::_include/tiering_supported_volumes.adoc[]
 
