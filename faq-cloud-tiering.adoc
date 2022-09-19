@@ -125,9 +125,7 @@ Cloud Tiering supports ONTAP version 9.2 and higher.
 
 === What types of ONTAP systems are supported?
 
-Cloud Tiering is supported from single-node and high-availability AFF, FAS, and ONTAP Select clusters.
-
-Clusters in FabricPool Mirror configurations and MetroCluster configurations are also supported, but the tiering configuration must be done using System Manager or the ONTAP CLI.
+Cloud Tiering is supported with single-node and high-availability AFF, FAS, and ONTAP Select clusters. Clusters in FabricPool Mirror configurations and MetroCluster configurations are also supported.
 
 === Can I tier data from FAS systems with HDDs only?
 
@@ -202,7 +200,7 @@ Yes. You can enable life cycle management so that Cloud Tiering transitions data
 
 === Does Cloud Tiering use one object store for the entire cluster or one per aggregate?
 
-In a typical configuration there is one object store for the entire cluster. Starting in August 2022, you can use the *Advanced Setup* page to add additional object stores for a cluster, and then attach different object stores to different aggregates.
+In a typical configuration there is one object store for the entire cluster. Starting in August 2022, you can use the *Advanced Setup* page to add additional object stores for a cluster, and then attach different object stores to different aggregates, or attach 2 object stores to an aggregate for mirroring.
 
 === Can multiple buckets be attached to the same aggregate?
 
@@ -267,10 +265,10 @@ In the case of a Connector failure, only the visibility into the tiered environm
 
 There are four tiering policies:
 
-●	None: Classifies all data as always hot; preventing any data from the volume being moved to object storage.
-●	Cold Snapshots (Snapshot-only): Only cold snapshot blocks are moved to object storage.
-●	Cold User Data and Snapshots (Auto): Both cold snapshot blocks and cold user data blocks are moved to object storage.
-●	All User Data (All): Classifies all data as cold; immediately moving the entire volume to object storage.
+* None: Classifies all data as always hot; preventing any data from the volume being moved to object storage.
+* Cold Snapshots (Snapshot-only): Only cold snapshot blocks are moved to object storage.
+* Cold User Data and Snapshots (Auto): Both cold snapshot blocks and cold user data blocks are moved to object storage.
+* All User Data (All): Classifies all data as cold; immediately moving the entire volume to object storage.
 
 link:concept-cloud-tiering.html#volume-tiering-policies[Learn more about Tiering Policies].
 
@@ -358,7 +356,7 @@ Yes. An intercluster LIF must be configured on an ethernet port, on each node wi
 
 === What permissions are required?
 
-* link:task-tiering-onprem-aws.html#preparing-amazon-s3[For Amazon, permissions are required to manage the S3 bucket].
+* link:task-tiering-onprem-aws.html#set-up-s3-permissions[For Amazon, permissions are required to manage the S3 bucket].
 * For Azure, no extra permissions are needed outside of the permissions that you need to provide to Cloud Manager.
 * link:task-tiering-onprem-gcp.html#preparing-google-cloud-storage[For Google Cloud, Storage Admin permissions are needed for a service account that has storage access keys].
 * link:task-tiering-onprem-storagegrid.html#preparing-storagegrid[For StorageGRID, S3 permissions are needed].

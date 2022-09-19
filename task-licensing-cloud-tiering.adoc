@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-licensing-cloud-tiering.html
-keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, tiering, cloud tiering
-summary: A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
+keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering
+summary: A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go or annual Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
 ---
 
 = Set up licensing for Cloud Tiering
@@ -13,7 +13,7 @@ summary: A 30-day free trial of Cloud Tiering starts when you set up tiering fro
 :imagesdir: ./media/
 
 [.lead]
-A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
+A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go or annual Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
 
 A few notes before you read any further:
 
@@ -78,9 +78,19 @@ The following video shows the process:
 +
 video::video_subscribing_gcp_tiering.mp4[width=848, height=480]
 
+== Use an annual contract
+
+Pay for Cloud Tiering annually by purchasing an annual contract.
+
+When tiering inactive data to AWS, you can subscribe to an annual contract available from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^]. It's available in 1-, 2-, or 3-year terms.
+
+If you want to use this option, set up your subscription from the Marketplace page and then https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription[associate the subscription with your AWS credentials^].
+
+Annual contracts are not currently supported when tiering to Azure or GCP.
+
 == Use a Cloud Tiering BYOL license
 
-Bring-your-own licenses from NetApp provide 2-, 12-, 24-, or 36-month terms. The BYOL *Cloud Tiering* license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. The total tiering capacity defined in your Cloud Tiering license is shared among *all* of your on-prem clusters, making initial licensing and renewal easy.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL *Cloud Tiering* license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. The total tiering capacity defined in your Cloud Tiering license is shared among *all* of your on-prem clusters, making initial licensing and renewal easy.
 
 If you don't have a Cloud Tiering license, contact us to purchase one:
 
@@ -93,9 +103,9 @@ You use the Digital Wallet page in Cloud Manager to manage Cloud Tiering BYOL li
 
 === New Cloud Tiering BYOL licensing starting August 21, 2021
 
-The new *Cloud Tiering* license was introduced in August 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, S3-compatible object storage, IBM Cloud Object Storage, and StorageGRID.
+The new *Cloud Tiering* license was introduced in August 2021 for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. Cloud Manager currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, S3-compatible object storage, and StorageGRID.
 
-The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for ONTAP deployments in sites that have no internet access (also known as "dark sites"). If you're using this type of configuration, you'll install a FabricPool license on each cluster using System Manager or the ONTAP CLI.
+The *FabricPool* license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for ONTAP deployments in sites that have no internet access (also known as "dark sites"), and for tiering configurations to IBM Cloud Object Storage. If you're using this type of configuration, you'll install a FabricPool license on each cluster using System Manager or the ONTAP CLI.
 
 TIP: Note that tiering to StorageGRID does not require a FabricPool or Cloud Tiering license.
 
@@ -191,11 +201,10 @@ Cloud Manager updates the license so that your Cloud Tiering service continues t
 
 == Apply Cloud Tiering licenses to clusters in special configurations
 
-ONTAP clusters in the following configurations can use Cloud Tiering licenses, but the license must be applied in a different manner than typical single-node and HA-configured ONTAP clusters:
+ONTAP clusters in the following configurations can use Cloud Tiering licenses, but the license must be applied in a different manner than single-node clusters, HA-configured clusters, clusters in Tiering Mirror configurations, and MetroCluster configurations using FabricPool Mirror:
 
-* Clusters in Tiering Mirror configurations (clusters connected to two object stores)
-* MetroCluster configurations using FabricPool Mirror
 * Clusters that are tiered to IBM Cloud Object Storage
+* Cluster that are installed in "dark sites"
 
 === Process for existing clusters that have a FabricPool license
 
@@ -210,7 +219,7 @@ When you discover typical clusters in Cloud Tiering, you'll configure tiering us
 
 NOTE: The licensed capacity and expiration date shown in System Manager or in the ONTAP CLI for the "child" license is not the real information, so don't be concerned if the information is not the same. These values are managed internally by the Cloud Tiering software. The real information is tracked in the Digital Wallet.
 
-For the three configurations listed above, you'll need to configure tiering using System Manager or the ONTAP CLI (not by using the Cloud Tiering interface). So in these cases you'll need to push the "child" license to these clusters manually from the Cloud Tiering interface.
+For the two configurations listed above, you'll need to configure tiering using System Manager or the ONTAP CLI (not by using the Cloud Tiering interface). So in these cases you'll need to push the "child" license to these clusters manually from the Cloud Tiering interface.
 
 Note that since data is tiered to two different object storage locations for Tiering Mirror configurations, you'll need to purchase a license with enough capacity for tiering data to both locations.
 
