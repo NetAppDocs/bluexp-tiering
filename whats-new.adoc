@@ -16,11 +16,11 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
-== 18 September 2022
+== 19 September 2022
 
 === Tiering wizard allows secure connection to S3 storage using AWS PrivateLink
 
-In previous releases it was very hard to provide this secure way of connecting your cluster to an S3 bucket through a VPC endpoint. So you can follow the steps to https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface[configure your system for a private connection using a VPC endpoint interface], and then you can select the PrivateLink during the Tiering setup wizard in the Networking page.
+In previous releases it was very time-consuming to provide this secure way of connecting your cluster to an S3 bucket through a VPC endpoint. Now you can follow the prerequisite steps to https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface[configure your system for a private connection using a VPC endpoint interface], and then you can select the PrivateLink during the Tiering setup wizard in the Networking page.
 
 https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html[Review the requirements and steps to tier inactive data to Amazon S3].
 

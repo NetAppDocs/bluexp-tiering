@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: task-licensing-cloud-tiering.html
-keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, tiering, cloud tiering
-summary: A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
+keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering
+summary: A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go or annual Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
 ---
 
 = Set up licensing for Cloud Tiering
@@ -13,7 +13,7 @@ summary: A 30-day free trial of Cloud Tiering starts when you set up tiering fro
 :imagesdir: ./media/
 
 [.lead]
-A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
+A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go or annual Cloud Manager subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
 
 A few notes before you read any further:
 
@@ -78,9 +78,19 @@ The following video shows the process:
 +
 video::video_subscribing_gcp_tiering.mp4[width=848, height=480]
 
+== Use an annual contract
+
+Pay for Cloud Tiering annually by purchasing an annual contract.
+
+When tiering inactive data to AWS, you can subscribe to an annual contract available from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^]. It's available in 1-, 2-, or 3-year terms.
+
+If you want to use this option, set up your subscription from the Marketplace page and then https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription[associate the subscription with your AWS credentials^].
+
+Annual contracts are not currently supported when tiering to Azure or GCP.
+
 == Use a Cloud Tiering BYOL license
 
-Bring-your-own licenses from NetApp provide 2-, 12-, 24-, or 36-month terms. The BYOL *Cloud Tiering* license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. The total tiering capacity defined in your Cloud Tiering license is shared among *all* of your on-prem clusters, making initial licensing and renewal easy.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL *Cloud Tiering* license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your Cloud Manager account. The total tiering capacity defined in your Cloud Tiering license is shared among *all* of your on-prem clusters, making initial licensing and renewal easy.
 
 If you don't have a Cloud Tiering license, contact us to purchase one:
 

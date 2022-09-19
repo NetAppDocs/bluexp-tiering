@@ -66,7 +66,7 @@ NOTE: You can't select lifecycle rules for data tiered to StorageGRID or S3-comp
 
 == Pricing and licenses
 
-Pay for Cloud Tiering through a pay-as-you-go subscription, a bring-your-own Cloud Tiering license, or a combination of both. A 30-day free trial is available for your first cluster if you don’t have a license.
+Pay for Cloud Tiering through a pay-as-you-go subscription, an annual subscription, a bring-your-own Cloud Tiering license, or a combination. A 30-day free trial is available for your first cluster if you don’t have a license.
 
 There are no charges when tiering data to StorageGRID. Neither a BYOL license or PAYGO registration is required.
 
@@ -74,7 +74,7 @@ https://cloud.netapp.com/cloud-tiering[View pricing details^].
 
 === 30-day free trial
 
-If you don't have a Cloud Tiering license, a 30-day free trial of Cloud Tiering starts when you set up tiering to your first cluster. After that 30-day free trial ends, you'll need to pay for Cloud Tiering through a pay-as-you-go subscription, a BYOL license, or a combination of both.
+If you don't have a Cloud Tiering license, a 30-day free trial of Cloud Tiering starts when you set up tiering to your first cluster. After that 30-day free trial ends, you'll need to pay for Cloud Tiering through a pay-as-you-go subscription, annual subscription, a BYOL license, or a combination.
 
 If your free trial ends and you haven't subscribed or added a license, then ONTAP no longer tiers cold data to object storage, but existing data is still available for access.
 
@@ -96,9 +96,15 @@ You won't be charged from your pay-as-you-go subscription during your free trial
 
 link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-paygo-subscription[Learn how to set up a pay-as-you-go subscription].
 
+=== Annual contract
+
+Cloud Tiering offers an annual contract when tiering inactive data to AWS. It's available in 1-, 2-, or 3-year terms.
+
+Annual contracts are not currently supported when tiering to Azure or GCP.
+
 === Bring your own license
 
-Bring your own license by purchasing a *Cloud Tiering* license from NetApp. You can purchase 2-, 12-, 24-, or 36-month term licenses and specify any amount of tiering capacity. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters.
+Bring your own license by purchasing a *Cloud Tiering* license from NetApp. You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters.
 
 After you purchase a Cloud Tiering license, you'll need use the Digital Wallet page in Cloud Manager to add the license.  link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[See how to use a Cloud Tiering BYOL license].
 
