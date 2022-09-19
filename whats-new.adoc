@@ -24,9 +24,9 @@ In previous releases it was very time-consuming to provide this secure way of co
 
 https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html[Review the requirements and steps to tier inactive data to Amazon S3].
 
-=== Drag and drop to enable Cloud Tiering to Azure Blob and Google Cloud Storage
+=== Drag and drop to enable Cloud Tiering to Amazon S3
 
-If the Azure Blob or Google Cloud Storage tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
+If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 
 == 3 August 2022
 

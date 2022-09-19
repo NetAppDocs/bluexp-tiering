@@ -149,8 +149,8 @@ After you prepare your Google Cloud environment, start tiering inactive data fro
 . Select an on-prem cluster.
 
 . Click *Enable* for the Tiering service.
-+
-If the Google Cloud Storage tiering destination exists as a working environment on the Canvas, you can drag the cluster onto the Google Cloud Storage working environment to initiate the setup wizard.
+//+
+//If the Google Cloud Storage tiering destination exists as a working environment on the Canvas, you can drag the cluster onto the Google Cloud Storage working environment to initiate the setup wizard.
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
