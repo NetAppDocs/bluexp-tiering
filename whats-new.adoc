@@ -16,6 +16,18 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 19 September 2022
+
+=== Tiering wizard allows secure connection to S3 storage using AWS PrivateLink
+
+In previous releases it was very time-consuming to provide this secure way of connecting your cluster to an S3 bucket through a VPC endpoint. Now you can follow the prerequisite steps to https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface[configure your system for a private connection using a VPC endpoint interface], and then you can select the PrivateLink during the Tiering setup wizard in the Networking page.
+
+https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html[Review the requirements and steps to tier inactive data to Amazon S3].
+
+=== Drag and drop to enable Cloud Tiering to Amazon S3
+
+If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
+
 == 3 August 2022
 
 === Ability to configure additional object stores for other aggregates in your cluster
@@ -31,6 +43,7 @@ Cloud Tiering licenses can now be shared with your clusters that are in MetroClu
 === Cloud Tiering license support for additional cluster configurations
 
 Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
+// end::whats-new[]
 
 == 4 April 2022
 
@@ -41,7 +54,6 @@ When setting up Cloud Tiering, now you can configure a lifecycle rule so your in
 === Cloud Tiering has been fully qualified on ONTAP Select systems
 
 In addition to tiering data from your AFF and FAS systems, now you can tier inactive data from your ONTAP Select systems to cloud storage.
-// end::whats-new[]
 
 == 2 September 2021
 
