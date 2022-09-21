@@ -77,9 +77,11 @@ Now you can attach the object store to an aggregate in your cluster.
 
 == Attaching a second object store to an aggregate for mirroring
 
-You can attach a second object store to an aggregate to create a FabricPool mirror to replicate an object store. You must have one object store already attached to the aggregate.
+You can attach a second object store to an aggregate to create a FabricPool mirror to synchronously tier data to two object stores. You must have one object store already attached to the aggregate.
 
-When using a MetroCluster configuration, https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html[go here to see more details and requirements in the ONTAP documentation].
+When using a MetroCluster configuration, it is a best practice to use object stores that are in different availability zones, or that are configured to keep copies of objects in multiple availability zones. https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html[Learn more about MetroCluster requirements in the ONTAP documentation^].
+
+Note that when using StorageGRID as your object store in a MetroCluster configuration that both ONTAP systems can perform FabricPool tiering to a single StorageGRID system.
 
 .Steps
 

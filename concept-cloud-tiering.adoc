@@ -98,7 +98,7 @@ link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-paygo-subscription[Le
 
 === Annual contract
 
-Cloud Tiering offers an annual contract when tiering inactive data to AWS. It's available in 1-, 2-, or 3-year terms.
+Cloud Tiering offers an annual contract when tiering inactive data to Amazon S3. It's available in 1-, 2-, or 3-year terms.
 
 Annual contracts are not currently supported when tiering to Azure or GCP.
 
