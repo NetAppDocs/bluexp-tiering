@@ -77,11 +77,11 @@ Now you can attach the object store to an aggregate in your cluster.
 
 == Attaching a second object store to an aggregate for mirroring
 
-You can attach a second object store to an aggregate to create a FabricPool mirror to synchronously tier data to two object stores. You must have one object store already attached to the aggregate.
+You can attach a second object store to an aggregate to create a FabricPool mirror to synchronously tier data to two object stores. You must have one object store already attached to the aggregate. https://docs.netapp.com/us-en/ontap/fabricpool/create-mirror-task.html[Learn more about FabricPool mirrors^].
 
-When using a MetroCluster configuration, it is a best practice to use object stores that are in different availability zones, or that are configured to keep copies of objects in multiple availability zones. https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html[Learn more about MetroCluster requirements in the ONTAP documentation^].
+When using a MetroCluster configuration, it's a best practice to use object stores in the public cloud that are in different availability zones. https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html[Learn more about MetroCluster requirements in the ONTAP documentation^].
 
-Note that when using StorageGRID as your object store in a MetroCluster configuration that both ONTAP systems can perform FabricPool tiering to a single StorageGRID system.
+Note that when using StorageGRID as your object store in a MetroCluster configuration, both ONTAP systems can perform FabricPool tiering to a single StorageGRID system. Each ONTAP system must tier data to different buckets.
 
 .Steps
 
@@ -97,7 +97,7 @@ image:screenshot_tiering_mirror_config.png["A screenshot showing how to drag a s
 +
 image:screenshot_tiering_mirror_config_complete.png["A screenshot showing a second object store attached to an aggregate."]
 
-The Mirror status will appear as "Sync in progress" while the 2 object stores are synchronizing, and it will change to "Synchronized" when synchronization is complete.
+The Mirror status will appear as "Sync in progress" while the 2 object stores are synchronizing. The status will change to "Synchronized" when synchronization is complete.
 
 == Swapping the primary and mirror object store
 
