@@ -18,7 +18,7 @@ Learn what's new in Cloud Tiering.
 // tag::whats-new[]
 == 19 September 2022
 
-=== Tiering wizard allows secure connection to S3 storage using AWS PrivateLink
+=== Tiering wizard enables you to configure AWS PrivateLink when tiering to S3 storage
 
 In previous releases it was very time-consuming to provide this secure way of connecting your cluster to an S3 bucket through a VPC endpoint. Now you can follow the prerequisite steps to https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface[configure your system for a private connection using a VPC endpoint interface], and then you can select the PrivateLink during the Tiering setup wizard in the Networking page.
 
@@ -27,6 +27,10 @@ https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html
 === Drag and drop to enable Cloud Tiering to Amazon S3
 
 If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
+
+=== Choose the tiering behavior when removing the mirror object store in a MetroCluster configuration
+
+When removing the mirror object store from a MetroCluster configuration, you’ll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
 
 == 3 August 2022
 
