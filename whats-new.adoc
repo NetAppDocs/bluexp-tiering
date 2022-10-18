@@ -16,6 +16,12 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 31 October 2022
+
+=== Drag and drop to enable Cloud Tiering to Azure Blob, Google Cloud Storage, and StorageGRID
+
+If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
+
 == 19 September 2022
 
 === Tiering wizard enables you to configure AWS PrivateLink when tiering to S3 storage
@@ -41,13 +47,13 @@ The Cloud Tiering UI has added a new set of pages for object storage configurati
 === Cloud Tiering license support for MetroCluster configurations
 
 Cloud Tiering licenses can now be shared with your clusters that are in MetroCluster configurations. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
+// end::whats-new[]
 
 == 3 May 2022
 
 === Cloud Tiering license support for additional cluster configurations
 
 Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
-// end::whats-new[]
 
 == 4 April 2022
 
