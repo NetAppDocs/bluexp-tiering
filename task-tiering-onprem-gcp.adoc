@@ -33,7 +33,7 @@ You need the following:
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Google Cloud Storage.
+In BlueXP, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Google Cloud Storage.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up licensing
 
@@ -42,7 +42,7 @@ After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscr
 
 [role="quick-margin-list"]
 * To subscribe from the GCP Marketplace, https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[go to the Cloud Manager Marketplace offering^], click *Subscribe*, and then follow the prompts.
-* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
+* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
 
 == Requirements
 
@@ -88,7 +88,7 @@ NOTE: Cloud Tiering supports FlexGroup volumes. Setup works the same as any othe
 
 === Discovering an ONTAP cluster
 
-You need to create an on-prem ONTAP working environment in Cloud Manager before you can start tiering cold data.
+You need to create an on-prem ONTAP working environment in BlueXP before you can start tiering cold data.
 
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 

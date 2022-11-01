@@ -60,9 +60,9 @@ sidebar:
     - title: Legal notices
       url: /legal-notices.html
 product-family:
-  name: Cloud Manager
+  name: BlueXP
   repo: cloud-manager-family
-  sidebar_label: All Cloud Manager documentation
+  sidebar_label: All BlueXP documentation
 homepage:
   tiles:
     - title: Get started
@@ -111,11 +111,11 @@ homepage:
       links:
         - title: NetApp Community
           url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
-        - title: Cloud Central blog
+        - title: BlueXP blog
           url: https://cloud.netapp.com/blog
         - title: Cloud webinars
           url: https://cloud.netapp.com/events
     - title: Other resources
       links:
-        - title: Cloud Central use cases
+        - title: BlueXP use cases
           url: https://cloud.netapp.com/cloud-tiering

@@ -27,7 +27,7 @@ Choose whether you'll connect your on-premises ONTAP cluster directly to AWS S3 
 [role="quick-margin-para"]
 <<Network diagrams for connection options,See the available connection methods.>>
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Prepare your Cloud Manager Connector
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Prepare your BlueXP Connector
 
 [role="quick-margin-para"]
 If you already have a Connector deployed in your AWS VPC or on your premises, then you're all set. If not, then you'll need to create a Connector to tier ONTAP data to AWS S3 storage. You'll also need to customize network settings for the Connector so that it can connect to AWS S3.
@@ -38,7 +38,7 @@ If you already have a Connector deployed in your AWS VPC or on your premises, th
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Prepare your on-premises ONTAP cluster
 
 [role="quick-margin-para"]
-Discover your ONTAP cluster in Cloud Manager, verify that the cluster meets minimum requirements, and customize network settings so the cluster can connect to AWS S3.
+Discover your ONTAP cluster in BlueXP, verify that the cluster meets minimum requirements, and customize network settings so the cluster can connect to AWS S3.
 
 [role="quick-margin-para"]
 <<Prepare your ONTAP cluster,See how to get your on-premises ONTAP cluster ready.>>
@@ -66,7 +66,7 @@ After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscr
 
 [role="quick-margin-list"]
 * To subscribe from the AWS Marketplace, https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[go to the Cloud Manager Marketplace offering^], click *Subscribe*, and then follow the prompts.
-* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the Cloud Manager Digital Wallet].
+* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
 
 == Network diagrams for connection options
 
@@ -87,7 +87,7 @@ NOTE: Communication between a Connector and S3 is for object storage setup only.
 
 == Prepare your Connector
 
-The Cloud Manager Connector is the main software for Cloud Manager functionality. A Connector is required to tier your inactive ONTAP data.
+The BlueXP Connector is the main software for BlueXP functionality. A Connector is required to tier your inactive ONTAP data.
 
 === Creating or switching Connectors
 
@@ -150,9 +150,9 @@ All intercluster LIFs within the IPspace must have access to the object store. I
 * If you are using a Private VPC Interface Endpoint in AWS for the S3 connection, then in order for HTTPS/443 to be used, you'll need to load the S3 endpoint certificate into the ONTAP cluster. <<Configure your system for a private connection using a VPC endpoint interface,See how to set up a VPC endpoint interface and load the S3 certificate.>>
 * <<Set up S3 permissions,Ensure that your ONTAP cluster has permissions to access the S3 bucket.>>
 
-=== Discover your ONTAP cluster in Cloud Manager
+=== Discover your ONTAP cluster in BlueXP
 
-You need to discover your on-premises ONTAP cluster in Cloud Manager before you can start tiering cold data to object storage. You'll need to know the cluster management IP address and the password for the admin user account to add the cluster.
+You need to discover your on-premises ONTAP cluster in BlueXP before you can start tiering cold data to object storage. You'll need to know the cluster management IP address and the password for the admin user account to add the cluster.
 
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 
@@ -201,7 +201,7 @@ If you want to have a more secure connection over the internet from your on-prem
 
 . Create an Interface endpoint configuration using the Amazon VPC console or the command line. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html[See details about using AWS PrivateLink for Amazon S3^].
 
-. Modify the security group configuration that's associated with the Cloud Manager Connector. You must change the policy to "Custom" (from "Full Access"), and you must <<Set up S3 permissions,add the required S3 Connector permissions>> as shown earlier.
+. Modify the security group configuration that's associated with the BlueXP Connector. You must change the policy to "Custom" (from "Full Access"), and you must <<Set up S3 permissions,add the required S3 Connector permissions>> as shown earlier.
 +
 image:screenshot_tiering_aws_sec_group.png[A screenshot of the AWS security group associated with the Connector.]
 +
@@ -213,7 +213,7 @@ If you're using port 443 (HTTPS) for communication to the private endpoint, you 
 +
 image:screenshot_endpoint_dns_aws_console.png[A screenshot of the DNS name of the VPC endpoint from the AWS Console.]
 
-. Obtain the certificate from the VPC S3 endpoint. You do this by https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm[logging into the VM that hosts the Cloud Manager Connector^] and running the following command. When entering the DNS name of the endpoint, add “bucket” to the beginning, replacing the “*”:
+. Obtain the certificate from the VPC S3 endpoint. You do this by https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm[logging into the VM that hosts the BlueXP Connector^] and running the following command. When entering the DNS name of the endpoint, add “bucket” to the beginning, replacing the “*”:
 +
 [source,text]
 [ec2-user@ip-10-160-4-68 ~]$ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts
