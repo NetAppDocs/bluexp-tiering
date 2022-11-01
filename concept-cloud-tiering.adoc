@@ -15,7 +15,7 @@ summary: NetApp's Cloud Tiering service extends your data center to the cloud by
 [.lead]
 NetApp's Cloud Tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. Cloud Tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 
-The Cloud Tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active (hot) data remains on the local tier (on-premises ONTAP aggregates), while inactive (cold) data is moved to the cloud tier -- all while preserving ONTAP data efficiencies.
+The Cloud Tiering service in BlueXP (formerly Cloud Manager), leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active (hot) data remains on the local tier (on-premises ONTAP aggregates), while inactive (cold) data is moved to the cloud tier -- all while preserving ONTAP data efficiencies.
 
 Originally supported on AFF, FAS, and ONTAP Select systems with all-SSD aggregates, starting with ONTAP 9.8 you can tier data from aggregates consisting of HDDs in addition to high-performance SSDs. See https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html[the considerations and requirements for using FabricPool^] for details.
 
@@ -34,9 +34,9 @@ Cloud Tiering offers automation, monitoring, reports, and a common management in
 * A tiering health status helps you identify and correct issues as they occur
 * If you have Cloud Volumes ONTAP systems, you'll find them in the Cluster Dashboard so you get a full view of data tiering in your hybrid cloud infrastructure
 
-For more details about the value that Cloud Tiering provides, https://cloud.netapp.com/cloud-tiering[check out the Cloud Tiering page on NetApp Cloud Central^].
+For more details about the value that Cloud Tiering provides, https://cloud.netapp.com/cloud-tiering[check out the Cloud Tiering page on the BlueXP website^].
 
-TIP: Cloud Volumes ONTAP systems are read-only from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in Cloud Manager^].
+TIP: Cloud Volumes ONTAP systems are read-only from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in BlueXP^].
 
 == Supported object storage providers
 
@@ -106,7 +106,7 @@ Annual contracts are not currently supported when tiering to Azure or GCP.
 
 Bring your own license by purchasing a *Cloud Tiering* license from NetApp. You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters.
 
-After you purchase a Cloud Tiering license, you'll need use the Digital Wallet page in Cloud Manager to add the license.  link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[See how to use a Cloud Tiering BYOL license].
+After you purchase a Cloud Tiering license, you'll need use the Digital Wallet in BlueXP to add the license.  link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[See how to use a Cloud Tiering BYOL license].
 
 As noted above, we recommend that you set up a pay-as-you-go subscription, even if you have purchased a BYOL license.
 
@@ -122,9 +122,9 @@ image:diagram_cloud_tiering.png["An architecture image that shows the Cloud Tier
 
 At a high level, Cloud Tiering works like this:
 
-. You discover your on-prem cluster from Cloud Manager.
+. You discover your on-prem cluster from BlueXP.
 . You set up tiering by providing details about your object storage, including the bucket/container, a storage class or access tier, and lifecycle rules for the tiered data.
-. Cloud Manager configures ONTAP to use the object storage provider and discovers the amount of active and inactive data on the cluster.
+. BlueXP configures ONTAP to use the object storage provider and discovers the amount of active and inactive data on the cluster.
 . You choose the volumes to tier and the tiering policy to apply to those volumes.
 . ONTAP starts tiering inactive data to the object store as soon as the data has reached the thresholds to be considered inactive (see <<Volume tiering policies>>).
 . If you have applied a lifecycle rule to the tiered data (only available for some providers), older tiered data is moved to a more cost-effective tier after a certain number of days.

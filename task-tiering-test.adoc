@@ -25,7 +25,7 @@ It's best to run this check when the cluster is under 50% CPU utilization.
 
 .Steps for a cluster that hasn't been set up for tiering
 
-. At the top of Cloud Manager, click *Tiering*.
+. From the left navigation menu, select *Mobility > Tiering*.
 
 . From the *Cluster Dashboard*, click the menu icon for a cluster and select *Cloud Performance Test*.
 
@@ -39,7 +39,7 @@ The information that you need to provide is the same as if you were setting up t
 
 .Steps for a cluster that has been set up for tiering
 
-. At the top of Cloud Manager, click *Tiering*.
+. From the left navigation menu, select *Mobility > Tiering*.
 
 . From the *Cluster Dashboard*, click the menu icon for a cluster and select *Cloud Performance Test*.
 
