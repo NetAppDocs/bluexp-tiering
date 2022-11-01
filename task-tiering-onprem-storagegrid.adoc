@@ -33,7 +33,7 @@ You need the following:
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
 [role="quick-margin-para"]
-In Cloud Manager, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to StorageGRID.
+In BlueXP, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to StorageGRID.
 
 == Requirements
 
@@ -59,7 +59,7 @@ ONTAP 9.4 or later
 include::_include/tiering-admin-app-access.adoc[]
 
 Licensing::
-A Cloud Tiering license isn’t required in your Cloud Manager account, nor is a FabricPool license required on the ONTAP cluster, when tiering data to StorageGRID.
+A Cloud Tiering license isn’t required in your BlueXP account, nor is a FabricPool license required on the ONTAP cluster, when tiering data to StorageGRID.
 
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port to the StorageGRID Gateway Node (the port is configurable during tiering setup).
@@ -80,7 +80,7 @@ NOTE: Cloud Tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup w
 
 === Discovering an ONTAP cluster
 
-You need to create an on-prem ONTAP working environment in the Cloud Manager Canvas before you can start tiering cold data.
+You need to create an on-prem ONTAP working environment in the BlueXP Canvas before you can start tiering cold data.
 
 https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 

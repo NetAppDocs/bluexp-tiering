@@ -23,7 +23,7 @@ TIP: You don't need to configure the object storage because it was already confi
 
 .Steps
 
-. At the top of Cloud Manager, click *Tiering*.
+. From the left navigation menu, select *Mobility > Tiering*.
 
 . From the *Clusters Dashboard*, click *Basic Tiering Setup* for the cluster.
 +
@@ -54,7 +54,7 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 
 .Steps
 
-. At the top of Cloud Manager, click *Tiering*.
+. From the left navigation menu, select *Mobility > Tiering*.
 
 . From the *Clusters Dashboard*, click *Tier Volumes* for the cluster.
 
@@ -94,7 +94,7 @@ NOTE: You may be charged by your cloud provider based on that amount of data tra
 
 Make sure you have enough space in the performance tier for all the data that is being moved from the cloud.
 
-. At the top of Cloud Manager, click *Tiering*.
+. From the left navigation menu, select *Mobility > Tiering*.
 
 . From the *Clusters Dashboard*, click *Tier Volumes* for the cluster.
 
@@ -142,7 +142,7 @@ You might want to see how much data is in the cloud tier and how much data is on
 
 .Steps
 
-. At the top of Cloud Manager, click *Tiering*.
+. From the left navigation menu, select *Mobility > Tiering*.
 
 . From the *Clusters Dashboard*, click the menu icon for a cluster and select *Cluster info*.
 
@@ -158,7 +158,7 @@ image:screenshot_tiering_aiq_fabricpool_info.png["A screenshot that shows Fabric
 
 == Fixing operational health
 
-Failures can happen. When they do, Cloud Tiering displays a "Failed" operational health status on the Cluster Dashboard. The health reflects the status of the ONTAP system and Cloud Manager.
+Failures can happen. When they do, Cloud Tiering displays a "Failed" operational health status on the Cluster Dashboard. The health reflects the status of the ONTAP system and BlueXP.
 
 .Steps
 
@@ -172,11 +172,11 @@ image:https://docs.netapp.com/us-en/cloud-tiering/media/screenshot_tiering_healt
 
 .. Verify that the ONTAP cluster is operational and that it has an inbound and outbound connection to your object storage provider.
 
-.. Verify that Cloud Manager has outbound connections to the Cloud Tiering service, to the object store, and to the ONTAP clusters that it discovers.
+.. Verify that BlueXP has outbound connections to the Cloud Tiering service, to the object store, and to the ONTAP clusters that it discovers.
 
 == Discovering additional clusters from Cloud Tiering
 
-You can add your undiscovered on-prem ONTAP clusters to Cloud Manager from the Tiering _Cluster Dashboard_ so that you can enable tiering for the cluster.
+You can add your undiscovered on-prem ONTAP clusters to BlueXP from the Tiering _Cluster Dashboard_ so that you can enable tiering for the cluster.
 
 Note that buttons also appear on the Tiering _On-Prem Overview_ page for you to discover additional clusters.
 
@@ -188,15 +188,15 @@ Note that buttons also appear on the Tiering _On-Prem Overview_ page for you to 
 +
 image:screenshot_tiering_show_undiscovered_cluster.png[A screenshot showing the Show Undiscovered Clusters button on the Tiering Dashboard.]
 +
-If your NSS credentials are saved in Cloud Manager, the clusters in your account are displayed in the list.
+If your NSS credentials are saved in BlueXP, the clusters in your account are displayed in the list.
 +
-If your NSS credentials are not saved in Cloud Manager, you are first prompted to add your credentials before you can see the undiscovered clusters.
+If your NSS credentials are not saved in BlueXP, you are first prompted to add your credentials before you can see the undiscovered clusters.
 
 . Scroll down the page to locate the clusters.
 +
-image:screenshot_tiering_discover_cluster.png[A screenshot showing how to discover an existing cluster to add to Cloud Manager and the Tiering Dashboard.]
+image:screenshot_tiering_discover_cluster.png[A screenshot showing how to discover an existing cluster to add to BlueXP and the Tiering Dashboard.]
 
-. Click *Discover Cluster* for the cluster that you want to manage through Cloud Manager and implement data tiering.
+. Click *Discover Cluster* for the cluster that you want to manage through BlueXP and implement data tiering.
 
 . On the _Choose a Location_ page *On-Premises ONTAP* is pre-selected, so just click *Continue*.
 
@@ -208,6 +208,6 @@ Note that the cluster management IP address is populated based on information fr
 
 .Result
 
-Cloud Manager discovers the cluster and adds it to a working environment in the Canvas using the cluster name as the working environment name.
+BlueXP discovers the cluster and adds it to a working environment in the Canvas using the cluster name as the working environment name.
 
 You can enable the Tiering service or other services for this cluster in the right panel.

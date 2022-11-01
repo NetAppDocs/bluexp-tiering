@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-support-registration.html
 keywords: support registration, register for support, support, nss account, add nss account,
-summary: Before you can open a support case with NetApp technical support, you need to add a NetApp Support Site account to Cloud Manager and then register for support.
+summary: Before you can open a support case with NetApp technical support, you need to add a NetApp Support Site account to BlueXP and then register for support.
 ---
 
 = Register for support
