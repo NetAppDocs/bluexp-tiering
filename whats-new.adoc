@@ -16,7 +16,7 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
-== 2 November 2022
+== 6 November 2022
 
 === Drag and drop to enable Cloud Tiering to Azure Blob, Google Cloud Storage, and StorageGRID
 
