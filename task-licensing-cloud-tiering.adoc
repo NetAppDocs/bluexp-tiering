@@ -17,7 +17,7 @@ A 30-day free trial of Cloud Tiering starts when you set up tiering from your fi
 
 A few notes before you read any further:
 
-* If you've already subscribed to the Cloud Manager subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You’ll see an active subscription in the Cloud Tiering *Licensing* tab. You won’t need to subscribe again.
+* If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You’ll see an active subscription in the Cloud Tiering *Licensing* tab. You won’t need to subscribe again.
 // You'll see an active subscription in the Digital Wallet.
 
 * The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. This is different than in the past where you purchased a _FabricPool_ license for each cluster.
