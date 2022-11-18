@@ -69,7 +69,7 @@ In addition to tiering data from your AFF and FAS systems, now you can tier inac
 
 === Cloud Tiering BYOL license replaces FabricPool license
 
-A new *Cloud Tiering* license is now available for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within Cloud Manager.
+A new *Cloud Tiering* license is now available for tiering configurations that are supported within BlueXP using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within BlueXP.
 
 https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
 
