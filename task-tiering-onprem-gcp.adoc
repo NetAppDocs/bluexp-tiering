@@ -41,7 +41,7 @@ In BlueXP, select an on-prem working environment, click *Enable* for the Tiering
 After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP Cloud Tiering BYOL license, or a combination of both:
 
 [role="quick-margin-list"]
-* To subscribe from the GCP Marketplace, https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[go to the Cloud Manager Marketplace offering^], click *Subscribe*, and then follow the prompts.
+* To subscribe from the GCP Marketplace, https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[go to the BlueXP Marketplace offering^], click *Subscribe*, and then follow the prompts.
 * To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
 
 == Requirements

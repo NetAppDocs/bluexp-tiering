@@ -93,7 +93,7 @@ Yes. Cloud Tiering allows you to use a BYOL license, a PAYGO subscription, or a 
 
 === What happens if I have reached the BYOL capacity limit?
 
-If you reach a BYOL capacity limit, tiering of new cold data stops while all previously tiered data remains accessible. If you have a PAYGO marketplace subscription to the _Cloud Manager - Deploy & Manage Cloud Data Services_, new cold data will continue to be tiered to object storage and you'll pay for those charges on a per-use basis.
+If you reach a BYOL capacity limit, tiering of new cold data stops while all previously tiered data remains accessible. If you have a PAYGO marketplace subscription to the _BlueXP - Deploy & Manage Cloud Data Services_, new cold data will continue to be tiered to object storage and you'll pay for those charges on a per-use basis.
 
 === Does the Cloud Tiering license include the egress charges from the cloud provider?
 
@@ -143,7 +143,7 @@ If you have Cloud Volumes ONTAP systems, you'll find them in the Cloud Tiering C
 
 It depends on where you tier the cold data. Refer to the following links for more details:
 
-* link:task-tiering-onprem-aws.html#preparing-your-ontap-clusters[Tiering data to Amazon S3]
+* link:task-tiering-onprem-aws.html#prepare-your-ontap-cluster[Tiering data to Amazon S3]
 * link:task-tiering-onprem-azure.html#preparing-your-ontap-clusters[Tiering data to Azure Blob storage]
 * link:task-tiering-onprem-gcp.html#preparing-your-ontap-clusters[Tiering data to Google Cloud Storage]
 * link:task-tiering-onprem-storagegrid.html#preparing-your-ontap-clusters[Tiering data to StorageGRID]
