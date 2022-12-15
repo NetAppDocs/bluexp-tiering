@@ -16,6 +16,27 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 6 December 2022
+
+=== Required Connector outbound internet access endpoint changes
+
+Because of a change in Cloud Tiering, you need to change the following Connector endpoints for successful Cloud Tiering operation:
+
+[cols=2*,options="header",cols="50,50",width="80%"]
+|===
+
+| Old endpoint
+| New endpoint
+
+| \https://cloudmanager.cloud.netapp.com
+| \https://api.bluexp.netapp.com
+| \https://*.cloudmanager.cloud.netapp.com
+| \https://*.api.bluexp.netapp.com
+
+|===
+
+See the full list of endpoints for your https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access[AWS^], https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access[Google Cloud^], or https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access[Azure^] cloud environment.
+
 == 6 November 2022
 
 === Drag and drop to enable Cloud Tiering to Azure Blob, Google Cloud Storage, and StorageGRID
@@ -37,6 +58,7 @@ If the Amazon S3 tiering destination exists as a working environment on the Canv
 === Choose the tiering behavior when removing the mirror object store in a MetroCluster configuration
 
 When removing the mirror object store from a MetroCluster configuration, you’ll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
+// end::whats-new[]
 
 == 3 August 2022
 
@@ -47,7 +69,6 @@ The Cloud Tiering UI has added a new set of pages for object storage configurati
 === Cloud Tiering license support for MetroCluster configurations
 
 Cloud Tiering licenses can now be shared with your clusters that are in MetroCluster configurations. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
-// end::whats-new[]
 
 == 3 May 2022
 
@@ -64,15 +85,3 @@ When setting up Cloud Tiering, now you can configure a lifecycle rule so your in
 === Cloud Tiering has been fully qualified on ONTAP Select systems
 
 In addition to tiering data from your AFF and FAS systems, now you can tier inactive data from your ONTAP Select systems to cloud storage.
-
-== 2 September 2021
-
-=== Cloud Tiering BYOL license replaces FabricPool license
-
-A new *Cloud Tiering* license is now available for tiering configurations that are supported within BlueXP using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The *FabricPool* license that you may have used in the past is retained only for configurations that aren’t supported within BlueXP.
-
-https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[Learn more about the new Cloud Tiering license].
-
-=== Tier inactive data from on-prem ONTAP clusters to S3-compatible object storage
-
-Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html[See how to tier data to S3-compatible object storage].

@@ -66,7 +66,7 @@ NOTE: You can't select lifecycle rules for data tiered to StorageGRID or S3-comp
 
 == Pricing and licenses
 
-Pay for Cloud Tiering through a pay-as-you-go subscription, an annual subscription, a bring-your-own Cloud Tiering license, or a combination. A 30-day free trial is available for your first cluster if you don’t have a license.
+Pay for Cloud Tiering through a pay-as-you-go subscription, an annual subscription, a bring-your-own Cloud Tiering license, or a combination. A 30-day free trial is available for your first cluster if you don't have a license.
 
 There are no charges when tiering data to StorageGRID. Neither a BYOL license or PAYGO registration is required.
 
@@ -80,13 +80,13 @@ If your free trial ends and you haven't subscribed or added a license, then ONTA
 
 === Pay-as-you-go subscription
 
-Cloud Tiering offers consumption-based licensing in a pay-as-you-go model. After subscribing through your cloud provider's marketplace, you pay per GB for data that's tiered--there’s no up-front payment. You are billed by your cloud provider through your monthly bill.
+Cloud Tiering offers consumption-based licensing in a pay-as-you-go model. After subscribing through your cloud provider's marketplace, you pay per GB for data that's tiered--there's no up-front payment. You are billed by your cloud provider through your monthly bill.
 
 You should subscribe even if you have a free trial or if you bring your own license (BYOL):
 
-* Subscribing ensures that there’s no disruption of service after your free trial ends.
+* Subscribing ensures that there's no disruption of service after your free trial ends.
 +
-When the trial ends, you’ll be charged hourly according to the amount of data that you tier.
+When the trial ends, you'll be charged hourly according to the amount of data that you tier.
 
 * If you tier more data than allowed by your BYOL license, then data tiering continues through your pay-as-you-go subscription.
 +
