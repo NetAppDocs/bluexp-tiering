@@ -45,8 +45,8 @@ You can tier inactive data from an on-premises ONTAP system to the following obj
 * Amazon S3
 * Microsoft Azure Blob
 * Google Cloud Storage
-* S3-compatible object storage
 * NetApp StorageGRID
+* S3-compatible object storage
 
 Cloud Tiering licenses can also be shared with your clusters that are tiering data to IBM Cloud Object Storage. The FabricPool configuration must be set up using System Manager or the ONTAP CLI, but https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations[licensing for this type of configuration is completed using Cloud Tiering.]
 

@@ -161,10 +161,10 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 . Complete the steps on the *Create Object Storage* pages:
 
 .. *Resource Group*: Select a resource group where an existing container is managed, or where you would like to create a new container for tiered data, and click *Continue*.
++
+When using an on-prem Connector, you must enter the Azure Subscription that provides access to the resource group.
 
 .. *Azure Container*: Add a new Blob container to a storage account, or select an existing container, and click *Continue*.
-+
-When using an on-prem Connector, you must enter the Azure Subscription that provides access to the existing container or new container that will be created.
 +
 The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
 
