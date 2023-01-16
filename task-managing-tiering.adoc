@@ -32,8 +32,8 @@ image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to sel
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
 +
-* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Configure volumes*.
-* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[""]) and click *Configure volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[""]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
 image:screenshot_tiering_tier_volumes.png[A screenshot that shows how to select a single volume, multiple volume, or all volumes, and the modify selected volumes button.]
@@ -98,7 +98,7 @@ Make sure you have enough space in the performance tier for all the data that is
 
 . From the *Clusters Dashboard*, click *Tier Volumes* for the cluster.
 
-. Click the image:screenshot_edit_icon.gif[A screenshot of the edit icon that appears at the end of each row in the table for tiering volumes] icon for the volume, choose the retrieval option you want to use, and click *Apply*.
+. Click the image:screenshot_edit_icon.gif[edit icon that appears at the end of each row in the table for tiering volumes] icon for the volume, choose the retrieval option you want to use, and click *Apply*.
 +
 image:screenshot_tiering_policy_settings_with_retrieve.png[A screenshot that shows the configurable tiering policy settings.]
 
@@ -163,10 +163,8 @@ Failures can happen. When they do, Cloud Tiering displays a "Failed" operational
 .Steps
 
 . Identify any clusters that have an operational health of "Failed."
-+
-image:screenshot_tiering_health.gif[A screenshot that shows a Failed tiering health status for a cluster.]
 
-. Hover over the image:screenshot_info_icon.gif[A screenshot of the i icon that shows the failure reason] icon to see the failure reason.
+. Hover over the informational "i" icon see the failure reason.
 
 . Correct the issue:
 
