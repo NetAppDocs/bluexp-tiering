@@ -130,9 +130,11 @@ A VNet service endpoint to Azure storage is recommended if you have an ExpressRo
 
 When you set up tiering, you need to identify the resource group you want to use, and the storage account and Azure container that belong to the resource group. A storage account enables Cloud Tiering to authenticate and access the Blob container used for data tiering.
 
-Cloud Tiering supports only the General Purpose v2 and Premium Block Blob types of storage accounts.
+Cloud Tiering supports tiering to any storage account in any region that can be accessed via the Connector.
 
-The Blob container must be in a link:reference-azure-support.html#supported-azure-regions[region that supports Cloud Tiering].
+Cloud Tiering supports only the General Purpose v2 and Premium Block Blob types of storage accounts.
+//
+//The Blob container must be in a link:reference-azure-support.html#supported-azure-regions[region that supports Cloud Tiering].
 
 NOTE: If you are planning to configure Cloud Tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the container in your Azure account. Cloud Tiering manages the life cycle transitions.
 
@@ -187,8 +189,8 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
 +
-* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Configure volumes*.
-* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[""]) and click *Configure volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[""]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
 image:screenshot_tiering_tier_volumes.png[A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button.]

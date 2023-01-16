@@ -27,46 +27,48 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview[Learn
 
 == Supported Azure regions
 
-Cloud Tiering supports the following Azure regions.
+Cloud Tiering supports tiering to any storage account in any region that can be accessed via the Connector.
 
-=== Africa
-
-* South Africa North
-
-=== Asia Pacific
-
-* Australia East
-* Australia Southeast
-* East Asia
-* Japan East
-* Japan West
-* Korea Central
-* Korea South
-* Southeast Asia
-
-=== Europe
-
-* France Central
-* Germany West Central
-* Germany North
-* North Europe
-* UK South
-* UK West
-* West Europe
-
-=== North America
-
-* Canada Central
-* Canada East
-* Central US
-* East US
-* East US 2
-* North Central US
-* South Central US
-* West US
-* West US 2
-* West Central US
-
-=== South America
-
-* Brazil South
+//Cloud Tiering supports the following Azure regions.
+//
+//=== Africa
+//
+//* South Africa North
+//
+//=== Asia Pacific
+//
+//* Australia East
+//* Australia Southeast
+//* East Asia
+//* Japan East
+//* Japan West
+//* Korea Central
+//* Korea South
+//* Southeast Asia
+//
+//=== Europe
+//
+//* France Central
+//* Germany West Central
+//* Germany North
+//* North Europe
+//* UK South
+//* UK West
+//* West Europe
+//
+//=== North America
+//
+//* Canada Central
+//* Canada East
+//* Central US
+//* East US
+//* East US 2
+//* North Central US
+//* South Central US
+//* West US
+//* West US 2
+//* West Central US
+//
+//=== South America
+//
+//* Brazil South
