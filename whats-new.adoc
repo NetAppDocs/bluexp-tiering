@@ -18,7 +18,7 @@ Learn what's new in Cloud Tiering.
 // tag::whats-new[]
 == 6 December 2022
 
-=== Required Connector outbound internet access endpoint changes
+=== Connector outbound internet access endpoint changes
 
 Because of a change in Cloud Tiering, you need to change the following Connector endpoints for successful Cloud Tiering operation:
 

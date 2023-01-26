@@ -139,15 +139,16 @@ Ensure that the Connector has the required networking connections.
 After you prepare your environment, start tiering inactive data from your first cluster.
 
 .What you'll need
+
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
 * The FQDN of the S3-compatible object storage server and the port that will be used for HTTPS communications.
 * An access key and secret key that has the required S3 permissions.
 
 .Steps
 
-. Select an on-prem cluster.
+. Select the on-prem ONTAP working environment.
 
-. In the right panel, click *Enable* for the Tiering service.
+. Click *Enable* for the Tiering service from the right panel.
 +
 image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Tiering option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
 
@@ -170,8 +171,8 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and click *Continue*:
 
 +
-* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Configure volumes*.
-* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[""]) and click *Configure volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[""]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
 image:screenshot_tiering_tier_volumes.png["A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button."]
@@ -187,6 +188,7 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 You've successfully set up data tiering from volumes on the cluster to S3-compatible object storage.
 
 .What's next?
+
 link:task-licensing-cloud-tiering.html[Be sure to subscribe to the Cloud Tiering service].
 
 You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].

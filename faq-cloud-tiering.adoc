@@ -46,11 +46,11 @@ Yes, the ONTAP volume-level storage efficiencies such as compression, deduplicat
 
 === What is the difference between FabricPool and Cloud Tiering?
 
-FabricPool is ONTAP’s tiering technology that can be self-managed through the ONTAP CLI and System Manager, or managed as-a-service through Cloud Tiering. Cloud Tiering turns FabricPool into a managed service with advanced automation processes, on both ONTAP and in the cloud, providing greater visibility and control over tiering across hybrid and multi-cloud deployments.
+FabricPool is the ONTAP tiering technology that can be self-managed through the ONTAP CLI and System Manager, or managed as-a-service through Cloud Tiering. Cloud Tiering turns FabricPool into a managed service with advanced automation processes, on both ONTAP and in the cloud, providing greater visibility and control over tiering across hybrid and multi-cloud deployments.
 
 === Can the data tiered to the cloud be used for disaster recovery or for backup/archive?
 
-No. Since the volume’s metadata is never tiered from the performance tier, the data stored in object storage cannot be accessed directly.
+No. Since the volume's metadata is never tiered from the performance tier, the data stored in object storage cannot be accessed directly.
 
 However, Cloud Tiering can be used to achieve cost-effective backup and DR by enabling it on secondary systems and SnapMirror destination volumes (DP volumes), to tier off all of the data (metadata excluded), thus reducing your data center footprint and TCO.
 
@@ -64,7 +64,7 @@ The tiering policy associated with the volume is the mechanism that controls whi
 
 === How does Cloud Tiering affect the volume capacity?
 
-Cloud Tiering has no effect on the volume’s capacity but rather on the aggregate’s performance tier usage.
+Cloud Tiering has no effect on the volume's capacity but rather on the aggregate's performance tier usage.
 
 === Does Cloud Tiering enable Inactive Data Reporting?
 
@@ -111,7 +111,7 @@ The best way to estimate how much a cloud provider will charge for hosting your 
 
 Yes. Check https://aws.amazon.com/s3/pricing/[Amazon S3 Pricing], https://azure.microsoft.com/en-us/pricing/details/storage/blobs/[Block Blob Pricing], and https://cloud.google.com/storage/pricing[Cloud Storage Pricing] for additional pricing incurred with data reading/retrieving.
 
-=== How can I estimate my volumes’ savings and get a cold data report before I enable Cloud Tiering?
+=== How can I estimate my volumes' savings and get a cold data report before I enable Cloud Tiering?
 
 To get an estimate, simply add your ONTAP cluster to BlueXP and inspect it through the Cloud Tiering Clusters Dashboard, which is located in the Tiering tab. When Inactive Data Reporting (IDR) is disabled or has not yet been activated for a long enough period of time, Cloud Tiering uses an industry-constant of 70% to calculate the estimated savings. Once IDR data is available, Cloud Tiering updates the savings to accurate figures.
 
@@ -226,11 +226,11 @@ Write back is generally performed on reads and depends on the tiering policy typ
 
 === When replacing an existing AFF/FAS controller with a new one, would the tiered data be migrated back on-prem?
 
-No. During the “head swap” procedure, the only thing that changes is the aggregate’s ownership. In this case, it will be changed to the new controller without any data movement.
+No. During the “head swap” procedure, the only thing that changes is the aggregate's ownership. In this case, it will be changed to the new controller without any data movement.
 
-=== Can I use the cloud provider’s console or object storage explorers to look at the data tiered to a bucket? Can I use the data stored in the object storage directly without ONTAP?
+=== Can I use the cloud provider's console or object storage explorers to look at the data tiered to a bucket? Can I use the data stored in the object storage directly without ONTAP?
 
-No. The objects constructed and tiered to the cloud do not contain a single file but up to 1,024 4KB blocks from multiple files. A volume’s metadata always remains on the local tier.
+No. The objects constructed and tiered to the cloud do not contain a single file but up to 1,024 4KB blocks from multiple files. A volume's metadata always remains on the local tier.
 
 == Connectors
 
@@ -274,7 +274,7 @@ link:concept-cloud-tiering.html#volume-tiering-policies[Learn more about Tiering
 
 === At which point is my data is considered cold?
 
-Since data tiering is done at the block level, a data block is considered cold after it hasn’t been accessed for a certain period of time, which is defined by the tiering policy’s minimum-cooling-days attribute. The applicable range is 2-63 days with ONTAP 9.7 and earlier, or 2-183 days starting with ONTAP 9.8.
+Since data tiering is done at the block level, a data block is considered cold after it hasn't been accessed for a certain period of time, which is defined by the tiering policy's minimum-cooling-days attribute. The applicable range is 2-63 days with ONTAP 9.7 and earlier, or 2-183 days starting with ONTAP 9.8.
 
 === What is the default cooling period for data before it is tiered to the cloud tier?
 

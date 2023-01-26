@@ -13,16 +13,16 @@ summary: A 30-day free trial of Cloud Tiering starts when you set up tiering fro
 :imagesdir: ./media/
 
 [.lead]
-A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you’ll need to pay for Cloud Tiering through a pay-as-you-go or annual subscription from your cloud provider’s marketplace, a BYOL license from NetApp, or a combination of both.
+A 30-day free trial of Cloud Tiering starts when you set up tiering from your first cluster. After the free trial ends, you'll need to pay for Cloud Tiering through a pay-as-you-go or annual subscription from your cloud provider's marketplace, a BYOL license from NetApp, or a combination of both.
 
 A few notes before you read any further:
 
-* If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You’ll see an active subscription in the Cloud Tiering *Licensing* tab. You won’t need to subscribe again.
+* If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to Cloud Tiering from on-premises ONTAP systems as well. You'll see an active subscription in the Cloud Tiering *Licensing* tab. You won't need to subscribe again.
 // You'll see an active subscription in the Digital Wallet.
 
 * The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. This is different than in the past where you purchased a _FabricPool_ license for each cluster.
 
-* There are no charges when tiering data to StorageGRID, so neither a BYOL license or PAYGO registration is required. This tiered data doesn’t count against the capacity purchased in your license.
+* There are no charges when tiering data to StorageGRID, so neither a BYOL license or PAYGO registration is required. This tiered data doesn't count against the capacity purchased in your license.
 
 link:concept-cloud-tiering.html#pricing-and-licenses[Learn more about how licensing works for Cloud Tiering].
 
@@ -188,7 +188,7 @@ You can update your Cloud Tiering license before it expires so that there is no 
 +
 After you pay for the license and it is registered with the NetApp Support Site, BlueXP automatically updates the license in the Digital Wallet and the Data Services Licenses page will reflect the change in 5 to 10 minutes.
 
-. If BlueXP can't automatically update the license, then you’ll need to manually upload the license file.
+. If BlueXP can't automatically update the license, then you'll need to manually upload the license file.
 .. You can <<Obtain your Cloud Tiering license file,obtain the license file from the NetApp Support Site>>.
 .. On the Digital Wallet page in the _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
 +
