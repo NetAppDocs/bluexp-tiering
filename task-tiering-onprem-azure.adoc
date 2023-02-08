@@ -162,7 +162,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 +
 When using an on-prem Connector, you must enter the Azure Subscription that provides access to the resource group.
 
-.. *Azure Container*: Select the radio button to add a new Blob container to a storage account or to use an existing container. Then select the storage account and choose the existing container, or enter the name for the new container. Then click *Continue*.
+.. *Azure Container*: Select the radio button to either add a new Blob container to a storage account or to use an existing container. Then select the storage account and choose the existing container, or enter the name for the new container. Then click *Continue*.
 +
 The storage accounts and containers that appear in this step belong to the resource group that you selected in the previous step.
 

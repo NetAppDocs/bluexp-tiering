@@ -130,7 +130,7 @@ NOTE: If you are planning to configure Cloud Tiering to use lower cost storage c
 
 . Go to https://console.cloud.google.com/storage/settings[GCP Storage Settings^] and create access keys for the service account:
 
-.. Select a project, and click *Interoperability*. If you haven’t already done so, click *Enable interoperability access*.
+.. Select a project, and click *Interoperability*. If you haven't already done so, click *Enable interoperability access*.
 
 .. Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
 +
