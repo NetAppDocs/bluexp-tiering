@@ -130,7 +130,7 @@ NOTE: If you are planning to configure Cloud Tiering to use lower cost storage c
 
 . Go to https://console.cloud.google.com/storage/settings[GCP Storage Settings^] and create access keys for the service account:
 
-.. Select a project, and click *Interoperability*. If you haven’t already done so, click *Enable interoperability access*.
+.. Select a project, and click *Interoperability*. If you haven't already done so, click *Enable interoperability access*.
 
 .. Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
 +
@@ -141,14 +141,15 @@ You'll need to enter the keys later when you set up Cloud Tiering.
 After you prepare your Google Cloud environment, start tiering inactive data from your first cluster.
 
 .What you'll need
+
 * https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
 * Storage access keys for a service account that has the Storage Admin role.
 
 .Steps
 
-. Select an on-prem cluster.
+. Select the on-prem ONTAP working environment.
 
-. Click *Enable* for the Tiering service.
+. Click *Enable* for the Tiering service from the right panel.
 +
 If the Google Cloud Storage tiering destination exists as a working environment on the Canvas, you can drag the cluster onto the Google Cloud Storage working environment to initiate the setup wizard.
 +
@@ -183,8 +184,8 @@ Selecting the correct IPspace ensures that Cloud Tiering can set up a connection
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
 +
-* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[]) and click *Configure volumes*.
-* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[]) and click *Configure volumes*.
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[""]) and click *Configure volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[""]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
 image:screenshot_tiering_tier_volumes.png[A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button.]
@@ -200,6 +201,7 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 You've successfully set up data tiering from volumes on the cluster to Google Cloud object storage.
 
 .What's next?
+
 link:task-licensing-cloud-tiering.html[Be sure to subscribe to the Cloud Tiering service].
 
 You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].

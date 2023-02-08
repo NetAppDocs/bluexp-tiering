@@ -32,7 +32,7 @@ You need the following:
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
 [role="quick-margin-para"]
-In BlueXP, select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Azure Blob storage.
+In BlueXP, select an on-prem ONTAP working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Azure Blob storage.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up licensing
 
@@ -93,7 +93,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 === Creating or switching Connectors
 
-A Connector is required to tier data to the cloud. When tiering data to Azure Blob storage, you can use a Connector that’s in an Azure VNet or on your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in Azure or on-prem.
+A Connector is required to tier data to the cloud. When tiering data to Azure Blob storage, you can use a Connector that's in an Azure VNet or in your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in Azure or on-prem.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html[Deploying a Connector in Azure^]
@@ -102,13 +102,9 @@ A Connector is required to tier data to the cloud. When tiering data to Azure Bl
 
 === Verify that you have the necessary Connector permissions
 
-If you created the Connector using BlueXP version 3.9.7 or greater, then you're all set.
+If you created the Connector using BlueXP version 3.9.25 or greater, then you're all set. The custom role that provides the permissions that a Connector needs to manage resources and processes within your Azure network will be set up by default. See the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html#custom-role-permissions[required custom role permissions^] and the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html#cloud-tiering[specific permissions required for Cloud Tiering^].
 
-If you created the Connector using an earlier version of BlueXP, then you'll need to edit the permission list to add 2 required permissions:
-
-[source,json]
-Microsoft.Storage/storageAccounts/managementPolicies/read
-Microsoft.Storage/storageAccounts/managementPolicies/write
+If you created the Connector using an earlier version of BlueXP, then you'll need to edit the permission list for the Azure account to add any missing permissions.
 
 === Preparing networking for the Connector
 
@@ -148,9 +144,9 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 .Steps
 
-. Select an on-prem cluster.
+. Select the on-prem ONTAP working environment.
 
-. Click *Enable* for the Tiering service.
+. Click *Enable* for the Tiering service from the right panel.
 +
 If the Azure Blob tiering destination exists as a working environment on the Canvas, you can drag the cluster onto the Azure Blob working environment to initiate the setup wizard.
 +
@@ -162,13 +158,13 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 . Complete the steps on the *Create Object Storage* pages:
 
-.. *Resource Group*: Select a resource group where an existing container is managed, or where you would like to create a new container for tiered data, and click *Continue*.
+.. *Resource Group*: Select a resource group where an existing container is managed, or where you'd like to create a new container for tiered data, and click *Continue*.
 +
 When using an on-prem Connector, you must enter the Azure Subscription that provides access to the resource group.
 
-.. *Azure Container*: Add a new Blob container to a storage account, or select an existing container, and click *Continue*.
+.. *Azure Container*: Select the radio button to either add a new Blob container to a storage account or to use an existing container. Then select the storage account and choose the existing container, or enter the name for the new container. Then click *Continue*.
 +
-The storage account and containers that appear in this step belong to the resource group that you selected in the previous step.
+The storage accounts and containers that appear in this step belong to the resource group that you selected in the previous step.
 
 .. *Access Tier Life Cycle*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Hot_ class, but you can create a rule to move the data to the _Cool_ class after a certain number of days.
 +
@@ -179,8 +175,6 @@ If you choose *Keep data in this access tier*, then the data remains in the _Hot
 image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
 +
 Note that the life cycle rule is applied to all blob containers in the selected storage account.
-+
-<<Verify that you have the necessary Connector permissions,Verify that you have the necessary Connector permissions>> for the life cycle management feature.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
@@ -206,6 +200,7 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 You've successfully set up data tiering from volumes on the cluster to Azure Blob object storage.
 
 .What's next?
+
 link:task-licensing-cloud-tiering.html[Be sure to subscribe to the Cloud Tiering service].
 
 You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].

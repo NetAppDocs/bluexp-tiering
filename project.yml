@@ -69,7 +69,7 @@ homepage:
       links:
         - title: Learn about Cloud Tiering
           url: concept-cloud-tiering.html
-        - title: What’s New
+        - title: What's New
           url: whats-new.html
         - title: Set up licensing
           url: task-licensing-cloud-tiering.html
@@ -87,7 +87,7 @@ homepage:
           url: task-tiering-onprem-s3-compat.html
     - title: Manage tiering settings
       links:
-        - title: Change a volume’s tiering policy
+        - title: Change a volume's tiering policy
           url: task-managing-tiering.html#changing-a-volumes-tiering-policy
         - title: Review tiering info for a cluster
           url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
@@ -110,12 +110,12 @@ homepage:
     - title: Blogs & community
       links:
         - title: NetApp Community
-          url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
-        - title: BlueXP blog
-          url: https://cloud.netapp.com/blog
+          url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
+        - title: Cloud Tiering blog
+          url: https://bluexp.netapp.com/blog/topic/cloud-tiering
         - title: Cloud webinars
-          url: https://cloud.netapp.com/events
+          url: https://bluexp.netapp.com/events
     - title: Other resources
       links:
         - title: BlueXP use cases
-          url: https://cloud.netapp.com/cloud-tiering
+          url: https://bluexp.netapp.com/cloud-tiering
