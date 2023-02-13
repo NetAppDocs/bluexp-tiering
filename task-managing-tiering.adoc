@@ -70,6 +70,12 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 
 The tiering policy is changed and data begins to be tiered based on the new policy.
 
+== Download a tiering report for your volumes
+
+You can download a report of the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. Just click the image:button_download.png[Download] button. Cloud Tiering generates a .CSV file that you can review and send to other groups as needed. The .CSV file includes up to 10,000 rows of data.
+
+image:screenshot_tiering_report_download.png[A screenshot showing how to generate a CSV file listing the tiering status of all your volumes.]
+
 == Migrating data from the cloud tier back to the performance tier
 
 Tiered data that is accessed from the cloud may be "re-heated" and moved back to the performance tier. However, if you want to proactively promote data to the performance tier from the cloud tier, you can do this in the _Tiering Policy_ dialog. This capability is available when using ONTAP 9.8 and greater.

@@ -16,6 +16,12 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 5 March 2023
+
+=== Generate a tiering report for your volumes
+
+You can download a report of the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. Cloud Tiering generates a .CSV file that you can review and send to other groups as needed. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
+
 == 6 December 2022
 
 === Connector outbound internet access endpoint changes
@@ -42,6 +48,7 @@ See the full list of endpoints for your https://docs.netapp.com/us-en/cloud-mana
 === Drag and drop to enable Cloud Tiering to Azure Blob, Google Cloud Storage, and StorageGRID
 
 If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
+// end::whats-new[]
 
 == 19 September 2022
 
@@ -58,7 +65,6 @@ If the Amazon S3 tiering destination exists as a working environment on the Canv
 === Choose the tiering behavior when removing the mirror object store in a MetroCluster configuration
 
 When removing the mirror object store from a MetroCluster configuration, you’ll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
-// end::whats-new[]
 
 == 3 August 2022
 
