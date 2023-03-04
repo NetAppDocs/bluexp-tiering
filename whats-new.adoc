@@ -18,9 +18,9 @@ Learn what's new in Cloud Tiering.
 // tag::whats-new[]
 == 5 March 2023
 
-=== Generate a tiering report for your volumes
+=== No you can generate a tiering report for your volumes
 
-You can download a report of the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. Cloud Tiering generates a .CSV file that you can review and send to other groups as needed. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
+You can download a report from the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. Cloud Tiering generates a .CSV file that you can review and send to other people in your company as needed. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
 
 == 6 December 2022
 
