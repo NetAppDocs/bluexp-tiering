@@ -72,6 +72,8 @@ There are no charges when tiering data to StorageGRID. Neither a BYOL license or
 
 https://bluexp.netapp.com/pricing#tiering[View pricing details^].
 
+Since Cloud Tiering preserves the storage efficiencies of the source volume, you pay the cloud provider object storage costs for the tiered data after ONTAP efficiencies (for the smaller amount of data after deduplication and compression have been applied).
+
 === 30-day free trial
 
 If you don't have a Cloud Tiering license, a 30-day free trial of Cloud Tiering starts when you set up tiering to your first cluster. After that 30-day free trial ends, you'll need to pay for Cloud Tiering through a pay-as-you-go subscription, annual subscription, a BYOL license, or a combination.
