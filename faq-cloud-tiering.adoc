@@ -161,7 +161,7 @@ Cloud Tiering supports the following object storage providers:
 * Microsoft Azure Blob
 * Google Cloud Storage
 * NetApp StorageGRID
-* S3-compatible object storage
+* S3-compatible object storage (for example, MinIO)
 * IBM Cloud Object Storage (the FabricPool configuration must be done using System Manager or the ONTAP CLI)
 
 === Can I use my own bucket/container?
@@ -182,7 +182,7 @@ Cloud Tiering supports data tiering to the _Standard_, _Standard-Infrequent Acce
 
 The main reason Amazon S3 Glacier Flexible and S3 Glacier Deep Archive aren't supported is that Cloud Tiering is designed as a high-performance tiering solution, so data must be continuously available and quickly accessible for retrieval. With S3 Glacier Flexible and S3 Glacier Deep Archive, data retrieval can last anywhere between a few minutes to 48 hours.
 
-=== Can I use other S3-compatible object storage services, such as Wasabi, with Cloud Tiering?
+=== Can I use other S3-compatible object storage services, such as MinIO, with Cloud Tiering?
 
 Yes, configuring S3-compatible object storage through the Tiering UI is supported for clusters using ONTAP 9.8 and later. link:task-tiering-onprem-s3-compat.html[See the details here].
 
