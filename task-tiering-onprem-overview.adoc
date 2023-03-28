@@ -16,16 +16,16 @@ summary: Cloud Tiering provides an aggregated view of data tiering from each of 
 [.lead]
 Cloud Tiering provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
 
-Just click *Tiering > On-Prem Overview*. Cloud Tiering provides the following details about your environment.
+Just click *Tiering > On-Prem dashboard*. Cloud Tiering provides the following details about your environment.
 
-image:screenshot_tiering_onprem_overview.gif[A screenshot of the On-Prem Overview page.]
+image:screenshot_tiering_onprem_dashboard.png[A screenshot of the On-Prem Dashboard page.]
 
-Active Clusters:: The number of clusters that are currently tiering data to the cloud, the clusters that aren't tiering data to the cloud, and the number of clusters that don't support data tiering.
+Discovered clusters:: The number of clusters that are currently tiering data to the cloud, the clusters that aren't tiering data to the cloud, and the number of clusters that don't support data tiering.
 
-Data Overview:: The amount of data that was tiered to the cloud, and the amount of hot and cold data on the cluster.
+Data overview:: The amount of data that was tiered to the cloud, and the amount of hot and cold data on the cluster.
 
-Total Savings:: The amount of money that you've saved by tiering data to the cloud, as well as the amount of money that you could save by tiering more data to the cloud.
+Tiering overview:: The amount of data that is currently being tiered, and the amount of data that could potentially be tiered.
 
 Policies:: The number of times that each tiering policy has been applied to a volume.
 
-Marketplace Subscriptions:: The number of clusters associated with each type of Marketplace Subscription and an indication about your subscription status.
+Marketplace subscriptions:: The number of clusters associated with each type of Marketplace Subscription and an indication about your subscription status.

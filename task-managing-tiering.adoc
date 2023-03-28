@@ -25,7 +25,7 @@ TIP: You don't need to configure the object storage because it was already confi
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters Dashboard*, click *Basic Tiering Setup* for the cluster.
+. From the *Clusters* page, click *Basic tiering setup* for the cluster.
 +
 image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to select the Tier Volumes button for a cluster.]
 
@@ -56,7 +56,7 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters Dashboard*, click *Tier Volumes* for the cluster.
+. From the *Clusters* page, click *Basic tiering setup* for the cluster.
 
 . Click the row for a volume, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
 +
@@ -102,7 +102,7 @@ Make sure you have enough space in the performance tier for all the data that is
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters Dashboard*, click *Tier Volumes* for the cluster.
+. From the *Clusters* page, click *Basic tiering setup* for the cluster.
 
 . Click the image:screenshot_edit_icon.gif[edit icon that appears at the end of each row in the table for tiering volumes] icon for the volume, choose the retrieval option you want to use, and click *Apply*.
 +
@@ -128,7 +128,7 @@ TIP: It's best to keep IDR enabled because it helps to identify your inactive da
 
 .Steps
 
-. From the *Clusters Dashboard*, click *Advanced Setup* for the selected cluster.
+. From the *Clusters* page, click *Advanced settings* for the selected cluster.
 +
 image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Advanced Setup button for a cluster.]
 
@@ -150,7 +150,7 @@ You might want to see how much data is in the cloud tier and how much data is on
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters Dashboard*, click the menu icon for a cluster and select *Cluster info*.
+. From the *Clusters* page, click the menu icon for a cluster and select *Cluster info*.
 
 . Review details about the cluster.
 +
@@ -180,35 +180,31 @@ Failures can happen. When they do, Cloud Tiering displays a "Failed" operational
 
 == Discovering additional clusters from Cloud Tiering
 
-You can add your undiscovered on-prem ONTAP clusters to BlueXP from the Tiering _Cluster Dashboard_ so that you can enable tiering for the cluster.
+You can add your undiscovered on-prem ONTAP clusters to BlueXP from the Tiering _Cluster_ page so that you can enable tiering for the cluster.
 
-Note that buttons also appear on the Tiering _On-Prem Overview_ page for you to discover additional clusters.
+Note that buttons also appear on the Tiering _On-Prem dashboard_ page for you to discover additional clusters.
 
 .Steps
 
-. From Cloud Tiering, click the *Clusters Dashboard* tab.
+. From Cloud Tiering, click the *Clusters* tab.
 
-. To see any undiscovered clusters, click *Show Undiscovered Clusters*.
+. To see any undiscovered clusters, click *Show undiscovered clusters*.
 +
 image:screenshot_tiering_show_undiscovered_cluster.png[A screenshot showing the Show Undiscovered Clusters button on the Tiering Dashboard.]
 +
 If your NSS credentials are saved in BlueXP, the clusters in your account are displayed in the list.
 +
 If your NSS credentials are not saved in BlueXP, you are first prompted to add your credentials before you can see the undiscovered clusters.
-
-. Scroll down the page to locate the clusters.
 +
 image:screenshot_tiering_discover_cluster.png[A screenshot showing how to discover an existing cluster to add to BlueXP and the Tiering Dashboard.]
 
-. Click *Discover Cluster* for the cluster that you want to manage through BlueXP and implement data tiering.
+. Click *Add Cluster* for the cluster that you want to manage through BlueXP and implement data tiering.
 
-. On the _Choose a Location_ page *On-Premises ONTAP* is pre-selected, so just click *Continue*.
-
-. On the _ONTAP Cluster Details_ page, enter the password for the admin user account and click *Add*.
+. In the _Cluster Details_ page, enter the password for the admin user account and click *Discover*.
 +
 Note that the cluster management IP address is populated based on information from your NSS account.
 
-. On the _Details & Credentials_ page the cluster name is added as the Working Environment Name, so just click *Go*.
+. In the _Details & Credentials_ page the cluster name is added as the Working Environment Name, so just click *Go*.
 
 .Result
 
