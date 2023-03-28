@@ -132,7 +132,7 @@ TIP: It's best to keep IDR enabled because it helps to identify your inactive da
 +
 image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Advanced Setup button for a cluster.]
 
-. From the Advanced Setup page, click the menu icon for the aggregate and select *Modify Aggregate*.
+. From the Advanced Settings page, click the menu icon for the aggregate and select *Modify Aggregate*.
 +
 image:screenshot_tiering_modify_aggr.png["A screenshot showing the Modify Aggregate option for an aggregate."]
 
