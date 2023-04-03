@@ -17,7 +17,7 @@ Run a Cloud Performance Test to measure network latency and throughput performan
 
 Here are sample performance results:
 
-image:screenshot_cloud_performance_test.gif[A screenshot of cluster performance results for a Cloud Performance Test.]
+image:screenshot_cloud_performance_test.png[A screenshot of cluster performance results for a Cloud Performance Test.]
 
 .Before you get started
 
@@ -27,7 +27,7 @@ It's best to run this check when the cluster is under 50% CPU utilization.
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Cluster Dashboard*, click the menu icon for a cluster and select *Cloud Performance Test*.
+. From the *Clusters* page, click the menu icon for a cluster and select *Cloud Performance Test*.
 
 . Review the details and click *Continue*.
 
@@ -41,7 +41,7 @@ The information that you need to provide is the same as if you were setting up t
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Cluster Dashboard*, click the menu icon for a cluster and select *Cloud Performance Test*.
+. From the *Clusters* page, click the menu icon for a cluster and select *Cloud Performance Test*.
 
 . Select a node from the drop-down list.
 

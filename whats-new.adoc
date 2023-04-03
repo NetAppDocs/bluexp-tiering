@@ -16,6 +16,16 @@ summary: Learn what's new in Cloud Tiering.
 Learn what's new in Cloud Tiering.
 
 // tag::whats-new[]
+== 3 April 2023
+
+=== Licensing tab has been removed
+
+The Licensing tab has been removed from the Cloud Tiering interface. All licensing for Pay-as-you-go (PAYGO) subscriptions are accessed from the Cloud Tiering On-prem Dashboard now. There is also a link from that page to the Digital Wallet so that you can view and manage any Cloud Tiering bring-your-own-licenses (BYOL).
+
+=== Tiering tabs have been renamed and have updated content
+
+The "Clusters Dashboard" tab has been renamed to "Clusters", and the "On-Prem Overview" tab has been renamed to "On-Prem Dashboard". These pages have added some information that will help you evaluate if you can optimize your storage space with additional tiering configuration.
+
 == 5 March 2023
 
 === Now you can generate a tiering report for your volumes
@@ -42,13 +52,13 @@ Because of a change in Cloud Tiering, you need to change the following Connector
 |===
 
 See the full list of endpoints for your https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access[AWS^], https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access[Google Cloud^], or https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access[Azure^] cloud environment.
+// end::whats-new[]
 
 == 6 November 2022
 
 === Drag and drop to enable Cloud Tiering to Azure Blob, Google Cloud Storage, and StorageGRID
 
 If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
-// end::whats-new[]
 
 == 19 September 2022
 
