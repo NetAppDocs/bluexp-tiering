@@ -25,7 +25,7 @@ TIP: You don't need to configure the object storage because it was already confi
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters* page, click *Basic tiering setup* for the cluster.
+. From the *Clusters* page, click *Tier volumes* for the cluster.
 +
 image:screenshot_tiering_tier_volumes_button.png[A screenshot showing how to select the Tier Volumes button for a cluster.]
 
@@ -56,7 +56,7 @@ Changing the tiering policy for a volume changes how ONTAP tiers cold data to ob
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters* page, click *Basic tiering setup* for the cluster.
+. From the *Clusters* page, click *Tier volumes* for the cluster.
 
 . Click the row for a volume, select a tiering policy, optionally adjust the cooling days, and click *Apply*.
 +
@@ -102,7 +102,7 @@ Make sure you have enough space in the performance tier for all the data that is
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters* page, click *Basic tiering setup* for the cluster.
+. From the *Clusters* page, click *Tier volumes* for the cluster.
 
 . Click the image:screenshot_edit_icon.gif[edit icon that appears at the end of each row in the table for tiering volumes] icon for the volume, choose the retrieval option you want to use, and click *Apply*.
 +
@@ -128,11 +128,11 @@ TIP: It's best to keep IDR enabled because it helps to identify your inactive da
 
 .Steps
 
-. From the *Clusters* page, click *Advanced settings* for the selected cluster.
+. From the *Clusters* page, click *Advanced setup* for the selected cluster.
 +
 image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Advanced Setup button for a cluster.]
 
-. From the Advanced Settings page, click the menu icon for the aggregate and select *Modify Aggregate*.
+. From the Advanced Setup page, click the menu icon for the aggregate and select *Modify Aggregate*.
 +
 image:screenshot_tiering_modify_aggr.png["A screenshot showing the Modify Aggregate option for an aggregate."]
 
@@ -198,7 +198,7 @@ If your NSS credentials are not saved in BlueXP, you are first prompted to add y
 +
 image:screenshot_tiering_discover_cluster.png[A screenshot showing how to discover an existing cluster to add to BlueXP and the Tiering Dashboard.]
 
-. Click *Add Cluster* for the cluster that you want to manage through BlueXP and implement data tiering.
+. Click *Discover Cluster* for the cluster that you want to manage through BlueXP and implement data tiering.
 
 . In the _Cluster Details_ page, enter the password for the admin user account and click *Discover*.
 +
