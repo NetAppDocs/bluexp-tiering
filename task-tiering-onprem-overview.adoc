@@ -16,7 +16,7 @@ summary: Cloud Tiering provides an aggregated view of data tiering from each of 
 [.lead]
 Cloud Tiering provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
 
-Just click *Tiering > On-Prem dashboard*. Cloud Tiering provides the following details about your environment.
+Just click *Tiering > On-Prem Dashboard*. Cloud Tiering provides the following details about your environment.
 
 image:screenshot_tiering_onprem_dashboard.png[A screenshot of the On-Prem Dashboard page.]
 
