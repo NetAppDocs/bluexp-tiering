@@ -102,8 +102,7 @@ If you already have a Connector deployed in your AWS VPC or on your premises, th
 
 * Ensure that the network where the Connector is installed enables the following connections:
 +
-** An outbound internet connection over port 443 (HTTPS) to the Cloud Tiering service 
-** An HTTPS connection over port 443 to your S3 object storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html[see the list of endpoints^])
+** An HTTPS connection over port 443 to the Cloud Tiering service and to your S3 object storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
 ** An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html#cloud-tiering[Ensure that the Connector has permissions to manage the S3 bucket^]
