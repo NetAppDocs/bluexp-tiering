@@ -94,7 +94,6 @@ The BlueXP Connector is the main software for BlueXP functionality. A Connector 
 If you already have a Connector deployed in your AWS VPC or on your premises, then you're all set. If not, then you'll need to create a Connector in either of those locations to tier ONTAP data to AWS S3 storage. You can't use a Connector that's deployed in another cloud provider.
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
-//* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html[Getting started with Connectors^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html[Deploying a Connector in AWS^]
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html[Installing a Connector on a Linux host^]
 
