@@ -51,7 +51,7 @@ Because of a change in Cloud Tiering, you need to change the following Connector
 
 |===
 
-See the full list of endpoints for your https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html#outbound-internet-access[AWS^], https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html#outbound-internet-access[Google Cloud^], or https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html#outbound-internet-access[Azure^] cloud environment.
+See the full list of endpoints for your https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#outbound-internet-access[AWS^], https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#outbound-internet-access[Google Cloud^], or https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#outbound-internet-access[Azure^] cloud environment.
 // end::whats-new[]
 
 == 6 November 2022
