@@ -21,6 +21,8 @@ Originally supported on AFF, FAS, and ONTAP Select systems with all-SSD aggregat
 
 Cloud Tiering can be configured for single-node clusters, HA-configured clusters, clusters in Tiering Mirror configurations, and MetroCluster configurations using FabricPool Mirror. Cloud Tiering licenses are shared among all of your clusters. 
 
+https://bluexp.netapp.com/cloud-tiering-service-tco[Use the Cloud Tiering TCO calculator to see how much money you can save^].
+
 == Features
 
 Cloud Tiering offers automation, monitoring, reports, and a common management interface:
@@ -34,9 +36,9 @@ Cloud Tiering offers automation, monitoring, reports, and a common management in
 * A tiering health status helps you identify and correct issues as they occur
 * If you have Cloud Volumes ONTAP systems, you'll find them in the Clusters page so you get a full view of data tiering in your hybrid cloud infrastructure
 
-For more details about the value that Cloud Tiering provides, https://cloud.netapp.com/cloud-tiering[check out the Cloud Tiering page on the BlueXP website^].
+For more details about the value that Cloud Tiering provides, https://bluexp.netapp.com/cloud-tiering[check out the Cloud Tiering page on the BlueXP website^].
 
-TIP: Cloud Volumes ONTAP systems are read-only from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in BlueXP^].
+TIP: Cloud Volumes ONTAP systems are read-only from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP systems from the working environment in BlueXP^].
 
 == Supported object storage providers
 
@@ -108,7 +110,7 @@ Annual contracts are not currently supported when tiering to Azure or GCP.
 
 Bring your own license by purchasing a *Cloud Tiering* license from NetApp. You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity. The BYOL Cloud Tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your Cloud Tiering license can be used by all of your on-prem clusters.
 
-After you purchase a Cloud Tiering license, you'll need use the Digital Wallet in BlueXP to add the license.  link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[See how to use a Cloud Tiering BYOL license].
+After you purchase a Cloud Tiering license, you'll need use the Digital Wallet in BlueXP to add the license. link:task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license[See how to use a Cloud Tiering BYOL license].
 
 As noted above, we recommend that you set up a pay-as-you-go subscription, even if you have purchased a BYOL license.
 

@@ -117,7 +117,7 @@ Yes. Check https://aws.amazon.com/s3/pricing/[Amazon S3 Pricing], https://azure.
 
 === How can I estimate my volumes' savings and get a cold data report before I enable Cloud Tiering?
 
-To get an estimate, simply add your ONTAP cluster to BlueXP and inspect it through the Cloud Tiering Clusters Dashboard, which is located in the Tiering tab. When Inactive Data Reporting (IDR) is disabled or has not yet been activated for a long enough period of time, Cloud Tiering uses an industry-constant of 70% to calculate the estimated savings. Once IDR data is available, Cloud Tiering updates the savings to accurate figures.
+To get an estimate, simply add your ONTAP cluster to BlueXP and inspect it through the Cloud Tiering Clusters page. Click *Calculate potential tiering savings* for the cluster to launch the https://bluexp.netapp.com/cloud-tiering-service-tco[Cloud Tiering TCO calculator^] to see how much money you can save.
 
 == ONTAP
 
@@ -141,7 +141,7 @@ Yes. Cloud Tiering can be configured to tier volumes hosted on any aggregate. Th
 
 === What about Cloud Volumes ONTAP?
 
-If you have Cloud Volumes ONTAP systems, you'll find them in the Cloud Tiering Clusters page so you get a full view of data tiering in your hybrid cloud infrastructure. However, Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP from the working environment in BlueXP^].
+If you have Cloud Volumes ONTAP systems, you'll find them in the Cloud Tiering Clusters page so you get a full view of data tiering in your hybrid cloud infrastructure. However, Cloud Volumes ONTAP systems are read-only from Cloud Tiering. You can't set up data tiering on Cloud Volumes ONTAP from Cloud Tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP systems from the working environment in BlueXP^].
 
 === What other requirements are necessary for my ONTAP clusters?
 
