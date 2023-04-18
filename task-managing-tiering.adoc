@@ -72,7 +72,7 @@ The tiering policy is changed and data begins to be tiered based on the new poli
 
 == Download a tiering report for your volumes
 
-You can download a report of the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. Just click the image:button_download.png[Download] button. BlueXP Tiering generates a .CSV file that you can review and send to other groups as needed. The .CSV file includes up to 10,000 rows of data.
+You can download a report of the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. Just click the image:button_download.png[Download] button. BlueXP tiering generates a .CSV file that you can review and send to other groups as needed. The .CSV file includes up to 10,000 rows of data.
 
 image:screenshot_tiering_report_download.png[A screenshot showing how to generate a CSV file listing the tiering status of all your volumes.]
 
@@ -144,7 +144,7 @@ image:screenshot_tiering_modify_aggregate.png[A screenshot that shows a slider t
 
 == Reviewing tiering info for a cluster
 
-You might want to see how much data is in the cloud tier and how much data is on disks. Or, you might want to see the amount of hot and cold data on the cluster's disks. BlueXP Tiering provides this information for each cluster.
+You might want to see how much data is in the cloud tier and how much data is on disks. Or, you might want to see the amount of hot and cold data on the cluster's disks. BlueXP tiering provides this information for each cluster.
 
 .Steps
 
@@ -164,7 +164,7 @@ image:screenshot_tiering_aiq_fabricpool_info.png["A screenshot that shows Fabric
 
 == Fixing operational health
 
-Failures can happen. When they do, BlueXP Tiering displays a "Failed" operational health status on the Cluster Dashboard. The health reflects the status of the ONTAP system and BlueXP.
+Failures can happen. When they do, BlueXP tiering displays a "Failed" operational health status on the Cluster Dashboard. The health reflects the status of the ONTAP system and BlueXP.
 
 .Steps
 
@@ -176,9 +176,9 @@ Failures can happen. When they do, BlueXP Tiering displays a "Failed" operationa
 
 .. Verify that the ONTAP cluster is operational and that it has an inbound and outbound connection to your object storage provider.
 
-.. Verify that BlueXP has outbound connections to the BlueXP Tiering service, to the object store, and to the ONTAP clusters that it discovers.
+.. Verify that BlueXP has outbound connections to the BlueXP tiering service, to the object store, and to the ONTAP clusters that it discovers.
 
-== Discovering additional clusters from BlueXP Tiering
+== Discovering additional clusters from BlueXP tiering
 
 You can add your undiscovered on-prem ONTAP clusters to BlueXP from the Tiering _Cluster_ page so that you can enable tiering for the cluster.
 
@@ -186,7 +186,7 @@ Note that buttons also appear on the Tiering _On-Prem dashboard_ page for you to
 
 .Steps
 
-. From BlueXP Tiering, click the *Clusters* tab.
+. From BlueXP tiering, click the *Clusters* tab.
 
 . To see any undiscovered clusters, click *Show undiscovered clusters*.
 +

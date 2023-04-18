@@ -17,7 +17,7 @@ After you've configured your on-prem ONTAP clusters to tier data to a particular
 
 == Viewing object stores configured for a cluster
 
-You might want to see all the object stores that have been configured for your cluster and to which aggregates they are attached. BlueXP Tiering provides this information for each cluster.
+You might want to see all the object stores that have been configured for your cluster and to which aggregates they are attached. BlueXP tiering provides this information for each cluster.
 
 .Steps
 
@@ -53,7 +53,7 @@ The object store wizard starts. The example below shows how to create an object 
 +
 The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
-.. *Storage Class Life Cycle*: BlueXP Tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
+.. *Storage Class Life Cycle*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
 +
 Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Standard-IA_ class after 45 days in object storage.
 +
@@ -69,7 +69,7 @@ The IAM user must be in the same AWS account as the bucket that you selected or 
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
-Selecting the correct IPspace ensures that BlueXP Tiering can set up a connection from ONTAP to your cloud provider's object storage.
+Selecting the correct IPspace ensures that BlueXP tiering can set up a connection from ONTAP to your cloud provider's object storage.
 
 The object store is created.
 
@@ -135,7 +135,7 @@ NOTE: When removing the mirror object store from a MetroCluster configuration yo
 
 == Migrating your tiered data to a different cloud provider
 
-BlueXP Tiering enables you to easily migrate your tiered data to a different cloud provider. For example, if you want to move from Amazon S3 to Azure Blob, you can follow the steps listed above in this order:
+BlueXP tiering enables you to easily migrate your tiered data to a different cloud provider. For example, if you want to move from Amazon S3 to Azure Blob, you can follow the steps listed above in this order:
 
 . Add an Azure Blob object store.
 . Attach this new object store as the mirror to the existing aggregate.

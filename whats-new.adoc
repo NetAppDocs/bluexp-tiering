@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, bugs, limitations, known issues, enhancements, fixes, tiering
-summary: Learn what's new in BlueXP Tiering.
+summary: Learn what's new in BlueXP tiering.
 ---
 
-= What's new with BlueXP Tiering
+= What's new with BlueXP tiering
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,14 +13,14 @@ summary: Learn what's new in BlueXP Tiering.
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new in BlueXP Tiering.
+Learn what's new in BlueXP tiering.
 
 // tag::whats-new[]
 == 3 April 2023
 
 === Licensing tab has been removed
 
-The Licensing tab has been removed from the BlueXP Tiering interface. All licensing for Pay-as-you-go (PAYGO) subscriptions are accessed from the BlueXP Tiering On-prem Dashboard now. There is also a link from that page to the Digital Wallet so that you can view and manage any BlueXP Tiering bring-your-own-licenses (BYOL).
+The Licensing tab has been removed from the BlueXP tiering interface. All licensing for Pay-as-you-go (PAYGO) subscriptions are accessed from the BlueXP tiering On-prem Dashboard now. There is also a link from that page to the Digital Wallet so that you can view and manage any BlueXP tiering bring-your-own-licenses (BYOL).
 
 === Tiering tabs have been renamed and have updated content
 
@@ -30,13 +30,13 @@ The "Clusters Dashboard" tab has been renamed to "Clusters", and the "On-Prem Ov
 
 === Now you can generate a tiering report for your volumes
 
-You can download a report from the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. BlueXP Tiering generates a .CSV file that you can review and send to other people in your company as needed. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
+You can download a report from the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. BlueXP tiering generates a .CSV file that you can review and send to other people in your company as needed. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
 
 == 6 December 2022
 
 === Connector outbound internet access endpoint changes
 
-Because of a change in BlueXP Tiering, you need to change the following Connector endpoints for successful BlueXP Tiering operation:
+Because of a change in BlueXP tiering, you need to change the following Connector endpoints for successful BlueXP tiering operation:
 
 [cols=2*,options="header",cols="50,50",width="80%"]
 |===
@@ -56,7 +56,7 @@ See the full list of endpoints for your https://docs.netapp.com/us-en/cloud-mana
 
 == 6 November 2022
 
-=== Drag and drop to enable BlueXP Tiering to Azure Blob, Google Cloud Storage, and StorageGRID
+=== Drag and drop to enable BlueXP tiering to Azure Blob, Google Cloud Storage, and StorageGRID
 
 If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 
@@ -68,7 +68,7 @@ In previous releases it was very time-consuming to provide this secure way of co
 
 https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html[Review the requirements and steps to tier inactive data to Amazon S3].
 
-=== Drag and drop to enable BlueXP Tiering to Amazon S3
+=== Drag and drop to enable BlueXP tiering to Amazon S3
 
 If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 

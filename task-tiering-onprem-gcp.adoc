@@ -28,7 +28,7 @@ You need the following:
 * An on-prem ONTAP cluster that's running ONTAP 9.6 or later and has an HTTPS connection to Google Cloud Storage. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * A service account that has the predefined Storage Admin role and storage access keys.
 * A Connector installed in a Google Cloud Platform VPC.
-* Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Google Cloud Storage, and to the BlueXP Tiering service.
+* Networking for the Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Google Cloud Storage, and to the BlueXP tiering service.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
@@ -38,11 +38,11 @@ In BlueXP, select an on-prem working environment, click *Enable* for the Tiering
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up licensing
 
 [role="quick-margin-para"]
-After your free trial ends, pay for BlueXP Tiering through a pay-as-you-go subscription, an ONTAP BlueXP Tiering BYOL license, or a combination of both:
+After your free trial ends, pay for BlueXP tiering through a pay-as-you-go subscription, an ONTAP BlueXP tiering BYOL license, or a combination of both:
 
 [role="quick-margin-list"]
 * To subscribe from the GCP Marketplace, https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[go to the BlueXP Marketplace offering^], click *Subscribe*, and then follow the prompts.
-* To pay using a BlueXP Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
+* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
 
 == Requirements
 
@@ -50,7 +50,7 @@ Verify support for your ONTAP cluster, set up your networking, and prepare your 
 
 The following image shows each component and the connections that you need to prepare between them:
 
-image:diagram_cloud_tiering_google.png["An architecture image that shows the BlueXP Tiering service with a connection to the Connector in your cloud provider, the Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
+image:diagram_cloud_tiering_google.png["An architecture image that shows the BlueXP tiering service with a connection to the Connector in your cloud provider, the Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage in your cloud provider. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
 
 NOTE: Communication between the Connector and Google Cloud Storage is for object storage setup only.
 
@@ -76,15 +76,15 @@ Although a Google Cloud Interconnect provides better performance and lower data 
 
 * An inbound connection is required from the Connector, which resides in a Google Cloud Platform VPC.
 +
-A connection between the cluster and the BlueXP Tiering service is not required.
+A connection between the cluster and the BlueXP tiering service is not required.
 
 * An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
 +
-When you set up data tiering, BlueXP Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
+When you set up data tiering, BlueXP tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
 
 include::_include/tiering_supported_volumes.adoc[]
 
-NOTE: BlueXP Tiering supports FlexGroup volumes. Setup works the same as any other volume.
+NOTE: BlueXP tiering supports FlexGroup volumes. Setup works the same as any other volume.
 
 === Discovering an ONTAP cluster
 
@@ -108,7 +108,7 @@ Ensure that the Connector has the required networking connections.
 
 . Ensure that the VPC where the Connector is installed enables the following connections:
 
-* An HTTPS connection over port 443 to the BlueXP Tiering service and to your Google Cloud Storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
+* An HTTPS connection over port 443 to the BlueXP tiering service and to your Google Cloud Storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
 * An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 . Optional: Enable Private Google Access on the subnet where you plan to deploy the Connector.
@@ -117,11 +117,11 @@ https://cloud.google.com/vpc/docs/configure-private-google-access[Private Google
 
 === Preparing Google Cloud Storage
 
-When you set up tiering, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables BlueXP Tiering to authenticate and access Cloud Storage buckets used for data tiering. The keys are required so that Google Cloud Storage knows who is making the request.
+When you set up tiering, you need to provide storage access keys for a service account that has Storage Admin permissions. A service account enables BlueXP tiering to authenticate and access Cloud Storage buckets used for data tiering. The keys are required so that Google Cloud Storage knows who is making the request.
 
-The Cloud Storage buckets must be in a link:reference-google-support.html#supported-google-cloud-regions[region that supports BlueXP Tiering].
+The Cloud Storage buckets must be in a link:reference-google-support.html#supported-google-cloud-regions[region that supports BlueXP tiering].
 
-NOTE: If you are planning to configure BlueXP Tiering to use lower cost storage classes where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your GCP account. BlueXP Tiering manages the life cycle transitions.
+NOTE: If you are planning to configure BlueXP tiering to use lower cost storage classes where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your GCP account. BlueXP tiering manages the life cycle transitions.
 
 .Steps
 
@@ -133,7 +133,7 @@ NOTE: If you are planning to configure BlueXP Tiering to use lower cost storage 
 
 .. Under *Access keys for service accounts*, click *Create a key for a service account*, select the service account that you just created, and click *Create Key*.
 +
-You'll need to enter the keys later when you set up BlueXP Tiering.
+You'll need to enter the keys later when you set up BlueXP tiering.
 
 == Tiering inactive data from your first cluster to Google Cloud Storage
 
@@ -162,7 +162,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 .. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
 
-.. *Storage Class Life Cycle*: BlueXP Tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create rules to move the data to other classes after a certain number of days.
+.. *Storage Class Life Cycle*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create rules to move the data to other classes after a certain number of days.
 +
 Select the Google Cloud storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Nearline_ class after 30 days in object storage, and then to the _Coldline_ class after 60 days in object storage.
 +
@@ -176,7 +176,7 @@ Note that the life cycle rule is applied to all objects in the selected bucket.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
 +
-Selecting the correct IPspace ensures that BlueXP Tiering can set up a connection from ONTAP to your cloud provider's object storage.
+Selecting the correct IPspace ensures that BlueXP tiering can set up a connection from ONTAP to your cloud provider's object storage.
 
 . Click *Continue* to select the volumes that you want to tier.
 
@@ -201,7 +201,7 @@ You've successfully set up data tiering from volumes on the cluster to Google Cl
 
 .What's next?
 
-link:task-licensing-cloud-tiering.html[Be sure to subscribe to the BlueXP Tiering service].
+link:task-licensing-cloud-tiering.html[Be sure to subscribe to the BlueXP tiering service].
 
 You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].
 

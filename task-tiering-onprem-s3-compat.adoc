@@ -37,7 +37,7 @@ You need the following:
 * A source on-prem ONTAP cluster that's running ONTAP 9.8 or later, and a connection over a user-specified port to the destination S3-compatible object storage. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * The FQDN, Access Key, and Secret Key for the object storage server so that the ONTAP cluster can access the bucket.
 * A Connector installed on your premises.
-* Networking for the Connector that enables an outbound HTTPS connection to the source ONTAP cluster, to the S3-compatible object storage, and to the BlueXP Tiering service.
+* Networking for the Connector that enables an outbound HTTPS connection to the source ONTAP cluster, to the S3-compatible object storage, and to the BlueXP tiering service.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
@@ -47,12 +47,12 @@ In BlueXP, select an on-prem working environment, click *Enable* for the Tiering
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up licensing
 
 [role="quick-margin-para"]
-Pay for BlueXP Tiering through a pay-as-you-go subscription from your cloud provider, a NetApp BlueXP Tiering bring-your-own-license, or a combination of both:
+Pay for BlueXP tiering through a pay-as-you-go subscription from your cloud provider, a NetApp BlueXP tiering bring-your-own-license, or a combination of both:
 
 [role="quick-margin-list"]
 * To subscribe to the BlueXP PAYGO offering from the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^], https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^], or https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], click *Subscribe* and follow the prompts.
 
-* To pay using a BlueXP Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
+* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
 
 == Requirements
 
@@ -60,7 +60,7 @@ Verify support for your ONTAP cluster, set up your networking, and prepare your 
 
 The following image shows each component and the connections that you need to prepare between them:
 
-image:diagram_cloud_tiering_s3_compat.png["An architecture image that shows the BlueXP Tiering service with a connection to the Connector on your premises, the Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
+image:diagram_cloud_tiering_s3_compat.png["An architecture image that shows the BlueXP tiering service with a connection to the Connector on your premises, the Connector with a connection to your ONTAP cluster, and a connection between the ONTAP cluster and object storage. Active data resides on the ONTAP cluster, while inactive data resides in object storage."]
 
 NOTE: Communication between the Connector and the S3-compatible object storage server is for object storage setup only.
 
@@ -83,15 +83,15 @@ The source ONTAP system reads and writes data to and from object storage. The ob
 
 * An inbound connection is required from the Connector, which must reside on your premises.
 +
-A connection between the cluster and the BlueXP Tiering service is not required.
+A connection between the cluster and the BlueXP tiering service is not required.
 
 * An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. The LIF must be associated with the _IPspace_ that ONTAP should use to connect to object storage.
 +
-When you set up data tiering, BlueXP Tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
+When you set up data tiering, BlueXP tiering prompts you for the IPspace to use. You should choose the IPspace that each LIF is associated with. That might be the "Default" IPspace or a custom IPspace that you created. Learn more about https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html[LIFs^] and https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[IPspaces^].
 
 include::_include/tiering_supported_volumes.adoc[]
 
-TIP: BlueXP Tiering supports both FlexVol and FlexGroup volumes.
+TIP: BlueXP tiering supports both FlexVol and FlexGroup volumes.
 
 === Discovering an ONTAP cluster
 
@@ -104,7 +104,7 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 S3-compatible object storage must meet the following requirements.
 
 S3 credentials::
-When you set up tiering to S3-compatible object storage, you're prompted to create an S3 bucket or to select an existing S3 bucket. You need to provide BlueXP Tiering with an S3 access key and secret key. BlueXP Tiering uses the keys to access your bucket.
+When you set up tiering to S3-compatible object storage, you're prompted to create an S3 bucket or to select an existing S3 bucket. You need to provide BlueXP tiering with an S3 access key and secret key. BlueXP tiering uses the keys to access your bucket.
 +
 These access keys must be associated with a user who has the following permissions:
 +
@@ -132,7 +132,7 @@ Ensure that the Connector has the required networking connections.
 
 . Ensure that the network where the Connector is installed enables the following connections:
 
-* An HTTPS connection over port 443 to the BlueXP Tiering service (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
+* An HTTPS connection over port 443 to the BlueXP tiering service (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-on-prem.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
 * An HTTPS connection over port 443 to S3-compatible object storage
 * An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
@@ -166,7 +166,7 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Tiering op
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage and click *Continue*.
 +
-Selecting the correct IPspace ensures that BlueXP Tiering can set up a connection from ONTAP to your S3-compatible object storage.
+Selecting the correct IPspace ensures that BlueXP tiering can set up a connection from ONTAP to your S3-compatible object storage.
 
 . On the _Success_ page click *Continue* to set up your volumes now.
 
@@ -191,7 +191,7 @@ You've successfully set up data tiering from volumes on the cluster to S3-compat
 
 .What's next?
 
-link:task-licensing-cloud-tiering.html[Be sure to subscribe to the BlueXP Tiering service].
+link:task-licensing-cloud-tiering.html[Be sure to subscribe to the BlueXP tiering service].
 
 You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].
 
