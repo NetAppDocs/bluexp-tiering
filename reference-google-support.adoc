@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-google-support.html
 keywords: google, gcp, regions, google regions, gcp regions, storage class, standard, nearline, coldline, archive
-summary: BlueXP Tiering supports several Google Cloud storage classes and most regions.
+summary: BlueXP tiering supports several Google Cloud storage classes and most regions.
 ---
 
 = Supported Google Cloud storage classes and regions
@@ -13,11 +13,11 @@ summary: BlueXP Tiering supports several Google Cloud storage classes and most r
 :imagesdir: ./media/
 
 [.lead]
-BlueXP Tiering supports several Google Cloud storage classes and most regions.
+BlueXP tiering supports several Google Cloud storage classes and most regions.
 
 == Supported GCP storage classes
 
-When you set up data tiering to GCP, BlueXP Tiering automatically uses the _Standard_ storage class for your inactive data. BlueXP Tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to other storage classes after a certain number of days. You can choose from the following storage classes:
+When you set up data tiering to GCP, BlueXP tiering automatically uses the _Standard_ storage class for your inactive data. BlueXP tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to other storage classes after a certain number of days. You can choose from the following storage classes:
 
 * Nearline
 * Coldline
@@ -25,13 +25,13 @@ When you set up data tiering to GCP, BlueXP Tiering automatically uses the _Stan
 
 If you do not choose another storage class, then the data remains in the _Standard_ storage class and no rules are applied.
 
-When you configure a BlueXP Tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your Google account. 
+When you configure a BlueXP tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your Google account. 
 
 https://cloud.google.com/storage/docs/storage-classes[Learn about Google Cloud Storage classes^].
 
 == Supported Google Cloud regions
 
-BlueXP Tiering supports the following regions.
+BlueXP tiering supports the following regions.
 
 === Americas
 

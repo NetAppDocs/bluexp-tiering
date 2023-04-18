@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-azure-support.html
 keywords: microsoft azure, azure, hot, access tier, cold, regions
-summary: BlueXP Tiering supports two access tiers and most regions.
+summary: BlueXP tiering supports two access tiers and most regions.
 ---
 
 = Supported Azure Blob access tiers and regions
@@ -13,23 +13,23 @@ summary: BlueXP Tiering supports two access tiers and most regions.
 :imagesdir: ./media/
 
 [.lead]
-BlueXP Tiering supports two access tiers and most regions.
+BlueXP tiering supports two access tiers and most regions.
 
 == Supported Azure Blob access tiers
 
-When you set up data tiering to Azure, BlueXP Tiering automatically uses the _Hot_ access tier for your inactive data. BlueXP Tiering can apply a lifecycle rule so the data transitions from the _Hot_ access tier to the _Cool_ access tier after a certain number of days.
+When you set up data tiering to Azure, BlueXP tiering automatically uses the _Hot_ access tier for your inactive data. BlueXP tiering can apply a lifecycle rule so the data transitions from the _Hot_ access tier to the _Cool_ access tier after a certain number of days.
 
 If you do not choose the _Cool_ access tier, then the data remains in the _Hot_ access tier and no rules are applied.
 
-When you configure a BlueXP Tiering lifecycle rule, you must not configure any lifecycle rules when setting up the container in your Azure account.
+When you configure a BlueXP tiering lifecycle rule, you must not configure any lifecycle rules when setting up the container in your Azure account.
 
 https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview[Learn about Azure Blob access tiers^].
 
 == Supported Azure regions
 
-BlueXP Tiering supports tiering to any storage account in any region that can be accessed via the Connector.
+BlueXP tiering supports tiering to any storage account in any region that can be accessed via the Connector.
 
-//BlueXP Tiering supports the following Azure regions.
+//BlueXP tiering supports the following Azure regions.
 //
 //=== Africa
 //
