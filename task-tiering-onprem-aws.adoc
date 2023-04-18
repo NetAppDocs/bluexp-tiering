@@ -51,7 +51,7 @@ Set up permissions for the Connector to create and manage the S3 bucket. You'll 
 [role="quick-margin-para"]
 <<Set up S3 permissions,See how to set up permissions for the Connector and for your on-prem cluster.>>
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Enable Cloud Tiering on the system
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Enable BlueXP tiering on the system
 
 [role="quick-margin-para"]
 Select an on-prem working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Amazon S3.
@@ -62,11 +62,11 @@ Select an on-prem working environment, click *Enable* for the Tiering service, a
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png[Six] Set up licensing
 
 [role="quick-margin-para"]
-After your free trial ends, pay for Cloud Tiering through a pay-as-you-go subscription, an ONTAP Cloud Tiering BYOL license, or a combination of both:
+After your free trial ends, pay for BlueXP tiering through a pay-as-you-go subscription, an ONTAP BlueXP tiering BYOL license, or a combination of both:
 
 [role="quick-margin-list"]
 * To subscribe from the AWS Marketplace, https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[go to the BlueXP Marketplace offering^], click *Subscribe*, and then follow the prompts.
-* To pay using a Cloud Tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-cloud-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
+* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
 
 == Network diagrams for connection options
 
@@ -77,11 +77,11 @@ There are two connection methods you can use when configuring tiering from on-pr
 
 The following diagram shows the *public connection* method and the connections that you need to prepare between the components. You can use a Connector that you've installed on your premises, or a Connector that you've deployed in the AWS VPC.
 
-image:diagram_cloud_tiering_aws_public.png[A diagram showing how Cloud Tiering communicates over a public connection with the volumes on the cluster and the AWS S3 storage where the inactive data is located.]
+image:diagram_cloud_tiering_aws_public.png[A diagram showing how BlueXP tiering communicates over a public connection with the volumes on the cluster and the AWS S3 storage where the inactive data is located.]
 
 The following diagram shows the *private connection* method and the connections that you need to prepare between the components. You can use a Connector that you've installed on your premises, or a Connector that you've deployed in the AWS VPC.
 
-image:diagram_cloud_tiering_aws_private.png[A diagram showing how Cloud Tiering communicates over a private connection with the volumes on the cluster and the AWS S3 storage where the inactive data is located.]
+image:diagram_cloud_tiering_aws_private.png[A diagram showing how BlueXP tiering communicates over a private connection with the volumes on the cluster and the AWS S3 storage where the inactive data is located.]
 
 NOTE: Communication between a Connector and S3 is for object storage setup only.
 
@@ -101,7 +101,7 @@ If you already have a Connector deployed in your AWS VPC or on your premises, th
 
 * Ensure that the network where the Connector is installed enables the following connections:
 +
-** An HTTPS connection over port 443 to the Cloud Tiering service and to your S3 object storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
+** An HTTPS connection over port 443 to the BlueXP tiering service and to your S3 object storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
 ** An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 * https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html#cloud-tiering[Ensure that the Connector has permissions to manage the S3 bucket^]
@@ -124,7 +124,7 @@ Supported ONTAP versions::
 
 include::_include/tiering_supported_volumes.adoc[]
 
-NOTE: Cloud Tiering supports FlexGroup volumes starting with ONTAP 9.5. Setup works the same as any other volume.
+NOTE: BlueXP tiering supports FlexGroup volumes starting with ONTAP 9.5. Setup works the same as any other volume.
 
 include::_include/tiering-admin-app-access.adoc[]
 
@@ -132,13 +132,13 @@ include::_include/tiering-admin-app-access.adoc[]
 
 * The cluster requires an inbound HTTPS connection from the Connector to the cluster management LIF.
 +
-A connection between the cluster and the Cloud Tiering service is not required.
+A connection between the cluster and the BlueXP tiering service is not required.
 * An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. These intercluster LIFs must be able to access the object store.
 +
 The cluster initiates an outbound HTTPS connection over port 443 from the intercluster LIFs to Amazon S3 storage for tiering operations. ONTAP reads and writes data to and from object storage -- the object storage never initiates, it just responds.
 * The intercluster LIFs must be associated with the _IPspace_ that ONTAP should use to connect to object storage. https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html[Learn more about IPspaces^].
 +
-When you set up Cloud Tiering, you are prompted for the IPspace to use. You should choose the IPspace that these LIFs are associated with. That might be the "Default" IPspace or a custom IPspace that you created.
+When you set up BlueXP tiering, you are prompted for the IPspace to use. You should choose the IPspace that these LIFs are associated with. That might be the "Default" IPspace or a custom IPspace that you created.
 +
 If you use are using a different IPspace than "Default", then you might need to create a static route to get access to the object storage.
 +
@@ -156,11 +156,11 @@ https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.
 
 == Prepare your AWS environment
 
-When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in Cloud Tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
+When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in BlueXP tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
 
-The S3 bucket must be in a link:reference-aws-support.html#supported-aws-regions[region that supports Cloud Tiering].
+The S3 bucket must be in a link:reference-aws-support.html#supported-aws-regions[region that supports BlueXP tiering].
 
-NOTE: If you are planning to configure Cloud Tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your AWS account. Cloud Tiering manages the life cycle transitions.
+NOTE: If you are planning to configure BlueXP tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your AWS account. BlueXP tiering manages the life cycle transitions.
 
 === Set up S3 permissions
 
@@ -187,7 +187,7 @@ See the https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-use
 
 . Create or locate the access key.
 +
-Cloud Tiering passes the access key on to the ONTAP cluster. The credentials are not stored in the Cloud Tiering service.
+BlueXP tiering passes the access key on to the ONTAP cluster. The credentials are not stored in the BlueXP tiering service.
 +
 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html[AWS Documentation: Managing Access Keys for IAM Users^]
 
@@ -203,7 +203,7 @@ If you want to have a more secure connection over the internet from your on-prem
 +
 image:screenshot_tiering_aws_sec_group.png[A screenshot of the AWS security group associated with the Connector.]
 +
-If you're using port 80 (HTTP) for communication to the private endpoint, you're all set. You can enable Cloud Tiering on the cluster now.
+If you're using port 80 (HTTP) for communication to the private endpoint, you're all set. You can enable BlueXP tiering on the cluster now.
 +
 If you're using port 443 (HTTPS) for communication to the private endpoint, you must copy the certificate from the VPC S3 endpoint and add it to your ONTAP cluster, as shown in the next 4 steps.
 +
@@ -268,7 +268,7 @@ When using an on-prem Connector, you must enter the AWS Account ID that provides
 +
 The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
-.. *Storage Class*: Cloud Tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
+.. *Storage Class*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
 +
 Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Standard-IA_ class after 45 days in object storage.
 +
@@ -311,7 +311,7 @@ You've successfully set up data tiering from volumes on the cluster to S3 object
 
 .What's next?
 
-link:task-licensing-cloud-tiering.html[Be sure to subscribe to the Cloud Tiering service].
+link:task-licensing-cloud-tiering.html[Be sure to subscribe to the BlueXP tiering service].
 
 You can review information about the active and inactive data on the cluster. link:task-managing-tiering.html[Learn more about managing your tiering settings].
 

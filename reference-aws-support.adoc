@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: reference-aws-support.html
 keywords: aws, amazon, s3, support, regions, storage classes
-summary: Cloud Tiering supports several S3 storage classes and most regions.
+summary: BlueXP tiering supports several S3 storage classes and most regions.
 ---
 
 = Supported S3 storage classes and regions
@@ -13,11 +13,11 @@ summary: Cloud Tiering supports several S3 storage classes and most regions.
 :imagesdir: ./media/
 
 [.lead]
-Cloud Tiering supports several S3 storage classes and most regions.
+BlueXP tiering supports several S3 storage classes and most regions.
 
 == Supported S3 storage classes
 
-When you set up data tiering to AWS, Cloud Tiering automatically uses the _Standard_ storage class for your inactive data. Cloud Tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to another storage class after a certain number of days. You can choose from the following storage classes:
+When you set up data tiering to AWS, BlueXP tiering automatically uses the _Standard_ storage class for your inactive data. BlueXP tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to another storage class after a certain number of days. You can choose from the following storage classes:
 
 * Standard-Infrequent Access
 * One Zone-Infrequent Access
@@ -26,13 +26,13 @@ When you set up data tiering to AWS, Cloud Tiering automatically uses the _Stand
 
 If you do not choose another storage class, then the data remains in the _Standard_ storage class and no rules are applied.
 
-When you configure a Cloud Tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your AWS account.
+When you configure a BlueXP tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your AWS account.
 
 https://aws.amazon.com/s3/storage-classes/[Learn about S3 storage classes^].
 
 == Supported AWS regions
 
-Cloud Tiering supports the following AWS regions.
+BlueXP tiering supports the following AWS regions.
 
 === Asia Pacific
 
