@@ -2,11 +2,11 @@
 layout: astra
 sidebar: sidebar
 permalink: index.html
-lead: Cloud Tiering extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
-summary: Cloud Tiering extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
+lead: BlueXP Tiering extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
+summary: BlueXP Tiering extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
 ---
 
-= Cloud Tiering documentation
+= BlueXP Tiering documentation
 :hardbreaks:
 :nofooter:
 :icons: font
