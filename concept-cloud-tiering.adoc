@@ -110,7 +110,7 @@ Annual contracts are not currently supported when tiering to Azure or GCP.
 
 Bring your own license by purchasing a *BlueXP tiering* license from NetApp (previously known as a "Cloud Tiering" license). You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity. The BYOL BlueXP tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your BlueXP tiering license can be used by all of your on-prem clusters.
 
-After you purchase a BlueXP tiering license, you'll need use the Digital wallet in BlueXP to add the license. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license[See how to use a BlueXP tiering BYOL license].
+After you purchase a BlueXP tiering license, you'll need use the BlueXP digital wallet in BlueXP to add the license. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license[See how to use a BlueXP tiering BYOL license].
 
 As noted above, we recommend that you set up a pay-as-you-go subscription, even if you have purchased a BYOL license.
 
@@ -167,7 +167,7 @@ Take the following into consideration before you choose this tiering policy:
 * Consider the impact of SnapMirror transfers before assigning the All tiering policy to source volumes in data protection relationships.
 +
 Because data is tiered immediately, SnapMirror will read data from the cloud tier rather than the performance tier. This will result in slower SnapMirror operations--possibly slowing other SnapMirror operations later in queue—even if they are using different tiering policies.
-* Cloud Backup is similarly affected by volumes set with a tiering policy. https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations[See tiering policy considerations with BlueXP backup and recovery^].
+* BlueXP backup and recovery is similarly affected by volumes set with a tiering policy. https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations[See tiering policy considerations with BlueXP backup and recovery^].
 
 All DP user data (Backup):: All data on a data protection volume (not including metadata) is immediately moved to the cloud tier. If read, cold data blocks on the cloud tier stay cold and are not written back to the performance tier (starting with ONTAP 9.4).
 +

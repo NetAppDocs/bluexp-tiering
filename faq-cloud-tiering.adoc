@@ -336,7 +336,7 @@ For more details, see:
 
 === What tools can I use for monitoring and reporting in order to manage cold data stored in the cloud?
 
-Other than BlueXP tiering, https://docs.netapp.com/us-en/active-iq-unified-manager/[Active IQ Unified Manager^] and https://docs.netapp.com/us-en/active-iq/index.html[Active IQ Digital Advisor^] can be used for monitoring and reporting.
+Other than BlueXP tiering, https://docs.netapp.com/us-en/active-iq-unified-manager/[Active IQ Unified Manager^] and https://docs.netapp.com/us-en/active-iq/index.html[BlueXP digital advisor^] can be used for monitoring and reporting.
 
 === What are the implications if the network link to the cloud provider fails?
 
