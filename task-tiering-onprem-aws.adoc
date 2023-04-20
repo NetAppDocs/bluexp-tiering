@@ -144,7 +144,7 @@ If you use are using a different IPspace than "Default", then you might need to 
 +
 All intercluster LIFs within the IPspace must have access to the object store. If you can't configure this for the current IPspace, then you'll need to create a dedicated IPspace where all intercluster LIFs have access to the object store.
 //* DNS servers must have been configured for the storage VM where the volumes are located. See how to https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html[configure DNS services for the SVM^].
-//* Update firewall rules, if necessary, to allow Cloud Backup connections from ONTAP to object storage through port 443 and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
+//* Update firewall rules, if necessary, to allow BlueXP tiering connections from ONTAP to object storage through port 443 and name resolution traffic from the storage VM to the DNS server over port 53 (TCP/UDP).
 * If you are using a Private VPC Interface Endpoint in AWS for the S3 connection, then in order for HTTPS/443 to be used, you'll need to load the S3 endpoint certificate into the ONTAP cluster. <<Configure your system for a private connection using a VPC endpoint interface,See how to set up a VPC endpoint interface and load the S3 certificate.>>
 * <<Set up S3 permissions,Ensure that your ONTAP cluster has permissions to access the S3 bucket.>>
 
