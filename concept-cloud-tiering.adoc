@@ -108,7 +108,7 @@ Annual contracts are not currently supported when tiering to Azure or GCP.
 
 === Bring your own license
 
-Bring your own license by purchasing a *BlueXP tiering* license from NetApp (previously known as a "Cloud Tiering" license). You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity. The BYOL BlueXP tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your BlueXP tiering license can be used by all of your on-prem clusters.
+Bring your own license by purchasing a *BlueXP tiering* license from NetApp (previously known as a "Cloud Tiering" license). You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity (starting at a minimum of 10 TiB). The BYOL BlueXP tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your BlueXP tiering license can be used by all of your on-prem clusters.
 
 After you purchase a BlueXP tiering license, you'll need use the BlueXP digital wallet in BlueXP to add the license. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license[See how to use a BlueXP tiering BYOL license].
 

@@ -126,8 +126,6 @@ include::_include/tiering_supported_volumes.adoc[]
 
 NOTE: BlueXP tiering supports FlexGroup volumes starting with ONTAP 9.5. Setup works the same as any other volume.
 
-include::_include/tiering-admin-app-access.adoc[]
-
 === Cluster networking requirements
 
 * The cluster requires an inbound HTTPS connection from the Connector to the cluster management LIF.

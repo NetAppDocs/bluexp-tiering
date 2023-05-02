@@ -89,7 +89,7 @@ Annual contracts are not currently supported when tiering to Azure or GCP.
 
 == Use a BlueXP tiering BYOL license
 
-Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL *BlueXP tiering* license (previously known as a "Cloud Tiering" license) is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. The total tiering capacity defined in your BlueXP tiering license is shared among *all* of your on-prem clusters, making initial licensing and renewal easy.
+Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL *BlueXP tiering* license (previously known as a "Cloud Tiering" license) is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. The total tiering capacity defined in your BlueXP tiering license is shared among *all* of your on-prem clusters, making initial licensing and renewal easy. The minimum capacity for a tiering BYOL license starts at 10 TiB.
 
 If you don't have a BlueXP tiering license, contact us to purchase one:
 

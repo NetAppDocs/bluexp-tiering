@@ -74,8 +74,6 @@ You can tier data from AFF systems, or FAS systems with all-SSD aggregates or al
 Supported ONTAP version::
 ONTAP 9.8 or later
 
-include::_include/tiering-admin-app-access.adoc[]
-
 Cluster networking requirements::
 * The ONTAP cluster initiates an HTTPS connection over a user-specified port to S3-compatible object storage (the port is configurable during tiering setup).
 +
