@@ -16,15 +16,25 @@ summary: BlueXP tiering provides an aggregated view of data tiering from each of
 [.lead]
 BlueXP tiering provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
 
-Just click *Tiering > On-Prem Dashboard*. BlueXP tiering provides the following details about your environment.
+Just click *Tiering > On-Premises Dashboard*. BlueXP tiering provides the following details about your environment.
 
-image:screenshot_tiering_onprem_dashboard.png[A screenshot of the On-Prem Dashboard page.]
+image:screenshot_tiering_onprem_dashboard.png[A screenshot of the On-Premises Dashboard page.]
 
-Discovered clusters:: The number of clusters that are currently tiering data to the cloud, the clusters that aren't tiering data to the cloud, and the number of clusters that don't support data tiering.
+Discovered clusters:: The number of on-premises clusters that BlueXP tiering has discovered. The chart provides an overview of the tiering status for these clusters.
++
+* High tiering - Clusters that are tiering over 20% of their cold data
+* Low tiering - Clusters that are tiering less than 20% of their cold data
+* No tiering - Clusters that aren't tiering any data 
+* Not eligible - Clusters that don't support data tiering
 
-Data overview:: The amount of data that was tiered to the cloud, and the amount of hot and cold data on the cluster.
+Data overview:: The amount of data that is being used by all discovered clusters. The chart indicates the amount of data that is being tiered, and more, for these clusters.
++
+* Tiered data - Total cold data being tiered to the cloud
+* Cold data - Total cold data that is not being tiered
+* Hot data - Total hot data that is active being used
+* Not eligible - Total data that is not being tiered because the cluster or volume doesn't support data tiering
 
-Tiering overview:: The amount of data that is currently being tiered, and the amount of data that could potentially be tiered.
+Tiering overview:: The amount of data that is currently being tiered, and the amount of cold data that could potentially be tiered.
 
 Policies:: The number of times that each tiering policy has been applied to a volume.
 
