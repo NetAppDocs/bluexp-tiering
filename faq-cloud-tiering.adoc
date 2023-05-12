@@ -141,7 +141,7 @@ Yes. BlueXP tiering can be configured to tier volumes hosted on any aggregate. T
 
 === What about Cloud Volumes ONTAP?
 
-If you have Cloud Volumes ONTAP systems, you'll find them in the BlueXP tiering Clusters page so you get a full view of data tiering in your hybrid cloud infrastructure. However, Cloud Volumes ONTAP systems are read-only from BlueXP tiering. You can't set up data tiering on Cloud Volumes ONTAP from BlueXP tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP systems from the working environment in BlueXP^].
+If you have Cloud Volumes ONTAP systems, you'll find them in the BlueXP tiering Clusters page so you get a full view of data tiering in your hybrid cloud infrastructure. However, Cloud Volumes ONTAP systems are read-only from BlueXP tiering. You can't set up data tiering on Cloud Volumes ONTAP from BlueXP tiering. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP systems from the working environment in BlueXP^].
 
 === What other requirements are necessary for my ONTAP clusters?
 
@@ -253,7 +253,7 @@ The Connector is software running on a compute instance either within your cloud
 
 === Can I deploy the Connector on-premises?
 
-Yes. The Connector software can be downloaded and manually installed on a Linux host in your network. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-on-prem.html[See how to install the Connector in your premises].
+Yes. The Connector software can be downloaded and manually installed on a Linux host in your network. https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html[See how to install the Connector in your premises].
 
 === Is an account with a cloud service provider required before using BlueXP tiering?
 

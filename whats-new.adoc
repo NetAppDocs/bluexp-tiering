@@ -30,7 +30,7 @@ The "Clusters Dashboard" tab has been renamed to "Clusters", and the "On-Prem Ov
 
 === Now you can generate a tiering report for your volumes
 
-You can download a report from the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. BlueXP tiering generates a .CSV file that you can review and send to other people in your company as needed. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
+You can download a report from the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. BlueXP tiering generates a .CSV file that you can review and send to other people in your company as needed. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
 
 == 6 December 2022
 
@@ -51,7 +51,7 @@ Because of a change in BlueXP tiering, you need to change the following Connecto
 
 |===
 
-See the full list of endpoints for your https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-aws.html#outbound-internet-access[AWS^], https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-google.html#outbound-internet-access[Google Cloud^], or https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#outbound-internet-access[Azure^] cloud environment.
+See the full list of endpoints for your https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-aws.html#outbound-internet-access[AWS^], https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#outbound-internet-access[Google Cloud^], or https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-azure.html#outbound-internet-access[Azure^] cloud environment.
 // end::whats-new[]
 
 == 6 November 2022
@@ -64,9 +64,9 @@ If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exis
 
 === Tiering wizard enables you to configure AWS PrivateLink when tiering to S3 storage
 
-In previous releases it was very time-consuming to provide this secure way of connecting your cluster to an S3 bucket through a VPC endpoint. Now you can follow the prerequisite steps to https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface[configure your system for a private connection using a VPC endpoint interface], and then you can select the PrivateLink during the Tiering setup wizard in the Networking page.
+In previous releases it was very time-consuming to provide this secure way of connecting your cluster to an S3 bucket through a VPC endpoint. Now you can follow the prerequisite steps to https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface[configure your system for a private connection using a VPC endpoint interface], and then you can select the PrivateLink during the Tiering setup wizard in the Networking page.
 
-https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-aws.html[Review the requirements and steps to tier inactive data to Amazon S3].
+https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html[Review the requirements and steps to tier inactive data to Amazon S3].
 
 === Drag and drop to enable BlueXP tiering to Amazon S3
 
@@ -80,23 +80,23 @@ When removing the mirror object store from a MetroCluster configuration, you’l
 
 === Ability to configure additional object stores for other aggregates in your cluster
 
-The Cloud Tiering UI has added a new set of pages for object storage configuration. You can add new object stores, connect multiple object stores to an aggregate for FabricPool Mirroring, swap the primary and mirror object stores, delete object store connections to aggregates, and more. https://docs.netapp.com/us-en/cloud-manager-tiering/task-managing-object-storage.html[Learn more about the new object storage functionality.]
+The Cloud Tiering UI has added a new set of pages for object storage configuration. You can add new object stores, connect multiple object stores to an aggregate for FabricPool Mirroring, swap the primary and mirror object stores, delete object store connections to aggregates, and more. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-object-storage.html[Learn more about the new object storage functionality.]
 
 === Cloud Tiering license support for MetroCluster configurations
 
-Cloud Tiering licenses can now be shared with your clusters that are in MetroCluster configurations. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
+Cloud Tiering licenses can now be shared with your clusters that are in MetroCluster configurations. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
 
 == 3 May 2022
 
 === Cloud Tiering license support for additional cluster configurations
 
-Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
+Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
 
 == 4 April 2022
 
 === Amazon S3 Glacier Instant Retrieval storage class is now available
 
-When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the _Standard_ storage class to _Glacier Instant Retrieval_ after a certain number of days. This will help reduce your AWS infrastructure costs. https://docs.netapp.com/us-en/cloud-manager-tiering/reference-aws-support.html[See the supported S3 storage classes.]
+When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the _Standard_ storage class to _Glacier Instant Retrieval_ after a certain number of days. This will help reduce your AWS infrastructure costs. https://docs.netapp.com/us-en/bluexp-tiering/reference-aws-support.html[See the supported S3 storage classes.]
 
 === Cloud Tiering has been fully qualified on ONTAP Select systems
 
