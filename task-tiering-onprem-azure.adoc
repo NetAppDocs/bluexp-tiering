@@ -41,7 +41,7 @@ After your free trial ends, pay for BlueXP tiering through a pay-as-you-go subsc
 
 [role="quick-margin-list"]
 * To subscribe from the Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[go to the BlueXP Marketplace offering^], click *Subscribe*, and then follow the prompts.
-* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
+* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP digital wallet].
 
 == Requirements
 

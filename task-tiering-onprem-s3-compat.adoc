@@ -52,7 +52,7 @@ Pay for BlueXP tiering through a pay-as-you-go subscription from your cloud prov
 [role="quick-margin-list"]
 * To subscribe to the BlueXP PAYGO offering from the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^], https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[Azure Marketplace^], or https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], click *Subscribe* and follow the prompts.
 
-* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
+* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP digital wallet].
 
 == Requirements
 
