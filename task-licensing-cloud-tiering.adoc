@@ -17,7 +17,7 @@ A 30-day free trial of BlueXP tiering starts when you set up tiering from your f
 
 A few notes before you read any further:
 
-* If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to BlueXP tiering for on-premises ONTAP systems as well. You'll see an active subscription in the BlueXP tiering *On-prem dashboard* tab. You won't need to subscribe again. You'll see an active subscription in the Digital Wallet.
+* If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to BlueXP tiering for on-premises ONTAP systems as well. You'll see an active subscription in the BlueXP tiering *On-Premises dashboard* tab. You won't need to subscribe again. You'll see an active subscription in the Digital Wallet.
 
 * The BYOL BlueXP tiering license (previously known as a "Cloud Tiering" license) is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. This is different (and much easier) than in the past where you purchased a _FabricPool_ license for each cluster.
 
@@ -35,7 +35,7 @@ Subscribe to BlueXP tiering from the AWS Marketplace to set up a pay-as-you-go s
 
 .Steps
 [[subscribe-aws]]
-. In BlueXP, click *Mobility > Tiering > On-Prem Dashboard*.
+. In BlueXP, click *Mobility > Tiering > On-Premises Dashboard*.
 
 . In the _Marketplace subscriptions_ section, click *Subscribe* under Amazon Web Services and then click *Continue*.
 
@@ -51,7 +51,7 @@ Subscribe to BlueXP tiering from the Azure Marketplace to set up a pay-as-you-go
 
 .Steps
 [[subscribe-azure]]
-. In BlueXP, click *Mobility > Tiering > On-Prem Dashboard*.
+. In BlueXP, click *Mobility > Tiering > On-Premises Dashboard*.
 
 . In the _Marketplace subscriptions_ section, click *Subscribe* under Microsoft Azure and then click *Continue*.
 
@@ -67,7 +67,7 @@ Subscribe to BlueXP tiering from the GCP Marketplace to set up a pay-as-you-go s
 
 .Steps
 [[subscribe-gcp]]
-. In BlueXP, click *Mobility > Tiering > On-Prem Dashboard*.
+. In BlueXP, click *Mobility > Tiering > On-Premises Dashboard*.
 
 . In the _Marketplace subscriptions_ section, click *Subscribe* under Google Cloud and then click *Continue*.
 
