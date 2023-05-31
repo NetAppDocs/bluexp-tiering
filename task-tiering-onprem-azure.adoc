@@ -25,7 +25,7 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An on-prem ONTAP cluster that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
+* An on-prem ONTAP cluster that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * A Connector installed in an Azure VNet or on your premises.
 * Networking for a Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Azure storage, and to the BlueXP tiering service.
 
@@ -41,7 +41,7 @@ After your free trial ends, pay for BlueXP tiering through a pay-as-you-go subsc
 
 [role="quick-margin-list"]
 * To subscribe from the Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[go to the BlueXP Marketplace offering^], click *Subscribe*, and then follow the prompts.
-* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP Digital Wallet].
+* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP digital wallet].
 
 == Requirements
 
@@ -87,20 +87,20 @@ NOTE: BlueXP tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup 
 
 You need to create an on-prem ONTAP working environment in BlueXP before you can start tiering cold data.
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 
 === Creating or switching Connectors
 
 A Connector is required to tier data to the cloud. When tiering data to Azure Blob storage, you can use a Connector that's in an Azure VNet or in your premises. You'll either need to create a new Connector or make sure that the currently selected Connector resides in Azure or on-prem.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html[Learn about Connectors^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html[Deploying a Connector in Azure^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html[Installing a Connector on a Linux host^]
-//* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html[Switching between Connectors^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[Learn about Connectors^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Deploying a Connector in Azure^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html[Installing a Connector on a Linux host^]
+//* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html[Switching between Connectors^]
 
 === Verify that you have the necessary Connector permissions
 
-If you created the Connector using BlueXP version 3.9.25 or greater, then you're all set. The custom role that provides the permissions that a Connector needs to manage resources and processes within your Azure network will be set up by default. See the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html#custom-role-permissions[required custom role permissions^] and the https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html#cloud-tiering[specific permissions required for BlueXP tiering^].
+If you created the Connector using BlueXP version 3.9.25 or greater, then you're all set. The custom role that provides the permissions that a Connector needs to manage resources and processes within your Azure network will be set up by default. See the https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#custom-role-permissions[required custom role permissions^] and the https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html#cloud-tiering[specific permissions required for BlueXP tiering^].
 
 If you created the Connector using an earlier version of BlueXP, then you'll need to edit the permission list for the Azure account to add any missing permissions.
 
@@ -112,7 +112,7 @@ Ensure that the Connector has the required networking connections. A Connector c
 
 . Ensure that the network where the Connector is installed enables the following connections:
 
-* An HTTPS connection over port 443 to the BlueXP tiering service and to your Azure Blob object storage (https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
+* An HTTPS connection over port 443 to the BlueXP tiering service and to your Azure Blob object storage (https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-azure.html#endpoints-contacted-for-day-to-day-operations[see the list of endpoints^])
 * An HTTPS connection over port 443 to your ONTAP cluster management LIF
 
 . If needed, enable a VNet service endpoint to Azure storage.
@@ -137,7 +137,7 @@ After you prepare your Azure environment, start tiering inactive data from your 
 
 .What you'll need
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[An on-premises working environment^].
 
 .Steps
 

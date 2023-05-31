@@ -38,7 +38,7 @@ BlueXP tiering offers automation, monitoring, reports, and a common management i
 
 For more details about the value that BlueXP tiering provides, https://bluexp.netapp.com/cloud-tiering[check out the BlueXP tiering page on the BlueXP website^].
 
-TIP: Cloud Volumes ONTAP systems are read-only from BlueXP tiering. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP systems from the working environment in BlueXP^].
+TIP: Cloud Volumes ONTAP systems are read-only from BlueXP tiering. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html[You set up tiering for Cloud Volumes ONTAP systems from the working environment in BlueXP^].
 
 == Supported object storage providers
 
@@ -167,7 +167,7 @@ Take the following into consideration before you choose this tiering policy:
 * Consider the impact of SnapMirror transfers before assigning the All tiering policy to source volumes in data protection relationships.
 +
 Because data is tiered immediately, SnapMirror will read data from the cloud tier rather than the performance tier. This will result in slower SnapMirror operations--possibly slowing other SnapMirror operations later in queue—even if they are using different tiering policies.
-* BlueXP backup and recovery is similarly affected by volumes set with a tiering policy. https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations[See tiering policy considerations with BlueXP backup and recovery^].
+* BlueXP backup and recovery is similarly affected by volumes set with a tiering policy. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html#fabricpool-tiering-policy-considerations[See tiering policy considerations with BlueXP backup and recovery^].
 
 All DP user data (Backup):: All data on a data protection volume (not including metadata) is immediately moved to the cloud tier. If read, cold data blocks on the cloud tier stay cold and are not written back to the performance tier (starting with ONTAP 9.4).
 +

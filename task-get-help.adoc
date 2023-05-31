@@ -9,4 +9,4 @@ summary: NetApp provides support for BlueXP in a variety of ways. Extensive free
 :icons: font
 :imagesdir: ../media/
 
-include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-family/main/_include/get-help.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/_include/get-help.adoc[]

@@ -17,7 +17,7 @@ A 30-day free trial of BlueXP tiering starts when you set up tiering from your f
 
 A few notes before you read any further:
 
-* If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to BlueXP tiering for on-premises ONTAP systems as well. You'll see an active subscription in the BlueXP tiering *On-Premises dashboard* tab. You won't need to subscribe again. You'll see an active subscription in the Digital Wallet.
+* If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to BlueXP tiering for on-premises ONTAP systems as well. You'll see an active subscription in the BlueXP tiering *On-Premises dashboard* tab. You won't need to subscribe again. You'll see an active subscription in the BlueXP digital wallet.
 
 * The BYOL BlueXP tiering license (previously known as a "Cloud Tiering" license) is a _floating_ license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. This is different (and much easier) than in the past where you purchased a _FabricPool_ license for each cluster.
 
@@ -83,7 +83,7 @@ Pay for BlueXP tiering annually by purchasing an annual contract.
 
 When tiering inactive data to AWS, you can subscribe to an annual contract available from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^]. It's available in 1-, 2-, or 3-year terms.
 
-If you want to use this option, set up your subscription from the Marketplace page and then https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription[associate the subscription with your AWS credentials^].
+If you want to use this option, set up your subscription from the Marketplace page and then https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription[associate the subscription with your AWS credentials^].
 
 Annual contracts are not currently supported when tiering to Azure or GCP.
 
@@ -96,7 +96,7 @@ If you don't have a BlueXP tiering license, contact us to purchase one:
 * mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Send email to purchase a license].
 * Click the chat icon in the lower-right of BlueXP to request a license.
 
-Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a BlueXP tiering license with the same dollar-equivalence and the same expiration date. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Go here for details^].
+Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a BlueXP tiering license with the same dollar-equivalence and the same expiration date. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Go here for details^].
 
 You use the BlueXP digital wallet page to manage BlueXP tiering BYOL licenses. You can add new licenses and update existing licenses.
 
@@ -160,7 +160,7 @@ After you purchase a BlueXP tiering license for your BlueXP account, you need to
 +
 * If you have the tiering license serial number and know your NSS account, select the *Enter Serial Number* option and enter that information.
 +
-If your NetApp Support Site account isn't available from the drop-down list, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html[add the NSS account to BlueXP^].
+If your NetApp Support Site account isn't available from the drop-down list, https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[add the NSS account to BlueXP^].
 * If you have the tiering license file, select the *Upload License File* option and follow the prompts to attach the file.
 +
 image:screenshot_services_license_add.png[A screenshot that shows the page to add the BlueXP tiering BYOL license.]
