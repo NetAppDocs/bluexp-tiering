@@ -31,6 +31,8 @@ sidebar:
               url: /task-tiering-onprem-s3-compat.html
         - title: Set up licensing
           url: /task-licensing-cloud-tiering.html
+        - title: Monitor the status of tiering alerts
+          url: /task-monitor-tiering-alerts.html
         - title: FAQ
           url: /faq-cloud-tiering.html
     - title: Use BlueXP tiering
@@ -93,6 +95,8 @@ homepage:
           url: task-managing-tiering.html#reviewing-tiering-info-for-a-cluster
         - title: Tier data from additional volumes
           url: task-managing-tiering.html#tiering-data-from-additional-volumes
+        - title: Change the bandwidth to upload inactive data to object storage
+          url: task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage
         - title: Move data from the cloud back to the performance tier
           url: task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier
         - title: Manage tiering settings on aggregates

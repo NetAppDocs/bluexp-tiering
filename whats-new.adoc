@@ -16,6 +16,20 @@ summary: Learn what's new in BlueXP tiering.
 Learn what's new in BlueXP tiering.
 
 // tag::whats-new[]
+== 3 July 2023
+
+=== Use a custom prefix for the bucket name where tiering data is stored
+
+In the past you needed to use the default "fabric-pool" prefix when defining the bucket name, for example, _fabric-pool-bucket1_. Now you can use a custom prefix when naming your bucket. This functionality is available only when tiering data from on-premises ONTAP clusters to Amazon S3. https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html[Learn more].
+
+=== Now you can adjust the bandwidth to upload inactive data to object storage
+
+When you activate BlueXP tiering, ONTAP can use an unlimited amount of network bandwidth to transfer the inactive data from volumes in the cluster to object storage. If you notice that tiering traffic is affecting normal user workloads, you can throttle the amount of bandwidth that can be used during the transfer. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage[Learn more].
+
+=== Search for a cluster across all BlueXP Connectors
+
+If you are using multiple Connectors to manage all the storage in your environment, some clusters on which you want to implement tiering may be in another Connector. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors[Learn more].
+
 == 3 April 2023
 
 === Licensing tab has been removed
@@ -31,6 +45,7 @@ The "Clusters Dashboard" tab has been renamed to "Clusters", and the "On-Prem Ov
 === Now you can generate a tiering report for your volumes
 
 You can download a report from the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. BlueXP tiering generates a .CSV file that you can review and send to other people in your company as needed. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
+// end::whats-new[]
 
 == 6 December 2022
 
@@ -52,7 +67,6 @@ Because of a change in BlueXP tiering, you need to change the following Connecto
 |===
 
 See the full list of endpoints for your https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-aws.html#outbound-internet-access[AWS^], https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#outbound-internet-access[Google Cloud^], or https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-azure.html#outbound-internet-access[Azure^] cloud environment.
-// end::whats-new[]
 
 == 6 November 2022
 
@@ -91,13 +105,3 @@ Cloud Tiering licenses can now be shared with your clusters that are in MetroClu
 === Cloud Tiering license support for additional cluster configurations
 
 Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
-
-== 4 April 2022
-
-=== Amazon S3 Glacier Instant Retrieval storage class is now available
-
-When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the _Standard_ storage class to _Glacier Instant Retrieval_ after a certain number of days. This will help reduce your AWS infrastructure costs. https://docs.netapp.com/us-en/bluexp-tiering/reference-aws-support.html[See the supported S3 storage classes.]
-
-=== Cloud Tiering has been fully qualified on ONTAP Select systems
-
-In addition to tiering data from your AFF and FAS systems, now you can tier inactive data from your ONTAP Select systems to cloud storage.

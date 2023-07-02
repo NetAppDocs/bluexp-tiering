@@ -1,0 +1,35 @@
+---
+sidebar: sidebar
+permalink: task-monitor-tiering-alerts.html
+keywords: tiering, status, monitor, alert, notification
+summary: You can view the status of tiering alerts in the BlueXP Notification Center.
+---
+
+= Monitor the status of tiering alerts
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+You can view the status of tiering alerts in the BlueXP Notification Center. 
+//You can also configure notifications to be sent by email so you can be informed of important system activity even when you're not logged into the system.
+
+The Notification Center tracks the progress of tiering incidents so you can verify whether they have been resolved or not. You can display the notifications by clicking the (image:button_bell_icon.png[notification bell]) in the BlueXP menu bar. 
+//You can also configure BlueXP to send notifications by email as alerts.
+
+//At this time, there is one event that will trigger email alerts:
+At this time, there is one event that will appear as a notification:
+
+* Tier additional data from cluster <name> to object storage to increase your storage efficiency
+
+This notification is a "Recommendation" to help make your systems more efficient.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html[Learn more about the Notification Center^].
+
+//By default, BlueXP Account Admins will receive emails for all "Critical" and "Recommendation" alerts. All other users and recipients are configured, by default, not to receive any notification emails. Emails can be sent to any BlueXP users who are part of your NetApp Cloud Account, or to any other recipients who need to be aware of ransomware protection incidents. 
+//
+//You'll need to select the notification type "Critical" to receive the BlueXP ransomware protection email alerts.
+//
+//https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html[Learn more about the Notification Center^] and how to send alert emails for tiering incidents.
