@@ -292,9 +292,9 @@ The IAM user must be in the same AWS account as the bucket that you selected or 
 +
 Select the IPspace in the ONTAP cluster where the volumes you want to tier reside. The intercluster LIFs for this IPspace must have outbound internet access so that they can connect to your cloud provider's object storage.
 +
-Optionally, choose whether you'll use an AWS PrivateLink that you have previously configured. <<Configure your system for a private connection using a VPC endpoint interface,See the setup information above.>>
+Optionally, choose whether you'll use an AWS PrivateLink that you have previously configured. <<Configure your system for a private connection using a VPC endpoint interface,See the setup information above.>> A dialog box is displayed to help guide you through the endpoint configuration.
 +
-A dialog box is displayed to help guide you through the endpoint configuration.
+You can also set the network bandwidth available to upload inactive data to object storage by defining the "Maximum transfer rate". Select the *Limited* radio button and enter the maximum bandwidth that can be used, or select *Unlimited* to indicate that there is no limit.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 

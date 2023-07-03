@@ -18,17 +18,17 @@ Learn what's new in BlueXP tiering.
 // tag::whats-new[]
 == 3 July 2023
 
-=== Use a custom prefix for the bucket name where tiering data is stored
+=== Use a custom prefix for the bucket name where tiered data is stored
 
 In the past you needed to use the default "fabric-pool" prefix when defining the bucket name, for example, _fabric-pool-bucket1_. Now you can use a custom prefix when naming your bucket. This functionality is available only when tiering data from on-premises ONTAP clusters to Amazon S3. https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html[Learn more].
 
-=== Now you can adjust the bandwidth to upload inactive data to object storage
+=== Now you can adjust the bandwidth used to upload inactive data to object storage
 
 When you activate BlueXP tiering, ONTAP can use an unlimited amount of network bandwidth to transfer the inactive data from volumes in the cluster to object storage. If you notice that tiering traffic is affecting normal user workloads, you can throttle the amount of bandwidth that can be used during the transfer. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage[Learn more].
 
 === Search for a cluster across all BlueXP Connectors
 
-If you are using multiple Connectors to manage all the storage in your environment, some clusters on which you want to implement tiering may be in another Connector. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors[Learn more].
+If you are using multiple Connectors to manage all the storage systems in your environment, some clusters on which you want to implement tiering may be in different Connectors. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors[Learn more].
 
 == 3 April 2023
 

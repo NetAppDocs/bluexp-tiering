@@ -175,6 +175,8 @@ Note that the life cycle rule is applied to all objects in the selected bucket.
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage.
 +
 Selecting the correct IPspace ensures that BlueXP tiering can set up a connection from ONTAP to your cloud provider's object storage.
++
+You can also set the network bandwidth available to upload inactive data to object storage by defining the "Maximum transfer rate". Select the *Limited* radio button and enter the maximum bandwidth that can be used, or select *Unlimited* to indicate that there is no limit.
 
 . Click *Continue* to select the volumes that you want to tier.
 

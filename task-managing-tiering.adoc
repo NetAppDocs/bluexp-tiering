@@ -5,7 +5,7 @@ keywords: discover, volumes, report, hot, cold, inactive, active, capacity, used
 summary: Now that you've set up data tiering from your on-prem ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, discover additional clusters, and more.
 ---
 
-= Managing data tiering from your clusters
+= Managing data tiering for your clusters
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -104,7 +104,7 @@ When you activate BlueXP tiering for a cluster, by default, ONTAP can use an unl
 +
 image:screenshot_tiering_transfer_rate_button.png[A screenshot of selecting the Maximum transfer rate button from the Clusters page.]
 
-. In the _Maximum transfer rate_ page, select the *Limited* radio button and enter the maximum bandwidth that can be used, or select *Unlimited* to indicate that there is no limit. Then click Apply.
+. In the _Maximum transfer rate_ page, select the *Limited* radio button and enter the maximum bandwidth that can be used, or select *Unlimited* to indicate that there is no limit. Then click *Apply*.
 +
 image:screenshot_tiering_transfer_rate.png[A screenshot of the Maximum Transfer Rate dialog for a cluster.]
 
