@@ -31,8 +31,6 @@ sidebar:
               url: /task-tiering-onprem-s3-compat.html
         - title: Set up licensing
           url: /task-licensing-cloud-tiering.html
-        - title: Monitor the status of tiering alerts
-          url: /task-monitor-tiering-alerts.html
         - title: FAQ
           url: /faq-cloud-tiering.html
     - title: Use BlueXP tiering
@@ -45,6 +43,8 @@ sidebar:
           url: /task-tiering-test.html
         - title: View tiering overview for all clusters
           url: /task-tiering-onprem-overview.html
+        - title: Monitor the status of tiering alerts
+          url: /task-monitor-tiering-alerts.html
     - title: Reference
       entries:
         - title: Supported Amazon S3 storage classes and regions
