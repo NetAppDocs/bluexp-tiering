@@ -346,6 +346,8 @@ In case of a network failure, the local performance tier remains online and hot 
 
 The underlying FabricPool tiering technology read latency depends on connectivity to the cloud tier. Although tiering works on any bandwidth, it is recommended to place intercluster LIFs on 10 Gbps ports to provide adequate performance. There are no recommendations or bandwidth limitations for the Connector.
 
+Additionally, you can throttle the amount of network bandwidth that is used during the transfer of inactive data from the volume to object storage. The _Maximum transfer rate_ setting is available when configuring your cluster for tiering, and afterwards from the *Clusters* page.
+
 === Is there any latency when a user attempts to access tiered data?
 
 Yes. Cloud tiers cannot provide the same latency as the local tier since latency depends on the connectivity. To estimate the latency and throughput of an object store, BlueXP tiering provides a Cloud Performance Test (based on the ONTAP object store profiler) that can be used after the object store is attached and before tiering is set up.

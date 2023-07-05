@@ -160,6 +160,8 @@ The _fabric-pool_ prefix is required because the IAM policy for the Connector en
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage and click *Continue*.
 +
 Selecting the correct IPspace ensures that BlueXP tiering can set up a connection from ONTAP to StorageGRID object storage.
++
+You can also set the network bandwidth available to upload inactive data to object storage by defining the "Maximum transfer rate". Select the *Limited* radio button and enter the maximum bandwidth that can be used, or select *Unlimited* to indicate that there is no limit.
 
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
