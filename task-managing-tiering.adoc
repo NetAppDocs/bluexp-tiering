@@ -5,7 +5,7 @@ keywords: discover, volumes, report, hot, cold, inactive, active, capacity, used
 summary: Now that you've set up data tiering from your on-prem ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, discover additional clusters, and more.
 ---
 
-= Managing data tiering from your clusters
+= Managing data tiering for your clusters
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -14,6 +14,30 @@ summary: Now that you've set up data tiering from your on-prem ONTAP clusters, y
 
 [.lead]
 Now that you've set up data tiering from your on-prem ONTAP clusters, you can tier data from additional volumes, change a volume's tiering policy, discover additional clusters, and more.
+
+== Reviewing tiering info for a cluster
+
+You might want to see how much data is in the cloud tier and how much data is on disks. Or, you might want to see the amount of hot and cold data on the cluster's disks. BlueXP tiering provides this information for each cluster.
+
+.Steps
+
+. From the left navigation menu, select *Mobility > Tiering*.
+
+. From the *Clusters* page, click the menu icon image:icon-action.png[Actions icon] for a cluster and select *Cluster info*.
++
+image:screenshot_tiering_cluster_info_button.png[A screenshot of selecting the Cluster Info button from the Clusters page.]
+
+. Review details about the cluster.
++
+Here's an example:
++
+image:screenshot_tiering_cluster_info.png["A screenshot that shows the cluster total used data capacity, cluster used capacity, and cluster information."]
+
+Note that the display is different for Cloud Volumes ONTAP systems. While Cloud Volumes ONTAP volumes can have data tiered to the cloud, they do not use the BlueXP tiering service. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html[Learn how to tier inactive data from Cloud Volumes ONTAP systems to low-cost object storage^].
+
+You can also https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering[view tiering information for a cluster from Digital Advisor^] if you're familiar with this NetApp product. Just select *Cloud Recommendations* from the left navigation pane.
+
+image:screenshot_tiering_aiq_fabricpool_info.png["A screenshot that shows FabricPool information for a cluster using the FabricPool Advisor from Digital Advisor."]
 
 == Tiering data from additional volumes
 
@@ -69,6 +93,22 @@ image:screenshot_tiering_policy_settings.png[A screenshot that shows the configu
 .Result
 
 The tiering policy is changed and data begins to be tiered based on the new policy.
+
+== Changing the network bandwidth available to upload inactive data to object storage
+
+When you activate BlueXP tiering for a cluster, by default, ONTAP can use an unlimited amount of bandwidth to transfer the inactive data from volumes in the working environment to object storage. If you notice that tiering traffic is affecting normal user workloads, you can throttle the amount of network bandwidth that is used during the transfer. You can choose a value between 1 and 10,000 Mbps as the maximum transfer rate.
+
+. From the left navigation menu, select *Mobility > Tiering*.
+
+. From the *Clusters* page, click the menu icon image:icon-action.png[Actions icon] for a cluster and select *Maximum transfer rate*.
++
+image:screenshot_tiering_transfer_rate_button.png[A screenshot of selecting the Maximum transfer rate button from the Clusters page.]
+
+. In the _Maximum transfer rate_ page, select the *Limited* radio button and enter the maximum bandwidth that can be used, or select *Unlimited* to indicate that there is no limit. Then click *Apply*.
++
+image:screenshot_tiering_transfer_rate.png[A screenshot of the Maximum Transfer Rate dialog for a cluster.]
+
+This setting does not affect the bandwidth allocated to any other clusters that are tiering data.
 
 == Download a tiering report for your volumes
 
@@ -142,26 +182,6 @@ image:screenshot_tiering_modify_aggregate.png[A screenshot that shows a slider t
 
 . Click *Apply*.
 
-== Reviewing tiering info for a cluster
-
-You might want to see how much data is in the cloud tier and how much data is on disks. Or, you might want to see the amount of hot and cold data on the cluster's disks. BlueXP tiering provides this information for each cluster.
-
-.Steps
-
-. From the left navigation menu, select *Mobility > Tiering*.
-
-. From the *Clusters* page, click the menu icon for a cluster and select *Cluster info*.
-
-. Review details about the cluster.
-+
-Here's an example:
-+
-image:screenshot_tiering_cluster_info.png["A screenshot that shows the cluster report, which details total used capacity, cluster used capacity, cluster information, and object storage information."]
-
-You can also https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering[view tiering information for a cluster from Digital Advisor^] if you're familiar with this NetApp product. Just select *Cloud Recommendations* from the left navigation pane.
-
-image:screenshot_tiering_aiq_fabricpool_info.png["A screenshot that shows FabricPool information for a cluster using the FabricPool Advisor from Digital Advisor."]
-
 == Fixing operational health
 
 Failures can happen. When they do, BlueXP tiering displays a "Failed" operational health status on the Cluster Dashboard. The health reflects the status of the ONTAP system and BlueXP.
@@ -211,3 +231,19 @@ Note that the cluster management IP address is populated based on information fr
 BlueXP discovers the cluster and adds it to a working environment in the Canvas using the cluster name as the working environment name.
 
 You can enable the Tiering service or other services for this cluster in the right panel.
+
+//== Search for a cluster across all BlueXP Connectors
+//
+//If you are using multiple Connectors to manage all the storage in your environment, some clusters on which you want to implement tiering may be in another Connector. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering.
+//
+//.Steps
+//
+//. In the BlueXP tiering menu bar, click the action menu and select *Search for cluster in all Connectors*.
+//+
+//image:screenshot_tiering_search for_cluster.png[A screenshot showing how to search for a cluster that may be in any of your BlueXP Connectors.]
+//
+//. In the displayed Search dialog, enter the name of the cluster and click *Search*.
+//+
+//BlueXP tiering displays the name of the Connector if it is able to find the cluster.
+//
+//. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#switch-between-connectors[Switch to the Connector and configure tiering for the cluster^].
