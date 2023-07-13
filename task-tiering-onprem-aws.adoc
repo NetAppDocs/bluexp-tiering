@@ -154,9 +154,9 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[Le
 
 == Prepare your AWS environment
 
-When you set up data tiering to a new cluster, you're prompted to create an S3 bucket or to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in BlueXP tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
+When you set up data tiering for a new cluster, you're prompted whether you want the service to create an S3 bucket or if you want to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in BlueXP tiering. The ONTAP cluster uses the access key to tier data in and out of S3.
 
-The S3 bucket must be in a link:reference-aws-support.html#supported-aws-regions[region that supports BlueXP tiering].
+By default, the tiering service creates the bucket for you. If you want to use your own bucket, you can create one before you start the tiering activation wizard and then select that bucket in the wizard. https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html[See how to create S3 buckets from BlueXP^]. The bucket must be used exclusively for storing inactive data from your volumes - it cannot be used for any other purpose. The S3 bucket must be in a link:reference-aws-support.html#supported-aws-regions[region that supports BlueXP tiering].
 
 NOTE: If you are planning to configure BlueXP tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your AWS account. BlueXP tiering manages the life cycle transitions.
 
@@ -170,16 +170,14 @@ You'll need to configure two sets of permissions:
 .Steps
 
 . Confirm that https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies[these S3 permissions^] are part of the IAM role that provides the Connector with permissions. They should have been included by default when you first deployed the Connector. If not, you'll need to add the missing permissions. See the https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html[AWS Documentation: Editing IAM policies^].
-//+
-//Note that the default bucket that BlueXP tiering creates has a prefix of "fabric-pool". If you want to use a different prefix for your bucket, you'll need to customize the permissions with the name you want to use. In the permissions you'll see a line 
-//`"Resource": ["arn:aws:s3:::fabric-pool*"]`. You'll need to change "fabric-pool" to the prefix that you want to use. For example, if you want to use "tiering" as the prefix for your buckets, you'll change this line to `"Resource": ["arn:aws:s3:::tiering*"]`. 
-//+
-//If you want to use a different prefix for additional clusters in this BlueXP account, you can add another line with the prefix for other buckets. For example:
-//
-// "Resource": ["arn:aws:s3:::tiering-1*"]
-// "Resource": ["arn:aws:s3:::tiering-2*"]
-//
-//https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html[See how to create S3 buckets from BlueXP^].
++
+Note that the default bucket that BlueXP tiering creates has a prefix of "fabric-pool". If you want to use a different prefix for your bucket, you'll need to customize the permissions with the name you want to use. In the permissions you'll see a line 
+`"Resource": ["arn:aws:s3:::fabric-pool*"]`. You'll need to change "fabric-pool" to the prefix that you want to use. For example, if you want to use "tiering" as the prefix for your buckets, you'll change this line to `"Resource": ["arn:aws:s3:::tiering*"]`. 
++
+If you want to use a different prefix for buckets for additional clusters in this BlueXP account, you can add another line with the prefix for other buckets. For example:
++
+`"Resource": ["arn:aws:s3:::tiering-1*"]`
+`"Resource": ["arn:aws:s3:::tiering-2*"]`
 
 . When activating the service, the Tiering wizard will prompt you to enter an access key and secret key. These credentials are passed to the ONTAP cluster so that ONTAP can tier data to the S3 bucket. For that, you'll need to create an IAM user with the following permissions:
 +
@@ -274,8 +272,7 @@ image:screenshot_tiering_aws_s3_bucket.png[A screenshot showing the data that mu
 +
 When using an on-prem Connector, you must enter the AWS Account ID that provides access to the existing S3 bucket or new S3 bucket that will be created.
 +
-The _fabric-pool_ prefix is used by default because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster. 
-//You can define the prefix for the buckets used for tiering as well. See <<Set up S3 permissions,setting up S3 permissions>> to make sure you have AWS permissions that recognize any custom prefix you plan to use. 
+The _fabric-pool_ prefix is used by default because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster. You can define the prefix for the buckets used for tiering as well. See <<Set up S3 permissions,setting up S3 permissions>> to make sure you have AWS permissions that recognize any custom prefix you plan to use. 
 
 .. *Storage Class*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
 +
