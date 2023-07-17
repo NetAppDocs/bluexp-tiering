@@ -164,22 +164,25 @@ NOTE: If you are planning to configure BlueXP tiering to use a lower cost storag
 
 You'll need to configure two sets of permissions:
 
-* Permissions for the Connector to create and manage the S3 bucket.
+* Permissions for the Connector so it can create and manage the S3 bucket.
 * Permissions for the on-premises ONTAP cluster so it can read and write data to the S3 bucket.
 
 .Steps
 
-. Confirm that https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies[these S3 permissions^] are part of the IAM role that provides the Connector with permissions. They should have been included by default when you first deployed the Connector. If not, you'll need to add the missing permissions. See the https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html[AWS Documentation: Editing IAM policies^].
+. *Connector permissions*:
+* Confirm that https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies[these S3 permissions^] are part of the IAM role that provides the Connector with permissions. They should have been included by default when you first deployed the Connector. If not, you'll need to add any missing permissions. See the https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html[AWS Documentation: Editing IAM policies^] for instructions.
+
+* The default bucket that BlueXP tiering creates has a prefix of "fabric-pool". If you want to use a different prefix for your bucket, you'll need to customize the permissions with the name you want to use. In the S3 permissions you'll see a line `"Resource": ["arn:aws:s3:::fabric-pool*"]`. You'll need to change "fabric-pool" to the prefix that you want to use. For example, if you want to use "tiering-1" as the prefix for your buckets, you'll change this line to `"Resource": ["arn:aws:s3:::tiering-1*"]`. 
 +
-Note that the default bucket that BlueXP tiering creates has a prefix of "fabric-pool". If you want to use a different prefix for your bucket, you'll need to customize the permissions with the name you want to use. In the permissions you'll see a line 
-`"Resource": ["arn:aws:s3:::fabric-pool*"]`. You'll need to change "fabric-pool" to the prefix that you want to use. For example, if you want to use "tiering" as the prefix for your buckets, you'll change this line to `"Resource": ["arn:aws:s3:::tiering*"]`. 
-+
-If you want to use a different prefix for buckets for additional clusters in this BlueXP account, you can add another line with the prefix for other buckets. For example:
+If you want to use a different prefix for buckets that you'll use for additional clusters in this same BlueXP account, you can add another line with the prefix for other buckets. For example:
 +
 `"Resource": ["arn:aws:s3:::tiering-1*"]`
 `"Resource": ["arn:aws:s3:::tiering-2*"]`
++
+If you are creating your own bucket and do not use a standard prefix, you should change this line to `"Resource": ["arn:aws:s3:::*"]` so that any bucket is recognized. However, this may expose all your buckets instead of those you have designed to hold inactive data from your volumes.
 
-. When activating the service, the Tiering wizard will prompt you to enter an access key and secret key. These credentials are passed to the ONTAP cluster so that ONTAP can tier data to the S3 bucket. For that, you'll need to create an IAM user with the following permissions:
+. *Cluster permissions*:
+* When activating the service, the Tiering wizard will prompt you to enter an access key and secret key. These credentials are passed to the ONTAP cluster so that ONTAP can tier data to the S3 bucket. For that, you'll need to create an IAM user with the following permissions:
 +
 [source,json]
 "s3:ListAllMyBuckets",
@@ -268,7 +271,7 @@ image:screenshot_tiering_aws_s3_bucket.png[A screenshot showing the data that mu
 
 . Complete the sections in the *Tiering Setup* page:
 
-.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the defined prefix "fabric-pool", select the bucket region, and click *Continue*.
+.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket, select the bucket region, and click *Continue*.
 +
 When using an on-prem Connector, you must enter the AWS Account ID that provides access to the existing S3 bucket or new S3 bucket that will be created.
 +
