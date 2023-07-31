@@ -20,7 +20,7 @@ Learn what's new in BlueXP tiering.
 
 === Use a custom prefix for the bucket name where tiered data is stored
 
-In the past you needed to use the default "fabric-pool" prefix when defining the bucket name, for example, _fabric-pool-bucket1_. Now you can use a custom prefix when naming your bucket. This functionality is available only when tiering data from on-premises ONTAP clusters to Amazon S3. https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html[Learn more].
+In the past you needed to use the default "fabric-pool" prefix when defining the bucket name, for example, _fabric-pool-bucket1_. Now you can use a custom prefix when naming your bucket. This functionality is available only when tiering data from on-premises ONTAP clusters to Amazon S3. https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#prepare-your-aws-environment[Learn more].
 
 === Search for a cluster across all BlueXP Connectors
 
