@@ -26,10 +26,6 @@ In the past you needed to use the default "fabric-pool" prefix when defining the
 
 If you are using multiple Connectors to manage all the storage systems in your environment, some clusters on which you want to implement tiering may be in different Connectors. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors[Learn more].
 
-=== More?
-
-more?
-
 == 4 July 2023
 
 === Now you can adjust the bandwidth used to upload inactive data to object storage
