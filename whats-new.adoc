@@ -16,7 +16,7 @@ summary: Learn what's new in BlueXP tiering.
 Learn what's new in BlueXP tiering.
 
 // tag::whats-new[]
-== 7 August 2023
+== 9 August 2023
 
 === Use a custom prefix for the bucket name where tiered data is stored
 
