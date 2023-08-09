@@ -232,18 +232,18 @@ BlueXP discovers the cluster and adds it to a working environment in the Canvas 
 
 You can enable the Tiering service or other services for this cluster in the right panel.
 
-//== Search for a cluster across all BlueXP Connectors
-//
-//If you are using multiple Connectors to manage all the storage in your environment, some clusters on which you want to implement tiering may be in another Connector. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering.
-//
-//.Steps
-//
-//. In the BlueXP tiering menu bar, click the action menu and select *Search for cluster in all Connectors*.
-//+
-//image:screenshot_tiering_search for_cluster.png[A screenshot showing how to search for a cluster that may be in any of your BlueXP Connectors.]
-//
-//. In the displayed Search dialog, enter the name of the cluster and click *Search*.
-//+
-//BlueXP tiering displays the name of the Connector if it is able to find the cluster.
-//
-//. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#switch-between-connectors[Switch to the Connector and configure tiering for the cluster^].
+== Search for a cluster across all BlueXP Connectors
+
+If you are using multiple Connectors to manage all the storage in your environment, some clusters on which you want to implement tiering may be in another Connector. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering.
+
+.Steps
+
+. In the BlueXP tiering menu bar, click the action menu and select *Search for cluster in all Connectors*.
++
+image:screenshot_tiering_search for_cluster.png[A screenshot showing how to search for a cluster that may be in any of your BlueXP Connectors.]
+
+. In the displayed Search dialog, enter the name of the cluster and click *Search*.
++
+BlueXP tiering displays the name of the Connector if it is able to find the cluster.
+
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#switch-between-connectors[Switch to the Connector and configure tiering for the cluster^].

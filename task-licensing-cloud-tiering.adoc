@@ -128,7 +128,18 @@ Here are some things you need to know about the two licenses:
 
 === Obtain your BlueXP tiering license file
 
-After you have purchased your BlueXP tiering license, you activate the license in BlueXP by entering the BlueXP tiering serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
+After you've purchased your BlueXP tiering license, you activate the license in BlueXP either by entering the BlueXP tiering serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.
+
+.Before you begin
+
+You'll need to have the following information before you start:
+
+* BlueXP tiering serial number
++
+Locate this number from your Sales Order, or contact the account team for this information.
+* BlueXP Account ID
++
+You can find your BlueXP Account ID by selecting the *Account* drop-down from the top of BlueXP, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
 
 .Steps
 
@@ -138,13 +149,11 @@ After you have purchased your BlueXP tiering license, you activate the license i
 +
 image:screenshot_cloud_tiering_license_step1.gif[A screenshot that shows a table of licenses after searching by serial number.]
 
-. Under *License Key*, click *Get NetApp License File*.
+. In the *License Key* column, click *Get NetApp License File*.
 
 . Enter your BlueXP Account ID (this is called a Tenant ID on the support site) and click *Submit* to download the license file.
 +
 image:screenshot_cloud_tiering_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
-+
-You can find your BlueXP Account ID by selecting the *Account* drop-down from the top of BlueXP, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
 
 === Add BlueXP tiering BYOL licenses to your account
 
