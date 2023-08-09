@@ -177,13 +177,13 @@ You can also set the network bandwidth available to upload inactive data to obje
 * To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[""]) and click *Configure volumes*.
 * To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
-image:screenshot_tiering_tier_volumes.png["A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button."]
+image:screenshot_tiering_initial_volumes.png["A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button."]
 
 . In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
 +
 link:concept-cloud-tiering.html#volume-tiering-policies[Learn more about volume tiering policies and cooling days].
 +
-image:screenshot_tiering_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
+image:screenshot_tiering_initial_policy_settings.png[A screenshot that shows the configurable tiering policy settings.]
 
 .Result
 
