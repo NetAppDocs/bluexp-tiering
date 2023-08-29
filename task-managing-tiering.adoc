@@ -138,7 +138,7 @@ NOTE: You may be charged by your cloud provider based on that amount of data tra
 
 .Steps
 
-Make sure you have enough space in the performance tier for all the data that is being moved from the cloud.
+Make sure you have enough space in the performance tier for all the data that is being moved back from the cloud.
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
