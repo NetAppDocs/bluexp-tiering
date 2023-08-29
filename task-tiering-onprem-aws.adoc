@@ -158,7 +158,7 @@ When you set up data tiering for a new cluster, you're prompted whether you want
 
 By default, the tiering service creates the bucket for you. If you want to use your own bucket, you can create one before you start the tiering activation wizard and then select that bucket in the wizard. https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html[See how to create S3 buckets from BlueXP^]. The bucket must be used exclusively for storing inactive data from your volumes - it cannot be used for any other purpose. The S3 bucket must be in a link:reference-aws-support.html#supported-aws-regions[region that supports BlueXP tiering].
 
-NOTE: If you are planning to configure BlueXP tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your AWS account. BlueXP tiering manages the life cycle transitions.
+NOTE: If you are planning to configure BlueXP tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any lifecycle rules when setting up the bucket in your AWS account. BlueXP tiering manages the lifecycle transitions.
 
 === Set up S3 permissions
 
@@ -277,15 +277,15 @@ When using an on-prem Connector, you must enter the AWS Account ID that provides
 +
 The _fabric-pool_ prefix is used by default because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster. You can define the prefix for the buckets used for tiering as well. See <<Set up S3 permissions,setting up S3 permissions>> to make sure you have AWS permissions that recognize any custom prefix you plan to use. 
 
-.. *Storage Class*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
+.. *Storage Class*: BlueXP tiering manages the lifecycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to apply a different storage class to the data after a certain number of days.
 +
-Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Standard-IA_ class after 45 days in object storage.
+Select the S3 storage class that you want to transition the tiered data to and the number of days before the data is assigned to that class, and click *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Standard-IA_ class from the _Standard_ class after 45 days in object storage.
 +
 If you choose *Keep data in this storage class*, then the data remains in the _Standard_ storage class and no rules are applied. link:reference-aws-support.html[See supported storage classes^].
 +
-image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to select another storage class where data is moved after a certain number of days.]
+image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to select another storage class that is assigned to your data after a certain number of days.]
 +
-Note that the life cycle rule is applied to all objects in the selected bucket.
+Note that the lifecycle rule is applied to all objects in the selected bucket.
 
 .. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click *Continue*.
 +

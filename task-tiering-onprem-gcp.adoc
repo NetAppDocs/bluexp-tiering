@@ -119,7 +119,7 @@ When you set up tiering, you need to provide storage access keys for a service a
 
 The Cloud Storage buckets must be in a link:reference-google-support.html#supported-google-cloud-regions[region that supports BlueXP tiering].
 
-NOTE: If you are planning to configure BlueXP tiering to use lower cost storage classes where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the bucket in your GCP account. BlueXP tiering manages the life cycle transitions.
+NOTE: If you are planning to configure BlueXP tiering to use lower cost storage classes where your tiered data will transition to after a certain number of days, you must not select any lifecycle rules when setting up the bucket in your GCP account. BlueXP tiering manages the lifecycle transitions.
 
 .Steps
 
@@ -160,15 +160,15 @@ image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable opt
 
 .. *Bucket*: Add a new Google Cloud Storage bucket or select an existing bucket.
 
-.. *Storage Class Life Cycle*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create rules to move the data to other classes after a certain number of days.
+.. *Storage Class Lifecycle*: BlueXP tiering manages the lifecycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create rules to apply different storage classes after a certain number of days.
 +
-Select the Google Cloud storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Nearline_ class after 30 days in object storage, and then to the _Coldline_ class after 60 days in object storage.
+Select the Google Cloud storage class that you want to transition the tiered data to and the number of days before the data is assigned to that class, and click *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Nearline_ class from the _Standard_ class after 30 days in object storage, and then to the _Coldline_ class after 60 days in object storage.
 +
 If you choose *Keep data in this storage class*, then the data remains in the that storage class. link:reference-google-support.html[See supported storage classes^].
 +
-image:screenshot_tiering_lifecycle_selection_gcp.png[A screenshot showing how to select additional storage classes where data is moved after a certain number of days.]
+image:screenshot_tiering_lifecycle_selection_gcp.png[A screenshot showing how to select additional storage classes that are assigned to your data after a certain number of days.]
 +
-Note that the life cycle rule is applied to all objects in the selected bucket.
+Note that the lifecycle rule is applied to all objects in the selected bucket.
 
 .. *Credentials*: Enter the storage access key and secret key for a service account that has the Storage Admin role.
 

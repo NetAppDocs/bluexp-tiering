@@ -129,7 +129,7 @@ BlueXP tiering supports only the General Purpose v2 and Premium Block Blob types
 //
 //The Blob container must be in a link:reference-azure-support.html#supported-azure-regions[region that supports BlueXP tiering].
 
-NOTE: If you are planning to configure BlueXP tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any life cycle rules when setting up the container in your Azure account. BlueXP tiering manages the life cycle transitions.
+NOTE: If you are planning to configure BlueXP tiering to use a lower cost access tier where your tiered data will transition to after a certain number of days, you must not select any lifecycle rules when setting up the container in your Azure account. BlueXP tiering manages the lifecycle transitions.
 
 == Tiering inactive data from your first cluster to Azure Blob storage
 
@@ -163,15 +163,15 @@ When using an on-prem Connector, you must enter the Azure Subscription that prov
 +
 The storage accounts and containers that appear in this step belong to the resource group that you selected in the previous step.
 
-.. *Access Tier Life Cycle*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Hot_ class, but you can create a rule to move the data to the _Cool_ class after a certain number of days.
+.. *Access Tier Lifecycle*: BlueXP tiering manages the lifecycle transitions of your tiered data. Data starts in the _Hot_ class, but you can create a rule to apply the _Cool_ class to the data after a certain number of days.
 +
-Select the access tier that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Hot_ class to the _Cool_ class after 45 days in object storage.
+Select the access tier that you want to transition the tiered data to and the number of days before the data is assigned to that tier, and click *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Cool_ class from the _Hot_ class after 45 days in object storage.
 +
 If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied. link:reference-azure-support.html[See supported access tiers^].
 +
-image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where data is moved after a certain number of days.]
+image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how to select another access tier where that is assigned to your data after a certain number of days.]
 +
-Note that the life cycle rule is applied to all blob containers in the selected storage account.
+Note that the lifecycle rule is applied to all blob containers in the selected storage account.
 
 .. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
 +
