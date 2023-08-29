@@ -198,9 +198,9 @@ BlueXP tiering supports data tiering to the _Hot_ or _Cool_ access tiers for you
 
 BlueXP tiering supports data tiering to the _Standard_, _Nearline_, _Coldline_, and _Archive_ storage classes. See link:reference-google-support.html[Supported Google Cloud storage classes] for more details.
 
-=== Does BlueXP tiering support the use of life cycle management policies?
+=== Does BlueXP tiering support the use of lifecycle management policies?
 
-Yes. You can enable life cycle management so that BlueXP tiering transitions data from the default storage class/access tier to a more cost-effective tier after a certain number of days. The life cycle rule is applied to all objects in the selected bucket for Amazon S3 and Google Cloud storage, and to all containers in the selected storage account for Azure Blob.
+Yes. You can enable lifecycle management so that BlueXP tiering transitions data from the default storage class/access tier to a more cost-effective tier after a certain number of days. The lifecycle rule is applied to all objects in the selected bucket for Amazon S3 and Google Cloud storage, and to all containers in the selected storage account for Azure Blob.
 
 === Does BlueXP tiering use one object store for the entire cluster or one per aggregate?
 

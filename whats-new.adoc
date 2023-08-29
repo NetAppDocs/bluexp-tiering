@@ -96,7 +96,7 @@ If the Amazon S3 tiering destination exists as a working environment on the Canv
 
 === Choose the tiering behavior when removing the mirror object store in a MetroCluster configuration
 
-When removing the mirror object store from a MetroCluster configuration, you’ll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
+When removing the mirror object store from a MetroCluster configuration, you'll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
 
 == 3 August 2022
 

@@ -53,15 +53,15 @@ The object store wizard starts. The example below shows how to create an object 
 +
 The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
-.. *Storage Class Life Cycle*: BlueXP tiering manages the life cycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to move the data to another class after a certain number of days.
+.. *Storage Class Lifecycle*: BlueXP tiering manages the lifecycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to apply a different storage class to the data after a certain number of days.
 +
-Select the S3 storage class that you want to transition the tiered data to and the number of days before the data will be moved, and click *Continue*. For example, the screenshot below shows that tiered data is moved from the _Standard_ class to the _Standard-IA_ class after 45 days in object storage.
+Select the S3 storage class that you want to transition the tiered data to and the number of days before the data is assigned to that class, and click *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Standard-IA_ class from the _Standard_ class after 45 days in object storage.
 +
 If you choose *Keep data in this storage class*, then the data remains in the _Standard_ storage class and no rules are applied. link:reference-aws-support.html[See supported storage classes^].
 +
-image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to select another storage class where data is moved after a certain number of days.]
+image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to select another storage class that is assigned to your data after a certain number of days.]
 +
-Note that the life cycle rule is applied to all objects in the selected bucket.
+Note that the lifecycle rule is applied to all objects in the selected bucket.
 
 .. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click *Continue*.
 +
