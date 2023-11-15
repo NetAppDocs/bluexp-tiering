@@ -25,6 +25,12 @@ A few notes before you read any further:
 
 link:concept-cloud-tiering.html#pricing-and-licenses[Learn more about how licensing works for BlueXP tiering].
 
+== 30-day free trial
+
+If you don't have a BlueXP tiering license, a 30-day free trial of BlueXP tiering starts when you set up tiering to your first cluster. After the 30-day free trial ends, you'll need to pay for BlueXP tiering through a pay-as-you-go subscription, annual subscription, a BYOL license, or a combination.
+
+If your free trial ends and you haven't subscribed or added a license, then ONTAP no longer tiers cold data to object storage. All previously tiered data remains accessible; meaning you can retrieve and use this data. When retrieved, this data is moved back to the performance tier from the cloud. 
+
 == Use a BlueXP tiering PAYGO subscription
 
 Pay-as-you-go subscriptions from your cloud provider's marketplace enable you to license the use of Cloud Volumes ONTAP systems and many Cloud Data Services, such as BlueXP tiering.
@@ -39,7 +45,7 @@ Subscribe to BlueXP tiering from the AWS Marketplace to set up a pay-as-you-go s
 
 . In the _Marketplace subscriptions_ section, click *Subscribe* under Amazon Web Services and then click *Continue*.
 
-. Subscribe from the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[AWS Marketplace^], and then log back into the BlueXP website to complete the registration.
+. Subscribe from the https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4[AWS Marketplace^], and then log back into the BlueXP website to complete the registration.
 +
 The following video shows the process:
 +
@@ -61,9 +67,9 @@ The following video shows the process:
 +
 video::video_subscribing_azure_tiering.mp4[width=848, height=480]
 
-=== Subscribing from the GCP Marketplace
+=== Subscribing from the Google Cloud Marketplace
 
-Subscribe to BlueXP tiering from the GCP Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to Google Cloud storage.
+Subscribe to BlueXP tiering from the Google Cloud Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to Google Cloud storage.
 
 .Steps
 [[subscribe-gcp]]
@@ -71,7 +77,7 @@ Subscribe to BlueXP tiering from the GCP Marketplace to set up a pay-as-you-go s
 
 . In the _Marketplace subscriptions_ section, click *Subscribe* under Google Cloud and then click *Continue*.
 
-. Subscribe from the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project&rif_reserved[GCP Marketplace^], and then log back into the BlueXP website to complete the registration.
+. Subscribe from the https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project[Google Cloud Marketplace^], and then log back into the BlueXP website to complete the registration.
 +
 The following video shows the process:
 +
@@ -79,13 +85,13 @@ video::video_subscribing_gcp_tiering.mp4[width=848, height=480]
 
 == Use an annual contract
 
-Pay for BlueXP tiering annually by purchasing an annual contract.
+Pay for BlueXP tiering annually by purchasing an annual contract. Annual contracts are available in 1-, 2-, or 3-year terms.
 
-When tiering inactive data to AWS, you can subscribe to an annual contract available from the https://aws.amazon.com/marketplace/pp/B086PDWSS8[AWS Marketplace page^]. It's available in 1-, 2-, or 3-year terms.
+When tiering inactive data to AWS, you can subscribe to an annual contract from the https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri[AWS Marketplace page^]. If you want to use this option, set up your subscription from the Marketplace page and then https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription[associate the subscription with your AWS credentials^].
 
-If you want to use this option, set up your subscription from the Marketplace page and then https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription[associate the subscription with your AWS credentials^].
+When tiering inactive data to Azure, you can subscribe to an annual contract from the https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp[Azure Marketplace page^]. If you want to use this option, set up your subscription from the Marketplace page and then https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe[associate the subscription with your Azure credentials^].
 
-Annual contracts are not currently supported when tiering to Azure or GCP.
+Annual contracts are not currently supported when tiering to Google Cloud.
 
 == Use a BlueXP tiering BYOL license
 
