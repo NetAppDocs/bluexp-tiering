@@ -6,7 +6,6 @@ summary: BlueXP tiering provides an aggregated view of data tiering from each of
 ---
 
 = Get an overview of data tiering from your clusters
-:toc: macro
 :hardbreaks:
 :nofooter:
 :icons: font
