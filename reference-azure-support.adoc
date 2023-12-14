@@ -17,7 +17,7 @@ BlueXP tiering supports two access tiers and most regions.
 
 == Supported Azure Blob access tiers
 
-When you set up data tiering to Azure, BlueXP tiering automatically uses the _Hot_ access tier for your inactive data. BlueXP tiering can apply a lifecycle rule so the data transitions from the _Hot_ access tier to the _Cool_ access tier after a certain number of days.
+When you set up data tiering to Azure from your on-premises ONTAP systems, BlueXP tiering automatically uses the _Hot_ access tier for your inactive data. BlueXP tiering can apply a lifecycle rule so the data transitions from the _Hot_ access tier to the _Cool_ access tier after a certain number of days.
 
 If you do not choose the _Cool_ access tier, then the data remains in the _Hot_ access tier and no rules are applied.
 
