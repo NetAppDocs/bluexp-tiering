@@ -2,8 +2,8 @@
 layout: landing-page
 sidebar: sidebar
 permalink: index.html
-lead: BlueXP tiering (Cloud Tiering) extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
-summary: BlueXP tiering (Cloud Tiering) extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
+lead: BlueXP tiering extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
+summary: BlueXP tiering extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage.
 ---
 
 = BlueXP tiering documentation
