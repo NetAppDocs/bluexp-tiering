@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/concept-cloud-tiering.html</loc>
+        
+      
+      <lastmod>2023-11-15T20:45:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/faq-cloud-tiering.html</loc>
+        
+      
+      <lastmod>2023-08-29T14:59:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/</loc>
+        
+      
+      <lastmod>2024-02-02T13:39:38+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/legal-notices.html</loc>
+        
+      
+      <lastmod>2023-05-12T12:17:09+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/reference-aws-support.html</loc>
+        
+      
+      <lastmod>2023-12-14T19:01:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/reference-azure-support.html</loc>
+        
+      
+      <lastmod>2023-12-14T19:01:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/reference-google-support.html</loc>
+        
+      
+      <lastmod>2023-12-14T19:01:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering//search.html</loc>
+        
+      
+      <lastmod>2024-02-11T23:26:10+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-get-help.html</loc>
+        
+      
+      <lastmod>2023-08-09T12:41:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html</loc>
+        
+      
+      <lastmod>2023-11-15T20:45:01+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-managing-object-storage.html</loc>
+        
+      
+      <lastmod>2023-08-29T14:59:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html</loc>
+        
+      
+      <lastmod>2023-08-29T14:59:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-monitor-tiering-alerts.html</loc>
+        
+      
+      <lastmod>2023-07-05T15:24:14+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-support-registration.html</loc>
+        
+      
+      <lastmod>2023-08-09T12:41:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html</loc>
+        
+      
+      <lastmod>2023-08-29T14:59:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-azure.html</loc>
+        
+      
+      <lastmod>2023-08-29T14:59:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-gcp.html</loc>
+        
+      
+      <lastmod>2023-08-29T14:59:07+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-overview.html</loc>
+        
+      
+      <lastmod>2023-11-29T18:33:55+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-s3-compat.html</loc>
+        
+      
+      <lastmod>2023-08-09T12:41:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-storagegrid.html</loc>
+        
+      
+      <lastmod>2023-08-09T12:41:28+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-test.html</loc>
+        
+      
+      <lastmod>2023-03-28T19:55:36+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      
+        <loc>https://docs.netapp.com/us-en/bluexp-tiering/whats-new.html</loc>
+        
+      
+      <lastmod>2023-08-29T14:59:07+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>

@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Tiering data from on-premises ONTAP clusters to Amazon S3 | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Tiering data from on-premises ONTAP clusters to Amazon S3 | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html" />
+	<meta property="og:description" content="Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3." />
+  <meta property="og:image" content="https://docs.netapp.com/us-en/bluexp-tiering/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3.">
+  <meta name="keywords" content=" data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, aws, amazon, s3"><!-- Icons -->
+  <link rel="icon" href="/us-en/bluexp-tiering/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/bluexp-tiering/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/us-en/bluexp-tiering/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/us-en/bluexp-tiering/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/us-en/bluexp-tiering/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-tiering/task-tiering-onprem-aws.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/bluexp-tiering/js/na-search.js'></script><script src='/us-en/bluexp-tiering/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/us-en/bluexp-tiering/js/custom-dropdown.js'></script>
+  <script src='/us-en/bluexp-tiering/js/FileSaver.min.js'></script>
+  <script src='/us-en/bluexp-tiering/js/jszip-utils.min.js'></script>
+  <script src='/us-en/bluexp-tiering/js/jszip.min.js'></script><script src='/us-en/bluexp-tiering/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/us-en/bluexp-tiering/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/">
+                <image id="ie-header-logo" src="/us-en/bluexp-tiering/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">Docs</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/us-en/bluexp-tiering/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">English</span>
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/bluexp-tiering/task-tiering-onprem-aws.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/us-en/bluexp-tiering/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">All NetApp</span>
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">Support</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">Knowledge Base</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">Training</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">All docs</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">Cloud docs</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/bluexp-family/">
+        BlueXP
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/us-en/bluexp-tiering/">-->
+      BlueXP tiering
+    <!--</a>-->
+  </div>
+</div>
+
+            
+
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/us-en/bluexp-tiering/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/us-en/bluexp-tiering/search.html" 
+        data-type="widget"
+        data-placeholder="Search documentation"
+        data-no-results-found="No results were found for {query}"
+        data-did-you-mean="Search for {suggestion}."
+        data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?"
+        data-results-found="{hitCount} results found"
+        data-error-message="An error occurred. Please try again."
+        data-error-reset="Reset search"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="BlueXP tiering docs"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/us-en/bluexp-tiering/index.html">
+        BlueXP tiering docs
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Release notes"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/us-en/bluexp-tiering/whats-new.html">
+        Release notes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Get started</div>-->
+         Get started
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Learn about BlueXP tiering"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/concept-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/concept-cloud-tiering.html">
+        Learn about BlueXP tiering
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier on-prem data to the cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Tier on-prem data to the cloud</div>-->
+         Tier on-prem data to the cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Amazon S3"
+      data-li-level="3#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-tiering-onprem-aws.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-aws.html">
+        Tier to Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Azure Blob storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-tiering-onprem-azure.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-azure.html">
+        Tier to Azure Blob storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Google Cloud Storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-tiering-onprem-gcp.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-gcp.html">
+        Tier to Google Cloud Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to StorageGRID"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-tiering-onprem-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-storagegrid.html">
+        Tier to StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to S3 object storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-tiering-onprem-s3-compat.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-s3-compat.html">
+        Tier to S3 object storage
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up licensing"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-licensing-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-licensing-cloud-tiering.html">
+        Set up licensing
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/faq-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/faq-cloud-tiering.html">
+        FAQ
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Use BlueXP tiering"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Use BlueXP tiering</div>-->
+         Use BlueXP tiering
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage data tiering"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-managing-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-managing-tiering.html">
+        Manage data tiering
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage object storage"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-managing-object-storage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-managing-object-storage.html">
+        Manage object storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Test cloud performance"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-tiering-test.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-tiering-test.html">
+        Test cloud performance
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="View tiering overview for all clusters"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-tiering-onprem-overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-tiering-onprem-overview.html">
+        View tiering overview for all clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitor the status of tiering alerts"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-monitor-tiering-alerts.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-monitor-tiering-alerts.html">
+        Monitor the status of tiering alerts
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Reference"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Reference</div>-->
+         Reference
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supported Amazon S3 storage classes and regions"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/reference-aws-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/reference-aws-support.html">
+        Supported Amazon S3 storage classes and regions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supported Azure access tiers and regions"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/reference-azure-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/reference-azure-support.html">
+        Supported Azure access tiers and regions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supported Google Cloud storage classes and regions"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/reference-google-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/reference-google-support.html">
+        Supported Google Cloud storage classes and regions
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Knowledge and support"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Knowledge and support</div>-->
+         Knowledge and support
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Register for support"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-support-registration.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-support-registration.html">
+        Register for support
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get help"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/task-get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-get-help.html">
+        Get help
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Legal notices"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-tiering-onprem-aws.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/us-en/bluexp-tiering/legal-notices.html">
+        Legal notices
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/us-en/bluexp-tiering"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/us-en/bluexp-tiering"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">Tiering data from on-premises ONTAP clusters to Amazon S3</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2023-08-29 14:59:07 +0000">08/29/2023</time>
+        
+    
+    
+        <span>Contributors
+            <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-tonacki"><img  class="avatar avatar-small" alt="netapp-tonacki" width="20" height="20" src="https://avatars.githubusercontent.com/u/38222299?v=4" style="border-radius: 50%;"/></a>
+        
+            <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett"><img  class="avatar avatar-small" alt="netapp-bcammett" width="20" height="20" src="https://avatars.githubusercontent.com/u/18287750?v=4" style="border-radius: 50%;"/></a>
+        
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/us-en/bluexp-tiering/images/discuss-sm.svg" alt="" class="github-icon" />Suggest changes</span>
+        <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html&page-title=Tiering data from on-premises ONTAP clusters to Amazon S3" class="page-nav-contribute-link" role="button">Request doc changes</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering/blob/main/task-tiering-onprem-aws.adoc" class="page-nav-contribute-link" role="button">Edit this page</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Learn how to contribute</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>PDFs<img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/us-en/bluexp-tiering/pdfs/fullsite-sidebar/BlueXP_tiering_documentation.pdf" >
+                    <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>PDF of this doc site</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Get_started.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Get started
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Tier_on_prem_data_to_the_cloud.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Tier on-prem data to the cloud
+          </a>
+          
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Use_BlueXP_tiering.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Use BlueXP tiering
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Reference.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Reference
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Knowledge_and_support.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Knowledge and support
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/us-en/bluexp-tiering/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>Collection of separate PDF docs<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Free space on your on-prem ONTAP clusters by tiering inactive data to Amazon S3.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start">Quick start</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get started quickly by following these steps. Details for each step are provided in the following sections in this topic.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="One"></span> Identify the configuration method you'll use</div>
+<p>Choose whether you'll connect your on-premises ONTAP cluster directly to AWS S3 over the public internet, or whether you'll use a VPN or AWS Direct Connect and route traffic through a private VPC Endpoint interface to AWS S3.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#network-diagrams-for-connection-options">See the available connection methods.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Two"></span> Prepare your BlueXP Connector</div>
+<p>If you already have a Connector deployed in your AWS VPC or on your premises, then you're all set. If not, then you'll need to create a Connector to tier ONTAP data to AWS S3 storage. You'll also need to customize network settings for the Connector so that it can connect to AWS S3.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#prepare-your-connector">See how to create a Connector and how to define required network settings.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Three"></span> Prepare your on-premises ONTAP cluster</div>
+<p>Discover your ONTAP cluster in BlueXP, verify that the cluster meets minimum requirements, and customize network settings so the cluster can connect to AWS S3.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#prepare-your-ontap-cluster">See how to get your on-premises ONTAP cluster ready.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Four"></span> Prepare Amazon S3 as your tiering target</div>
+<p>Set up permissions for the Connector to create and manage the S3 bucket. You'll also need to set up permissions for the on-premises ONTAP cluster so it can read and write data to the S3 bucket.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#set-up-s3-permissions">See how to set up permissions for the Connector and for your on-prem cluster.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Five"></span> Enable BlueXP tiering on the system</div>
+<p>Select an on-prem working environment, click <strong>Enable</strong> for the Tiering service, and follow the prompts to tier data to Amazon S3.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#tier-inactive-data-from-your-first-cluster-to-amazon-s3">See how to enable Tiering for your volumes.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png" alt="Six"></span> Set up licensing</div>
+<p>After your free trial ends, pay for BlueXP tiering through a pay-as-you-go subscription, an ONTAP BlueXP tiering BYOL license, or a combination of both:</p>
+</div>
+<div class="ulist quick-margin-list">
+<ul>
+<li>
+<p>To subscribe from the AWS Marketplace, <a href="https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&amp;ref_=beagle&amp;applicationId=AWSMPContessa" target="_blank" rel="noopener">go to the BlueXP Marketplace offering</a>, click <strong>Subscribe</strong>, and then follow the prompts.</p>
+</li>
+<li>
+<p>To pay using a BlueXP tiering BYOL license, <a href="mailto:ng-cloud-tiering@netapp.com?subject=Licensing">contact us if you need to purchase one</a>, and then <a href="task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account">add it to your account from the BlueXP digital wallet</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="network-diagrams-for-connection-options">Network diagrams for connection options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two connection methods you can use when configuring tiering from on-premises ONTAP systems to AWS S3.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Public connection - Directly connect the ONTAP system to AWS S3 using a public S3 endpoint.</p>
+</li>
+<li>
+<p>Private connection - Use a VPN or AWS Direct Connect and route traffic through a VPC Endpoint interface that uses a private IP address.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following diagram shows the <strong>public connection</strong> method and the connections that you need to prepare between the components. You can use a Connector that you've installed on your premises, or a Connector that you've deployed in the AWS VPC.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_cloud_tiering_aws_public.png" alt="A diagram showing how BlueXP tiering communicates over a public connection with the volumes on the cluster and the AWS S3 storage where the inactive data is located."></span></p>
+</div>
+<div class="paragraph">
+<p>The following diagram shows the <strong>private connection</strong> method and the connections that you need to prepare between the components. You can use a Connector that you've installed on your premises, or a Connector that you've deployed in the AWS VPC.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_cloud_tiering_aws_private.png" alt="A diagram showing how BlueXP tiering communicates over a private connection with the volumes on the cluster and the AWS S3 storage where the inactive data is located."></span></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Communication between a Connector and S3 is for object storage setup only.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prepare-your-connector">Prepare your Connector</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The BlueXP Connector is the main software for BlueXP functionality. A Connector is required to tier your inactive ONTAP data.</p>
+</div>
+<div class="sect2">
+<h3 id="creating-or-switching-connectors">Creating or switching Connectors</h3>
+<div class="paragraph">
+<p>If you already have a Connector deployed in your AWS VPC or on your premises, then you're all set. If not, then you'll need to create a Connector in either of those locations to tier ONTAP data to AWS S3 storage. You can't use a Connector that's deployed in another cloud provider.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html" target="_blank" rel="noopener">Learn about Connectors</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html" target="_blank" rel="noopener">Deploying a Connector in AWS</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html" target="_blank" rel="noopener">Installing a Connector on a Linux host</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="connector-networking-requirements">Connector networking requirements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Ensure that the network where the Connector is installed enables the following connections:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>An HTTPS connection over port 443 to the BlueXP tiering service and to your S3 object storage (<a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-aws.html#endpoints-contacted-for-day-to-day-operations" target="_blank" rel="noopener">see the list of endpoints</a>)</p>
+</li>
+<li>
+<p>An HTTPS connection over port 443 to your ONTAP cluster management LIF</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#cloud-tiering" target="_blank" rel="noopener">Ensure that the Connector has permissions to manage the S3 bucket</a></p>
+</li>
+<li>
+<p>If you have a Direct Connect or VPN connection from your ONTAP cluster to the VPC, and you want communication between the Connector and S3 to stay in your AWS internal network (a <strong>private</strong> connection), you'll need to enable a VPC Endpoint interface to S3. <a href="#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface">See how to set up a VPC endpoint interface.</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prepare-your-ontap-cluster">Prepare your ONTAP cluster</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your ONTAP clusters must meet the following requirements when tiering data to Amazon S3.</p>
+</div>
+<div class="sect2">
+<h3 id="ontap-requirements">ONTAP requirements</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Supported ONTAP platforms</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>When using ONTAP 9.8 and later: You can tier data from AFF systems, or FAS systems with all-SSD aggregates or all-HDD aggregates.</p>
+</li>
+<li>
+<p>When using ONTAP 9.7 and earlier: You can tier data from AFF systems, or FAS systems with all-SSD aggregates.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Supported ONTAP versions</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>ONTAP 9.2 or later</p>
+</li>
+<li>
+<p>ONTAP 9.7 or later is required if you plan to use an AWS PrivateLink connection to object storage</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Supported volumes and aggregates</dt>
+<dd>
+<p>The total number of volumes that BlueXP tiering can tier might be less than the number of volumes on your ONTAP system. That's because volumes can't be tiered from some aggregates. Refer to the ONTAP documentation for <a href="https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html#functionality-or-features-not-supported-by-fabricpool" target="_blank" rel="noopener">functionality or features not supported by FabricPool</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/note.svg" alt="Note">
+</td>
+<td class="content">
+BlueXP tiering supports FlexGroup volumes starting with ONTAP 9.5. Setup works the same as any other volume.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="cluster-networking-requirements">Cluster networking requirements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The cluster requires an inbound HTTPS connection from the Connector to the cluster management LIF.</p>
+<div class="paragraph">
+<p>A connection between the cluster and the BlueXP tiering service is not required.</p>
+</div>
+</li>
+<li>
+<p>An intercluster LIF is required on each ONTAP node that hosts the volumes you want to tier. These intercluster LIFs must be able to access the object store.</p>
+<div class="paragraph">
+<p>The cluster initiates an outbound HTTPS connection over port 443 from the intercluster LIFs to Amazon S3 storage for tiering operations. ONTAP reads and writes data to and from object storage&#8201;&#8212;&#8201;the object storage never initiates, it just responds.</p>
+</div>
+</li>
+<li>
+<p>The intercluster LIFs must be associated with the <em>IPspace</em> that ONTAP should use to connect to object storage. <a href="https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html" target="_blank" rel="noopener">Learn more about IPspaces</a>.</p>
+<div class="paragraph">
+<p>When you set up BlueXP tiering, you are prompted for the IPspace to use. You should choose the IPspace that these LIFs are associated with. That might be the "Default" IPspace or a custom IPspace that you created.</p>
+</div>
+<div class="paragraph">
+<p>If you use are using a different IPspace than "Default", then you might need to create a static route to get access to the object storage.</p>
+</div>
+<div class="paragraph">
+<p>All intercluster LIFs within the IPspace must have access to the object store. If you can't configure this for the current IPspace, then you'll need to create a dedicated IPspace where all intercluster LIFs have access to the object store.</p>
+</div>
+</li>
+<li>
+<p>If you are using a Private VPC Interface Endpoint in AWS for the S3 connection, then in order for HTTPS/443 to be used, you'll need to load the S3 endpoint certificate into the ONTAP cluster. <a href="#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface">See how to set up a VPC endpoint interface and load the S3 certificate.</a></p>
+</li>
+<li>
+<p><a href="#set-up-s3-permissions">Ensure that your ONTAP cluster has permissions to access the S3 bucket.</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="discover-your-ontap-cluster-in-bluexp">Discover your ONTAP cluster in BlueXP</h3>
+<div class="paragraph">
+<p>You need to discover your on-premises ONTAP cluster in BlueXP before you can start tiering cold data to object storage. You'll need to know the cluster management IP address and the password for the admin user account to add the cluster.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">Learn how to discover a cluster</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prepare-your-aws-environment">Prepare your AWS environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you set up data tiering for a new cluster, you're prompted whether you want the service to create an S3 bucket or if you want to select an existing S3 bucket in the AWS account where the Connector is set up. The AWS account must have permissions and an access key that you can enter in BlueXP tiering. The ONTAP cluster uses the access key to tier data in and out of S3.</p>
+</div>
+<div class="paragraph">
+<p>By default, the tiering service creates the bucket for you. If you want to use your own bucket, you can create one before you start the tiering activation wizard and then select that bucket in the wizard. <a href="https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html" target="_blank" rel="noopener">See how to create S3 buckets from BlueXP</a>. The bucket must be used exclusively for storing inactive data from your volumes - it cannot be used for any other purpose. The S3 bucket must be in a <a href="reference-aws-support.html#supported-aws-regions">region that supports BlueXP tiering</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If you are planning to configure BlueXP tiering to use a lower cost storage class where your tiered data will transition to after a certain number of days, you must not select any lifecycle rules when setting up the bucket in your AWS account. BlueXP tiering manages the lifecycle transitions.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="set-up-s3-permissions">Set up S3 permissions</h3>
+<div class="paragraph">
+<p>You'll need to configure two sets of permissions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Permissions for the Connector so it can create and manage the S3 bucket.</p>
+</li>
+<li>
+<p>Permissions for the on-premises ONTAP cluster so it can read and write data to the S3 bucket.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p><strong>Connector permissions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Confirm that <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html#iam-policies" target="_blank" rel="noopener">these S3 permissions</a> are part of the IAM role that provides the Connector with permissions. They should have been included by default when you first deployed the Connector. If not, you'll need to add any missing permissions. See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html" target="_blank" rel="noopener">AWS Documentation: Editing IAM policies</a> for instructions.</p>
+</li>
+<li>
+<p>The default bucket that BlueXP tiering creates has a prefix of "fabric-pool". If you want to use a different prefix for your bucket, you'll need to customize the permissions with the name you want to use. In the S3 permissions you'll see a line <code>"Resource": ["arn:aws:s3:::fabric-pool*"]</code>. You'll need to change "fabric-pool" to the prefix that you want to use. For example, if you want to use "tiering-1" as the prefix for your buckets, you'll change this line to <code>"Resource": ["arn:aws:s3:::tiering-1*"]</code>.</p>
+<div class="paragraph">
+<p>If you want to use a different prefix for buckets that you'll use for additional clusters in this same BlueXP account, you can add another line with the prefix for other buckets. For example:</p>
+</div>
+<div class="paragraph">
+<p><code>"Resource": ["arn:aws:s3:::tiering-1*"]</code><br>
+<code>"Resource": ["arn:aws:s3:::tiering-2*"]</code></p>
+</div>
+<div class="paragraph">
+<p>If you are creating your own bucket and do not use a standard prefix, you should change this line to <code>"Resource": ["arn:aws:s3:::*"]</code> so that any bucket is recognized. However, this may expose all your buckets instead of those you have designed to hold inactive data from your volumes.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Cluster permissions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>When activating the service, the Tiering wizard will prompt you to enter an access key and secret key. These credentials are passed to the ONTAP cluster so that ONTAP can tier data to the S3 bucket. For that, you'll need to create an IAM user with the following permissions:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"s3:ListAllMyBuckets",
+"s3:ListBucket",
+"s3:GetBucketLocation",
+"s3:GetObject",
+"s3:PutObject",
+"s3:DeleteObject"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html" target="_blank" rel="noopener">AWS Documentation: Creating a Role to Delegate Permissions to an IAM User</a> for details.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Create or locate the access key.</p>
+<div class="paragraph">
+<p>BlueXP tiering passes the access key on to the ONTAP cluster. The credentials are not stored in the BlueXP tiering service.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html" target="_blank" rel="noopener">AWS Documentation: Managing Access Keys for IAM Users</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface">Configure your system for a private connection using a VPC endpoint interface</h3>
+<div class="paragraph">
+<p>If you plan to use a standard public internet connection, then all the permissions are set by the Connector and there is nothing else you need to do. This type of connection is shown in the <a href="#network-diagrams-for-connection-options">first diagram above</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you want to have a more secure connection over the internet from your on-prem data center to the VPC, there's an option to select an AWS PrivateLink connection in the Tiering activation wizard. It's required if you plan to use a VPN or AWS Direct Connect to connect your on-premises system through a VPC Endpoint interface that uses a private IP address. This type of connection is shown in the <a href="#network-diagrams-for-connection-options">second diagram above</a>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create an Interface endpoint configuration using the Amazon VPC console or the command line. <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html" target="_blank" rel="noopener">See details about using AWS PrivateLink for Amazon S3</a>.</p>
+</li>
+<li>
+<p>Modify the security group configuration that's associated with the BlueXP Connector. You must change the policy to "Custom" (from "Full Access"), and you must <a href="#set-up-s3-permissions">add the required S3 Connector permissions</a> as shown earlier.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_aws_sec_group.png" alt="A screenshot of the AWS security group associated with the Connector."></span></p>
+</div>
+<div class="paragraph">
+<p>If you're using port 80 (HTTP) for communication to the private endpoint, you're all set. You can enable BlueXP tiering on the cluster now.</p>
+</div>
+<div class="paragraph">
+<p>If you're using port 443 (HTTPS) for communication to the private endpoint, you must copy the certificate from the VPC S3 endpoint and add it to your ONTAP cluster, as shown in the next 4 steps.</p>
+</div>
+</li>
+<li>
+<p>Obtain the DNS name of the endpoint from the AWS Console.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_endpoint_dns_aws_console.png" alt="A screenshot of the DNS name of the VPC endpoint from the AWS Console."></span></p>
+</div>
+</li>
+<li>
+<p>Obtain the certificate from the VPC S3 endpoint. You do this by <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm" target="_blank" rel="noopener">logging into the VM that hosts the BlueXP Connector</a> and running the following command. When entering the DNS name of the endpoint, add “bucket” to the beginning, replacing the “*”:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">[ec2-user@ip-10-160-4-68 ~]$ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>From the output of this command, copy the data for the S3 certificate (all data between, and including, the BEGIN / END CERTIFICATE tags):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">Certificate chain
+0 s:/CN=s3.us-west-2.amazonaws.com`
+   i:/C=US/O=Amazon/OU=Server CA 1B/CN=Amazon
+-----BEGIN CERTIFICATE-----
+MIIM6zCCC9OgAwIBAgIQA7MGJ4FaDBR8uL0KR3oltTANBgkqhkiG9w0BAQsFADBG
+…
+…
+GqvbOz/oO2NWLLFCqI+xmkLcMiPrZy+/6Af+HH2mLCM4EsI2b+IpBmPkriWnnxo=
+-----END CERTIFICATE-----</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Log into the ONTAP cluster CLI and apply the certificate you copied using the following command (substitute your own storage VM name):</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-text" data-lang="text">cluster1::&gt; security certificate install -vserver &lt;svm_name&gt; -type server-ca
+Please enter Certificate: Press &lt;Enter&gt; when done</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tier-inactive-data-from-your-first-cluster-to-amazon-s3">Tier inactive data from your first cluster to Amazon S3</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After you prepare your AWS environment, start tiering inactive data from your first cluster.</p>
+</div>
+<div class="ulist">
+<div class="title">What you'll need</div>
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">An on-premises working environment</a>.</p>
+</li>
+<li>
+<p>An AWS access key for an IAM user who has the required S3 permissions.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Select the on-prem ONTAP working environment.</p>
+</li>
+<li>
+<p>Click <strong>Enable</strong> for the Tiering service from the right panel.</p>
+<div class="paragraph">
+<p>If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag the cluster onto the working environment to initiate the setup wizard.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_setup_tiering_onprem.png" alt="A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment."></span></p>
+</div>
+</li>
+<li>
+<p><strong>Define Object Storage Name</strong>: Enter a name for this object storage. It must be unique from any other object storage you may be using with aggregates on this cluster.</p>
+</li>
+<li>
+<p><strong>Select Provider</strong>: Select <strong>Amazon Web Services</strong> and click <strong>Continue</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_aws_s3_bucket.png" alt="A screenshot showing the data that must be provided to set up tiering to an S3 bucket."></span></p>
+</div>
+</li>
+<li>
+<p>Complete the sections in the <strong>Tiering Setup</strong> page:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>S3 Bucket</strong>: Add a new S3 bucket or select an existing S3 bucket, select the bucket region, and click <strong>Continue</strong>.</p>
+<div class="paragraph">
+<p>When using an on-prem Connector, you must enter the AWS Account ID that provides access to the existing S3 bucket or new S3 bucket that will be created.</p>
+</div>
+<div class="paragraph">
+<p>The <em>fabric-pool</em> prefix is used by default because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket <em>fabric-pool-AFF1</em>, where AFF1 is the name of the cluster. You can define the prefix for the buckets used for tiering as well. See <a href="#set-up-s3-permissions">setting up S3 permissions</a> to make sure you have AWS permissions that recognize any custom prefix you plan to use.</p>
+</div>
+</li>
+<li>
+<p><strong>Storage Class</strong>: BlueXP tiering manages the lifecycle transitions of your tiered data. Data starts in the <em>Standard</em> class, but you can create a rule to apply a different storage class to the data after a certain number of days.</p>
+<div class="paragraph">
+<p>Select the S3 storage class that you want to transition the tiered data to and the number of days before the data is assigned to that class, and click <strong>Continue</strong>. For example, the screenshot below shows that tiered data is assigned to the <em>Standard-IA</em> class from the <em>Standard</em> class after 45 days in object storage.</p>
+</div>
+<div class="paragraph">
+<p>If you choose <strong>Keep data in this storage class</strong>, then the data remains in the <em>Standard</em> storage class and no rules are applied. <a href="reference-aws-support.html" target="_blank" rel="noopener">See supported storage classes</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_lifecycle_selection_aws.png" alt="A screenshot showing how to select another storage class that is assigned to your data after a certain number of days."></span></p>
+</div>
+<div class="paragraph">
+<p>Note that the lifecycle rule is applied to all objects in the selected bucket.</p>
+</div>
+</li>
+<li>
+<p><strong>Credentials</strong>: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click <strong>Continue</strong>.</p>
+<div class="paragraph">
+<p>The IAM user must be in the same AWS account as the bucket that you selected or created on the <strong>S3 Bucket</strong> page.</p>
+</div>
+</li>
+<li>
+<p><strong>Networking</strong>: Enter the networking details and click <strong>Continue</strong>.</p>
+<div class="paragraph">
+<p>Select the IPspace in the ONTAP cluster where the volumes you want to tier reside. The intercluster LIFs for this IPspace must have outbound internet access so that they can connect to your cloud provider's object storage.</p>
+</div>
+<div class="paragraph">
+<p>Optionally, choose whether you'll use an AWS PrivateLink that you have previously configured. <a href="#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface">See the setup information above.</a> A dialog box is displayed to help guide you through the endpoint configuration.</p>
+</div>
+<div class="paragraph">
+<p>You can also set the network bandwidth available to upload inactive data to object storage by defining the "Maximum transfer rate". Select the <strong>Limited</strong> radio button and enter the maximum bandwidth that can be used, or select <strong>Unlimited</strong> to indicate that there is no limit.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>On the <em>Tier Volumes</em> page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To select all volumes, check the box in the title row (<span class="image"><img src="./media/button_backup_all_volumes.png" alt=""></span>) and click <strong>Configure volumes</strong>.</p>
+</li>
+<li>
+<p>To select multiple volumes, check the box for each volume (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>) and click <strong>Configure volumes</strong>.</p>
+</li>
+<li>
+<p>To select a single volume, click the row (or <span class="image"><img src="./media/screenshot_edit_icon.gif" alt="edit pencil icon"></span> icon) for the volume.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_initial_volumes.png" alt="A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>In the <em>Tiering Policy</em> dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click <strong>Apply</strong>.</p>
+<div class="paragraph">
+<p><a href="concept-cloud-tiering.html#volume-tiering-policies">Learn more about volume tiering policies and cooling days</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_initial_policy_settings.png" alt="A screenshot that shows the configurable tiering policy settings."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>You've successfully set up data tiering from volumes on the cluster to S3 object storage.</p>
+</div>
+<div class="paragraph">
+<div class="title">What's next?</div>
+<p><a href="task-licensing-cloud-tiering.html">Be sure to subscribe to the BlueXP tiering service</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can review information about the active and inactive data on the cluster. <a href="task-managing-tiering.html">Learn more about managing your tiering settings</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can also create additional object storage in cases where you may want to tier data from certain aggregates on a cluster to different object stores. Or if you plan to use FabricPool Mirroring where your tiered data is replicated to an additional object store. <a href="task-managing-object-storage.html">Learn more about managing object stores</a>.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">On this page</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of use</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie settings</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/us-en/bluexp-tiering/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/us-en/bluexp-tiering/js/prism.js'></script>
+      <script type="text/javascript" src='/us-en/bluexp-tiering/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/us-en/bluexp-tiering/js/ie-tabbed-blocks.js'></script>
+    <script src='/us-en/bluexp-tiering/js/ie-sidebar.js'></script>
+  </body>
+
+</html>

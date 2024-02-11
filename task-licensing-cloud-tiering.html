@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Set up licensing for BlueXP tiering | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Set up licensing for BlueXP tiering | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html" />
+	<meta property="og:description" content="A 30-day free trial of BlueXP tiering starts when you set up tiering from your first cluster. After the free trial ends, you'll need to pay for BlueXP tierin..." />
+  <meta property="og:image" content="https://docs.netapp.com/us-en/bluexp-tiering/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="A 30-day free trial of BlueXP tiering starts when you set up tiering from your first cluster. After the free trial ends, you'll need to pay for BlueXP tierin...">
+  <meta name="keywords" content=" subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering"><!-- Icons -->
+  <link rel="icon" href="/us-en/bluexp-tiering/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/bluexp-tiering/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/us-en/bluexp-tiering/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/us-en/bluexp-tiering/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/us-en/bluexp-tiering/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-tiering/task-licensing-cloud-tiering.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/bluexp-tiering/js/na-search.js'></script><script src='/us-en/bluexp-tiering/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/us-en/bluexp-tiering/js/custom-dropdown.js'></script>
+  <script src='/us-en/bluexp-tiering/js/FileSaver.min.js'></script>
+  <script src='/us-en/bluexp-tiering/js/jszip-utils.min.js'></script>
+  <script src='/us-en/bluexp-tiering/js/jszip.min.js'></script><script src='/us-en/bluexp-tiering/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/us-en/bluexp-tiering/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/">
+                <image id="ie-header-logo" src="/us-en/bluexp-tiering/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">Docs</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/us-en/bluexp-tiering/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">English</span>
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/bluexp-tiering/task-licensing-cloud-tiering.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/us-en/bluexp-tiering/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">All NetApp</span>
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">Support</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">Knowledge Base</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">Training</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">All docs</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">Cloud docs</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/bluexp-family/">
+        BlueXP
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/us-en/bluexp-tiering/">-->
+      BlueXP tiering
+    <!--</a>-->
+  </div>
+</div>
+
+            
+
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/us-en/bluexp-tiering/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/us-en/bluexp-tiering/search.html" 
+        data-type="widget"
+        data-placeholder="Search documentation"
+        data-no-results-found="No results were found for {query}"
+        data-did-you-mean="Search for {suggestion}."
+        data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?"
+        data-results-found="{hitCount} results found"
+        data-error-message="An error occurred. Please try again."
+        data-error-reset="Reset search"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="BlueXP tiering docs"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/us-en/bluexp-tiering/index.html">
+        BlueXP tiering docs
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Release notes"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/us-en/bluexp-tiering/whats-new.html">
+        Release notes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get started"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Get started</div>-->
+         Get started
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Learn about BlueXP tiering"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/concept-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/concept-cloud-tiering.html">
+        Learn about BlueXP tiering
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier on-prem data to the cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Tier on-prem data to the cloud</div>-->
+         Tier on-prem data to the cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Amazon S3"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-aws.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-aws.html">
+        Tier to Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Azure Blob storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-azure.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-azure.html">
+        Tier to Azure Blob storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to Google Cloud Storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-gcp.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-gcp.html">
+        Tier to Google Cloud Storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to StorageGRID"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-storagegrid.html">
+        Tier to StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier to S3 object storage"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-s3-compat.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/us-en/bluexp-tiering/task-tiering-onprem-s3-compat.html">
+        Tier to S3 object storage
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Set up licensing"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-licensing-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-licensing-cloud-tiering.html">
+        Set up licensing
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/faq-cloud-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/faq-cloud-tiering.html">
+        FAQ
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Use BlueXP tiering"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Use BlueXP tiering</div>-->
+         Use BlueXP tiering
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage data tiering"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-managing-tiering.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-managing-tiering.html">
+        Manage data tiering
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Manage object storage"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-managing-object-storage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-managing-object-storage.html">
+        Manage object storage
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Test cloud performance"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-tiering-test.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-tiering-test.html">
+        Test cloud performance
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="View tiering overview for all clusters"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-tiering-onprem-overview.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-tiering-onprem-overview.html">
+        View tiering overview for all clusters
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitor the status of tiering alerts"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-monitor-tiering-alerts.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-monitor-tiering-alerts.html">
+        Monitor the status of tiering alerts
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Reference"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Reference</div>-->
+         Reference
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supported Amazon S3 storage classes and regions"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/reference-aws-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/reference-aws-support.html">
+        Supported Amazon S3 storage classes and regions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supported Azure access tiers and regions"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/reference-azure-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/reference-azure-support.html">
+        Supported Azure access tiers and regions
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supported Google Cloud storage classes and regions"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/reference-google-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/reference-google-support.html">
+        Supported Google Cloud storage classes and regions
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Knowledge and support"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/us-en/bluexp-tiering/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/us-en/bluexp-tiering/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Knowledge and support</div>-->
+         Knowledge and support
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Register for support"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-support-registration.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-support-registration.html">
+        Register for support
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Get help"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/task-get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/us-en/bluexp-tiering/task-get-help.html">
+        Get help
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Legal notices"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-tiering.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/us-en/bluexp-tiering/legal-notices.html">
+        Legal notices
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/us-en/bluexp-tiering"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/us-en/bluexp-tiering"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">Set up licensing for BlueXP tiering</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2023-11-15 20:45:01 +0000">11/15/2023</time>
+        
+    
+    
+        <span>Contributors
+            <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-tonacki"><img  class="avatar avatar-small" alt="netapp-tonacki" width="20" height="20" src="https://avatars.githubusercontent.com/u/38222299?v=4" style="border-radius: 50%;"/></a>
+        
+            <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett"><img  class="avatar avatar-small" alt="netapp-bcammett" width="20" height="20" src="https://avatars.githubusercontent.com/u/18287750?v=4" style="border-radius: 50%;"/></a>
+        
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/us-en/bluexp-tiering/images/discuss-sm.svg" alt="" class="github-icon" />Suggest changes</span>
+        <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html&page-title=Set up licensing for BlueXP tiering" class="page-nav-contribute-link" role="button">Request doc changes</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-tiering/blob/main/task-licensing-cloud-tiering.adoc" class="page-nav-contribute-link" role="button">Edit this page</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Learn how to contribute</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>PDFs<img src="/us-en/bluexp-tiering/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/us-en/bluexp-tiering/pdfs/fullsite-sidebar/BlueXP_tiering_documentation.pdf" >
+                    <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>PDF of this doc site</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Get_started.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Get started
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Tier_on_prem_data_to_the_cloud.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Tier on-prem data to the cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Use_BlueXP_tiering.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Use BlueXP tiering
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Reference.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Reference
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/us-en/bluexp-tiering/pdfs/sidebar/Knowledge_and_support.pdf" 
+            
+          >
+            <img src="/us-en/bluexp-tiering/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Knowledge and support
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/us-en/bluexp-tiering/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>Collection of separate PDF docs<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>A 30-day free trial of BlueXP tiering starts when you set up tiering from your first cluster. After the free trial ends, you'll need to pay for BlueXP tiering through a pay-as-you-go or annual subscription from your cloud provider's marketplace, a BYOL license from NetApp, or a combination of both.</p>
+</div>
+<div class="paragraph">
+<p>A few notes before you read any further:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you've already subscribed to the BlueXP subscription (PAYGO) in your cloud provider's marketplace, then you're automatically subscribed to BlueXP tiering for on-premises ONTAP systems as well. You'll see an active subscription in the BlueXP tiering <strong>On-Premises dashboard</strong> tab. You won't need to subscribe again. You'll see an active subscription in the BlueXP digital wallet.</p>
+</li>
+<li>
+<p>The BYOL BlueXP tiering license (previously known as a "Cloud Tiering" license) is a <em>floating</em> license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. This is different (and much easier) than in the past where you purchased a <em>FabricPool</em> license for each cluster.</p>
+</li>
+<li>
+<p>There are no charges when tiering data to StorageGRID, so neither a BYOL license or PAYGO registration is required. This tiered data doesn't count against the capacity purchased in your license.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="concept-cloud-tiering.html#pricing-and-licenses">Learn more about how licensing works for BlueXP tiering</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="30-day-free-trial">30-day free trial</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you don't have a BlueXP tiering license, a 30-day free trial of BlueXP tiering starts when you set up tiering to your first cluster. After the 30-day free trial ends, you'll need to pay for BlueXP tiering through a pay-as-you-go subscription, annual subscription, a BYOL license, or a combination.</p>
+</div>
+<div class="paragraph">
+<p>If your free trial ends and you haven't subscribed or added a license, then ONTAP no longer tiers cold data to object storage. All previously tiered data remains accessible; meaning you can retrieve and use this data. When retrieved, this data is moved back to the performance tier from the cloud.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-a-bluexp-tiering-paygo-subscription">Use a BlueXP tiering PAYGO subscription</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pay-as-you-go subscriptions from your cloud provider's marketplace enable you to license the use of Cloud Volumes ONTAP systems and many Cloud Data Services, such as BlueXP tiering.</p>
+</div>
+<div class="sect2">
+<h3 id="subscribing-from-the-aws-marketplace">Subscribing from the AWS Marketplace</h3>
+<div class="paragraph">
+<p>Subscribe to BlueXP tiering from the AWS Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to AWS S3.</p>
+</div>
+<div id="subscribe-aws" class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In BlueXP, click <strong>Mobility &gt; Tiering &gt; On-Premises Dashboard</strong>.</p>
+</li>
+<li>
+<p>In the <em>Marketplace subscriptions</em> section, click <strong>Subscribe</strong> under Amazon Web Services and then click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Subscribe from the <a href="https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4" target="_blank" rel="noopener">AWS Marketplace</a>, and then log back into the BlueXP website to complete the registration.</p>
+<div class="paragraph">
+<p>The following video shows the process:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_aws_tiering.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="subscribing-from-the-azure-marketplace">Subscribing from the Azure Marketplace</h3>
+<div class="paragraph">
+<p>Subscribe to BlueXP tiering from the Azure Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to Azure Blob storage.</p>
+</div>
+<div id="subscribe-azure" class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In BlueXP, click <strong>Mobility &gt; Tiering &gt; On-Premises Dashboard</strong>.</p>
+</li>
+<li>
+<p>In the <em>Marketplace subscriptions</em> section, click <strong>Subscribe</strong> under Microsoft Azure and then click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Subscribe from the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview" target="_blank" rel="noopener">Azure Marketplace</a>, and then log back into the BlueXP website to complete the registration.</p>
+<div class="paragraph">
+<p>The following video shows the process:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_azure_tiering.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="subscribing-from-the-google-cloud-marketplace">Subscribing from the Google Cloud Marketplace</h3>
+<div class="paragraph">
+<p>Subscribe to BlueXP tiering from the Google Cloud Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to Google Cloud storage.</p>
+</div>
+<div id="subscribe-gcp" class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>In BlueXP, click <strong>Mobility &gt; Tiering &gt; On-Premises Dashboard</strong>.</p>
+</li>
+<li>
+<p>In the <em>Marketplace subscriptions</em> section, click <strong>Subscribe</strong> under Google Cloud and then click <strong>Continue</strong>.</p>
+</li>
+<li>
+<p>Subscribe from the <a href="https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project" target="_blank" rel="noopener">Google Cloud Marketplace</a>, and then log back into the BlueXP website to complete the registration.</p>
+<div class="paragraph">
+<p>The following video shows the process:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="./media/video_subscribing_gcp_tiering.mp4" width="848" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-an-annual-contract">Use an annual contract</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pay for BlueXP tiering annually by purchasing an annual contract. Annual contracts are available in 1-, 2-, or 3-year terms.</p>
+</div>
+<div class="paragraph">
+<p>When tiering inactive data to AWS, you can subscribe to an annual contract from the <a href="https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri" target="_blank" rel="noopener">AWS Marketplace page</a>. If you want to use this option, set up your subscription from the Marketplace page and then <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription" target="_blank" rel="noopener">associate the subscription with your AWS credentials</a>.</p>
+</div>
+<div class="paragraph">
+<p>When tiering inactive data to Azure, you can subscribe to an annual contract from the <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp" target="_blank" rel="noopener">Azure Marketplace page</a>. If you want to use this option, set up your subscription from the Marketplace page and then <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe" target="_blank" rel="noopener">associate the subscription with your Azure credentials</a>.</p>
+</div>
+<div class="paragraph">
+<p>Annual contracts are not currently supported when tiering to Google Cloud.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-a-bluexp-tiering-byol-license">Use a BlueXP tiering BYOL license</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL <strong>BlueXP tiering</strong> license (previously known as a "Cloud Tiering" license) is a <em>floating</em> license that you can use across multiple on-premises ONTAP clusters in your BlueXP account. The total tiering capacity defined in your BlueXP tiering license is shared among <strong>all</strong> of your on-prem clusters, making initial licensing and renewal easy. The minimum capacity for a tiering BYOL license starts at 10 TiB.</p>
+</div>
+<div class="paragraph">
+<p>If you don't have a BlueXP tiering license, contact us to purchase one:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="mailto:ng-cloud-tiering@netapp.com?subject=Licensing">Send email to purchase a license</a>.</p>
+</li>
+<li>
+<p>Click the chat icon in the lower-right of BlueXP to request a license.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a BlueXP tiering license with the same dollar-equivalence and the same expiration date. <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses" target="_blank" rel="noopener">Go here for details</a>.</p>
+</div>
+<div class="paragraph">
+<p>You use the BlueXP digital wallet page to manage BlueXP tiering BYOL licenses. You can add new licenses and update existing licenses.</p>
+</div>
+<div class="sect2">
+<h3 id="bluexp-tiering-byol-licensing-starting-in-2021">BlueXP tiering BYOL licensing starting in 2021</h3>
+<div class="paragraph">
+<p>The new <strong>BlueXP tiering</strong> license was introduced in August 2021 for tiering configurations that are supported within BlueXP using the BlueXP tiering service. BlueXP currently supports tiering to the following cloud storage: Amazon S3, Azure Blob storage, Google Cloud Storage, NetApp StorageGRID, and S3-compatible object storage.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>FabricPool</strong> license that you may have used in the past to tier on-premises ONTAP data to the cloud is being retained only for ONTAP deployments in sites that have no internet access (also known as "dark sites"), and for tiering configurations to IBM Cloud Object Storage. If you're using this type of configuration, you'll install a FabricPool license on each cluster using System Manager or the ONTAP CLI.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+Note that tiering to StorageGRID does not require a FabricPool or BlueXP tiering license.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you are currently using FabricPool licensing, you're not affected until your FabricPool license reaches its expiration date or maximum capacity. Contact NetApp when you need to update your license, or earlier to make sure there is no interruption in your ability to tier data to the cloud.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you're using a configuration that's supported in BlueXP, your FabricPool licenses will be converted to BlueXP tiering licenses and they'll appear in the BlueXP digital wallet. When those initial licenses expire, you'll need to update the BlueXP tiering licenses.</p>
+</li>
+<li>
+<p>If you're using a configuration that's not supported in BlueXP, then you'll continue using a FabricPool license. <a href="https://docs.netapp.com/us-en/ontap/cloud-install-fabricpool-task.html" target="_blank" rel="noopener">See how to license tiering using System Manager</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Here are some things you need to know about the two licenses:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 95%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">BlueXP tiering license</th>
+<th class="tableblock halign-left valign-top">FabricPool license</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is a <em>floating</em> license that you can use across multiple on-premises ONTAP clusters.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is a per-cluster license that you purchase and license for <em>every</em> cluster.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is registered in the BlueXP digital wallet.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">It is applied to individual clusters using System Manager or the ONTAP CLI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tiering configuration and management is done through the BlueXP tiering service in BlueXP.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tiering configuration and management is done through System Manager or the ONTAP CLI.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once configured, you can use the tiering service without a license for 30 days using the free trial.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Once configured, you can tier the first 10 TB of data for free.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="obtain-your-bluexp-tiering-license-file">Obtain your BlueXP tiering license file</h3>
+<div class="paragraph">
+<p>After you've purchased your BlueXP tiering license, you activate the license in BlueXP either by entering the BlueXP tiering serial number and NSS account, or by uploading the NLF license file. The steps below show how to get the NLF license file if you plan to use that method.</p>
+</div>
+<div class="paragraph">
+<div class="title">Before you begin</div>
+<p>You'll need to have the following information before you start:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>BlueXP tiering serial number</p>
+<div class="paragraph">
+<p>Locate this number from your Sales Order, or contact the account team for this information.</p>
+</div>
+</li>
+<li>
+<p>BlueXP Account ID</p>
+<div class="paragraph">
+<p>You can find your BlueXP Account ID by selecting the <strong>Account</strong> drop-down from the top of BlueXP, and then clicking <strong>Manage Account</strong> next to your account. Your Account ID is in the Overview tab.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Sign in to the <a href="https://mysupport.netapp.com" target="_blank" rel="noopener">NetApp Support Site</a> and click <strong>Systems &gt; Software Licenses</strong>.</p>
+</li>
+<li>
+<p>Enter your BlueXP tiering license serial number.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cloud_tiering_license_step1.gif" alt="A screenshot that shows a table of licenses after searching by serial number."></span></p>
+</div>
+</li>
+<li>
+<p>In the <strong>License Key</strong> column, click <strong>Get NetApp License File</strong>.</p>
+</li>
+<li>
+<p>Enter your BlueXP Account ID (this is called a Tenant ID on the support site) and click <strong>Submit</strong> to download the license file.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cloud_tiering_license_step2.gif" alt="A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-bluexp-tiering-byol-licenses-to-your-account">Add BlueXP tiering BYOL licenses to your account</h3>
+<div class="paragraph">
+<p>After you purchase a BlueXP tiering license for your BlueXP account, you need to add the license to BlueXP to use the BlueXP tiering service.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click <strong>Governance &gt; Digital wallet &gt; Data Services Licenses</strong>.</p>
+</li>
+<li>
+<p>Click <strong>Add License</strong>.</p>
+</li>
+<li>
+<p>In the <em>Add License</em> dialog, enter the license information and click <strong>Add License</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have the tiering license serial number and know your NSS account, select the <strong>Enter Serial Number</strong> option and enter that information.</p>
+<div class="paragraph">
+<p>If your NetApp Support Site account isn't available from the drop-down list, <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html" target="_blank" rel="noopener">add the NSS account to BlueXP</a>.</p>
+</div>
+</li>
+<li>
+<p>If you have the tiering license file, select the <strong>Upload License File</strong> option and follow the prompts to attach the file.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_add.png" alt="A screenshot that shows the page to add the BlueXP tiering BYOL license."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>BlueXP adds the license so that your BlueXP tiering service is active.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="update-a-bluexp-tiering-byol-license">Update a BlueXP tiering BYOL license</h3>
+<div class="paragraph">
+<p>If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in BlueXP tiering.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_expire2.png" alt="A screenshot that shows an expiring license in the BlueXP tiering page."></span></p>
+</div>
+<div class="paragraph">
+<p>This status also appears in the BlueXP digital wallet page.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_expire1.png" alt="A screenshot that shows an expiring license in the BlueXP digital wallet page."></span></p>
+</div>
+<div class="paragraph">
+<p>You can update your BlueXP tiering license before it expires so that there is no interruption in your ability to tier your data to the cloud.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Click the chat icon in the lower-right of BlueXP to request an extension to your term or additional capacity to your BlueXP tiering license for the particular serial number.</p>
+<div class="paragraph">
+<p>After you pay for the license and it is registered with the NetApp Support Site, BlueXP automatically updates the license in the BlueXP digital wallet and the Data Services Licenses page will reflect the change in 5 to 10 minutes.</p>
+</div>
+</li>
+<li>
+<p>If BlueXP can't automatically update the license, then you'll need to manually upload the license file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>You can <a href="#obtain-your-bluexp-tiering-license-file">obtain the license file from the NetApp Support Site</a>.</p>
+</li>
+<li>
+<p>On the BlueXP digital wallet page in the <em>Data Services Licenses</em> tab, click <span class="image"><img src="./media/screenshot_horizontal_more_button.gif" alt="More icon"></span> for the service serial number you are updating, and click <strong>Update License</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_update.png" alt="A screenshot of selecting the Update License button for a particular service."></span></p>
+</div>
+</li>
+<li>
+<p>In the <em>Update License</em> page, upload the license file and click <strong>Update License</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Result</div>
+<p>BlueXP updates the license so that your BlueXP tiering service continues to be active.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="apply-bluexp-tiering-licenses-to-clusters-in-special-configurations">Apply BlueXP tiering licenses to clusters in special configurations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ONTAP clusters in the following configurations can use BlueXP tiering licenses, but the license must be applied in a different manner than single-node clusters, HA-configured clusters, clusters in Tiering Mirror configurations, and MetroCluster configurations using FabricPool Mirror:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Clusters that are tiered to IBM Cloud Object Storage</p>
+</li>
+<li>
+<p>Clusters that are installed in "dark sites"</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="process-for-existing-clusters-that-have-a-fabricpool-license">Process for existing clusters that have a FabricPool license</h3>
+<div class="paragraph">
+<p>When you <a href="task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering">discover any of these special cluster types in BlueXP tiering</a>, BlueXP tiering recognizes the FabricPool license and adds the license into the BlueXP digital wallet. Those clusters will continue tiering data as usual. When the FabricPool license expires, you'll need to purchase a BlueXP tiering license.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="process-for-newly-created-clusters">Process for newly created clusters</h3>
+<div class="paragraph">
+<p>When you discover typical clusters in BlueXP tiering, you'll configure tiering using the BlueXP tiering interface. In these cases the following actions happen:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The "parent" BlueXP tiering license tracks the capacity being used for tiering by all clusters to make sure there is enough capacity in the license. The total licensed capacity and expiration date are shown in the BlueXP digital wallet.</p>
+</li>
+<li>
+<p>A "child" tiering license is automatically installed on each cluster to communicate with the "parent" license.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-tiering/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The licensed capacity and expiration date shown in System Manager or in the ONTAP CLI for the "child" license is not the real information, so don't be concerned if the information is not the same. These values are managed internally by the BlueXP tiering software. The real information is tracked in the BlueXP digital wallet.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For the two configurations listed above, you'll need to configure tiering using System Manager or the ONTAP CLI (not by using the BlueXP tiering interface). So in these cases you'll need to push the "child" license to these clusters manually from the BlueXP tiering interface.</p>
+</div>
+<div class="paragraph">
+<p>Note that since data is tiered to two different object storage locations for Tiering Mirror configurations, you'll need to purchase a license with enough capacity for tiering data to both locations.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Steps</div>
+<ol class="arabic">
+<li>
+<p>Install and configure your ONTAP clusters using System Manager or the ONTAP CLI.</p>
+<div class="paragraph">
+<p>Do not configure tiering at this point.</p>
+</div>
+</li>
+<li>
+<p><a href="task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license">Purchase a BlueXP tiering license</a> for the capacity needed for the new cluster, or clusters.</p>
+</li>
+<li>
+<p>In BlueXP, <a href="task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account">add the license to the BlueXP digital wallet</a>.</p>
+</li>
+<li>
+<p>In BlueXP tiering, <a href="task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering">discover the new clusters</a>.</p>
+</li>
+<li>
+<p>From the Clusters page, click <span class="image"><img src="./media/screenshot_horizontal_more_button.gif" alt="More icon"></span> for the cluster and select <strong>Deploy License</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_tiering_deploy_license.png" alt="A screenshot showing how to deploy a tiering license to an ONTAP cluster."></span></p>
+</div>
+</li>
+<li>
+<p>In the <em>Deploy License</em> dialog, click <strong>Deploy</strong>.</p>
+<div class="paragraph">
+<p>The child license is deployed to the ONTAP cluster.</p>
+</div>
+</li>
+<li>
+<p>Return to System Manager or the ONTAP CLI and set up your tiering configuration.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/fabricpool/manage-mirrors-task.html">FabricPool Mirror configuration information</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html">FabricPool MetroCluster configuration information</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/fabricpool/setup-ibm-object-storage-cloud-tier-task.html">Tiering to IBM Cloud Object Storage information</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/us-en/bluexp-tiering/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">On this page</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of use</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie settings</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/us-en/bluexp-tiering/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/us-en/bluexp-tiering/js/prism.js'></script>
+      <script type="text/javascript" src='/us-en/bluexp-tiering/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/us-en/bluexp-tiering/js/ie-tabbed-blocks.js'></script>
+    <script src='/us-en/bluexp-tiering/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
