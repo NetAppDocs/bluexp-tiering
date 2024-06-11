@@ -96,7 +96,7 @@ A Connector is required to tier data to the cloud. When tiering data to Azure Bl
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html[Learn about Connectors^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html[Deploying a Connector in Azure^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html[Installing a Connector on a Linux host^]
-//* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html[Switching between Connectors^]
+//* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors[Switching between Connectors^]
 
 === Verify that you have the necessary Connector permissions
 
