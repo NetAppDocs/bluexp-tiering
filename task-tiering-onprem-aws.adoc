@@ -220,7 +220,7 @@ If you're using port 443 (HTTPS) for communication to the private endpoint, you 
 +
 image:screenshot_endpoint_dns_aws_console.png[A screenshot of the DNS name of the VPC endpoint from the AWS Console.]
 
-. Obtain the certificate from the VPC S3 endpoint. You do this by https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm[logging into the VM that hosts the BlueXP Connector^] and running the following command. When entering the DNS name of the endpoint, add “bucket” to the beginning, replacing the “*”:
+. Obtain the certificate from the VPC S3 endpoint. You do this by https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm[logging into the VM that hosts the BlueXP Connector^] and running the following command. When entering the DNS name of the endpoint, add “bucket” to the beginning, replacing the “*”:
 +
 [source,text]
 [ec2-user@ip-10-160-4-68 ~]$ openssl s_client -connect bucket.vpce-0ff5c15df7e00fbab-yxs7lt8v.s3.us-west-2.vpce.amazonaws.com:443 -showcerts

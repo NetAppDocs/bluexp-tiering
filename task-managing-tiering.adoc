@@ -246,4 +246,4 @@ image:screenshot_tiering_search for_cluster.png[A screenshot showing how to sear
 +
 BlueXP tiering displays the name of the Connector if it is able to find the cluster.
 
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#switch-between-connectors[Switch to the Connector and configure tiering for the cluster^].
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors[Switch to the Connector and configure tiering for the cluster^].
