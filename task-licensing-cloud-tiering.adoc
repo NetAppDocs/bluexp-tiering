@@ -138,16 +138,24 @@ After you've purchased your BlueXP tiering license, you activate the license in 
 
 .Before you begin
 
-You'll need to have the following information before you start:
-
-* BlueXP tiering serial number
-+
-Locate this number from your Sales Order, or contact the account team for this information.
-* BlueXP Account ID
-+
-You can find your BlueXP Account ID by selecting the *Account* drop-down from the top of BlueXP, and then clicking *Manage Account* next to your account. Your Account ID is in the Overview tab.
+You'll need your BlueXP tiering serial number. Locate this number from your Sales Order, or contact the account team for this information.
 
 .Steps
+
+. Find your BlueXP account ID:
+
+.. In the upper right of the BlueXP console, select image:icon-settings-option.png[The settings icon which displays in the top right of the BlueXP web console.] > *Identity & Access Management*.
+.. On the Organization page, look for your account ID and copy it. 
++
+If there is no account ID listed and you just have an organization ID, then you'll need to copy the first eight characters of the organization ID and append it to _account-_
++
+For example, let's say this is your organization ID:
++
+ea10e1c6-80cc-4219-8e99-3c3e6b161ba5
++
+Your account ID would be as follows: 
++
+account-ea10e1c6
 
 . Sign in to the https://mysupport.netapp.com[NetApp Support Site^] and click *Systems > Software Licenses*.
 
@@ -157,13 +165,13 @@ image:screenshot_cloud_tiering_license_step1.gif[A screenshot that shows a table
 
 . In the *License Key* column, click *Get NetApp License File*.
 
-. Enter your BlueXP Account ID (this is called a Tenant ID on the support site) and click *Submit* to download the license file.
+. Enter your BlueXP account ID (this is called a Tenant ID on the support site) and click *Submit* to download the license file.
 +
 image:screenshot_cloud_tiering_license_step2.gif[A screenshot that shows the get license dialog box where you enter your tenant ID and then click Submit to download the license file.]
 
 === Add BlueXP tiering BYOL licenses to your account
 
-After you purchase a BlueXP tiering license for your BlueXP account, you need to add the license to BlueXP to use the BlueXP tiering service.
+After you purchase a BlueXP tiering license, you need to add the license to BlueXP to use the BlueXP tiering service.
 
 .Steps
 
