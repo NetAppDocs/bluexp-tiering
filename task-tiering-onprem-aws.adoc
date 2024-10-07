@@ -174,7 +174,7 @@ You'll need to configure two sets of permissions:
 
 * The default bucket that BlueXP tiering creates has a prefix of "fabric-pool". If you want to use a different prefix for your bucket, you'll need to customize the permissions with the name you want to use. In the S3 permissions you'll see a line `"Resource": ["arn:aws:s3:::fabric-pool*"]`. You'll need to change "fabric-pool" to the prefix that you want to use. For example, if you want to use "tiering-1" as the prefix for your buckets, you'll change this line to `"Resource": ["arn:aws:s3:::tiering-1*"]`. 
 +
-If you want to use a different prefix for buckets that you'll use for additional clusters in this same BlueXP account, you can add another line with the prefix for other buckets. For example:
+If you want to use a different prefix for buckets that you'll use for additional clusters in this same BlueXP organization, you can add another line with the prefix for other buckets. For example:
 +
 `"Resource": ["arn:aws:s3:::tiering-1*"]`
 `"Resource": ["arn:aws:s3:::tiering-2*"]`
