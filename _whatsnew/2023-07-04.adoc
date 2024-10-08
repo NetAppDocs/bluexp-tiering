@@ -1,0 +1,7 @@
+=== Now you can adjust the bandwidth used to upload inactive data to object storage
+When you activate BlueXP tiering, ONTAP can use an unlimited amount of network bandwidth to transfer the inactive data from volumes in the cluster to object storage. If you notice that tiering traffic is affecting normal user workloads, you can throttle the amount of bandwidth that can be used during the transfer. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage[Learn more].
+
+=== Tiering event for "low tiering" is displayed in the Notification Center
+The tiering event "Tier additional data from cluster <name> to object storage to increase your storage efficiency" now appears as a notification when a cluster is tiering less than 20% of its cold data - including clusters that are tiering no data.
+
+This notification is a "Recommendation" to help make your systems more efficient and to save on storage costs. It provides a link to the https://bluexp.netapp.com/cloud-tiering-service-tco[BlueXP tiering total cost of ownership and savings calculator^] to help you calculate your cost savings.

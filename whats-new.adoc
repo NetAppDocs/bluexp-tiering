@@ -15,39 +15,17 @@ summary: Learn what's new in BlueXP tiering.
 [.lead]
 Learn what's new in BlueXP tiering.
 
-// tag::whats-new[]
 == 9 August 2023
 
-=== Use a custom prefix for the bucket name where tiered data is stored
-
-In the past you needed to use the default "fabric-pool" prefix when defining the bucket name, for example, _fabric-pool-bucket1_. Now you can use a custom prefix when naming your bucket. This functionality is available only when tiering data to Amazon S3. https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#prepare-your-aws-environment[Learn more].
-
-=== Search for a cluster across all BlueXP Connectors
-
-If you are using multiple Connectors to manage all the storage systems in your environment, some clusters on which you want to implement tiering may be in different Connectors. If you are not sure which Connector is managing a certain cluster, you can search across all Connectors using BlueXP tiering. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#search-for-a-cluster-across-all-bluexp-connectors[Learn more].
+include::_whatsnew/2023-08-09.adoc[]
 
 == 4 July 2023
 
-=== Now you can adjust the bandwidth used to upload inactive data to object storage
-
-When you activate BlueXP tiering, ONTAP can use an unlimited amount of network bandwidth to transfer the inactive data from volumes in the cluster to object storage. If you notice that tiering traffic is affecting normal user workloads, you can throttle the amount of bandwidth that can be used during the transfer. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#changing-the-network-bandwidth-available-to-upload-inactive-data-to-object-storage[Learn more].
-
-=== Tiering event for "low tiering" is displayed in the Notification Center
-
-The tiering event "Tier additional data from cluster <name> to object storage to increase your storage efficiency" now appears as a notification when a cluster is tiering less than 20% of its cold data - including clusters that are tiering no data.
-
-This notification is a "Recommendation" to help make your systems more efficient and to save on storage costs. It provides a link to the https://bluexp.netapp.com/cloud-tiering-service-tco[BlueXP tiering total cost of ownership and savings calculator^] to help you calculate your cost savings.
+include::_whatsnew/2023-07-04.adoc[]
 
 == 3 April 2023
 
-=== Licensing tab has been removed
-
-The Licensing tab has been removed from the BlueXP tiering interface. All licensing for Pay-as-you-go (PAYGO) subscriptions are accessed from the BlueXP tiering On-Premises Dashboard now. There is also a link from that page to the BlueXP digital wallet so that you can view and manage any BlueXP tiering bring-your-own-licenses (BYOL).
-
-=== Tiering tabs have been renamed and have updated content
-
-The "Clusters Dashboard" tab has been renamed to "Clusters", and the "On-Prem Overview" tab has been renamed to "On-Premises Dashboard". These pages have added some information that will help you evaluate if you can optimize your storage space with additional tiering configuration.
-// end::whats-new[]
+include::_whatsnew/2023-04-03.adoc[]
 
 == 5 March 2023
 
