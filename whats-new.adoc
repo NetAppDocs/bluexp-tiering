@@ -15,6 +15,7 @@ summary: Learn what's new in BlueXP tiering.
 [.lead]
 Learn what's new in BlueXP tiering.
 
+// tag::whats-new[]
 == 9 August 2023
 
 include::_whatsnew/2023-08-09.adoc[]
@@ -26,6 +27,7 @@ include::_whatsnew/2023-07-04.adoc[]
 == 3 April 2023
 
 include::_whatsnew/2023-04-03.adoc[]
+// end::whats-new[]
 
 == 5 March 2023
 
