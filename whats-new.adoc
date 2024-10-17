@@ -31,7 +31,7 @@ include::_whatsnew/2023-04-03.adoc[]
 
 == 5 March 2023
 
-=== Now you can generate a tiering report for your volumes
+=== Generate a tiering report for volumes
 
 You can download a report from the Tier Volumes page so you can review the tiering status of all the volumes on the clusters you are managing. BlueXP tiering generates a .CSV file that you can review and send to other people in your company as needed. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-tiering.html#download-a-tiering-report-for-your-volumes[See how to download the tiering report].
 
@@ -58,32 +58,32 @@ See the full list of endpoints for your https://docs.netapp.com/us-en/bluexp-set
 
 == 6 November 2022
 
-=== Drag and drop to enable BlueXP tiering to Azure Blob, Google Cloud Storage, and StorageGRID
+=== Drag and drop to enable tiering to additional destinations
 
 If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 
 == 19 September 2022
 
-=== Tiering wizard enables you to configure AWS PrivateLink when tiering to S3 storage
+=== Configure AWS PrivateLink when tiering to Amazon S3
 
 In previous releases it was very time-consuming to provide this secure way of connecting your cluster to an S3 bucket through a VPC endpoint. Now you can follow the prerequisite steps to https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html#configure-your-system-for-a-private-connection-using-a-vpc-endpoint-interface[configure your system for a private connection using a VPC endpoint interface], and then you can select the PrivateLink during the Tiering setup wizard in the Networking page.
 
 https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html[Review the requirements and steps to tier inactive data to Amazon S3].
 
-=== Drag and drop to enable BlueXP tiering to Amazon S3
+=== Drag and drop to enable tiering to Amazon S3
 
 If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 
-=== Choose the tiering behavior when removing the mirror object store in a MetroCluster configuration
+=== Choose tiering behavior when removing the mirror object store
 
 When removing the mirror object store from a MetroCluster configuration, you'll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
 
 == 3 August 2022
 
-=== Ability to configure additional object stores for other aggregates in your cluster
+=== Configure additional object stores for other aggregates
 
 The Cloud Tiering UI has added a new set of pages for object storage configuration. You can add new object stores, connect multiple object stores to an aggregate for FabricPool Mirroring, swap the primary and mirror object stores, delete object store connections to aggregates, and more. https://docs.netapp.com/us-en/bluexp-tiering/task-managing-object-storage.html[Learn more about the new object storage functionality.]
 
-=== Cloud Tiering license support for MetroCluster configurations
+=== License support for MetroCluster configurations
 
 Cloud Tiering licenses can now be shared with your clusters that are in MetroCluster configurations. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. https://docs.netapp.com/us-en/bluexp-tiering/task-licensing-cloud-tiering.html#apply-bluexp-tiering-licenses-to-clusters-in-special-configurations[See how to license and configure these types of clusters.]
