@@ -74,7 +74,7 @@ https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html[Review
 
 If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 
-=== Choose tiering behavior when removing the mirror object store
+=== Choose tiering behavior when removing mirror object store
 
 When removing the mirror object store from a MetroCluster configuration, you'll be prompted whether you want to remove the primary object store as well. You can choose to keep the primary object store attached to the aggregate, or to remove it.
 

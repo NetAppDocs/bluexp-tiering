@@ -1,5 +1,5 @@
 === Licensing tab has been removed
 The Licensing tab has been removed from the BlueXP tiering interface. All licensing for Pay-as-you-go (PAYGO) subscriptions are accessed from the BlueXP tiering On-Premises Dashboard now. There is also a link from that page to the BlueXP digital wallet so that you can view and manage any BlueXP tiering bring-your-own-licenses (BYOL).
 
-=== Tiering tabs have been renamed and have updated content
+=== Tiering tabs have been renamed and updated
 The "Clusters Dashboard" tab has been renamed to "Clusters", and the "On-Prem Overview" tab has been renamed to "On-Premises Dashboard". These pages have added some information that will help you evaluate if you can optimize your storage space with additional tiering configuration.
