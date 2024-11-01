@@ -35,7 +35,7 @@ image:screenshot_tiering_cluster_info.png["A screenshot that shows the cluster t
 
 Note that the display is different for Cloud Volumes ONTAP systems. While Cloud Volumes ONTAP volumes can have data tiered to the cloud, they do not use the BlueXP tiering service. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html[Learn how to tier inactive data from Cloud Volumes ONTAP systems to low-cost object storage^].
 
-You can also https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering[view tiering information for a cluster from Digital Advisor^] if you're familiar with this NetApp product. Just select *Cloud Recommendations* from the left navigation pane.
+You can also https://docs.netapp.com/us-en/active-iq/task-informed-decisions-based-on-cloud-recommendations.html#tiering[view tiering information for a cluster from Active IQ Digital Advisor (also known as Digital Advisor)^] if you're familiar with this NetApp product. Just select *Cloud Recommendations* from the left navigation pane.
 
 image:screenshot_tiering_aiq_fabricpool_info.png["A screenshot that shows FabricPool information for a cluster using the FabricPool Advisor from Digital Advisor."]
 
