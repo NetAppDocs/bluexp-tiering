@@ -148,7 +148,7 @@ After you purchase a BlueXP tiering license, you need to add the license to Blue
 
 .Steps
 
-. Click *Governance > Digital wallet > Data Services Licenses*.
+. Click *Governance > Digital wallet > Data services licenses*.
 
 . Click *Add License*.
 
