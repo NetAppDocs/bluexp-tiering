@@ -140,7 +140,7 @@ After you've purchased your BlueXP tiering license, you activate the license in 
 
 You'll need your BlueXP tiering serial number. Locate this number from your Sales Order, or contact the account team for this information.
 
-include::https://raw.githubusercontent.com/NetAppDocs/bluexp-digital-wallet-internal/netapp-tonias-digital-wallet/obtain-licenses.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/bluexp-digital-wallet/main/obtain-licenses.adoc[]
 
 === Add BlueXP tiering BYOL licenses to your account
 
@@ -158,22 +158,12 @@ After you purchase a BlueXP tiering license, you need to add the license to Blue
 +
 If your NetApp Support Site account isn't available from the drop-down list, https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html[add the NSS account to BlueXP^].
 * If you have the tiering license file, select the *Upload License File* option and follow the prompts to attach the file.
-+
-image:screenshot_services_license_add.png[A screenshot that shows the page to add the BlueXP tiering BYOL license.]
-
-.Result
-
-BlueXP adds the license so that your BlueXP tiering service is active.
 
 === Update a BlueXP tiering BYOL license
 
-If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in BlueXP tiering.
+If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in BlueXP tiering as well as in digital wallet.
 
 image:screenshot_services_license_expire2.png[A screenshot that shows an expiring license in the BlueXP tiering page.]
-
-This status also appears in the BlueXP digital wallet page.
-
-image:screenshot_services_license_expire1.png[A screenshot that shows an expiring license in the BlueXP digital wallet page.]
 
 You can update your BlueXP tiering license before it expires so that there is no interruption in your ability to tier your data to the cloud.
 
@@ -186,13 +176,7 @@ After you pay for the license and it is registered with the NetApp Support Site,
 . If BlueXP can't automatically update the license, then you'll need to manually upload the license file.
 .. You can <<Obtain your BlueXP tiering license file,obtain the license file from the NetApp Support Site>>.
 .. On the BlueXP digital wallet page in the _Data Services Licenses_ tab, click image:screenshot_horizontal_more_button.gif[More icon] for the service serial number you are updating, and click *Update License*.
-+
-image:screenshot_services_license_update.png[A screenshot of selecting the Update License button for a particular service.]
 .. In the _Update License_ page, upload the license file and click *Update License*.
-
-.Result
-
-BlueXP updates the license so that your BlueXP tiering service continues to be active.
 
 == Apply BlueXP tiering licenses to clusters in special configurations
 
