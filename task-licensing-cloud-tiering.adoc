@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-licensing-cloud-tiering.html
-keywords: subscribe, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering
+keywords: subscribe, digital wallet, trial, marketplace, subscription, paygo, pay as you go, byol, bring your own license, annual, tiering, cloud tiering
 summary: A 30-day free trial of BlueXP tiering starts when you set up tiering from your first cluster. After the free trial ends, you'll need to pay for BlueXP tiering through a pay-as-you-go or annual subscription from your cloud provider's marketplace, a BYOL license from NetApp, or a combination of both.
 ---
 
@@ -137,7 +137,6 @@ Here are some things you need to know about the two licenses:
 If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in BlueXP tiering as well as in digital wallet.
 
 You can update existing licenses, view license status, and add new licenses through the BlueXP digital wallet. https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html[Learn about managing licenses in the digital wallet^].
-
 
 == Apply BlueXP tiering licenses to clusters in special configurations
 
