@@ -93,7 +93,7 @@ When tiering cold data to a NetApp StorageGRID system (private cloud) there is n
 
 Yes. BlueXP tiering allows you to use a BYOL license, a PAYGO subscription, or a combination of both.
 
-=== What happens if I have reached the BYOL capacity limit, or if my BYOL license expires??
+=== What happens if I have reached the BYOL capacity limit, or if my BYOL license expires?
 
 If you reach the BYOL capacity limit or if your BYOL license expires, tiering of new cold data stops, tiering of new cold data stops. All previously tiered data remains accessible; meaning you can retrieve and use this data. When retrieved, this data is moved back to the performance tier from the cloud. 
 
