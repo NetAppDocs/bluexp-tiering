@@ -106,7 +106,7 @@ If you don't have a BlueXP tiering license, contact us to purchase one:
 
 Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a BlueXP tiering license with the same dollar-equivalence and the same expiration date. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Go here for details^].
 
-You use the BlueXP digital wallet page to manage BlueXP tiering BYOL licenses. You can add new licenses and update existing licenses.
+You use the BlueXP digital wallet page to manage BlueXP tiering BYOL licenses. You can add new licenses and update existing licenses. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html[Learn how to use digital wallet.^]
 
 === BlueXP tiering BYOL licensing starting in 2021
 
