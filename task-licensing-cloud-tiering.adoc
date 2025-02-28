@@ -35,6 +35,8 @@ If your free trial ends and you haven't subscribed or added a license, then ONTA
 
 Pay-as-you-go subscriptions from your cloud provider's marketplace enable you to license the use of Cloud Volumes ONTAP systems and many Cloud Data Services, such as BlueXP tiering.
 
+After you subscribe to BlueXP tiering, you can manage your subscriptions in digital wallet. link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-subscriptions.html#view-your-subscriptions[Learn how to use digital wallet.^]
+
 === Subscribing from the AWS Marketplace
 
 Subscribe to BlueXP tiering from the AWS Marketplace to set up a pay-as-you-go subscription for data tiering from ONTAP clusters to AWS S3.
