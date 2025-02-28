@@ -66,7 +66,7 @@ After your free trial ends, pay for BlueXP tiering through a pay-as-you-go subsc
 
 [role="quick-margin-list"]
 * To subscribe from the AWS Marketplace, https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4?sr=0-8&ref_=beagle&applicationId=AWSMPContessa[go to the BlueXP Marketplace offering^], click *Subscribe*, and then follow the prompts.
-* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add it to your account from the BlueXP digital wallet].
+* To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html[add it to your account from the BlueXP digital wallet].
 
 == Network diagrams for connection options
 
