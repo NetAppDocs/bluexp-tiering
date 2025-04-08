@@ -85,7 +85,7 @@ When using StorageGRID as your object store in a MetroCluster configuration, bot
 
 [NOTE]
 =====
-* Your tiering licensed capacity is applied to mirrored buckets equally. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 100 TiB. There is no extra charge for mirrored buckets. Tiering from unmirrored aggregates in MetroCluster environments, the BlueXP tiering license is applied as normal, and the total capacity tiered to both buckets is used.For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 50TB.
+* Your tiering licensed capacity is applied to mirrored buckets equally. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 100 TiB. There is no extra charge for mirrored buckets. Tiering from unmirrored aggregates in MetroCluster environments, the BlueXP tiering license is applied as normal, and the total capacity tiered to both buckets is used. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 50TB.
 
 * Within a MetroCluster, it is not recommended to use unmirrored aggregates, doing so will give you an error message. 
 =====
