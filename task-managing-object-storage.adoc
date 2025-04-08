@@ -81,7 +81,18 @@ You can attach a second object store to an aggregate to create a FabricPool mirr
 
 When using a MetroCluster configuration, it's a best practice to use object stores in the public cloud that are in different availability zones. https://docs.netapp.com/us-en/ontap/fabricpool/setup-object-stores-mcc-task.html[Learn more about MetroCluster requirements in the ONTAP documentation^].
 
-Note that when using StorageGRID as your object store in a MetroCluster configuration, both ONTAP systems can perform FabricPool tiering to a single StorageGRID system. Each ONTAP system must tier data to different buckets.
+When using StorageGRID as your object store in a MetroCluster configuration, both ONTAP systems can perform FabricPool tiering to a single StorageGRID system. Each ONTAP system must tier data to different buckets.
+
+[NOTE]
+=====
+* Your tiering licensed capacity is applied to mirrored buckets equally. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 100 TiB. There is no extra charge for mirrored buckets. Tiering from unmirrored aggregates in MetroCluster environments, the BlueXP tiering license is applied as normal, and the total capacity tiered to both buckets is used.For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 50TB.
+
+* Within a MetroCluster, it is not recommended to use unmirrored aggregates, doing so will give you an error message. 
+=====
+
+ 
+
+
 
 .Steps
 
