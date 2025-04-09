@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: task-managing-object-storage.html
-keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage
+keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage, license
 summary: After you've configured your on-prem ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, remove a mirrored object store from an aggregate, and more.
 ---
 
