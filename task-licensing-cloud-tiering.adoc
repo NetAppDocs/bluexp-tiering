@@ -134,6 +134,7 @@ Here are some things you need to know about the two licenses:
 | Once configured, you can use the tiering service without a license for 30 days using the free trial. | Once configured, you can tier the first 10 TB of data for free.
 |===
 
+[[licenses]]
 === Manage BlueXP tiering licenses
 
 If your licensed term is nearing the expiration date, or if your licensed capacity is reaching the limit, you'll be notified in BlueXP tiering as well as in digital wallet.
@@ -172,7 +173,7 @@ Do not configure tiering at this point.
 
 . link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license[Purchase a BlueXP tiering license] for the capacity needed for the new cluster, or clusters.
 
-. In BlueXP, link:task-licensing-cloud-tiering.html#add-bluexp-tiering-byol-licenses-to-your-account[add the license to the BlueXP digital wallet].
+. In BlueXP, <<licenses,add the license to the BlueXP digital wallet>>[add the license to the BlueXP digital wallet].
 
 . In BlueXP tiering, link:task-managing-tiering.html#discovering-additional-clusters-from-bluexp-tiering[discover the new clusters].
 
