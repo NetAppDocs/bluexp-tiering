@@ -119,6 +119,10 @@ Yes. Check https://aws.amazon.com/s3/pricing/[Amazon S3 Pricing], https://azure.
 
 To get an estimate, simply add your ONTAP cluster to BlueXP and inspect it through the BlueXP tiering Clusters page. Click *Calculate potential tiering savings* for the cluster to launch the https://bluexp.netapp.com/cloud-tiering-service-tco[BlueXP tiering TCO calculator^] to see how much money you can save.
 
+=== How am I charged for tiering when I am using an ONTAP MetroCluster?
+
+When used in MetroCluster environments, tiering licensed capacity is applied to mirrored buckets equally. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 100 TiB. There is no extra charge for mirrored buckets. When tiering from unmirrored aggregates in MetroCluster environments, the BlueXP tiering license is applied as normal, and the total capacity tiered to both buckets is used. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 50TB.
+
 == ONTAP
 
 The following questions relate to ONTAP.
