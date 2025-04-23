@@ -28,46 +28,5 @@ https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview[Learn
 == Supported Azure regions
 
 
-BlueXP tiering supports the following Azure regions. Azure China regions are not supported as destinations for tiering. 
+BlueXP tiering is supported in all Azure Regions except for China, where Microsoft Azure operated by 21Vianet.
 
-=== Africa
-
-* South Africa North
-
-=== Asia Pacific
-
-* Australia East
-* Australia Southeast
-* East Asia
-* Japan East
-* Japan West
-* Korea Central
-* Korea South
-* Southeast Asia
-
-=== Europe
-
-* France Central
-* Germany West Central
-* Germany North
-* North Europe
-* UK South
-* UK West
-* West Europe
-
-=== North America
-
-* Canada Central
-* Canada East
-* Central US
-* East US
-* East US 2
-* North Central US
-* South Central US
-* West US
-* West US 2
-* West Central US
-
-=== South America
-
-* Brazil South
