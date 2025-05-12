@@ -101,8 +101,8 @@ Bring-your-own licenses from NetApp provide 1-, 2-, or 3-year terms. The BYOL *B
 
 If you don't have a BlueXP tiering license, contact us to purchase one:
 
-* mailto:ng-cloud-tiering@netapp.com?subject=Licensing[Send email to purchase a license].
-* Click the chat icon in the lower-right of BlueXP to request a license.
+* Contact your NetApp sales representative
+* Contact NetApp support.
 
 Optionally, if you have an unassigned node-based license for Cloud Volumes ONTAP that you won't be using, you can convert it to a BlueXP tiering license with the same dollar-equivalence and the same expiration date. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses[Go here for details^].
 
