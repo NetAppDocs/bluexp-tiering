@@ -27,7 +27,7 @@ https://bluexp.netapp.com/cloud-tiering-service-tco[Use the BlueXP tiering TCO c
 
 BlueXP tiering offers automation, monitoring, reports, and a common management interface:
 
-* Automation makes it easier to set up and manage data tiering from on-prem ONTAP clusters to the cloud
+* Automation makes it easier to set up and manage data tiering from on-premises ONTAP clusters to the cloud
 * You can choose the default cloud provider storage class/access tier, or use lifecycle management to assign a more cost-effective tier to older tiered data 
 * You can create connections to additional object stores that can be used for other aggregates in your cluster
 * Using the UI you can drag object stores to an aggregate for tiering and for FabricPool mirroring
@@ -108,7 +108,7 @@ Annual contracts are not currently supported when tiering to Google CLoud.
 
 === Bring your own license
 
-Bring your own license by purchasing a *BlueXP tiering* license from NetApp (previously known as a "Cloud Tiering" license). You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity (starting at a minimum of 10 TiB). The BYOL BlueXP tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your BlueXP tiering license can be used by all of your on-prem clusters.
+Bring your own license by purchasing a *BlueXP tiering* license from NetApp (previously known as a "Cloud Tiering" license). You can purchase 1-, 2-, or 3-year term licenses and specify any amount of tiering capacity (starting at a minimum of 10 TiB). The BYOL BlueXP tiering license is a _floating_ license that you can use across multiple on-premises ONTAP clusters. The total tiering capacity that you define in your BlueXP tiering license can be used by all of your on-premises clusters.
 
 After you purchase a BlueXP tiering license, you'll need use the BlueXP digital wallet in BlueXP to add the license. link:task-licensing-cloud-tiering.html#use-a-bluexp-tiering-byol-license[See how to use a BlueXP tiering BYOL license].
 
@@ -126,7 +126,7 @@ image:diagram_cloud_tiering.png["An architecture image that shows the BlueXP tie
 
 At a high level, BlueXP tiering works like this:
 
-. You discover your on-prem cluster from BlueXP.
+. You discover your on-premises cluster from BlueXP.
 . You set up tiering by providing details about your object storage, including the bucket/container, a storage class or access tier, and lifecycle rules for the tiered data.
 . BlueXP configures ONTAP to use the object storage provider and discovers the amount of active and inactive data on the cluster.
 . You choose the volumes to tier and the tiering policy to apply to those volumes.

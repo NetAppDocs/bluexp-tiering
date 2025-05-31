@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-managing-object-storage.html
 keywords: object storage, mirror object storage, create object storage, remove object storage, swap object storage, display object storage, license
-summary: After you've configured your on-prem ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, remove a mirrored object store from an aggregate, and more.
+summary: After you've configured your on-premises ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, remove a mirrored object store from an aggregate, and more.
 ---
 
 = Managing object storage used for data tiering
@@ -13,15 +13,15 @@ summary: After you've configured your on-prem ONTAP clusters to tier data to a p
 :imagesdir: ./media/
 
 [.lead]
-After you've configured your on-prem ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, remove a mirrored object store from an aggregate, and more.
+After you've configured your on-premises ONTAP clusters to tier data to a particular object storage, you can perform additional object storage tasks. You can add new object storage, mirror your tiered data to a secondary object storage, swap the primary and mirror object storage, remove a mirrored object store from an aggregate, and more.
 
 == Viewing object stores configured for a cluster
 
-You might want to see all the object stores that have been configured for your cluster and to which aggregates they are attached. BlueXP tiering provides this information for each cluster.
+You can see all the object stores that have been configured for each cluster and to which aggregates they are attached. 
 
 .Steps
 
-. From the *Clusters* page, click the menu icon for a cluster and select *Object Store Info*.
+. From the *Clusters* page, select the menu icon for a cluster and select *Object Store Info*.
 
 . Review details about the object stores.
 +
@@ -31,13 +31,13 @@ image:screenshot_tiering_object_store_view.png["A screenshot that shows the obje
 
 == Adding a new object store
 
-You can add a new object store that will be available for aggregates in your cluster. After you create it, you can attach it to an aggregate.
+Add a new object store that you can attach to an aggregate.
 
 .Steps
 
-. From the *Clusters* page, click the menu icon for a cluster and select *Object Store Info*.
+. From the *Clusters* page, select the menu icon for a cluster and select *Object Store Info*.
 
-. From the Object Store Information page, click *Create New Object Store*.
+. From the Object Store Information page, select *Create New Object Store*.
 +
 image:screenshot_tiering_object_store_create_button.png["A screenshot showing the Create New Object Store button to create a new object store."]
 +
@@ -45,17 +45,17 @@ The object store wizard starts. The example below shows how to create an object 
 
 . *Define Object Storage Name*: Enter a name for this object storage. It must be unique from any other object storage you may be using with aggregates on this cluster.
 
-. *Select Provider*: Select the provider, for example *Amazon Web Services*, and click *Continue*.
+. *Select Provider*: Select the provider, for example *Amazon Web Services*, and select *Continue*.
 
 . Complete the steps on the *Create Object Storage* pages:
 
-.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_. Then enter the AWS Account ID that provides access to the bucket, select the bucket region, and click *Continue*.
+.. *S3 Bucket*: Add a new S3 bucket or select an existing S3 bucket that starts with the prefix _fabric-pool_. Then enter the AWS Account ID that provides access to the bucket, select the bucket region, and select *Continue*.
 +
 The _fabric-pool_ prefix is required because the IAM policy for the Connector enables the instance to perform S3 actions on buckets named with that exact prefix. For example, you could name the S3 bucket _fabric-pool-AFF1_, where AFF1 is the name of the cluster.
 
 .. *Storage Class Lifecycle*: BlueXP tiering manages the lifecycle transitions of your tiered data. Data starts in the _Standard_ class, but you can create a rule to apply a different storage class to the data after a certain number of days.
 +
-Select the S3 storage class that you want to transition the tiered data to and the number of days before the data is assigned to that class, and click *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Standard-IA_ class from the _Standard_ class after 45 days in object storage.
+Select the S3 storage class that you want to transition the tiered data to and the number of days before the data is assigned to that class, and select *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Standard-IA_ class from the _Standard_ class after 45 days in object storage.
 +
 If you choose *Keep data in this storage class*, then the data remains in the _Standard_ storage class and no rules are applied. link:reference-aws-support.html[See supported storage classes^].
 +
@@ -63,11 +63,11 @@ image:screenshot_tiering_lifecycle_selection_aws.png[A screenshot showing how to
 +
 Note that the lifecycle rule is applied to all objects in the selected bucket.
 
-.. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and click *Continue*.
+.. *Credentials*: Enter the access key ID and secret key for an IAM user who has the required S3 permissions, and select *Continue*.
 +
 The IAM user must be in the same AWS account as the bucket that you selected or created on the *S3 Bucket* page. See the required permissions in the section about activating tiering.
 
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and select *Continue*.
 +
 Selecting the correct IPspace ensures that BlueXP tiering can set up a connection from ONTAP to your cloud provider's object storage.
 
@@ -87,7 +87,7 @@ When using StorageGRID as your object store in a MetroCluster configuration, bot
 
 .Steps
 
-. From the *Clusters* page, click *Advanced setup* for the selected cluster.
+. From the *Clusters* page, select *Advanced setup* for the selected cluster.
 +
 image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Advanced Setup button for a cluster.]
 
@@ -95,7 +95,7 @@ image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Adva
 +
 image:screenshot_tiering_mirror_config.png["A screenshot showing how to drag a second object store to an aggregate to create a tiering mirror."]
 
-. In the Attach Object Store dialog, click *Attach* and the second object store is attached to the aggregate.
+. In the Attach Object Store dialog, select *Attach* and the second object store is attached to the aggregate.
 +
 image:screenshot_tiering_mirror_config_complete.png["A screenshot showing a second object store attached to an aggregate."]
 
@@ -107,11 +107,11 @@ You can swap the primary and mirror object store for an aggregate. The object st
 
 .Steps
 
-. From the *Clusters* page, click *Advanced setup* for the selected cluster.
+. From the *Clusters* page, select *Advanced setup* for the selected cluster.
 +
 image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Advanced Setup button for a cluster.]
 
-. From the Advanced Setup page, click the menu icon for the aggregate and select *Swap Destinations*.
+. From the Advanced Setup page, select the menu icon for the aggregate and select *Swap Destinations*.
 +
 image:screenshot_tiering_mirror_swap.png["A screenshot showing the Swap Destination option for an aggregate."]
 
@@ -123,11 +123,11 @@ You can remove a FabricPool mirror if you no longer need to replicate to an addi
 
 .Steps
 
-. From the *Clusters* page, click *Advanced setup* for the selected cluster.
+. From the *Clusters* page, select *Advanced setup* for the selected cluster.
 +
 image:screenshot_tiering_advanced_setup_button.png[A screenshot showing the Advanced Setup button for a cluster.]
 
-. From the Advanced Setup page, click the menu icon for the aggregate and select *Unmirror Object Store*.
+. From the Advanced Setup page, select the menu icon for the aggregate and select *Unmirror Object Store*.
 +
 image:screenshot_tiering_mirror_delete.png["A screenshot showing the Unmirror Object Store option for an aggregate."]
 
