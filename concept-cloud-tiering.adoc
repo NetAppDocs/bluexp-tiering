@@ -15,7 +15,9 @@ summary: NetApp's BlueXP tiering service extends your data center to the cloud b
 [.lead]
 NetApp's BlueXP tiering service extends your data center to the cloud by automatically tiering inactive data from on-premises ONTAP clusters to object storage. This frees valuable space on the cluster for more workloads, without making changes to the application layer. BlueXP tiering can reduce costs in your data center and enables you to switch from a CAPEX model to an OPEX model.
 
-The BlueXP tiering service leverages the capabilities of _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active (hot) data remains on the local tier (on-premises ONTAP aggregates), while inactive (cold) data is moved to the cloud tier -- all while preserving ONTAP data efficiencies.
+The BlueXP tiering service uses _FabricPool_. FabricPool is a NetApp Data Fabric technology that enables automated tiering of data to low-cost object storage. Active (hot) data remains on the local tier (on-premises ONTAP aggregates), while inactive (cold) data is moved to the cloud tier -- all while preserving ONTAP data efficiencies.
+
+Suggestion: Active (hot) data stays on the local tier (on-premises ONTAP aggregates), while inactive (cold) data is moved to the cloud tier -- keeping ONTAP data efficient.
 
 Originally supported on AFF, FAS, and ONTAP Select systems with all-SSD aggregates, starting with ONTAP 9.8 you can tier data from aggregates consisting of HDDs in addition to high-performance SSDs. See https://docs.netapp.com/us-en/ontap/fabricpool/requirements-concept.html[the considerations and requirements for using FabricPool^] for details.
 
