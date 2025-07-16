@@ -13,13 +13,13 @@ summary: BlueXP tiering provides an aggregated view of data tiering from each of
 :imagesdir: ./media/
 
 [.lead]
-BlueXP tiering provides an aggregated view of data tiering from each of your on-premises clusters. This overview provides a clear picture of your environment and enables you to take proper actions.
+BlueXP tiering provides an aggregated view of data tiering from each of your on-premises clusters. 
 
-Just click *Tiering > On-Premises Dashboard*. BlueXP tiering provides the following details about your environment.
+Select *Tiering > On-Premises Dashboard*. The following details are included on the dashboard.
 
 image:screenshot_tiering_onprem_dashboard.png[A screenshot of the On-Premises Dashboard page.]
 
-Discovered clusters:: The number of on-premises clusters that BlueXP tiering has discovered. The chart provides an overview of the tiering status for these clusters.
+Discovered clusters:: The number of on-premises clusters that have been discovered. The chart provides an overview of the tiering status for these clusters.
 +
 * High tiering - Clusters that are tiering over 20% of their cold data
 * Low tiering - Clusters that are tiering less than 20% of their cold data

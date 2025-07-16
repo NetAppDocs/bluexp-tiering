@@ -103,7 +103,7 @@ However, if you have a PAYGO marketplace subscription to the _BlueXP - Deploy & 
 
 No, it does not.
 
-=== Is rehydration of on-prem systems subject to the egress cost charged by the cloud providers?
+=== Is rehydration of on-premises systems subject to the egress cost charged by the cloud providers?
 
 Yes. All reads from the public cloud are subject to egress fees.
 
@@ -111,7 +111,7 @@ Yes. All reads from the public cloud are subject to egress fees.
 
 The best way to estimate how much a cloud provider will charge for hosting your data is to use their calculators: https://calculator.aws/#/[AWS], https://azure.microsoft.com/en-us/pricing/calculator/[Azure] and https://cloud.google.com/products/calculator[Google Cloud].
 
-=== Are there any extra charges by the cloud providers for reading/retrieving data from the object storage to the on-prem storage?
+=== Are there any extra charges by the cloud providers for reading/retrieving data from the object storage to the on-premises storage?
 
 Yes. Check https://aws.amazon.com/s3/pricing/[Amazon S3 Pricing], https://azure.microsoft.com/en-us/pricing/details/storage/blobs/[Block Blob Pricing], and https://cloud.google.com/storage/pricing[Cloud Storage Pricing] for additional pricing incurred with data reading/retrieving.
 
@@ -121,7 +121,7 @@ To get an estimate, simply add your ONTAP cluster to BlueXP and inspect it throu
 
 === How am I charged for tiering when I am using an ONTAP MetroCluster?
 
-When used in MetroCluster environments, tiering licensed capacity is applied to mirrored buckets equally. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 100 TiB. There is no extra charge for mirrored buckets. When tiering from unmirrored aggregates in MetroCluster environments, the BlueXP tiering license is applied as normal, and the total capacity tiered to both buckets is used. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 50TB.
+When used in MetroCluster environments, total tiering license is applied to both clusters’ usage. For example, if you have a license for 100TiB of tiering, each cluster’s used tiering capacity contributes to the total capacity of 100TiB. 
 
 == ONTAP
 
@@ -228,7 +228,7 @@ If the destination aggregate does not have an attached cloud tier, data is read 
 
 Starting with ONTAP 9.6, if the destination aggregate is using the same cloud tier as the source aggregate, the cold data does not move back to the local tier.
 
-=== How can I bring my tiered data back on-prem to the performance tier?
+=== How can I bring my tiered data back on-premises to the performance tier?
 
 Write back is generally performed on reads and depends on the tiering policy type. Prior to ONTAP 9.8, writing back of the entire volume can be done with a _volume move_ operation. Starting with ONTAP 9.8, the Tiering UI has options to *Bring back all data* or *Bring back active file system*. link:task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier[See how to move data back to the performance tier].
 

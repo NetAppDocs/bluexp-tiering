@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: task-tiering-onprem-azure.html
 keywords: data tiering, fabricpool, cloud tiering, tiering cold data, tiering inactive data, tiering aff, tiering fas, tiering ontap, tiering volumes, tier data, tier cold data, tier fas, tier aff, tier ontap, azure, blob, azure blob
-summary: Free space on your on-prem ONTAP clusters by tiering inactive data to Azure Blob storage.
+summary: Free space on your on-premises ONTAP clusters by tiering inactive data to Azure Blob storage.
 ---
 
 = Tiering data from on-premises ONTAP clusters to Azure Blob storage
@@ -13,7 +13,7 @@ summary: Free space on your on-prem ONTAP clusters by tiering inactive data to A
 :imagesdir: ./media/
 
 [.lead]
-Free space on your on-prem ONTAP clusters by tiering inactive data to Azure Blob storage.
+Free space on your on-premises ONTAP clusters by tiering inactive data to Azure Blob storage.
 
 == Quick start
 
@@ -25,14 +25,14 @@ Get started quickly by following these steps, or scroll down to the remaining se
 You need the following:
 
 [role="quick-margin-list"]
-* An on-prem ONTAP cluster that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
+* An on-premises ONTAP cluster that's running ONTAP 9.4 or later and has an HTTPS connection to Azure Blob storage. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 * A Connector installed in an Azure VNet or on your premises.
 * Networking for a Connector that enables an outbound HTTPS connection to the ONTAP cluster in your data center, to Azure storage, and to the BlueXP tiering service.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Set up tiering
 
 [role="quick-margin-para"]
-In BlueXP, select an on-prem ONTAP working environment, click *Enable* for the Tiering service, and follow the prompts to tier data to Azure Blob storage.
+In BlueXP, select an on-premises ONTAP working environment, select  *Enable* for the Tiering service, and follow the prompts to tier data to Azure Blob storage.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Set up licensing
 
@@ -40,7 +40,7 @@ In BlueXP, select an on-prem ONTAP working environment, click *Enable* for the T
 After your free trial ends, pay for BlueXP tiering through a pay-as-you-go subscription, an ONTAP BlueXP tiering BYOL license, or a combination of both:
 
 [role="quick-margin-list"]
-* To subscribe from the Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[go to the BlueXP Marketplace offering^], click *Subscribe*, and then follow the prompts.
+* To subscribe from the Azure Marketplace, https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview[go to the BlueXP Marketplace offering^], select *Subscribe*, and then follow the prompts.
 * To pay using a BlueXP tiering BYOL license, mailto:ng-cloud-tiering@netapp.com?subject=Licensing[contact us if you need to purchase one], and then link:https://docs.netapp.com/us-en/bluexp-digital-wallet/task-manage-data-services-licenses.html[add it to your account from the BlueXP digital wallet].
 
 == Requirements
@@ -85,7 +85,7 @@ NOTE: BlueXP tiering supports FlexGroup volumes, starting with ONTAP 9.5. Setup 
 
 === Discovering an ONTAP cluster
 
-You need to create an on-prem ONTAP working environment in BlueXP before you can start tiering cold data.
+You need to create an on-premises ONTAP working environment in BlueXP before you can start tiering cold data.
 
 https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[Learn how to discover a cluster^].
 
@@ -106,7 +106,7 @@ If you created the Connector using an earlier version of BlueXP, then you'll nee
 
 === Preparing networking for the Connector
 
-Ensure that the Connector has the required networking connections. A Connector can be installed on-prem or in Azure.
+Ensure that the Connector has the required networking connections. A Connector can be installed on-premises or in Azure.
 
 .Steps
 
@@ -141,31 +141,31 @@ https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html[An
 
 .Steps
 
-. Select the on-prem ONTAP working environment.
+. Select the on-premises ONTAP working environment.
 
 . Click *Enable* for the Tiering service from the right panel.
 +
 If the Azure Blob tiering destination exists as a working environment on the Canvas, you can drag the cluster onto the Azure Blob working environment to initiate the setup wizard.
 +
-image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-prem ONTAP working environment.]
+image:screenshot_setup_tiering_onprem.png[A screenshot that shows the Enable option that appears on the right side of the screen after you select an on-premises ONTAP working environment.]
 
 . *Define Object Storage Name*: Enter a name for this object storage. It must be unique from any other object storage you may be using with aggregates on this cluster.
 
-. *Select Provider*: Select *Microsoft Azure* and click *Continue*.
+. *Select Provider*: Select *Microsoft Azure* and select *Continue*.
 
 . Complete the steps on the *Create Object Storage* pages:
 
-.. *Resource Group*: Select a resource group where an existing container is managed, or where you'd like to create a new container for tiered data, and click *Continue*.
+.. *Resource Group*: Select a resource group where an existing container is managed, or where you'd like to create a new container for tiered data, and select *Continue*.
 +
-When using an on-prem Connector, you must enter the Azure Subscription that provides access to the resource group.
+When using an on-premises Connector, you must enter the Azure Subscription that provides access to the resource group.
 
-.. *Azure Container*: Select the radio button to either add a new Blob container to a storage account or to use an existing container. Then select the storage account and choose the existing container, or enter the name for the new container. Then click *Continue*.
+.. *Azure Container*: Select the radio button to either add a new Blob container to a storage account or to use an existing container. Then select the storage account and choose the existing container, or enter the name for the new container. Then select *Continue*.
 +
 The storage accounts and containers that appear in this step belong to the resource group that you selected in the previous step.
 
 .. *Access Tier Lifecycle*: BlueXP tiering manages the lifecycle transitions of your tiered data. Data starts in the _Hot_ class, but you can create a rule to apply the _Cool_ class to the data after a certain number of days.
 +
-Select the access tier that you want to transition the tiered data to and the number of days before the data is assigned to that tier, and click *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Cool_ class from the _Hot_ class after 45 days in object storage.
+Select the access tier that you want to transition the tiered data to and the number of days before the data is assigned to that tier, and select *Continue*. For example, the screenshot below shows that tiered data is assigned to the _Cool_ class from the _Hot_ class after 45 days in object storage.
 +
 If you choose *Keep data in this access tier*, then the data remains in the _Hot_ access tier and no rules are applied. link:reference-azure-support.html[See supported access tiers^].
 +
@@ -173,7 +173,7 @@ image:screenshot_tiering_lifecycle_selection_azure.png[A screenshot showing how 
 +
 Note that the lifecycle rule is applied to all blob containers in the selected storage account.
 
-.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and click *Continue*.
+.. *Cluster Network*: Select the IPspace that ONTAP should use to connect to object storage, and select *Continue*.
 +
 Selecting the correct IPspace ensures that BlueXP tiering can set up a connection from ONTAP to your cloud provider's object storage.
 +
@@ -182,13 +182,13 @@ You can also set the network bandwidth available to upload inactive data to obje
 . On the _Tier Volumes_ page, select the volumes that you want to configure tiering for and launch the Tiering Policy page:
 
 +
-* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[""]) and click *Configure volumes*.
-* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[""]) and click *Configure volumes*.
-* To select a single volume, click the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
+* To select all volumes, check the box in the title row (image:button_backup_all_volumes.png[""]) and select *Configure volumes*.
+* To select multiple volumes, check the box for each volume (image:button_backup_1_volume.png[""]) and select *Configure volumes*.
+* To select a single volume, select the row (or image:screenshot_edit_icon.gif[edit pencil icon] icon) for the volume.
 +
 image:screenshot_tiering_initial_volumes.png[A screenshot that shows how to select a single volume, multiple volumes, or all volumes, and the modify selected volumes button.]
 
-. In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and click *Apply*.
+. In the _Tiering Policy_ dialog, select a tiering policy, optionally adjust the cooling days for the selected volumes, and select *Apply*.
 +
 link:concept-cloud-tiering.html#volume-tiering-policies[Learn more about volume tiering policies and cooling days].
 +
