@@ -121,7 +121,7 @@ To get an estimate, simply add your ONTAP cluster to BlueXP and inspect it throu
 
 === How am I charged for tiering when I am using an ONTAP MetroCluster?
 
-When used in MetroCluster environments, tiering licensed capacity is applied to mirrored buckets equally. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 100 TiB. There is no extra charge for mirrored buckets. When tiering from unmirrored aggregates in MetroCluster environments, the BlueXP tiering license is applied as normal, and the total capacity tiered to both buckets is used. For example, if you have a license for 100TiB of tiering, both buckets can be tiered up to 50TB.
+When used in MetroCluster environments, total tiering license is applied to both clusters’ usage. For example, if you have a license for 100TiB of tiering, each cluster’s used tiering capacity contributes to the total capacity of 100TiB. 
 
 == ONTAP
 
