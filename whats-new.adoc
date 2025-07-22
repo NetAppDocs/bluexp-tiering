@@ -60,7 +60,7 @@ See the full list of endpoints for your https://docs.netapp.com/us-en/bluexp-set
 
 === Drag and drop to enable tiering to additional destinations
 
-If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
+If the Azure Blob, Google Cloud Storage, or StorageGRID tiering destination exists as a working environment on the Canvas, you can drag your on-premises ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 
 == 19 September 2022
 
@@ -72,7 +72,7 @@ https://docs.netapp.com/us-en/bluexp-tiering/task-tiering-onprem-aws.html[Review
 
 === Drag and drop to enable tiering to Amazon S3
 
-If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-prem ONTAP working environment onto the destination to initiate the Tiering setup wizard.
+If the Amazon S3 tiering destination exists as a working environment on the Canvas, you can drag your on-premises ONTAP working environment onto the destination to initiate the Tiering setup wizard.
 
 === Choose tiering behavior when removing mirror object store
 

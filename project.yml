@@ -16,7 +16,7 @@ sidebar:
       entries:
         - title: Learn about BlueXP tiering
           url: /concept-cloud-tiering.html
-        - title: Tier on-prem data to the cloud
+        - title: Tier on-premises data to the cloud
           entries:
             - title: Tier to Amazon S3
               url: /task-tiering-onprem-aws.html

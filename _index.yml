@@ -12,7 +12,7 @@ indexpage:
           url: whats-new.html
         - title: Set up licensing
           url: task-licensing-cloud-tiering.html
-    - title: Tier on-prem ONTAP data to the cloud
+    - title: Tier on-premises ONTAP data to the cloud
       links:
         - title: Tier to Amazon S3
           url: task-tiering-onprem-aws.html

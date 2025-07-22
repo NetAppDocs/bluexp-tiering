@@ -17,7 +17,7 @@ BlueXP tiering supports several Google Cloud storage classes and most regions.
 
 == Supported GCP storage classes
 
-When you set up data tiering to GCP from your on-premises ONTAP systems, BlueXP tiering automatically uses the _Standard_ storage class for your inactive data. BlueXP tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to other storage classes after a certain number of days. You can choose from the following storage classes:
+When you set up data tiering to Google Cloud storage from your on-premises ONTAP systems,  tiering automatically uses the _Standard_ storage class for your inactive data. Tiering can apply a lifecycle rule so the data transitions from the _Standard_ storage class to other storage classes after a certain number of days. You can choose from the following storage classes:
 
 * Nearline
 * Coldline
@@ -25,13 +25,13 @@ When you set up data tiering to GCP from your on-premises ONTAP systems, BlueXP 
 
 If you do not choose another storage class, then the data remains in the _Standard_ storage class and no rules are applied.
 
-When you configure a BlueXP tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your Google account. 
+When you configure a tiering lifecycle rule, you must not configure any lifecycle rules when setting up the bucket in your Google account. 
 
 https://cloud.google.com/storage/docs/storage-classes[Learn about Google Cloud Storage classes^].
 
 == Supported Google Cloud regions
 
-BlueXP tiering supports the following regions.
+Tiering supports the following regions.
 
 === Americas
 

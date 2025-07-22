@@ -27,9 +27,9 @@ It's best to run this check when the cluster is under 50% CPU utilization.
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters* page, click the menu icon for a cluster and select *Cloud Performance Test*.
+. From the *Clusters* page, select the menu icon for a cluster and select *Cloud Performance Test*.
 
-. Review the details and click *Continue*.
+. Review the details and select *Continue*.
 
 . Follow the prompts to provide the required information.
 +
@@ -41,7 +41,7 @@ The information that you need to provide is the same as if you were setting up t
 
 . From the left navigation menu, select *Mobility > Tiering*.
 
-. From the *Clusters* page, click the menu icon for a cluster and select *Cloud Performance Test*.
+. From the *Clusters* page, select the menu icon for a cluster and select *Cloud Performance Test*.
 
 . Select a node from the drop-down list.
 
